@@ -53,65 +53,41 @@ $('#submitquote').submit(function() {
     var organization = $("input[name='organization']").val(); 
     var phone = $("input[name='phone']").val(); 
     var message = $("textarea[name='message']").val(); 
-    // var filename0 = _checkFile("input[name='filename0']");
-    // var filename1 = _checkFile("input[name='filename1']");
-    // var filename2 = _checkFile("input[name='filename2']");
+    var filename0 = _checkFile("input[name='filename0']");
+    var filename1 = _checkFile("input[name='filename1']");
+    var filename2 = _checkFile("input[name='filename2']");
     
     console.log(firstname);
     console.log(lastname);
     console.log(email);
     console.log(organization);
     console.log(phone);
-    console.log($('#submitquote').attr('action'));
-    // console.log(filename0);
-    // console.log(filename1);
-    // console.log(filename2);
-
-    $.ajax({
-        method: "POST",
-        url: $('#submitquote').attr('action') + '/Submitquote/upload_form',
-        data: { 
-            FirstName : firstname, 
-            LastName : lastname, 
-            email : email, 
-            organization : organization, 
-            phone : phone, 
-            message : message
-            // filename0 : filename0,
-            // filename1 : filename1,
-            // filename2 : filename2
-        },
-        success: function (response) {
-                    
-            if (response == 'failed') {
-                $("#error_quote").text("There was a database error submitting your quote. Please try again.");
-                $("#error_quote").css("display", "block");
-            }
-            else{
-                window.location.href = $('#submitquote').attr('action') + '/Submitquote/quote_success';
-            }
-            
-        },
-        error: function(xhr, textStatus, errorThrown){
-            alert('There was an error processing your request. Please try again.\n\n' + errorThrown);
-        }
-    })
-    
-//    var myFormData = new FormData(this);
+    console.log(message);
+    console.log(filename0);
+    console.log(filename1);
+    console.log(filename2);
 //    $.ajax({
 //        method: "POST",
-//        url: $('#submitquote').attr('action') + '/Submitquote/upload_formdata',
-//        data: myFormData,
-//        processData: false,
-//        contentType: false,
+//        url: $('#submitquote').attr('action') + '/Submitquote/upload_form',
+//        data: { 
+//            FirstName : firstname, 
+//            LastName : lastname, 
+//            email : email, 
+//            organization : organization, 
+//            phone : phone, 
+//            message : message,
+//            filename0 : filename0,
+//            filename1 : filename1,
+//            filename2 : filename2
+//        },
 //        success: function (response) {
 //                    
-//            if (response == 'failed_database') {
+//            if (response == 'failed') {
 //                $("#error_quote").text("There was a database error submitting your quote. Please try again.");
 //                $("#error_quote").css("display", "block");
 //            }
 //            else{
-////                window.location.replace($('#submitquote').attr('action') + '/Submitquote/quote_success');
+//                window.location.replace($('#submitquote').attr('action') + '/Submitquote/quote_success');
 //            }
 //            
 //        },
@@ -119,6 +95,30 @@ $('#submitquote').submit(function() {
 //            alert('There was an error processing your request. Please try again.\n\n' + errorThrown);
 //        }
 //    })
+    
+    var myFormData = new FormData(this);
+    $.ajax({
+        method: "POST",
+        url: $('#submitquote').attr('action') + '/Submitquote/upload_formdata',
+        data: myFormData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+                    
+            if (response == 'failed_database') {
+                $("#error_quote").text("There was a database error submitting your quote. Please try again.");
+                $("#error_quote").css("display", "block");
+            }
+            else{
+                window.location.replace($('#submitquote').attr('action') + '/Submitquote/quote_success');
+//                alert(response);
+            }
+            
+        },
+        error: function(xhr, textStatus, errorThrown){
+            alert('There was an error processing your request. Please try again.\n\n' + errorThrown);
+        }
+    })
 
     return false; // keep page from refreshing
 
@@ -132,3 +132,18 @@ function _checkFile(fname) {
         return $(fname).val().split('\\').pop();
     }
 }
+
+//function dump(obj) {
+//    var out = '';
+//    for (var i in obj) {
+//        out += i + ": " + obj[i] + "\n";
+//    }
+//
+//    alert(out);
+//
+//    // or, if you wanted to avoid alerts...
+//
+//    var pre = document.createElement('pre');
+//    pre.innerHTML = out;
+//    document.body.appendChild(pre)
+//}

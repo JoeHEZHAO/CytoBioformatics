@@ -7,7 +7,7 @@
 				<div id="logo">
 					<a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>">
 						<!-- <img src="assets/images/logo.png" alt="" style="width: 75px; height: 75px"> -->
-						<img src="<?php echo base_url('/assets/images/cyto_logo.png'); ?>" alt="<?php echo base_url(); ?>" width="75" height="75">
+						<img src="<?php echo base_url('../../assets/images/cyto_logo.png'); ?>" alt="<?php echo base_url(); ?>" width="75" height="75">
 					</a>
                     <a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>"><div class="navbar-company-name">CytoInformatics</div></a>
 				</div><!-- LOGO -->
@@ -34,9 +34,6 @@
 							<a href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>"><?php echo $firstname," ", $lastname; ?></a>
 							<ul>
 								<li><a href="<?php echo base_url('index.php/cyto_bioformatics/about_us'); ?>">About us</a></li>
-								<li><a href="<?php echo base_url('index.php/cyto_bioformatics/buyingAndPayment'); ?>">Buying and Payment</a></li>
-
-								<li><a href="<?php echo base_url('index.php/cyto_bioformatics/User_Payment_Info') ?>">User Payment Management</a></li>
 								<li><a href="services.html">Services</a></li>
 								<li><a href="single-service.html">Single service</a></li>
 								<li class="dropdown">

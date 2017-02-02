@@ -86,7 +86,11 @@
         
         
         <div id="container">
-
+            <div class="text text-center">
+                <h1>Under Construction</h1>
+                <h4>Please come back soon!</h4>
+                <p><a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>">Return to home page</a></p>
+            </div>
         </div>
 		
 		<!-- FOOTER -->
@@ -157,83 +161,83 @@
             document.getElementById("workflow-button").setAttribute("class", "active");
         });
         
-        function randnum(min, max) {
-            return Math.floor(Math.random()*(max-min+1)+min);
-        }
-        
-        var dotsCount = 50,
-            dotsHtml = "",
-            $count = $("#count"),
-            $dots;
-        
-        for (var i = 0; i < dotsCount; i++) {
-            dotsHtml += "<div class='dot'></div>";
-        }
-        
-        $dots = $(dotsHtml);
-        $count.html(dotsCount);
-        
-        var $container = $("#container"),
-		    $browserWidthNotice = $("#browserWidthNotice");
-
-        var screenWidth = window.screen.availWidth,
-		    screenHeight = window.screen.availHeight,
-		    chromeHeight = screenHeight - (document.documentElement.clientHeight || screenHeight);
-
-	    var translateZMin = -725,
-		    translateZMax = 600;
-
-	    var containerAnimationMap = {
-			perspective: [ 215, 50 ],
-			opacity: [ 0.90, 0.55 ]
-		};
-
-        /* IE10+ produce odd glitching issues when you rotateZ on a parent element subjected to 3D transforms. */
-        if (!isIE) {
-            containerAnimationMap.rotateZ = [ 5, 0 ];
-        }
-
-        /* Ensure the user is full-screened; this demo's translations are relative to screen width, not window width. */
-        if ((document.documentElement.clientWidth / screenWidth) < 0.80) {
-            $browserWidthNotice.show();
-        }
-
-        /*****************
-            Animation
-        *****************/
-
-        /* Animate the dots' container. */
-        $container
-            .css("perspective-origin", screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px")
-            .velocity(containerAnimationMap, { duration: 800, loop: 1, delay: 3250 });
-
-        /* Special visual enhancement for WebKit browsers, which are faster at box-shadow manipulation. */
-        if (isWebkit) {
-            $dots.css("boxShadow", "0px 0px 4px 0px #4bc2f1");
-        }
-
-        /* Animate the dots. */
-        $dots
-            .velocity({ 
-                translateX: [ 
-                    function() { return "+=" + randnum(-screenWidth/2.5, screenWidth/2.5) },
-                    function() { return randnum(0, screenWidth) }
-                ],
-                translateY: [
-                    function() { return "+=" + randnum(-screenHeight/2.75, screenHeight/2.75) },
-                    function() { return randnum(0, screenHeight) }
-                ],
-                translateZ: [
-                    function() { return "+=" + randnum(translateZMin, translateZMax) },
-                    function() { return randnum(translateZMin, translateZMax) }
-                ],
-                opacity: [ 
-                    function() { return Math.random() },
-                    function() { return Math.random() + 0.1 }
-                ]
-            }, { duration: 6000 })
-            .velocity("reverse", { easing: "easeOutQuad" })
-            .appendTo($container);
+//        function randnum(min, max) {
+//            return Math.floor(Math.random()*(max-min+1)+min);
+//        }
+//        
+//        var dotsCount = 50,
+//            dotsHtml = "",
+//            $count = $("#count"),
+//            $dots;
+//        
+//        for (var i = 0; i < dotsCount; i++) {
+//            dotsHtml += "<div class='dot'></div>";
+//        }
+//        
+//        $dots = $(dotsHtml);
+//        $count.html(dotsCount);
+//        
+//        var $container = $("#container"),
+//		    $browserWidthNotice = $("#browserWidthNotice");
+//
+//        var screenWidth = window.screen.availWidth,
+//		    screenHeight = window.screen.availHeight,
+//		    chromeHeight = screenHeight - (document.documentElement.clientHeight || screenHeight);
+//
+//	    var translateZMin = -725,
+//		    translateZMax = 600;
+//
+//	    var containerAnimationMap = {
+//			perspective: [ 215, 50 ],
+//			opacity: [ 0.90, 0.55 ]
+//		};
+//
+//        /* IE10+ produce odd glitching issues when you rotateZ on a parent element subjected to 3D transforms. */
+//        if (!isIE) {
+//            containerAnimationMap.rotateZ = [ 5, 0 ];
+//        }
+//
+//        /* Ensure the user is full-screened; this demo's translations are relative to screen width, not window width. */
+//        if ((document.documentElement.clientWidth / screenWidth) < 0.80) {
+//            $browserWidthNotice.show();
+//        }
+//
+//        /*****************
+//            Animation
+//        *****************/
+//
+//        /* Animate the dots' container. */
+//        $container
+//            .css("perspective-origin", screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px")
+//            .velocity(containerAnimationMap, { duration: 800, loop: 1, delay: 3250 });
+//
+//        /* Special visual enhancement for WebKit browsers, which are faster at box-shadow manipulation. */
+//        if (isWebkit) {
+//            $dots.css("boxShadow", "0px 0px 4px 0px #4bc2f1");
+//        }
+//
+//        /* Animate the dots. */
+//        $dots
+//            .velocity({ 
+//                translateX: [ 
+//                    function() { return "+=" + randnum(-screenWidth/2.5, screenWidth/2.5) },
+//                    function() { return randnum(0, screenWidth) }
+//                ],
+//                translateY: [
+//                    function() { return "+=" + randnum(-screenHeight/2.75, screenHeight/2.75) },
+//                    function() { return randnum(0, screenHeight) }
+//                ],
+//                translateZ: [
+//                    function() { return "+=" + randnum(translateZMin, translateZMax) },
+//                    function() { return randnum(translateZMin, translateZMax) }
+//                ],
+//                opacity: [ 
+//                    function() { return Math.random() },
+//                    function() { return Math.random() + 0.1 }
+//                ]
+//            }, { duration: 6000 })
+//            .velocity("reverse", { easing: "easeOutQuad" })
+//            .appendTo($container);
         
     </script>
 	

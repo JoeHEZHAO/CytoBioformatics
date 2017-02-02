@@ -88,12 +88,16 @@
                 
                 <label id="error_quote" style="display: none; position: relative; color: red; font-size: 13px; left: 0; bottom: 21px;"></label>
                 
+                <!-- CSRF FORM TOKEN -->
+                <?php $csrf = array('name' => $this->security->get_csrf_token_name(),
+                                    'hash' => $this->security->get_csrf_hash()); ?>
+                
                 <form action="<?php echo base_url('index.php'); ?>" method="post" id="submitquote" enctype="multipart/form-data">
                 <!--<?php 
                     $attributes = array('method' => 'post', 'id' => 'submitquote', 'enctype' => 'multipart/form-data');
                     echo form_open_multipart('', $attributes);
                 ?>-->
-
+                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                     <div class="top-row">
                         <div class="field-wrap">
                             <label>

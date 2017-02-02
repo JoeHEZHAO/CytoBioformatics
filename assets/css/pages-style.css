@@ -774,6 +774,10 @@
 		background: #282a37 no-repeat center center;
 		color: #fff;
 	}	
+
+    #page-header-aboutus {
+        background-image: url(../../images/backgrounds/page-header-1.jpg);
+    }
 	
 	#page-header [class^="col-"] {
 		position: static;
@@ -828,7 +832,7 @@
  ***********************************************************************************/
 	
 	#page-content {
-		padding-bottom: 50px;
+		padding-bottom: 0px;
 	}
 
 /***********************************************************************************
@@ -1065,7 +1069,9 @@
 		margin-bottom: 50px;
 	}
 	
-	.service-box-content {}
+	.service-box-content {
+        margin-top: 30px;
+    }
 	
 	
 	/* SERVICE BOX STYLE 1 */
