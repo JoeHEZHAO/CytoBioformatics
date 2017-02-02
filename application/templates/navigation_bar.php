@@ -28,12 +28,13 @@
 						<li id="quote-button"><a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Quote</a></li>
 						<li id="about_us-button"><a href="<?php echo base_url('index.php/cyto_bioformatics/about_us'); ?>">About Us</a></li>
 						
-					<!-- login button if not logged in -->
+					<!-- login button if logged in -->
 					<?php if(!empty($firstname)): ?>
 						<li class="dropdown">
-							<a href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>"><?php echo $firstname," ", $lastname; ?></a>
+							<a href="#"><?php echo $firstname," ", $lastname; ?></a>
 							<ul>
 								<li><a href="<?php echo base_url('index.php/cyto_bioformatics/about_us'); ?>">About us</a></li>
+								<li><a href="<?php echo base_url('index.php/cyto_bioformatics/buyingAndPayment'); ?>">Buying and Payment</a></li>
 								<li><a href="services.html">Services</a></li>
 								<li><a href="single-service.html">Single service</a></li>
 								<li class="dropdown">

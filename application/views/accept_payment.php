@@ -117,7 +117,7 @@
                             
 	<div class="container">
 	<div class="row">
-        <div class="span8">
+        <div class="col-3 col-sm-3">
     		<form action="billing" method="post" class="form-horizontal" id="billingform" accept-charset="utf-8">
     			<div class="control-group">
     				<label for="email" class="control-label">	
@@ -261,7 +261,13 @@
 
     		</form>
     	</div> <!-- .span8 -->
-    	<button onclick="showNext()"> Continue </button>
+        
+        <div class="col-3 col-sm-3">
+            <div class="AuthorizeNetSeal"> 
+                <script type="text/javascript" language="javascript">var ANS_customer_id="f9affc83-ee34-4e20-a9a1-5356d6b52d27";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Accept Credit Cards Online</a><br>
+    	       <button onclick="showNext()" class="btn-lg"> Continue </button>
+            </div>
+        </div>
 	</div>
 </div>
 

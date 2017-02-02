@@ -17,7 +17,7 @@ class Login extends CI_Controller
 //            var_dump($data['result']);
 			$_SESSION['firstname'] = $data['result']->firstname; // data type always a problem
 			$_SESSION['lastname'] = $data['result']->lastname;
-
+            $_SESSION['email'] = $data['result']->email;
 			echo "";
 		}
 		else
