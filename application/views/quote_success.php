@@ -9,7 +9,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	
-	<title>Refund Policy | CytoInformatics</title>
+	<title>Quote Submitted | CytoInformatics</title>
 	
 	<!-- FAVICON AND APPLE TOUCH -->    
 	<link rel="shortcut icon" href="favicon.png">

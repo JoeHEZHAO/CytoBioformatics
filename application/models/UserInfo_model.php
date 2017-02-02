@@ -29,12 +29,12 @@ date_default_timezone_set('America/New_York');
 
 		function selectForLogin($email, $password)
 		{
-
 			$this->db->from('UserInfo');
 			$this->db->where('email', $email);
-			$this->db->where('password', $password);
 
-			if (!empty($data = $this->db->get()->row())) {
+            $data = $this->db->get()->row();
+            // if row was found and submitted password matches stored hash 
+			if ((!empty($data)) && (password_verify($password, $data->password))) {
 				return $data;
 			}
 			else{
@@ -44,6 +44,11 @@ date_default_timezone_set('America/New_York');
 		}
 
 		function selectForSignUp($email){
+
+			$data = array(
+				'email' => $email
+			);
+
 			$this->db->from('UserInfo');
 			$this->db->where('email', $email);
 
@@ -53,28 +58,8 @@ date_default_timezone_set('America/New_York');
 			else{
 				return;
 			}
-		}
-
-		function getCustomerPaymentIDs($customerID){
-
-			$this->db->from('customerPaymentProfile');
-			$this->db->where('customer_id', $customerID);
-
-			if (!empty($data = $this->db->get()->row())) 
-			{
-				return $data;
-			}
-			else
-			{
-				return "error";
-			}
-		}
-
-		function StoreTransactionRecord(){
-
 			
 		}
-
 
 		function removeUser($email, $password){
 

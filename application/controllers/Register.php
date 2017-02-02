@@ -9,12 +9,24 @@ class Register extends CI_Controller
 
 		$this->load->model('Register_model');
 		$UniqueID = md5(uniqid(mt_rand(), true));
+        
+        $email = $this->security->xss_clean($this->input->post('email'));
+        $firstname = $this->security->xss_clean($this->input->post('FirstName'));
+        $lastname = $this->security->xss_clean($this->input->post('LastName'));
+        $password = $this->security->xss_clean($this->input->post('password'));
+        
+        // hash password before checking database
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
-		if (empty($data = $this->Register_model->checkerExisted($_POST['email']))) {
+		if (empty($data = $this->Register_model->checkerExisted($email))) {
 
-			$this->Register_model->register($_POST['email'], $_POST['FirstName'], $_POST['LastName'], $_POST['password'], $UniqueID);
-			$_SESSION['firstname'] = $_POST['FirstName'];
-			$_SESSION['lastname'] = $_POST['LastName'];
+			$this->Register_model->register($email, 
+                                            $firstname,
+                                            $lastname,
+                                            $password, 
+                                            $UniqueID);
+			$_SESSION['firstname'] = $firstname;
+			$_SESSION['lastname'] = $lastname;
 			echo "";
 			
 		}

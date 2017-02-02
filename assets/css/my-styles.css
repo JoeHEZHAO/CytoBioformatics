@@ -231,3 +231,8 @@
 #container {
     height: 1000px;
 }
+
+/*FOOTER*/
+.trustwave-signature {
+    text-align: left;
+}

@@ -101,7 +101,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <img src="<?php echo base_url('images/services/detection.png'); ?>" alt="">
-                                <i class="bronx-icon-bubble"></i>
+                                <!--<i class="bronx-icon-bubble"></i>-->
                                 <div class="service-box-content">
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Cell Detection</a></h6>
                                     <p>Rapidly obtain precise coordinates specifying the locations of cells in your image, facilitating density modeling, cell classification, and more.</p>
@@ -112,7 +112,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <img src="<?php echo base_url('images/services/segmentation.png'); ?>" alt="">
-                                <i class="bronx-icon-heart"></i>
+                                <!--<i class="bronx-icon-heart"></i>-->
                                 <div class="service-box-content">
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Cell Segmentation</a></h6>
                                     <p>Find the boundary coordinates of up to thousands of cells per image, enabling robust cross-sectional area calculations, background removal, shape modeling, and more.</p>
@@ -123,8 +123,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <img src="<?php echo base_url('images/services/classification.png'); ?>" alt="">
-                                <i class="bronx-icon-data"></i>
-
+                                <!--<i class="bronx-icon-data"></i>-->
                                 <div class="service-box-content">
 
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Classification</a></h6>
@@ -145,8 +144,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <img src="<?php echo base_url('images/services/denoised.jpg'); ?>" alt="">
-                                <i class="bronx-icon-eye"></i>
-
+                                <!--<i class="bronx-icon-eye"></i>-->
                                 <div class="service-box-content">
 
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Image Cleaning</a></h6>
@@ -161,8 +159,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <img src="<?php echo base_url('images/services/area.png'); ?>" alt="">
-                                <i class="bronx-icon-food"></i>
-
+                                <!--<i class="bronx-icon-food"></i>-->
                                 <div class="service-box-content">
 
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Feature Extraction</a></h6>
@@ -177,8 +174,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <img src="<?php echo base_url('images/services/voteIllustration.png'); ?>" alt="" style="width: 270px; height: 270px;">
-                                <i class="bronx-icon-lab"></i>
-
+                                <!--<i class="bronx-icon-lab"></i>-->
                                 <div class="service-box-content">
 
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">More...</a></h6>
@@ -220,8 +216,7 @@
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
                                         <img src="<?php echo base_url('images/services/lung_crop.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-bubble"></i>
-
+                                        <!--<i class="bronx-icon-bubble"></i>-->
                                         <div class="service-box-content">
 
                                             <h6><a href="single-service.html">Lung</a></h6>
@@ -236,8 +231,7 @@
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
                                         <img src="<?php echo base_url('images/services/muscle_crop.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-heart"></i>
-
+                                        <!--<i class="bronx-icon-heart"></i>-->
                                         <div class="service-box-content">
 
                                             <h6><a href="single-service.html">Muscle</a></h6>
@@ -252,8 +246,7 @@
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
                                         <img src="<?php echo base_url('images/services/bladder_crop.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-data"></i>
-
+                                        <!--<i class="bronx-icon-data"></i>-->
                                         <div class="service-box-content">
 
                                             <h6><a href="single-service.html">Bladder</a></h6>
@@ -274,8 +267,7 @@
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
                                         <img src="<?php echo base_url('images/services/NET_crop.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-food"></i>
-
+                                        <!--<i class="bronx-icon-food"></i>-->
                                         <div class="service-box-content">
 
                                             <h6><a href="single-service.html">Neuroendocrine Tumor</a></h6>
@@ -290,8 +282,7 @@
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
                                         <img src="<?php echo base_url('images/services/breast_crop.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-eye"></i>
-
+                                        <!--<i class="bronx-icon-eye"></i>-->
                                         <div class="service-box-content">
 
                                             <h6><a href="single-service.html">Breast</a></h6>
@@ -306,8 +297,7 @@
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
                                         <img src="<?php echo base_url('images/services/brain_crop.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-lab"></i>
-
+                                        <!--<i class="bronx-icon-lab"></i>-->
                                         <div class="service-box-content">
 
                                             <h6><a href="single-service.html">Brain</a></h6>
@@ -460,9 +450,9 @@
         });
         
         $(".backing-image").velocity({
-            opacity: "0.4"
+            opacity: "0.2"
         }, {
-            duration: 5000,
+            duration: 4000,
             loop: true
             
         }).velocity("reverse");

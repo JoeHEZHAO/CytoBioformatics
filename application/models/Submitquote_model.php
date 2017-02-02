@@ -4,13 +4,13 @@ date_default_timezone_set('America/New_York');
 	{
 		
 		public function __construct()
-		{
+		 {
 			  parent::__construct();
-		}
+		 }
 
-		function submitquote($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review')
+		function submitquote($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2)
 		{
-			if ($this->insert($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review')) {
+			if ($this->insert($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2)) {
 				return true;
 			}
             else {
@@ -19,7 +19,7 @@ date_default_timezone_set('America/New_York');
 
 		}
         
-        function insert($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review') {
+        function insert($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2) {
             $data = array(
 				'firstname' => $firstname,
 				'lastname' => $lastname,
@@ -31,8 +31,7 @@ date_default_timezone_set('America/New_York');
                 'quoteID' => $QuoteID,
                 'filename0' => $filename0,
                 'filename1' => $filename1,
-                'filename2' => $filename2,
-                'status' => $status
+                'filename2' => $filename2
 			);
 
 			if ($this->db->insert('Quotes', $data)) {
@@ -42,24 +41,6 @@ date_default_timezone_set('America/New_York');
 				return false;
 			}
         }
-
-	    function loadQuotes(){
-			$email = $_SESSION['email'];
-
-			$this->db->select('*');
-			$this->db->from('Quotes');
-			$this->db->where('email', $email);
-			// $this->db->where('status','approved');
-
-			if (!empty($response = $this->db->get())) {
-				if ($response->num_rows() > 0) {
-					$row = $response->result_array();
-					return $row;
-				}
-			}else{
-				return false;
-			}
-	    }
 
 		/*function checkerExisted($email){
 			$this->load->model('UserInfo_model');

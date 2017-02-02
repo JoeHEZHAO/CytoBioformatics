@@ -1209,7 +1209,7 @@
 	}
 
 	.progress-bar-title {
-		float: left;
+		float: right;
 		color: #363636;
 		font: 14px "Montserrat", sans-serif;
 	}
@@ -2148,7 +2148,7 @@
 	
 	#section-6 {
 		padding: 80px 0 70px;
-		margin-bottom: -50px;
+		margin-bottom: 0px;
 		background-image: url(../../images/backgrounds/bg-4.jpg);
 	}
 	
@@ -2177,7 +2177,7 @@
 	#section-9 {
 		padding: 80px 0;
 		margin-bottom: -50px;
-		background: url(../../images/backgrounds/bg-6.png) no-repeat bottom right;
+		background: url(../../images/backgrounds/bg-1.jpg) no-repeat bottom right;
 	}
 	
 	#section-9 a:hover {
