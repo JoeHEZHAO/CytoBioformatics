@@ -1,0 +1,5 @@
+dark blue		36394a
+darker blue		282a37
+lt blue			00ddf7
+alt				bc59f2
+deep dark		1a1c24

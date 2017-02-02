@@ -1,0 +1,47 @@
+/*
+ * MY-ANIMATIONS
+ * Added by Mason McGough to include custom CSS animations to elements.
+ * December 31st, 2016
+ *
+ *
+ */
+ 
+	@keyframes fadein {
+		from {left: -50px; opacity: 0.0;}
+		to {left: 0px; opacity: 1.0;}
+	}
+	.workflow-animation {
+		height: 1000px;
+		overflow: hidden;
+		margin-bottom: 100px;
+	}
+	.fadein-header1 {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.fadein-text1 {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.whole-slide {
+		position: relative;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.slide-excerpt {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.fadein-object1 {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}

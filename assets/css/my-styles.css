@@ -1,0 +1,233 @@
+/*
+ * MY-STYLES
+ * Added by Mason McGough
+ * December 31st, 2016
+ *
+ *
+ */
+ 
+.custom-section-1 {
+    background: #282a37 no-repeat center center;
+}
+
+.privacy-ul {
+    margin: 20px;
+}
+
+.refund-ol {
+    margin: 20px;
+}
+
+.navbar-company-name {
+    position: absolute;
+    left: 72px;
+    top: 50px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+/*HOME PAGE INTRO*/
+.intro-section {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    margin-bottom: 100px;
+}
+
+.intro-section.rectangle {
+    position: absolute; 
+    width: 55%;
+    height: 100% !important;
+    background-color: #282a37;
+}
+
+.intro-section-card {
+    margin-top: 300px;
+    margin-left: 220px;
+}
+
+.intro-section-image {
+    position: absolute;
+    left: 70px;
+    top: 150px;
+    width: 200px;
+    z-image: 0;
+}
+
+.intro-section-big-title {
+    position: relative;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 82px;
+    line-height: 72px;
+}
+
+.intro-section-small-title {
+    position: relative;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    line-height: 38px;
+}
+
+.intro-section-caption {
+    position: relative;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+/*CONTACT*/
+.about-me h4 {
+    margin-bottom: 0px;
+}
+
+.tp-caption.my-small-title {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 60px;
+    line-height: 72px;
+}
+
+.my-ctr-label {
+    height: 40px;
+}
+
+/*DEMO PAGE*/
+#gif-window {
+    
+}
+
+.button-panel {
+    display: block;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.button-panel button {
+    margin-right: 40px;
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+/*SOLUTIONS PAGE*/
+.page-solutions {
+    display: block;
+    position: relative;
+    height: 700px;
+    width: 100%;
+    background-color: #000000;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.page-solutions-text h1 {
+    position: absolute;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    width: 75%; 
+    text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+    white-space: pre-wrap; 
+    padding-top: 200px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.page-solutions-text p {
+    position: absolute;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    width:700px; 
+    text-align: justify;
+    font-size: 24px;
+    line-height: 24px;
+    white-space: pre-wrap;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 450px;
+}
+
+.backing-image {
+    position: absolute;
+    width: 100%;
+}
+
+/*PRICING PAGE*/
+.price-table {
+    padding-bottom: 100px;
+}
+
+.price-box {
+    background-color: #f5f5f5;
+    width: 250px;
+    height: 400px;
+    padding: 25px 25px 25px 25px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eff5fa;
+}
+
+.price-box h1 {
+    color: #bc59f2;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    white-space: pre-wrap; 
+    margin: auto;    
+}
+
+.price-box p {
+    position: absolute;
+    top: 100px;
+    color: #363636;
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: pre-wrap; 
+    margin: auto;    
+}
+
+.price-box:hover {
+    background-color: #cdf0f4;
+}
+
+/*WORKFLOW PAGE*/
+.box {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #00ddf7;
+}
+
+.dot {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #00ddf7;
+}
+
+#container {
+    height: 1000px;
+}
