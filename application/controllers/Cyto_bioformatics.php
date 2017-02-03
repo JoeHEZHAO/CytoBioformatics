@@ -48,8 +48,12 @@ class Cyto_bioformatics extends CI_Controller {
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
 			$this->load->model('Submitquote_model');
-			$data['rows'] = $this->Submitquote_model->loadQuotes();
 
+			if ($this->Submitquote_model->loadQuotes()) {
+				$data['rows'] = $this->Submitquote_model->loadQuotes();
+			}else{
+				$data['rows'] = 'failed';
+			}
 			$this->load->view('buyingAndPayment', $data);
 		}
 	}
@@ -61,6 +65,8 @@ class Cyto_bioformatics extends CI_Controller {
 			$_SESSION['quoteIds'] = $_POST['quoteIds'];
 			$_SESSION['quoteCharges'] = $_POST['quoteCharges'];	
 	        echo "succes!";
+		}else{
+			echo 'failed';
 		}	
 	}
 
