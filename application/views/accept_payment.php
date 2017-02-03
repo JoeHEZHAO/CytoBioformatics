@@ -92,8 +92,8 @@
 	<!-- <script src="scripts/jquery.cookie.js"></script> -->
 	
 	
-	<!-- <script src="https://jstest.authorize.net/v1/Accept.js"></script> -->
-    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>
+	<script src="https://jstest.authorize.net/v1/Accept.js"></script>
+    <!-- <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script> -->
 	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
 
 </head>

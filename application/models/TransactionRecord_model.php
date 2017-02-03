@@ -9,14 +9,12 @@
 		 }
 
 		function createTransacationRecord($data){
-
 			if ($this->db->insert('tranRecord', $data)) {
 				return true;
 			}
 			else{
 				return false;
 			}
-
 		}
 
 		function saveBillingAddress($data){

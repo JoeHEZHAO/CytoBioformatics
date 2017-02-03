@@ -15,9 +15,10 @@ $(document).ready(function() {
 					url: $('#checkout').attr('name') + '/Cyto_bioformatics/Checkout',
 					data: { TotelCharge : totalCharge, quoteIds: quoteIds,  quoteCharges : quoteCharges },
 					success: function (response) {
-						if (response != null) {
-							console.log(response);
+						if (response == 'success!') {
 							window.location.replace($('#checkout').attr('name') + '/Cyto_bioformatics/paymentPage');
+						}else{
+							alert(response);
 						}				
 		            },
 		            error: function(xhr, textStatus, errorThrown){
