@@ -62,36 +62,189 @@
 		<header id="header-container">
 			<!-- NAVIGATION BAR -->
 			<?php include "application/templates/navigation_bar.php"; ?>
-			
-			<div id="page-header" class="parallax" data-stellar-background-ratio="0.1" style="background-image:url(images/backgrounds/page-header-1.jpg);">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							
-							<h1>Workflow</h1>
-							
-							<p class="tp-caption text-center text">View a quick animation explaining our services</p>
-							
-						</div><!-- col -->
-					</div><!-- row -->
-				</div><!-- container -->    
-			</div><!-- page-header -->
             
 		</header><!-- HEADER CONTAINER -->
 		
 		
 		<!-- PAGE CONTENT -->
 		<div id="page-content">
-		</div><!-- PAGE CONTENT -->
-        
-        
-        <div id="container">
-            <div class="text text-center">
-                <h1>Under Construction</h1>
-                <h4>Please come back soon!</h4>
-                <p><a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>">Return to home page</a></p>
+            <!-- INTRO SLIDER -->
+			<div class="rev_slider_wrapper">
+                <div id="workflow-slider" class="rev_slider" data-version="5.0">
+                    <img src="<?php echo base_url('images/backgrounds/bg-slider.jpg'); ?>" style="width:102%; height: 100%;">
+                    <ul>
+						<li data-transition="fade">
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="300"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h2>Say you are a pathologist...</h2>
+                            </div>
+
+                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="400"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <p>You have several hundred images of lung biopsies. You know that some of your images depict tissue with signs of small cell carcinoma, some show large cell carcinoma, and some show no signs of carcinoma.</p>
+                            </div>
+						</li>
+                        
+						<li data-transition="fade">
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="300"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h2>But you are also a researcher.</h2>
+                            </div>
+
+                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="400"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <p>You want to publish high-quality studies with impact. You know that there are significant morphological differences between the tissue samples you have. However, you don't have the time or resources to pay an assistant to manually annotate each image by hand, much less do it yourself. If only you could find a way to easily quantify these differences!</p>
+                            </div>
+						</li>
+                        
+						<li data-transition="fade">
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="230"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h2>That's where <br><span class="text-alt-color">CytoInformatics</span> comes in.</h2>
+                            </div>
+
+                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="400"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <p>Here at CytoInformatics, we aim to simplify the analysis of microscopy images for you while delivering pinpoint-accurate results. All you need to do is upload your images and we will handle the rest.<br><br>To get started, follow these simple instructions.</p>
+                            </div>
+						</li>
+                        
+                        <li data-transition="fade">
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="300"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h2>Step 1: Submit a Quote</h2>
+                            </div>
+
+                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="400"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <p>Click the <a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to discuss the possible solutions we can pursue to help you get the findings you need.<br><br>You are also encouraged to submit up to three sample images so that we may better prepare to discuss your data with you.</p>
+                            </div>
+						</li>
+                        
+                        <li data-transition="fade">
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="300"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h2>Step 2: Purchase Our Services</h2>
+                            </div>
+
+                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="400"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <p>Once you have agreed to a solution and have logged in with your account, you should see a <span class="text-alt-color">Projects and Payment</span> tab in the dropdown menu under your name. This link will bring you to a table with your unpaid charges. Select this charge and continue through our online payment portal powered by <a href="https://www.authorize.net/">Authorize.Net</a> to complete your payment.
+                            </div>
+						</li>
+                        
+                        <li data-transition="fade">
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="300"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h2>Step 3: Submit Your Images</h2>
+                            </div>
+
+                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="400"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <p>After you have paid for your images, we will provide you with a link to securely upload your images to our platform. From here we can begin to work on your data. From there on we will provide you with regular updates until the project is complete. It's that simple.</p>
+                            </div>
+                            
+                            <div class="tp-caption text-center"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="650"
+                                 data-speed="700"
+                                 data-start="700"
+                                 data-transform_in="o:0;s:700;"
+                                 data-transform_out="o:0;s:700;">
+                                <h4><a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>" class="text-alt-color">Ready to get started?</a></h4>
+                            </div>
+						</li>
+					</ul>
+				</div>
             </div>
-        </div>
+            
+		</div><!-- PAGE CONTENT -->
 		
 		<!-- FOOTER -->
 		<?php include 'application/templates/footer.php'; ?>
@@ -118,6 +271,22 @@
 	<!-- FANCYBOX -->
 	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
 
+    <!-- REVOLUTION SLIDER -->  
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.actions.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.carousel.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.kenburn.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.layeranimation.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.migration.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.navigation.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.slideanims.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.video.min.js'); ?>"></script>
+	
+	<!-- OWL Carousel 
+	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>-->
+    
 	<!-- PARALLAX -->
 	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
 	

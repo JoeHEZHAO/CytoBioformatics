@@ -104,7 +104,7 @@
 			</div><!-- container -->
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-offset-1 col-lg-5 col-sm-6" style="margin-left: auto; margin-right: auto; width: 61.333%; text-align: justify;">
+                    <div class="col-lg-offset-1 col-lg-5 col-sm-6 text-block">
                         <p>What began as a spirited discussion between a muscle biologist and a biomedical engineer has turned into a unique platform poised to take the world of medical and pathology imaging data by storm. CytoInformatics is an imaging informatics company based out of the University of Kentucky and backed by the National Institutes of Health (NIH). Forged at the intersection of biomedical science and machine intelligence, CytoInformatics is operated by a handful of renowned pathology and computer vision researchers, working in collaboration to ensure that the best in state-of-the-art technology is applied to solve real problems.</p>
                     </div>
                 </div>
@@ -137,13 +137,13 @@
 							
 								<img src="<?php echo base_url('images/about/team/image-1.jpg'); ?>" alt="">
 								
-								<div class="social-media">
+								<!--<div class="social-media">
 									
 									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
 									<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
 									
-								</div><!-- social-media -->
+								</div>-->
 							
 							</div><!-- about-me-thumbnail -->
 							
@@ -161,13 +161,13 @@
 							
 								<img src="<?php echo base_url('images/about/team/image-2.jpg'); ?>" alt="">
 								
-								<div class="social-media">
+								<!--<div class="social-media">
 									
 									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
 									<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
 									
-								</div><!-- social-media -->
+								</div>-->
 							
 							</div><!-- about-me-thumbnail -->
 							
@@ -185,13 +185,13 @@
 							
 								<img src="<?php echo base_url('images/about/team/image-3.jpg'); ?>" alt="">
 								
-								<div class="social-media">
+								<!--<div class="social-media">
 									
 									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
 									<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
 									
-								</div><!-- social-media -->
+								</div>-->
 							
 							</div><!-- about-me-thumbnail -->
 							
@@ -203,30 +203,6 @@
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
-            
-            <!-- YOUTUBE VIDEO
-            <a class="youtube-player" data-property="{videoURL:'https://www.youtube.com/watch?v=OO-Bc8s50F4',containment:'#youtube-video-section',showControls:true,autoPlay:true, mute:true, startAt:0, opacity:1}">My video</a>
-
-            <section class="full-section dark-section" id="video-section">
-
-                <div id="youtube-video-section">
-                    <div class="full-section-overlay-color"></div>
-
-                <div class="full-section-container">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-							
-								<h2 class="text-center text-default-color">Watch our event live</h2>
-								<h5 class="text-center">A multaitude of ideas in a one day seminary</h5>
-								
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>-->
             
             <section class="full-section dark-section">
                 <div class="full-section-container">
@@ -251,7 +227,7 @@
 								<h2 class="text-center">Look no further</h2>
                                 <h5 class="text-center">for the image analysis you need</h5>
                                 <br>
-								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>" style="display: block; margin-left: auto; margin-right: auto; width: 100px;">Login<i class="bronx-icon-arrow-right text-alt-color"></i></a>
+								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>" style="display: block; margin-left: auto; margin-right: auto; width: 100px;">Login<i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->
