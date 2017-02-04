@@ -10,6 +10,7 @@
 
 		function checkUser($email, $password)
 		{
+
 			$this->load->model('UserInfo_model');
 			
 			if (!empty($data = $this->UserInfo_model->selectForLogin($email, $password))) 

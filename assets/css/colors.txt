@@ -1,5 +1,7 @@
 dark blue		36394a
 darker blue		282a37
 lt blue			00ddf7
-alt				bc59f2
+alt			bc59f2
+dark alt		3c1759
 deep dark		1a1c24
+white			ffffff

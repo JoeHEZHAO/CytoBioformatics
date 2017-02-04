@@ -9,14 +9,12 @@
 		 }
 
 		function createTransacationRecord($data){
-
 			if ($this->db->insert('tranRecord', $data)) {
 				return true;
 			}
 			else{
 				return false;
 			}
-
 		}
 
 		function saveBillingAddress($data){
@@ -26,6 +24,16 @@
 			else{
 				return false;
 			}			
+		}
+
+		function rewriteQuoteDb($quoteIds){
+			foreach ($quoteIds as $key => $value) {
+				$data = array(
+					'status' => 'paid'
+				);
+				$this->db->where('quoteId', $value);
+				$this->db->update('Quotes', $data);    
+			}
 		}
 
 	}

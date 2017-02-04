@@ -47,16 +47,7 @@
 	<!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	
-	<!-- MY ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-animations.css'); ?>">
-
-	<style type="text/css">
-		.col-sm-4{
-			width : 15%;
-		}
-
-	</style>
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
 
 </head>
 
@@ -117,8 +108,7 @@
                 <div class="row">
                     <div class="col-sm-12">
 						<div class="headline text-center">
-							<p>Our Offered</p>
-							<h2>Choose Quotes</h2>
+							<h2>My Projects</h2>
 						</div><!-- headline -->
                     </div><!-- col -->
                 </div><!-- row -->
@@ -128,112 +118,84 @@
 				<div class="col-sm-12">
 					<div class="item">
 
-							<div class="row">
+                        <div class="row">
 
-								<div class="col-sm-4">
-									Quote ID
-								</div><!-- col -->
-								
-								<div class="col-sm-4 ">
-									Organization
-								</div><!-- col -->
+                            <div class="col-sm-4 payment-table-col payment-table-header">
+                                Quote ID
+                            </div><!-- col -->
 
-								<div class="col-sm-4">
-									Created Date
-								</div><!-- col -->
+                            <div class="col-sm-4 payment-table-col payment-table-header">
+                                Organization
+                            </div><!-- col -->
 
-								<div class="col-sm-4">
-									Message
-								</div><!-- col -->
+                            <div class="col-sm-4 payment-table-col payment-table-header">
+                                Date Created
+                            </div><!-- col -->
 
-								<div class="col-sm-4 ">
-									Status
-								</div><!-- col -->
+                            <div class="col-sm-4 payment-table-col payment-table-header">
+                                Message
+                            </div><!-- col -->
 
-								<div class="col-sm-4">
-									SubTotal
-								</div><!-- col -->
-								
-							</div><!-- row -->
+                            <div class="col-sm-4 payment-table-col payment-table-header">
+                                Status
+                            </div><!-- col -->
+
+                            <div class="col-sm-4 payment-table-col-small payment-table-header">
+                                Subtotal
+                            </div><!-- col -->
+                            
+                            <div class="col-sm-4 payment-table-col-small payment-table-header">
+                                Select
+                            </div><!-- col -->
+
+                        </div><!-- row -->
 
 						<form method="post" action="" id="ServiceQuantity"> <!-- form -->
-						 <?php foreach ($rows as $key => $value) {
+				 	<?php
+				 	if($rows != 'failed'){
+						 foreach ($rows as $key => $value) {
 						 ?> 
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo substr($value['quoteId'], 0, 15)?>
 								</div><!-- col -->
 								
-								<div class="col-sm-4 ">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['organization']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['created_at']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['message']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4 ">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['status']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col-small">
 									<?php echo $value['subTotal']?>
+                                </div>
+                                
+                                <div class="col-sm-4 payment-table-col-small">
 									<?php if ($value['status'] == 'approved') { ?>
 									    <input type="checkbox" name="<?php echo $value['quoteId'] ?>" value="<?php echo $value['subTotal']?>" style="float: right;">
 									<?php }else{  } ?>
-
 								</div><!-- col -->
 							</div><!-- row -->
-						<?php  }?>
-
-							<input type="submit" name="submit" value="Continue" style="float:right">
+						<?php  }
+							   	}else{}?>
+							<input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
 						</form> <!-- form -->
 
 					</div><!-- item -->
 				</div><!-- col -->
-				</div>
             </div><!-- container -->
 
-            <div class="container2">
-                
-
-            <div class="container">
-				<div class="col-sm-12">
-					<div class="item">
-						<div class="row" id="numOfDet">
-							<div class="col-sm-4">
-								<div class="service-box style-1">
-									<img src="<?php echo base_url('images/services/muscle.jpg'); ?>" alt="">
-									<i class="bronx-icon-bubble"></i>
-									<div class="service-box-content">
-										<h6 style="margin-bottom: 0px"><a href="solutions.html">Detection</a></h6>
-										<!-- <p>Lung cell detection, tumor segmentation, tumor grading, and more are practical solutions with our platform.</p> -->
-										<label id="label_quantity_detection">Total Purchase Number: </label>
-
-									</div><!-- service-box-content -->
-								</div><!-- service-box -->
-							</div><!-- col -->
-
-							<div class="col-sm-4">
-								<div class="service-box style-1">
-									<label>Image Size: 500 X 500: <input type="number" name="detection_500_500" min="0" value="0" 
-									style="color: #24171E; background-color: #D4E8F6"></label></br>
-									<label>Image Size: 1000 X 1000: <input type="number" name="detection_1000_1000" min="0" value="0" 
-									style="color: #24171E; background-color: #D4E8F6"></label></br>
-									<label>Image Size: 2000 X 2000: <input type="number" name="detection_10000_10000" min="0" value="0" 
-									style="color: #24171E; background-color: #D4E8F6"></label></br>
-									<input type="button" id='nextToSeg' value="Next" style="float: right;">
-								</div><!-- service-box -->
-							</div><!-- col -->
-						</div>
-				
-						<input type="button" name="<?php echo base_url('index.php'); ?>" id='checkout' value="Checkout" style="float: right;">
-                
-            </div><!-- container -->
+        </div><!-- PAGE-CONTENT -->
 		<!-- FOOTER -->
 		<?php include "application/templates/footer.php"; ?>
 	</div><!-- MAIN CONTAINER -->

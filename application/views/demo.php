@@ -39,6 +39,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/forms.css'); ?>">
 	
 
 </head>
@@ -67,9 +68,9 @@
 			</div><!-- page-header -->
             
             <div class="button-panel">
-                <button onclick="loadVideo('<?php echo base_url('images/videos/webdemo1.gif'); ?>')">Segment (NET)</button>
-                <button onclick="loadVideo('<?php echo base_url('images/videos/webdemo2.gif'); ?>')">Segment (Muscle)</button>
-                <button onclick="loadVideo('<?php echo base_url('images/videos/webdemo3.gif'); ?>')">Detect</button>
+                <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo1.gif'); ?>')">Segment (NET)</button>
+                <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo2.gif'); ?>')">Segment (Muscle)</button>
+                <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo3.gif'); ?>')">Detect</button>
             </div>
             <img id="gif-window" class="centered" src="" alt="">
 		</header><!-- HEADER CONTAINER -->

@@ -1,23 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-date_default_timezone_set('America/New_York');//or change to whatever timezone you want
-
+date_default_timezone_set('America/Los_Angeles');
 
 class Cyto_bioformatics extends CI_Controller {
 
 	public function index()
 	{
-		if(isset($_SESSION['firstname']) && !empty($_SESSION['firstname']))
+		$this->viewInSession('index');
+	}
+    
+    function viewInSession($dest) {
+        if(isset($_SESSION['firstname']) && !empty($_SESSION['firstname']))
 		{
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
-			$this->load->view('index', $data);
+			$this->load->view($dest, $data);
 		}
-		else {$this->load->view('index');}
-	}
+		else {$this->load->view($dest);}
+    }
 
 	function login()
-	{
+	{ 
 		$this->load->view('login');
 	}
 
@@ -29,15 +32,15 @@ class Cyto_bioformatics extends CI_Controller {
 	
 	function solutions()
 	{
-		$this->load->view('solutions');
+		$this->viewInSession('solutions');
 	}
 	
 	function workflow()
 	{
-		$this->load->view('workflow');
+		$this->viewInSession('workflow');
 	}
-
-	function buyingAndPayment()
+    
+    function buyingAndPayment()
 	{
 		if (!isset($_SESSION['firstname']) && !empty($_SESSION['firstname'])) {
 			$this->load->view('login');
@@ -45,10 +48,13 @@ class Cyto_bioformatics extends CI_Controller {
 		else{
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
-
 			$this->load->model('Submitquote_model');
-			$data['rows'] = $this->Submitquote_model->loadQuotes();
 
+			if ($this->Submitquote_model->loadQuotes()) {
+				$data['rows'] = $this->Submitquote_model->loadQuotes();
+			}else{
+				$data['rows'] = 'failed';
+			}
 			$this->load->view('buyingAndPayment', $data);
 		}
 	}
@@ -59,68 +65,26 @@ class Cyto_bioformatics extends CI_Controller {
 			$_SESSION['TotelCharge'] = $_POST['TotelCharge'];
 			$_SESSION['quoteIds'] = $_POST['quoteIds'];
 			$_SESSION['quoteCharges'] = $_POST['quoteCharges'];	
-	        echo "succes!";
+	        echo "success!";
+		}else{
+			echo 'failed';
 		}	
 	}
 
 	function paymentPage()
 	{
-
 		$data['TotelCharge'] = $_SESSION['TotelCharge'];
 		$data['quoteIds'] = $_SESSION['quoteIds'];
 		$data['quoteCharges'] = $_SESSION['quoteCharges'];
 
 		if (isset($_SESSION['firstname']) && !empty($_SESSION['firstname'])) {
-
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
-
-			// $this->load->model('getCustomerPaymentProfile_model');
-			// $data['card_num'] = array();
-
-			// foreach ($_SESSION['cards'] as $key => $value) {
-
-			// 	array_push($data['card_num'], $this->getCustomerPaymentProfile_model->getCustomerPaymentProfile($customerID, $value));
-
-			// }
-
-			// $data['length'] = count($data['card_num']);
-
 			$this->load->view('accept_payment', $data);
 		}
-
 	}
-	
-	function CIMpayment()
-	{
-
-		$customerID = $_SESSION['customer_id'];
-		$customerPaymentID = $_POST['paymentProfileID'];
-		$TotelCharge = $_POST['TotelCharge'];
-
-		$this->load->model('TransactionByID_model');
-
-		$response = $this->TransactionByID_model->chargeCustomerProfile($customerID, $customerPaymentID, $TotelCharge);
-
-		$_SESSION['transactionResponse'] = array();
-
-		foreach ($response as $key => $value) {
-	
-			array_push($_SESSION['transactionResponse'], $value);
-
-		}
-
-		echo "success!!!";
-
-	}
-
-	function User_Payment_Info(){
-
-		$this->load->view('User_Payment_Info');
-
-	}
-
-	function StoreTransactionRecord(){
+    
+    function StoreTransactionRecord(){
 
 		$data = array(
 				'firstname'   => $_SESSION['firstname'],
@@ -137,9 +101,7 @@ class Cyto_bioformatics extends CI_Controller {
 		);
 
 		$_SESSION['transInfo'] = $data;
-
 		$this->load->model('TransactionRecord_model');
-
 		if ($response = $this->TransactionRecord_model->createTransacationRecord($data)) {
 			echo "Ok";
 		}else{
@@ -179,22 +141,17 @@ class Cyto_bioformatics extends CI_Controller {
 		);
 
 		$_SESSION['billingAddr'] = $data; 
-
 		$this->load->model('TransactionRecord_model');
-
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
-
-			echo "Ok";
 			$this->load->model('email_receipt_model');
 			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo']);
-
+			echo "Ok";
 		}else{
 			echo "failed";
 		}
 	}
-
-	function createPdf(){
-
+    
+    function createPdf(){
 		$this->load->helper('pdf_helper');
     /*
         ---- ---- ---- ----
@@ -202,55 +159,61 @@ class Cyto_bioformatics extends CI_Controller {
         ---- ---- ---- ----
     */
 	    $this->load->view('pdf_example');
-
 	}
-
-	function quote() 
+    
+    function demo()
+    {
+		$this->viewInSession('demo');
+    }
+    
+    function pricing() 
+    {
+		$this->viewInSession('pricing');
+    }
+    
+    function quote() 
     {
         $this->load->helper('form');
 		$this->viewInSession('quote');
     }
-
+    
     function quote_success()
     {
 		$this->viewInSession('quote_success');        
     }
 
-    function viewInSession($dest) 
-    {
-        if(isset($_SESSION['firstname']) && !empty($_SESSION['firstname']))
-		{
-			$data['firstname'] = $_SESSION['firstname'];
-			$data['lastname'] = $_SESSION['lastname'];
-			$this->load->view($dest, $data);
-		}
-		else {$this->load->view($dest);}
-    }
-
-    function demo()
-    {
-		$this->viewInSession('demo');
-    }
-
-    function pricing() 
-    {
-		$this->viewInSession('pricing');
-    }
-
-    function about_us(){
-	  $this->viewInSession('about_us');
-	}
-
-	function contact()
+	function about_us()
 	{
-		$this->load->view('contact');
+		$this->viewInSession('about_us');
 	}
+    
+    function privacy_policy()
+    {
+		$this->viewInSession('privacy_policy');
+    }
+    
+    function refund_policy()
+    {
+		$this->viewInSession('refund_policy');
+    }
 	
 	function error404()
 	{
-		$this->load->view('error404');
+		$this->viewInSession('error404');
 	}
+    
+    function do_nothing()
+    {
+        
+    }
 
+	function rewriteQuotesDb(){
+		$quoteIds = $_SESSION['quoteIds'];
+		$this->load->model('TransactionRecord_model');
+		$this->TransactionRecord_model->rewriteQuoteDb($quoteIds);
+		echo 'Ok';
+	}
+	
 }
 /**
 * 

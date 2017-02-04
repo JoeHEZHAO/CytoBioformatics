@@ -49,14 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-// $route['default_controller'] = 'Cyto_bioformatics';
-$route['404_override'] = 'Cyto_bioformatics/error404';
+$route['default_controller'] = 'cyto_bioformatics';
+$route['404_override'] = 'cyto_bioformatics/error404';
 $route['translate_uri_dashes'] = FALSE;
-
-// $route['solutions'] = 'index.php/cyto_bioformatics/solutions';
-
-$route['solutions'] = 'Cyto_bioformatics/solutions';
-// $route['home'] = '/index.php/Cyto_bioformatics/index';
-
 
 

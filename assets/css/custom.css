@@ -629,6 +629,23 @@
 		border-color: #BC59F2;
 		color: #BC59F2;
 	}
+
+    .btn-default-alt-hover:hover {
+        color: #363636;
+    }
+
+	.btn-default-alt-hover:before,
+	.btn-default-alt-hover:after,
+	.btn-default-alt-hover:active:focus:before,
+	.btn-default-alt-hover:active:focus:after {
+		border-color: #BC59F2;
+	}
+	
+	.btn-default-alt-hover:hover,
+	.btn-default-alt-hover:active:focus {
+		background-color: transparent;
+		color: #BC59F2;
+	}
 	
 	.btn-default:before,
 	.btn-default:after,
@@ -658,6 +675,19 @@
 	.btn-black:hover {
 		border-color: #00ddf7;
 		color: #00ddf7;
+	}
+
+	.btn-white-hover:before,
+	.btn-white-hover:after,
+	.btn-white-hover:active:focus:before,
+	.btn-white-hover:active:focus:after {
+		border-color: #fff;
+	}
+	
+	.btn-white-hover:hover,
+	.btn-white-hover:active:focus {
+		background-color: transparent;
+		color: #fff;
 	}
 	
 /***********************************************************************************
@@ -1209,7 +1239,7 @@
 	}
 
 	.progress-bar-title {
-		float: left;
+		float: right;
 		color: #363636;
 		font: 14px "Montserrat", sans-serif;
 	}
@@ -2148,7 +2178,7 @@
 	
 	#section-6 {
 		padding: 80px 0 70px;
-		margin-bottom: -50px;
+		margin-bottom: 0px;
 		background-image: url(../../images/backgrounds/bg-4.jpg);
 	}
 	
@@ -2177,7 +2207,7 @@
 	#section-9 {
 		padding: 80px 0;
 		margin-bottom: -50px;
-		background: url(../../images/backgrounds/bg-6.png) no-repeat bottom right;
+		background: url(../../images/backgrounds/bg-1.jpg) no-repeat bottom right;
 	}
 	
 	#section-9 a:hover {
@@ -2527,8 +2557,8 @@
 	
 	/* REVOLUTION SLIDER */
 	.rev_slider_wrapper {
-		margin-bottom: 100px;
-		height: 880px;
+		margin-bottom: 0px;
+		height: 1000px;
 	}
 	
 	
@@ -2546,7 +2576,8 @@
 	.tparrows.tp-leftarrow.custom:before,
 	.tparrows.tp-rightarrow.custom:before {
 		font-family: "bronx-icons";
-		font-size: 32px;
+		font-size: 72px;
+        color: #bc59f7;
 		-webkit-transition: all 0.3s;
 				transition: all 0.3s;
 	}
@@ -2567,10 +2598,10 @@
 	
 	/* BULLETS */
 	.tp-bullets.custom .tp-bullet {
-		width: 6px;
-		height: 6px;
+		width: 13px;
+		height: 13px;
 		border-radius: 50%;
-		background-color: #fff;
+		background-color: #bc59f7;
 		-webkit-transition: all 0.3s;
 				transition: all 0.3s;
 	}
@@ -2580,8 +2611,8 @@
 		top: -5px;
 		left: -5px;
 		display: block;
-		width: 16px;
-		height: 16px;
+		width: 22px;
+		height: 22px;
 		border: 2px solid transparent;
 		border-radius: 50%;
 		content: "";

@@ -41,8 +41,6 @@ function messageFunc(msg)
 }
 
 function createTransact(dataObj) {
-	var responese;
-
 	$.ajax({
 
 		url: "https://localhost/Codeigniter/transactionCaller.php",
@@ -50,31 +48,24 @@ function createTransact(dataObj) {
 		method: 'POST',
 		timeout: 5000
 		
-	}).done(function(data){
-		
+	}).done(function(data){	
 		console.log('data');
-		
 	}).fail(function(){
-		
 		console.log('Error');
-		
 	}).always(function(textStatus){
-
-		response = JSON.parse(textStatus);
-
+		var response = JSON.parse(textStatus);
 		if (response.messages.resultCode == 'Ok') {
+			console.log(response);
 			storeRecord(response);
 			saveBillingAddress(response.transactionResponse.transId);
+			rewriteQuotesDb();
 		}
 		else{
 			console.log('failed');
 			console.log(textStatus);
 		}
-
 		messageFunc(textStatus);
-
 	})
-
 }
 
 function  responseHandler(response) {
@@ -83,12 +74,10 @@ function  responseHandler(response) {
 			console.log(response.messages.message[i].code + ':' + response.messages.message[i].text);
 			alert(response.messages.message[i].text);
 		}
-		// alert("acceptJS library error!")
 	} else {
 		console.log(response.opaqueData.dataDescriptor);
 		console.log(response.opaqueData.dataValue);
 		createTransact(response.opaqueData);
-
 	}
 }
 
@@ -100,10 +89,10 @@ function acceptJSCaller()
 	cardData.month  =  document.getElementById('expiryDateMM').value;
 	cardData.year  =  document.getElementById('expiryDateYY').value;
 	secureData.cardData  =  cardData;
-	// authData.clientKey  =  '34a6nAh6cQ55EYR3z8tcsK3pH9c8WVV6qKQ2Bn2zWVE2BkPMHjuN7MNf9kssQZTR';
-	// authData.apiLoginID  =  '3Dh3gd4ZwG';
-	authData.clientKey  = '5qethK3q4Hg7TtgJ3YDF98Zq5426Nbf26GDhXyGfXtWBKAzLdrfY66zaFJG5MKt8';
-	authData.apiLoginID  =  '2m7ULx4Bva';
+	authData.clientKey  =  '34a6nAh6cQ55EYR3z8tcsK3pH9c8WVV6qKQ2Bn2zWVE2BkPMHjuN7MNf9kssQZTR';
+	authData.apiLoginID  =  '3Dh3gd4ZwG';
+	// authData.clientKey  = '5qethK3q4Hg7TtgJ3YDF98Zq5426Nbf26GDhXyGfXtWBKAzLdrfY66zaFJG5MKt8';
+	// authData.apiLoginID  =  '2m7ULx4Bva';
 	secureData.authData  =  authData;
 	Accept.dispatchData(secureData, 'responseHandler');
 }
@@ -111,7 +100,6 @@ function acceptJSCaller()
 function storeRecord(response){
 
 	$.ajax({
-
 		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/StoreTransactionRecord',
 		data: { 
 
@@ -127,28 +115,20 @@ function storeRecord(response){
 		timeout: 5000
 
 	}).done(function(data) {
-
 		if (data == 'Ok') {
 			console.log(data);
 		}else{
-			
 			console.log(data);
 			console.log('failed')
-
 		}
-
-	}).fail(function(){
-		
+	}).fail(function(){	
 		console.log('Error');
-		
 	})
-
 }
 
 function saveBillingAddress(transId){
 
 $.ajax({
-
 		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/saveBillingAddress',
 		data: { 
 			billEmail: document.getElementById('email').value, 
@@ -160,18 +140,34 @@ $.ajax({
 			},
 		method: 'POST',
 		timeout: 5000
-
 	}).done(function(data) {
-		
+		if (data != 'failed') {
+			console.log(data);
+		}else{		
+			console.log(data);
+			console.log('failed')
+		}
+	}).fail(function(){
+		console.log('Error');
+	})
+}
+
+function rewriteQuotesDb(){
+
+	$.ajax({
+		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/rewriteQuotesDb',
+		data: {},
+		method: 'POST',
+		timeout: 5000
+	}).done(function(data) {
 		if (data == 'Ok') {
 			console.log(data);
 		}else{		
 			console.log(data);
 			console.log('failed')
 		}
-
 	}).fail(function(){
 		console.log('Error');
 	})
-
 }
+

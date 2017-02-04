@@ -1,10 +1,11 @@
+// changes activity and appearance of input and textarea fields
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),
-      label = $this.prev('label');
+    label = $this.prev('label');
 
-	  if (e.type === 'keyup') {
-			if ($this.val() === '') {
+	if (e.type === 'keyup') {
+      if ($this.val() === '') {
           label.removeClass('active highlight');
         } else {
           label.addClass('active highlight');
@@ -27,6 +28,7 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 
 });
 
+// changes active tab styles
 $('.tab a').on('click', function (e) {
   
   e.preventDefault();
@@ -42,6 +44,7 @@ $('.tab a').on('click', function (e) {
   
 });
 
+
 $('#userlogin').submit(function() {
 
     var email =  $("input[name='email_login']").val(); 
@@ -55,19 +58,18 @@ $('#userlogin').submit(function() {
             
             if (response == 'failed') {
 
-                $("#error_login").text("Wrong email or password, please try again");
+                $("#error_login").text("Wrong email or password. Please try again.");
                 $("#error_login").css("display", "block");
 
             }
             else{
-
                 window.location.replace($('#userlogin').attr('action') + '/cyto_bioformatics/index');
-
+//                alert(response);
             }
 
         },
         error: function(xhr, textStatus, errorThrown){
-            alert('request failed');
+            alert('Request failed.\n\n' + errorThrown);
         }
     })
 
@@ -89,16 +91,19 @@ $('#register').submit(function() {
         success: function (response) {
             
             if (response == 'email address already existed') {
-                $("#error_signup").text("Email address already existed, please try another one");
+
+                $("#error_signup").text("Duplicate email address. Please try another.");
                 $("#error_signup").css("display", "block");
+
             }
             else{
-                window.location.replace($('#register').attr('action') + '/cyto_bioformatics/index');  
+                window.location.replace($('#register').attr('action') + '/cyto_bioformatics/index');
+//                alert(response);
             }
 
         },
         error: function(xhr, textStatus, errorThrown){
-            alert('request failed');
+            alert('Request failed.\n\n' + errorThrown);
         }
     })
 
