@@ -129,7 +129,7 @@ class Cyto_bioformatics extends CI_Controller {
 	}
 
 	function saveBillingAddress(){
-		
+
 		$data = array(
 				'billEmail'   => $_POST['billEmail'],
 				'streetAddress' => $_POST['streetAddress'],
@@ -206,6 +206,13 @@ class Cyto_bioformatics extends CI_Controller {
     {
         
     }
+
+	function rewriteQuotesDb(){
+		$quoteIds = $_SESSION['quoteIds'];
+		$this->load->model('TransactionRecord_model');
+		$this->TransactionRecord_model->rewriteQuoteDb($quoteIds);
+		echo 'Ok';
+	}
 	
 }
 /**

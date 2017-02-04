@@ -1,15 +1,16 @@
 
 $(document).ready(function() {
 	$('#ServiceQuantity').submit(function() {
-			    var quoteIds = [];
-			    var quoteCharges = [];
-			    var totalCharge = 0;
-				$('input:checkbox:checked').each(function () {
-				    quoteIds.push($(this).attr('name'));
-				    quoteCharges.push($(this).attr('value'));
-				    totalCharge = totalCharge + parseFloat($(this).attr('value'));
-				});
+		    var quoteIds = [];
+		    var quoteCharges = [];
+		    var totalCharge = 0;
+			$('input:checkbox:checked').each(function () {
+			    quoteIds.push($(this).attr('name'));
+			    quoteCharges.push($(this).attr('value'));
+			    totalCharge = totalCharge + parseFloat($(this).attr('value'));
+			});
 
+			if(totalCharge != 0){	
 				$.ajax({
 					type: "POST",
 					url: $('#checkout').attr('name') + '/Cyto_bioformatics/Checkout',
@@ -25,7 +26,11 @@ $(document).ready(function() {
 			            alert('request failed');
 		        	}
 				});
-			    return false; // keep website from refreshing and re-directing
+			}else{
+			    alert('please choose a quote or add a quote'); // keep website from refreshing and re-directing
+			}
+
+			return false;
 	}); 
 
 	function goToByScroll(id){

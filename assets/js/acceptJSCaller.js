@@ -58,6 +58,7 @@ function createTransact(dataObj) {
 			console.log(response);
 			storeRecord(response);
 			saveBillingAddress(response.transactionResponse.transId);
+			rewriteQuotesDb();
 		}
 		else{
 			console.log('failed');
@@ -65,7 +66,6 @@ function createTransact(dataObj) {
 		}
 		messageFunc(textStatus);
 	})
-
 }
 
 function  responseHandler(response) {
@@ -141,6 +141,25 @@ $.ajax({
 		method: 'POST',
 		timeout: 5000
 	}).done(function(data) {
+		if (data != 'failed') {
+			console.log(data);
+		}else{		
+			console.log(data);
+			console.log('failed')
+		}
+	}).fail(function(){
+		console.log('Error');
+	})
+}
+
+function rewriteQuotesDb(){
+
+	$.ajax({
+		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/rewriteQuotesDb',
+		data: {},
+		method: 'POST',
+		timeout: 5000
+	}).done(function(data) {
 		if (data == 'Ok') {
 			console.log(data);
 		}else{		
@@ -151,3 +170,4 @@ $.ajax({
 		console.log('Error');
 	})
 }
+

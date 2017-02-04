@@ -26,6 +26,16 @@
 			}			
 		}
 
+		function rewriteQuoteDb($quoteIds){
+			foreach ($quoteIds as $key => $value) {
+				$data = array(
+					'status' => 'paid'
+				);
+				$this->db->where('quoteId', $value);
+				$this->db->update('Quotes', $data);    
+			}
+		}
+
 	}
 
 ?>
