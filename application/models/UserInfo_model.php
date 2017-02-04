@@ -40,15 +40,9 @@ date_default_timezone_set('America/New_York');
 			else{
 				return;
 			}
-
 		}
 
 		function selectForSignUp($email){
-
-			$data = array(
-				'email' => $email
-			);
-
 			$this->db->from('UserInfo');
 			$this->db->where('email', $email);
 
@@ -57,8 +51,7 @@ date_default_timezone_set('America/New_York');
 			}
 			else{
 				return;
-			}
-			
+			}	
 		}
 
 		function removeUser($email, $password){

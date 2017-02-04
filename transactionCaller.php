@@ -20,11 +20,11 @@ XML;
 
 $transRequestXml=new SimpleXMLElement($transRequestXmlStr);
 
-// $loginId = "3Dh3gd4ZwG";
-// $transactionKey = "82xL6Wk6A46r88t6";
+$loginId = "3Dh3gd4ZwG";
+$transactionKey = "82xL6Wk6A46r88t6";
 
-$loginId = "2m7ULx4Bva";
-$transactionKey = "224DSD4ns9bUk4K4";
+// $loginId = "2m7ULx4Bva";
+// $transactionKey = "224DSD4ns9bUk4K4";
 
 $transRequestXml->merchantAuthentication->addChild('name',$loginId);
 $transRequestXml->merchantAuthentication->addChild('transactionKey',$transactionKey);
@@ -33,8 +33,8 @@ $transRequestXml->transactionRequest->amount=$_POST['amount'];
 $transRequestXml->transactionRequest->payment->opaqueData->dataDescriptor=$_POST['dataDesc'];
 $transRequestXml->transactionRequest->payment->opaqueData->dataValue=$_POST['dataValue'];
 
-// $url="https://apitest.authorize.net/xml/v1/request.api";
-$url="https://api.authorize.net/xml/v1/request.api";
+$url="https://apitest.authorize.net/xml/v1/request.api";
+// $url="https://api.authorize.net/xml/v1/request.api";
 
 
 //print_r($transRequestXml->asXML());

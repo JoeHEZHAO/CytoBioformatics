@@ -37,9 +37,7 @@ class Submitquote extends CI_Controller
         $resp0 = $this->do_upload_onefile($inputname0, $file0);
         $resp1 = $this->do_upload_onefile($inputname1, $file1);
         $resp2 = $this->do_upload_onefile($inputname2, $file2);
-        
-        var_dump($file0);
-        
+                
         /*UPDATE DATABASE*/
 		$this->load->model('Submitquote_model');
         

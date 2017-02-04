@@ -66,35 +66,6 @@ $('#submitquote').submit(function() {
     console.log(filename0);
     console.log(filename1);
     console.log(filename2);
-//    $.ajax({
-//        method: "POST",
-//        url: $('#submitquote').attr('action') + '/Submitquote/upload_form',
-//        data: { 
-//            FirstName : firstname, 
-//            LastName : lastname, 
-//            email : email, 
-//            organization : organization, 
-//            phone : phone, 
-//            message : message,
-//            filename0 : filename0,
-//            filename1 : filename1,
-//            filename2 : filename2
-//        },
-//        success: function (response) {
-//                    
-//            if (response == 'failed') {
-//                $("#error_quote").text("There was a database error submitting your quote. Please try again.");
-//                $("#error_quote").css("display", "block");
-//            }
-//            else{
-//                window.location.replace($('#submitquote').attr('action') + '/Submitquote/quote_success');
-//            }
-//            
-//        },
-//        error: function(xhr, textStatus, errorThrown){
-//            alert('There was an error processing your request. Please try again.\n\n' + errorThrown);
-//        }
-//    })
     
     var myFormData = new FormData(this);
     $.ajax({

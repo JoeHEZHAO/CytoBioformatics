@@ -27,6 +27,7 @@ class Register extends CI_Controller
                                             $UniqueID);
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
+            $_SESSION['email'] = $email;
 			echo "";
 			
 		}
