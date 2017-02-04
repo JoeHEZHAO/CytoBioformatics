@@ -47,16 +47,7 @@
 	<!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	
-	<!-- MY ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-animations.css'); ?>">
-
-	<style type="text/css">
-		.col-sm-4{
-			width : 15%;
-		}
-
-	</style>
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
 
 </head>
 
@@ -117,8 +108,7 @@
                 <div class="row">
                     <div class="col-sm-12">
 						<div class="headline text-center">
-							<p>Our Offered</p>
-							<h2>Choose Quotes</h2>
+							<h2>My Projects</h2>
 						</div><!-- headline -->
                     </div><!-- col -->
                 </div><!-- row -->
@@ -130,28 +120,32 @@
 
                         <div class="row">
 
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 payment-table-col payment-table-header">
                                 Quote ID
                             </div><!-- col -->
 
-                            <div class="col-sm-4 ">
+                            <div class="col-sm-4 payment-table-col payment-table-header">
                                 Organization
                             </div><!-- col -->
 
-                            <div class="col-sm-4">
-                                Created Date
+                            <div class="col-sm-4 payment-table-col payment-table-header">
+                                Date Created
                             </div><!-- col -->
 
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 payment-table-col payment-table-header">
                                 Message
                             </div><!-- col -->
 
-                            <div class="col-sm-4 ">
+                            <div class="col-sm-4 payment-table-col payment-table-header">
                                 Status
                             </div><!-- col -->
 
-                            <div class="col-sm-4">
-                                SubTotal
+                            <div class="col-sm-4 payment-table-col-small payment-table-header">
+                                Subtotal
+                            </div><!-- col -->
+                            
+                            <div class="col-sm-4 payment-table-col-small payment-table-header">
+                                Select
                             </div><!-- col -->
 
                         </div><!-- row -->
@@ -162,38 +156,39 @@
 						 foreach ($rows as $key => $value) {
 						 ?> 
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo substr($value['quoteId'], 0, 15)?>
 								</div><!-- col -->
 								
-								<div class="col-sm-4 ">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['organization']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['created_at']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['message']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4 ">
+								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['status']?>
 								</div><!-- col -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 payment-table-col-small">
 									<?php echo $value['subTotal']?>
+                                </div>
+                                
+                                <div class="col-sm-4 payment-table-col-small">
 									<?php if ($value['status'] == 'approved') { ?>
 									    <input type="checkbox" name="<?php echo $value['quoteId'] ?>" value="<?php echo $value['subTotal']?>" style="float: right;">
 									<?php }else{  } ?>
-
 								</div><!-- col -->
 							</div><!-- row -->
 						<?php  }
 							   	}else{}?>
-
-							<input type="submit" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
+							<input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
 						</form> <!-- form -->
 
 					</div><!-- item -->
