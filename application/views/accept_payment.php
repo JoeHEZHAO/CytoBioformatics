@@ -26,9 +26,8 @@
     <!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/forms.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/forms.css'); ?>">
   
 </head>
 
@@ -52,135 +51,128 @@
                         <div class="top-row">
                             <div class="field-wrap">
                                 <label for="email">Billing E-Mail</label>
-                                <div class="controls">
-                                    <input name="email" type="email" value="" id="email">
-                                </div>
+                                <input name="email" type="email" value="" id="email">
                             </div>
                         </div>
                         
                         <div class="top-row">
                             <div class="field-wrap">
                                 <label for="address">Street Address</label>
-                                <div class="controls"><input name="address" type="text" value="" id="address">
-                                </div>
+                                <input name="address" type="text" value="" id="address">
                             </div>
                         </div>
 
                         <div class="top-row">
                             <div class="field-wrap">
                                 <label for="city">City</label>
-                                <div class="controls"><input name="city" type="text" value="" id="city">
-                                </div>
+                                <input name="city" type="text" value="" id="city">
                             </div>
                         </div>
 
                         <div class="top-row">
                                 <div class="field-wrap">
                                 <label for="zip">Zip Code</label>
-                                <div class="controls"><input name="zip" type="text" value="" id="zip">
-                                </div>
+                                <input name="zip" type="text" value="" id="zip">
                             </div>
                         </div>
 
                         <div class="top-row">
                             <div class="field-wrap">
-                                <label for="country">Country</label>
-                                <div class="controls">
-                                    <select name="country" id="country">
-                                        <option value="">
-                                        <option value="AR">Argentina
-                                        <option value="AU">Australia
-                                        <option value="AT">Austria
-                                        <option value="BY">Belarus
-                                        <option value="BE">Belgium
-                                        <option value="BA">Bosnia and Herzegovina
-                                        <option value="BR">Brazil
-                                        <option value="BG">Bulgaria
-                                        <option value="CA">Canada
-                                        <option value="CL">Chile
-                                        <option value="CN">China
-                                        <option value="CO">Colombia
-                                        <option value="CR">Costa Rica
-                                        <option value="HR">Croatia
-                                        <option value="CU">Cuba
-                                        <option value="CY">Cyprus
-                                        <option value="CZ">Czech Republic
-                                        <option value="DK">Denmark
-                                        <option value="DO">Dominican Republic
-                                        <option value="EG">Egypt
-                                        <option value="EE">Estonia
-                                        <option value="FI">Finland
-                                        <option value="FR">France
-                                        <option value="GE">Georgia
-                                        <option value="DE">Germany
-                                        <option value="GI">Gibraltar
-                                        <option value="GR">Greece
-                                        <option value="HK">Hong Kong S.A.R., China
-                                        <option value="HU">Hungary
-                                        <option value="IS">Iceland
-                                        <option value="IN">India
-                                        <option value="ID">Indonesia
-                                        <option value="IR">Iran
-                                        <option value="IQ">Iraq
-                                        <option value="IE">Ireland
-                                        <option value="IL">Israel
-                                        <option value="IT">Italy
-                                        <option value="JM">Jamaica
-                                        <option value="JP">Japan
-                                        <option value="KZ">Kazakhstan
-                                        <option value="KW">Kuwait
-                                        <option value="KG">Kyrgyzstan
-                                        <option value="LA">Laos
-                                        <option value="LV">Latvia
-                                        <option value="LB">Lebanon
-                                        <option value="LT">Lithuania
-                                        <option value="LU">Luxembourg
-                                        <option value="MK">Macedonia
-                                        <option value="MY">Malaysia
-                                        <option value="MT">Malta
-                                        <option value="MX">Mexico
-                                        <option value="MD">Moldova
-                                        <option value="MC">Monaco
-                                        <option value="ME">Montenegro
-                                        <option value="MA">Morocco
-                                        <option value="NL">Netherlands
-                                        <option value="NZ">New Zealand
-                                        <option value="NI">Nicaragua
-                                        <option value="KP">North Korea
-                                        <option value="NO">Norway
-                                        <option value="PK">Pakistan
-                                        <option value="PS">Palestinian Territory
-                                        <option value="PE">Peru
-                                        <option value="PH">Philippines
-                                        <option value="PL">Poland
-                                        <option value="PT">Portugal
-                                        <option value="PR">Puerto Rico
-                                        <option value="QA">Qatar
-                                        <option value="RO">Romania
-                                        <option value="RU">Russia
-                                        <option value="SA">Saudi Arabia
-                                        <option value="RS">Serbia
-                                        <option value="SG">Singapore
-                                        <option value="SK">Slovakia
-                                        <option value="SI">Slovenia
-                                        <option value="ZA">South Africa
-                                        <option value="KR">South Korea
-                                        <option value="ES">Spain
-                                        <option value="LK">Sri Lanka
-                                        <option value="SE">Sweden
-                                        <option value="CH">Switzerland
-                                        <option value="TW">Taiwan
-                                        <option value="TH">Thailand
-                                        <option value="TN">Tunisia
-                                        <option value="TR">Turkey
-                                        <option value="UA">Ukraine
-                                        <option value="AE">United Arab Emirates
-                                        <option value="GB">United Kingdom
-                                        <option value="US">USA
-                                        <option value="UZ">Uzbekistan
-                                        <option value="VN">Vietnam
-                                    </select>
-                                </div>
+                                <label class='active highlight' for="country">Country</label>
+                                <select name="country" id="country">
+                                    <option value="">
+                                    <option value="AR">Argentina
+                                    <option value="AU">Australia
+                                    <option value="AT">Austria
+                                    <option value="BY">Belarus
+                                    <option value="BE">Belgium
+                                    <option value="BA">Bosnia and Herzegovina
+                                    <option value="BR">Brazil
+                                    <option value="BG">Bulgaria
+                                    <option value="CA">Canada
+                                    <option value="CL">Chile
+                                    <option value="CN">China
+                                    <option value="CO">Colombia
+                                    <option value="CR">Costa Rica
+                                    <option value="HR">Croatia
+                                    <option value="CU">Cuba
+                                    <option value="CY">Cyprus
+                                    <option value="CZ">Czech Republic
+                                    <option value="DK">Denmark
+                                    <option value="DO">Dominican Republic
+                                    <option value="EG">Egypt
+                                    <option value="EE">Estonia
+                                    <option value="FI">Finland
+                                    <option value="FR">France
+                                    <option value="GE">Georgia
+                                    <option value="DE">Germany
+                                    <option value="GI">Gibraltar
+                                    <option value="GR">Greece
+                                    <option value="HK">Hong Kong S.A.R., China
+                                    <option value="HU">Hungary
+                                    <option value="IS">Iceland
+                                    <option value="IN">India
+                                    <option value="ID">Indonesia
+                                    <option value="IR">Iran
+                                    <option value="IQ">Iraq
+                                    <option value="IE">Ireland
+                                    <option value="IL">Israel
+                                    <option value="IT">Italy
+                                    <option value="JM">Jamaica
+                                    <option value="JP">Japan
+                                    <option value="KZ">Kazakhstan
+                                    <option value="KW">Kuwait
+                                    <option value="KG">Kyrgyzstan
+                                    <option value="LA">Laos
+                                    <option value="LV">Latvia
+                                    <option value="LB">Lebanon
+                                    <option value="LT">Lithuania
+                                    <option value="LU">Luxembourg
+                                    <option value="MK">Macedonia
+                                    <option value="MY">Malaysia
+                                    <option value="MT">Malta
+                                    <option value="MX">Mexico
+                                    <option value="MD">Moldova
+                                    <option value="MC">Monaco
+                                    <option value="ME">Montenegro
+                                    <option value="MA">Morocco
+                                    <option value="NL">Netherlands
+                                    <option value="NZ">New Zealand
+                                    <option value="NI">Nicaragua
+                                    <option value="KP">North Korea
+                                    <option value="NO">Norway
+                                    <option value="PK">Pakistan
+                                    <option value="PS">Palestinian Territory
+                                    <option value="PE">Peru
+                                    <option value="PH">Philippines
+                                    <option value="PL">Poland
+                                    <option value="PT">Portugal
+                                    <option value="PR">Puerto Rico
+                                    <option value="QA">Qatar
+                                    <option value="RO">Romania
+                                    <option value="RU">Russia
+                                    <option value="SA">Saudi Arabia
+                                    <option value="RS">Serbia
+                                    <option value="SG">Singapore
+                                    <option value="SK">Slovakia
+                                    <option value="SI">Slovenia
+                                    <option value="ZA">South Africa
+                                    <option value="KR">South Korea
+                                    <option value="ES">Spain
+                                    <option value="LK">Sri Lanka
+                                    <option value="SE">Sweden
+                                    <option value="CH">Switzerland
+                                    <option value="TW">Taiwan
+                                    <option value="TH">Thailand
+                                    <option value="TN">Tunisia
+                                    <option value="TR">Turkey
+                                    <option value="UA">Ukraine
+                                    <option value="AE">United Arab Emirates
+                                    <option value="GB">United Kingdom
+                                    <option value="US">USA
+                                    <option value="UZ">Uzbekistan
+                                    <option value="VN">Vietnam
+                                </select>
                             </div>
                         </div>
 
@@ -190,10 +182,11 @@
                     
                         <div class="AuthorizeNetSeal"> 
                             <script type="text/javascript" language="javascript">var ANS_customer_id="f9affc83-ee34-4e20-a9a1-5356d6b52d27";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Accept Credit Cards Online</a><br>
-                           <button onclick="showNext()" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;"> Continue </button>
                         </div>
 
                     </form>
+                    
+                   <button onclick="showNext()" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;"> Continue </button>
                 </div>
             </div>
         </div>
@@ -335,15 +328,15 @@
             <br/>
             <br/>
             <p>
-                <button type="button" id="acceptJSPayButton" class="btn btn-primary btn-lg col-sm-offset-3 col-sm-2 col-xs-offset-3 col-xs-6" style="font-weight: bolder; font-size: 24px; margin-top: 10px; margin-bottom: 10px" data-toggle="modal" data-target="#acceptJSPayModal">Pay</button>
+                <button type="button" id="acceptJSPayButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal">Pay</button>
 
-                <button type="button" id="acceptJSCancelButton" class="btn btn-primary btn-lg col-sm-offset-3 col-sm-2 col-xs-offset-3 col-xs-6" style="font-weight: bolder; font-size: 24px; margin-top: 10px; margin-bottom: 10px" data-toggle="modal" data-target="#acceptJSPayModal" onclick="cancelTransaction()">Cancel </button>
+                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal" onclick="cancelTransaction()">Cancel </button>
             </p>
             <br>         
         </div>
 
         <div id="acceptJSReceiptModal" class="modal fade" role="dialog">
-            <div class="modal-dialog" style="display: inline-block; vertical-align: middle;">
+            <div class="modal-dialog" style="display: block; vertical-align: middle;">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Accept.js Example</h4>
@@ -357,7 +350,7 @@
 
         <!-- Modal -->
         <div id="acceptJSPayModal" class="modal fade" role="dialog">
-            <div class="modal-dialog" style="display: inline-block; vertical-align: middle;">
+            <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
 
@@ -403,7 +396,7 @@
 
                         <!--/form-->
                         <div style="text-align: center; margin-top: 20%;">
-                            <button type="button" name="<?php echo base_url();?>" id="submitButton" class="btn btn-primary" style="width: 95%;">SUBMIT</button>
+                            <button type="button" name="<?php echo base_url();?>" id="submitButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;">SUBMIT</button>
                         </div>
                     </div>
                 </div>
@@ -416,6 +409,24 @@
 	<!-- <FOOTER> -->
     <?php include "application/templates/footer.php"; ?>
 
+	<script src="<?php echo base_url('assets/accept/jquery-2.1.4.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/accept/bootstrap.min.js'); ?>"></script>
+	
+	<!-- <script src="https://jstest.authorize.net/v1/Accept.js"></script> -->
+    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>
+	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
+
+    <script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
+
+    <!-- MENU -->
+    <script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
+
+    <!-- FANCYBOX -->
+    <script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>	
+    
+	<script src="<?php echo base_url('assets/js/quoteform.js'); ?>"></script>
+    
     <script>
         $('#container2').hide();
 
@@ -475,26 +486,6 @@
         }
 
     </script>
-
-	<script src="<?php echo base_url('assets/accept/jquery-2.1.4.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/accept/bootstrap.min.js'); ?>"></script>
-	
-	<!-- <script src="https://jstest.authorize.net/v1/Accept.js"></script> -->
-    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>
-	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
-
-    <script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
-
-    <!-- MENU -->
-    <script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
-
-    <!-- FANCYBOX -->
-    <script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>	
-    
-	<!-- CUSTOM JS -->
-	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/js/quoteform.js'); ?>"></script>
     
 </body>
 
