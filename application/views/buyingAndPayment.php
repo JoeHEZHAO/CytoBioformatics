@@ -151,7 +151,9 @@
                         </div><!-- row -->
 
 						<form method="post" action="" id="ServiceQuantity"> <!-- form -->
-						 <?php foreach ($rows as $key => $value) {
+				 	<?php
+				 	if($rows != 'failed'){
+						 foreach ($rows as $key => $value) {
 						 ?> 
 							<div class="row">
 								<div class="col-sm-4 payment-table-col">
@@ -184,51 +186,15 @@
 									<?php }else{  } ?>
 								</div><!-- col -->
 							</div><!-- row -->
-						<?php  }?>
-
-							<input class="payment-button" type="submit" name="submit" value="Continue">
+						<?php  }
+							   	}else{}?>
+							<input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
 						</form> <!-- form -->
 
 					</div><!-- item -->
 				</div><!-- col -->
             </div><!-- container -->
 
-            <div class="container2">
-                <div class="container">
-                    <div class="col-sm-12">
-                        <div class="item">
-                            <div class="row" id="numOfDet">
-                                <div class="col-sm-4">
-                                    <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/muscle.jpg'); ?>" alt="">
-                                        <i class="bronx-icon-bubble"></i>
-                                        <div class="service-box-content">
-                                            <h6 style="margin-bottom: 0px"><a href="solutions.html">Detection</a></h6>
-                                            <!-- <p>Lung cell detection, tumor segmentation, tumor grading, and more are practical solutions with our platform.</p> -->
-                                            <label id="label_quantity_detection">Total Purchase Number: </label>
-
-                                        </div><!-- service-box-content -->
-                                    </div><!-- service-box -->
-                                </div><!-- col -->
-
-                                <div class="col-sm-4">
-                                    <div class="service-box style-1">
-                                        <label>Image Size: 500 X 500: <input type="number" name="detection_500_500" min="0" value="0" 
-                                        style="color: #24171E; background-color: #D4E8F6"></label><br>
-                                        <label>Image Size: 1000 X 1000: <input type="number" name="detection_1000_1000" min="0" value="0" 
-                                        style="color: #24171E; background-color: #D4E8F6"></label><br>
-                                        <label>Image Size: 2000 X 2000: <input type="number" name="detection_10000_10000" min="0" value="0" 
-                                        style="color: #24171E; background-color: #D4E8F6"></label><br>
-                                        <input type="button" id='nextToSeg' value="Next" style="float: right;">
-                                    </div><!-- service-box -->
-                                </div><!-- col -->
-                            </div>
-
-                            <input type="button" name="<?php echo base_url('index.php'); ?>" id='checkout' value="Checkout" style="float: right;">
-                        </div>
-                    </div>
-                </div><!-- container -->
-            </div><!-- container2 -->
         </div><!-- PAGE-CONTENT -->
 		<!-- FOOTER -->
 		<?php include "application/templates/footer.php"; ?>

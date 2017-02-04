@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('America/Los_Angeles');
 
 class Cyto_bioformatics extends CI_Controller {
 
@@ -48,8 +49,12 @@ class Cyto_bioformatics extends CI_Controller {
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
 			$this->load->model('Submitquote_model');
-			$data['rows'] = $this->Submitquote_model->loadQuotes();
 
+			if ($this->Submitquote_model->loadQuotes()) {
+				$data['rows'] = $this->Submitquote_model->loadQuotes();
+			}else{
+				$data['rows'] = 'failed';
+			}
 			$this->load->view('buyingAndPayment', $data);
 		}
 	}
@@ -60,7 +65,9 @@ class Cyto_bioformatics extends CI_Controller {
 			$_SESSION['TotelCharge'] = $_POST['TotelCharge'];
 			$_SESSION['quoteIds'] = $_POST['quoteIds'];
 			$_SESSION['quoteCharges'] = $_POST['quoteCharges'];	
-	        echo "succes!";
+	        echo "success!";
+		}else{
+			echo 'failed';
 		}	
 	}
 
@@ -94,9 +101,7 @@ class Cyto_bioformatics extends CI_Controller {
 		);
 
 		$_SESSION['transInfo'] = $data;
-
 		$this->load->model('TransactionRecord_model');
-
 		if ($response = $this->TransactionRecord_model->createTransacationRecord($data)) {
 			echo "Ok";
 		}else{
@@ -136,15 +141,11 @@ class Cyto_bioformatics extends CI_Controller {
 		);
 
 		$_SESSION['billingAddr'] = $data; 
-
 		$this->load->model('TransactionRecord_model');
-
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
-
-			echo "Ok";
 			$this->load->model('email_receipt_model');
 			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo']);
-
+			echo "Ok";
 		}else{
 			echo "failed";
 		}
@@ -205,6 +206,13 @@ class Cyto_bioformatics extends CI_Controller {
     {
         
     }
+
+	function rewriteQuotesDb(){
+		$quoteIds = $_SESSION['quoteIds'];
+		$this->load->model('TransactionRecord_model');
+		$this->TransactionRecord_model->rewriteQuoteDb($quoteIds);
+		echo 'Ok';
+	}
 	
 }
 /**

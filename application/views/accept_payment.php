@@ -26,9 +26,10 @@
     <!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/forms.css'); ?>">
 
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/forms.css'); ?>">
+  
 </head>
 
 <body>
