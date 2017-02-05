@@ -1,11 +1,11 @@
 <?php
+
 tcpdf();
 ob_start();
 $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 $obj_pdf->SetCreator(PDF_CREATOR);
 $title = "PDF Report";
 $obj_pdf->SetTitle($title);
-$obj_pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, $title, PDF_HEADER_STRING);
 $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $obj_pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 $obj_pdf->SetDefaultMonospacedFont('helvetica');
@@ -17,7 +17,11 @@ $obj_pdf->SetFont('helvetica', '', 9);
 $obj_pdf->setFontSubsetting(false);
 $obj_pdf->AddPage();
 
+// $name = 'He Zhao';
+
 $html = "
+<!doctype html>
+<html>
 <head>
     <meta charset='utf-8'>
     <title>A simple, clean, and responsive HTML invoice template</title>
@@ -102,12 +106,36 @@ $html = "
     }
     </style>
 </head>
-<div class='invoice-box'>
-        
+
+<body>
+    <div style=' max-width:800px;
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:16px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;'>
+        <table cellpadding='0' cellspacing='0'>
+            <tr class='top'>
+                <td colspan='2'>
+                    <table>
+                        <tr>
+                            <td class='title'>
+                                <img src='http://nextstepwebs.com/images/logo.png' style='width:100%; max-width:300px;'>
+                            </td>
+                            
+                            <td>
                                 Invoice #: 123<br>
                                 Created: January 1, 2015<br>
                                 Due: February 1, 2015
-                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
             <tr class='information'>
                 <td colspan='2'>
                     <table>
@@ -140,44 +168,14 @@ $html = "
             
             <tr class='details'>
                 <td>
-                    Account Number : 
+                    Check
                 </td>
                 
                 <td>
-                    
+                    1000
                 </td>
             </tr>
-
-            <tr class='details'>
-                <td>
-                    Account Type : 
-                </td>
-                
-                <td>
-                   
-                </td>
-            </tr>
-
-            <tr class='details'>
-                <td>
-                    Transaction ID : 
-                </td>
-                
-                <td>
-                   
-                </td>
-            </tr>
-
-            <tr class='details'>
-                <td>
-                    Transaction Date : 
-                </td>
-                
-                <td>
-                   
-                </td>
-            </tr>
-
+            
             <tr class='heading'>
                 <td>
                     Item
@@ -218,74 +216,21 @@ $html = "
                 </td>
             </tr>
             
-            <!-- billing address -->
-            <tr class='heading'>
-                <td>
-                    Billing Info
-                </td>
-
-                <td>
-                    
-                </td>
-            </tr>
-            
-            <tr class='item'>
-                <td>
-                    Billing Email : 
-                </td>
-                
-                <td>
-                    
-                </td>
-            </tr>
-            
-            <tr class='item'>
-                <td>
-                    Street Address :
-                </td>
-                
-                <td>
-                  
-                </td>
-            </tr>
-
-            <tr class='item'>
-                <td>
-                    City :
-                </td>
-                
-                <td>
-                   
-                </td>
-            </tr>
-
-            <tr class='item'>
-                <td>
-                    Country :
-                </td>
-                
-                <td>
-                 
-                </td>
-            </tr
-            <tr class='item last'>
-                <td>
-                    Zipcode :
-                </td>    
-                <td>         
-                </td>
-            </tr>            
             <tr class='total'>
-                <td></td>          
+                <td></td>
+                
                 <td>
                    Total: $385.00
                 </td>
             </tr>
         </table>
-    </div>";
+    </div>
+</body>
+</html>
+";
     // we can have any view part here like HTML, PHP etc
 $content = ob_get_contents();
 ob_end_clean();
 $obj_pdf->writeHTML($html, true, false, true, false, '');
-$obj_pdf->Output('output.pdf', 'I');
+$obj_pdf->Output('/Users/zhaohe/htdocs/localhost/output.pdf', 'F');
 ?>

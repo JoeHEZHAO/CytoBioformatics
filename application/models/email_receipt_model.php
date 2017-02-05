@@ -46,7 +46,8 @@ date_default_timezone_set('America/New_York');
           $this->email->subject('Auto-Receipt');
           // $this->email->message($email_body);
           $this->email->message($this->load->view('email_receipt',$data, true));
-          $this->email->attach('/Users/zhaohe/htdocs/localhost/Codeigniter/Holistically-Nested_Edge_Detection.pdf');
+          $fileLocation = '/Users/zhaohe/htdocs/localhost/';
+          $this->email->attach($fileLocation.'output.pdf');
           $this->email->send();
           echo $this->email->print_debugger();
 
