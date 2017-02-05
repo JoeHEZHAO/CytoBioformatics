@@ -1,6 +1,5 @@
 // changes activity and appearance of input and textarea fields
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
   var $this = $(this),
     label = $this.prev('label');
 
