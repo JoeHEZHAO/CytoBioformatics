@@ -42,7 +42,7 @@
             <textarea readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
             <br>
             <div>
-    			<input type="checkbox" class="" name="termsCheck" id="termsCheck"/><span style="font-weight: bolder; font-size: 24px; margin-top: 10px; margin-bottom: 10px">I understand these terms and agree to continue.</span> 
+    			<input type="checkbox" class="" name="termsCheck" id="termsCheck" style="height:50px" /><span style="font-weight: bolder; font-size: 24px; margin-top: 10px; margin-bottom: 10px">I understand these terms and agree to continue.</span> 
             </div>
 		</div>
                             
@@ -338,7 +338,7 @@
         </div>
 
         <div id="acceptJSReceiptModal" class="modal fade" role="dialog">
-            <div class="modal-dialog" style="display: block; vertical-align: middle;">
+            <div class="modal-dialog" style="display: block; vertical-align: middle; bottom: 0px;">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Accept.js Example</h4>
@@ -414,8 +414,8 @@
 	<script src="<?php echo base_url('assets/accept/jquery-2.1.4.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/accept/bootstrap.min.js'); ?>"></script>
 	
-	<!-- <script src="https://jstest.authorize.net/v1/Accept.js"></script> -->
-    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>
+	<script src="https://jstest.authorize.net/v1/Accept.js"></script>
+    <!-- <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script> -->
 
 	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
 
