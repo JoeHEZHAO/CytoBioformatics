@@ -42,7 +42,9 @@
             <h2>Terms and Conditions</h2><br>
             <textarea readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
             <br>
-			<input type="checkbox" class="" name="termsCheck" id="termsCheck" /><span style="font-weight: bolder; font-size: 24px; margin-top: 10px; margin-bottom: 10px">I understand these terms and agree to continue.</span> 
+            <div>
+    			<input type="checkbox" class="" name="termsCheck" id="termsCheck"/><span style="font-weight: bolder; font-size: 24px; margin-top: 10px; margin-bottom: 10px">I understand these terms and agree to continue.</span> 
+            </div>
 		</div>
                             
         <div class="container" style="width: 80%;">
@@ -190,10 +192,9 @@
                     
                         <div class="AuthorizeNetSeal"> 
                             <script type="text/javascript" language="javascript">var ANS_customer_id="f9affc83-ee34-4e20-a9a1-5356d6b52d27";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Accept Credit Cards Online</a><br>
-                           <button onclick="showNext()" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;"> Continue </button>
                         </div>
-
                     </form>
+                    <button onclick="showNext()" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;"> Continue </button>
                 </div>
             </div>
         </div>
@@ -416,6 +417,26 @@
 	<!-- <FOOTER> -->
     <?php include "application/templates/footer.php"; ?>
 
+	<script src="<?php echo base_url('assets/accept/jquery-2.1.4.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/accept/bootstrap.min.js'); ?>"></script>
+	
+	<script src="https://jstest.authorize.net/v1/Accept.js"></script>
+    <!-- <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script> -->
+	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
+
+    <script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
+
+    <!-- MENU -->
+    <script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
+
+    <!-- FANCYBOX -->
+    <script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>	
+    
+	<!-- CUSTOM JS -->
+	<!-- <script src="<?php echo base_url('assets/js/custom.js'); ?>"></script> -->
+	<script src="<?php echo base_url('assets/js/quoteform.js'); ?>"></script>
+
     <script>
         $('#container2').hide();
 
@@ -436,34 +457,31 @@
         }
 
         function showNext(){
+            if ($('#termsCheck').is(':checked')) {
+                if ($("input[name='email']").val() && $("input[name='address']").val() && $("input[name='zip']").val() && $("input[name='city']").val() && $("#country").val()) 
+                {
+                    var email = $("input[name='email']").val();
+                    var address = $("input[name='address']").val();
+                    var zip = $("input[name='zip']").val();
+                    var city = $("input[name='city']").val();
+                    var country = $("#country").val();
 
-        if ($('#termsCheck').is(':checked')) {
+                    document.getElementById('bill_email').innerHTML = email;
+                    document.getElementById('bill_streetaddr').innerHTML = address;
+                    document.getElementById('bill_city').innerHTML = city;
+                    document.getElementById('bill_country').innerHTML = country;
+                    document.getElementById('bill_zipcode').innerHTML = zip;
 
-            if ($("input[name='email']").val() && $("input[name='address']").val() && $("input[name='zip']").val() && $("input[name='city']").val() && $("#country").val()) 
-            {
-                var email = $("input[name='email']").val();
-                var address = $("input[name='address']").val();
-                var zip = $("input[name='zip']").val();
-                var city = $("input[name='city']").val();
-                var country = $("#country").val();
+                }else
+                {
+                    alert('Bill Info is not complete, please check before Continue');
+                    return false;
+                }
 
-                document.getElementById('bill_email').innerHTML = email;
-                document.getElementById('bill_streetaddr').innerHTML = address;
-                document.getElementById('bill_city').innerHTML = city;
-                document.getElementById('bill_country').innerHTML = country;
-                document.getElementById('bill_zipcode').innerHTML = zip;
-
-            }else
-            {
-                alert('Bill Info is not complete, please check before Continue');
+            }else{
+                alert('please check the term agreement button');
                 return false;
             }
-
-        }else{
-            alert('please check the term agreement button');
-            return false;
-        }
-
             $('#container2').show();
             goToByScroll('#container2');
         }
@@ -475,26 +493,6 @@
         }
 
     </script>
-
-	<script src="<?php echo base_url('assets/accept/jquery-2.1.4.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/accept/bootstrap.min.js'); ?>"></script>
-	
-	<!-- <script src="https://jstest.authorize.net/v1/Accept.js"></script> -->
-    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>
-	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
-
-    <script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
-
-    <!-- MENU -->
-    <script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
-
-    <!-- FANCYBOX -->
-    <script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>	
-    
-	<!-- CUSTOM JS -->
-	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/js/quoteform.js'); ?>"></script>
     
 </body>
 
