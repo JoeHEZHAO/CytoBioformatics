@@ -9,7 +9,9 @@ class MYPDF extends TCPDF {
     //Page header
     public function Header() {
         // Logo
-        $image_file = base_url('assets/images/cyto_logo_orgdark_sharp_noalpha.png');
+        // $image_file = "http://cytoinformatics.com/assets/images/cyto_logo.png";
+        $image_file = $_SERVER['DOCUMENT_ROOT']. 'Codeigniter/assets/images/cyto_logo.png';
+
         $this->Image($image_file, 10, 10, 25, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
         // Set font
         $this->SetFont('helvetica', 'B', 20);
