@@ -33,6 +33,9 @@
         .customer-title {
             font-size: 16px;
         }
+        .highlight {
+            background-color: #cccccc;
+        }
     </style>
 </head>
 
@@ -140,15 +143,15 @@
               <td></td>
               <td></td>
               <td></td>
-              <td align="right" class="border-bottom border-left">Balance Due:</td>
-              <td class="border-right border-bottom">$875.00</td>
+              <td align="right" class="border-top border-bottom border-left highlight">Balance Due:</td>
+              <td class="border-top border-right border-bottom highlight">$875.00</td>
           </tr>
 
         </table>
 
         <div id='terms'>
           <h5>Terms</h5>
-          <p>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</p>
+          <p>Services will not be completed until balance due is paid in full.</p>
         </div>
 
     </div>

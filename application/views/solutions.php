@@ -38,9 +38,6 @@
 	<!-- OWL Carousel -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
 	
-	<!-- YOUTUBE PLAYER -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/ytplayer/css/jquery.mb.ytplayer.min.css'); ?>">
-	
 	<!-- ANIMATIONS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
 	
@@ -51,7 +48,6 @@
 	
 	<!-- MY ANIMATIONS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-animations.css'); ?>">
-	
 
 </head>
 
@@ -100,10 +96,13 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/detection.png'); ?>" alt="">
+                                <div class="solutions-image-box">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/detection_bg.jpg'); ?>" alt="">
+                                    <img class="hv-img" src="<?php echo base_url('images/services/detection_regions.png'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-bubble"></i>-->
                                 <div class="service-box-content">
-                                    <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Cell Detection</a></h6>
+                                    <h6><a href="#">Cell Detection</a></h6>
                                     <p>Rapidly obtain precise coordinates specifying the locations of cells in your image, facilitating density modeling, cell classification, and more.</p>
                                 </div><!-- service-box-content -->
                             </div><!-- service-box -->
@@ -111,10 +110,13 @@
 
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/segmentation.png'); ?>" alt="">
+                                <div class="solutions-image-box">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/segmentation_bg.jpg'); ?>" alt="">
+                                    <img class="hv-img" src="<?php echo base_url('images/services/segmentation_contours.png'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-heart"></i>-->
                                 <div class="service-box-content">
-                                    <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Cell Segmentation</a></h6>
+                                    <h6><a href="#">Cell Segmentation</a></h6>
                                     <p>Find the boundary coordinates of up to thousands of cells per image, enabling robust cross-sectional area calculations, background removal, shape modeling, and more.</p>
                                 </div><!-- service-box-content -->
                             </div><!-- service-box -->
@@ -122,11 +124,14 @@
                         </div><!-- col -->
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/classification.png'); ?>" alt="">
+                                <div class="solutions-image-box">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/classification_bg.png'); ?>" alt="">
+                                    <img class="hv-img" src="<?php echo base_url('images/services/classification_overlay.png'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-data"></i>-->
                                 <div class="service-box-content">
 
-                                    <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Classification</a></h6>
+                                    <h6><a href="#">Classification</a></h6>
 
                                     <p>Distinguish benign from malignant cells, separate epithelial from stromal regions, identify necrotic muscle fibers, and much more.</p>
 
@@ -143,11 +148,14 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/denoised.jpg'); ?>" alt="">
+                                <div class="solutions-image-box">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/cleaning_dirty.jpg'); ?>" alt="">
+                                    <img class="hv-img" src="<?php echo base_url('images/services/cleaning_clean.jpg'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-eye"></i>-->
                                 <div class="service-box-content">
 
-                                    <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Image Cleaning</a></h6>
+                                    <h6><a href="#">Image Cleaning</a></h6>
 
                                     <p>Denoise, contrast-enhance, and sharpen your images so that they are as clear to the naked eye as possible.</p>
 
@@ -158,11 +166,14 @@
                         </div><!-- col -->
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/area.png'); ?>" alt="">
+                                <div class="solutions-image-box">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/heatmap_small.jpg'); ?>" alt="">
+                                    <img class="hv-img" src="<?php echo base_url('images/services/heatmap_small_overlay.png'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-food"></i>-->
                                 <div class="service-box-content">
 
-                                    <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Feature Extraction</a></h6>
+                                    <h6><a href="#">Feature Extraction</a></h6>
 
                                     <p>End-to-end imaging informatics solution. Tell us what you would like to learn and we will calculate it for you, from detection to extraction.</p>
 
@@ -173,13 +184,16 @@
                         </div><!-- col -->
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/voteIllustration.png'); ?>" alt="" style="width: 270px; height: 270px;">
+                                <div class="solutions-image-box">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/tracking.jpg'); ?>" alt="">
+                                    <img class="hv-img" src="<?php echo base_url('images/services/tracking_overlay.png'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-lab"></i>-->
                                 <div class="service-box-content">
 
-                                    <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">More...</a></h6>
+                                    <h6><a href="#">More...</a></h6>
 
-                                    <p>Contact us to see if our services can help you address your specific pathology data.</p>
+                                    <p>Contact us to see if our services can help you address your specific needs.</p>
 
                                 </div><!-- service-box-content -->
 
@@ -215,11 +229,13 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/lung_crop.jpg'); ?>" alt="">
+                                        <div class="solutions-image-box">
+                                            <img src="<?php echo base_url('images/services/lung_crop.jpg'); ?>" alt="">
+                                        </div>
                                         <!--<i class="bronx-icon-bubble"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="single-service.html">Lung</a></h6>
+                                            <h6><a href="#">Lung</a></h6>
 
                                             <p>Lung cell detection, tumor segmentation, tumor grading, and more are practical solutions with our platform.</p>
 
@@ -230,11 +246,13 @@
                                 </div><!-- col -->
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/muscle_crop.jpg'); ?>" alt="">
+                                        <div class="solutions-image-box">
+                                            <img src="<?php echo base_url('images/services/muscle_crop.jpg'); ?>" alt="">
+                                        </div>
                                         <!--<i class="bronx-icon-heart"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="single-service.html">Muscle</a></h6>
+                                            <h6><a href="#">Muscle</a></h6>
 
                                             <p>Model muscular dystrophy and myositis easily with reliable muscle fiber segmentation and inflammatory cell detection.</p>
 
@@ -245,11 +263,13 @@
                                 </div><!-- col -->
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/bladder_crop.jpg'); ?>" alt="">
+                                        <div class="solutions-image-box">
+                                            <img src="<?php echo base_url('images/services/bladder_crop.jpg'); ?>" alt="">
+                                        </div>
                                         <!--<i class="bronx-icon-data"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="single-service.html">Bladder</a></h6>
+                                            <h6><a href="#">Bladder</a></h6>
 
                                             <p>Separate urothelial from stromal regions and identify papillary urothelial neoplasms.</p>
 
@@ -266,11 +286,13 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/NET_crop.jpg'); ?>" alt="">
+                                        <div class="solutions-image-box">
+                                            <img src="<?php echo base_url('images/services/NET_crop.jpg'); ?>" alt="">
+                                        </div>
                                         <!--<i class="bronx-icon-food"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="single-service.html">Neuroendocrine Tumor</a></h6>
+                                            <h6><a href="#">Neuroendocrine Tumor</a></h6>
 
                                             <p>Lung cell detection, tumor segmentation, tumor grading, and more are practical solutions with our platform.</p>
 
@@ -281,11 +303,13 @@
                                 </div><!-- col -->
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/breast_crop.jpg'); ?>" alt="">
+                                        <div class="solutions-image-box">
+                                            <img src="<?php echo base_url('images/services/breast_crop.jpg'); ?>" alt="">
+                                        </div>
                                         <!--<i class="bronx-icon-eye"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="single-service.html">Breast</a></h6>
+                                            <h6><a href="#">Breast</a></h6>
 
                                             <p>Model muscular dystrophy and myositis easily with reliable muscle fiber segmentation and inflammatory cell detection.</p>
 
@@ -296,11 +320,13 @@
                                 </div><!-- col -->
                                 <div class="col-sm-4">
                                     <div class="service-box style-1">
-                                        <img src="<?php echo base_url('images/services/brain_crop.jpg'); ?>" alt="">
+                                        <div class="solutions-image-box">
+                                            <img src="<?php echo base_url('images/services/brain_crop.jpg'); ?>" alt="">
+                                        </div>
                                         <!--<i class="bronx-icon-lab"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="single-service.html">Brain</a></h6>
+                                            <h6><a href="#">And more...</a></h6>
 
                                             <p>Contact us to see if our services can help you address your specific pathology data.</p>
 
@@ -319,7 +345,7 @@
             </div><!-- container -->
         </div><!-- solutions -->
 
-        <!-- COUNTER EFFECTS -->
+        <!-- COUNTER EFFECTS 
         <section class="full-section dark-section" style="margin-bottom: 0px;" id="section-4">
             <div class="full-section-container">
                 <div class="container-fluid">
@@ -327,28 +353,28 @@
 
                         <div class="col-sm-2 visible-lg-block">
 								<a class="more-facts" href="#"><img src="<?php echo base_url('assets/images/cyto_logo_white_sharp.png'); ?>" style="width: 100px; height: 100px" alt="<?php echo base_url();?>"></a>
-							</div><!-- col -->
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="10000"></div>
 									<div class="counter-details">Images Processed</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="160"></div>
 									<div class="counter-details">Projects Completed</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="53"></div>
 									<div class="counter-details">Active Users</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
@@ -359,12 +385,12 @@
 							
 							<div class="col-sm-2 visible-lg-block">
 								<a class="more-facts" href="#"></a>
-							</div><!-- col -->
+							</div>
 
-                    </div><!-- row -->
-                </div><!-- container -->
-            </div><!-- full-section-container -->
-        </section><!-- full-section -->
+                    </div>
+                </div>
+            </div>
+        </section>-->
 
         <!-- SPAN -->
         <section class="full-section parallax" id="section-6" data-stellar-background-ratio="0.1">
@@ -379,16 +405,13 @@
                 </div><!-- container -->
             </div><!-- full-section-container -->
         </section><!-- full-section -->
-    </div><!-- PAGE CONTENT -->
-		
+        
 		<!-- FOOTER -->
 		<?php include 'application/templates/footer.php'; ?>
-	</div><!-- MAIN CONTAINER -->
-	
+    </div>
 	
 	<!-- SCROLL UP -->
 	<a id="scroll-up"><i class="fa fa-angle-up"></i></a>
-	
 	
 	<!-- jQUERY -->
 	<script src="<?php echo base_url('assets/plugins/jquery/jquery-2.2.2.min.js'); ?>"></script>
@@ -399,50 +422,25 @@
 	<!-- VIEWPORT -->
 	<script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
 	
-	<!-- MENU -->
-	<script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
-	
 	<!-- FANCYBOX -->
 	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
 	
 	<!-- PARALLAX -->
 	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
-	
-	<!-- ISOTOPE -->
-	<script src="<?php echo base_url('assets/plugins/isotope/imagesloaded.pkgd.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/isotope/isotope.pkgd.min.js'); ?>"></script>
-	
-	<!-- PLACEHOLDER -->
-	<script src="<?php echo base_url('assets/plugins/placeholders/jquery.placeholder.min.js'); ?>"></script>
-	
-	<!-- CONTACT FORM VALIDATE & SUBMIT -->
-	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
-	
-	<!-- CHARTS -->
-	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
-	
+    
 	<!-- COUNTER -->
 	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
 	
-	<!-- STATISTICS -->
-	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
-	
-	<!-- INSTAFEED -->
-	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>
-	
 	<!-- COUNTDOWN -->
 	<script src="<?php echo base_url('assets/plugins/countdown/jquery.countdown.min.js'); ?>"></script>
-	
-	<!-- ANIMATIONS -->
-	<script src="<?php echo base_url('assets/plugins/animations/wow.min.js'); ?>"></script>
 	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
     
     <!-- ANIMATIONS -->
+	<script src="<?php echo base_url('assets/plugins/animations/wow.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/velocity.min.js'); ?>"></script> 
+    <script src="<?php echo base_url('assets/js/hoverfade.js'); ?>"></script> 
     
     <script text="type/javascript">
         $(document).ready(function() {
