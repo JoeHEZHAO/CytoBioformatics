@@ -1,4 +1,5 @@
 <?php
+
 tcpdf();
 ob_start();
 
@@ -32,7 +33,6 @@ $obj_pdf = new MYPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 $obj_pdf->SetCreator(PDF_CREATOR);
 $title = "PDF Report";
 $obj_pdf->SetTitle($title);
-$obj_pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, $title, PDF_HEADER_STRING);
 $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $obj_pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 $obj_pdf->SetDefaultMonospacedFont('helvetica');
@@ -45,10 +45,9 @@ $obj_pdf->setFontSubsetting(false);
 $obj_pdf->AddPage();
 
 $html = file_get_contents(base_url('application/templates/pdf_template.php'));
-
 // we can have any view part here like HTML, PHP etc
 $content = ob_get_contents();
 ob_end_clean();
 $obj_pdf->writeHTML($html, true, false, true, false, '');
-$obj_pdf->Output('output.pdf', 'I');
+$obj_pdf->Output('/Users/zhaohe/htdocs/localhost/output.pdf', 'F');
 ?>

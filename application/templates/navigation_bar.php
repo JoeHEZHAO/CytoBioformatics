@@ -34,7 +34,7 @@
                             <li class="dropdown">
                                 <!--<a href="#"><?php echo $firstname," ", $lastname; ?></a>-->
                                 <a href="#">Hi, <?php echo $firstname; ?></a>
-                                <ul>
+                                <ul style="left: auto; right: 0;">
                                     <li><a href="<?php echo base_url('index.php/cyto_bioformatics/buyingAndPayment'); ?>">Projects and Payment</a></li>
                                     <!--<li><a href="services.html">Services</a></li>
                                     <li><a href="single-service.html">Single service</a></li>
