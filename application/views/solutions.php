@@ -111,7 +111,10 @@
 
                         <div class="col-sm-4">
                             <div class="service-box style-1">
-                                <img src="<?php echo base_url('images/services/segmentation.png'); ?>" alt="">
+                                <div class="hover-images">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/segmentation_bg.jpg'); ?>" alt="">
+                                    <img class="hover-img" src="<?php echo base_url('images/services/segmentation_contours.png'); ?>" alt="">
+                                </div>
                                 <!--<i class="bronx-icon-heart"></i>-->
                                 <div class="service-box-content">
                                     <h6><a href="<?php echo base_url('index.php/Cyto_bioformatics/solutions.php'); ?>">Cell Segmentation</a></h6>
@@ -379,16 +382,13 @@
                 </div><!-- container -->
             </div><!-- full-section-container -->
         </section><!-- full-section -->
-    </div><!-- PAGE CONTENT -->
-		
+        
 		<!-- FOOTER -->
 		<?php include 'application/templates/footer.php'; ?>
-	</div><!-- MAIN CONTAINER -->
-	
+    </div>
 	
 	<!-- SCROLL UP -->
 	<a id="scroll-up"><i class="fa fa-angle-up"></i></a>
-	
 	
 	<!-- jQUERY -->
 	<script src="<?php echo base_url('assets/plugins/jquery/jquery-2.2.2.min.js'); ?>"></script>
