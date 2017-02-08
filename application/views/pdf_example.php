@@ -211,5 +211,7 @@ $html = "
 $content = ob_get_contents();
 ob_end_clean();
 $obj_pdf->writeHTML($html, true, false, true, false, '');
+
 $obj_pdf->Output('/Users/zhaohe/htdocs/localhost/output.pdf', 'F');
+//$obj_pdf->Output('/var/www/html/Codeigniter/tmp/output.pdf', 'F');
 ?>
