@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/forms.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/invoice.css'); ?>">
   
 </head>
 
@@ -49,35 +50,35 @@
                 <div class="form">
                     <form action="billing" method="post" class="form-horizontal" id="billingform" accept-charset="utf-8">
                         <div class="top-row">
-                            <div class="field-wrap">
+                            <div class="field-wrap" style="margin-bottom: 20px;">
                                 <label for="email">Billing E-Mail</label>
                                 <input name="email" type="email" value="" id="email">
                             </div>
                         </div>
                         
                         <div class="top-row">
-                            <div class="field-wrap">
+                            <div class="field-wrap" style="margin-bottom: 20px;">
                                 <label for="address">Street Address</label>
                                 <input name="address" type="text" value="" id="address">
                             </div>
                         </div>
 
                         <div class="top-row">
-                            <div class="field-wrap">
+                            <div class="field-wrap" style="margin-bottom: 20px;">
                                 <label for="city">City</label>
                                 <input name="city" type="text" value="" id="city">
                             </div>
                         </div>
 
                         <div class="top-row">
-                                <div class="field-wrap">
+                                <div class="field-wrap" style="margin-bottom: 20px;">
                                 <label for="zip">Zip Code</label>
                                 <input name="zip" type="text" value="" id="zip">
                             </div>
                         </div>
 
                         <div class="top-row">
-                            <div class="field-wrap">
+                            <div class="field-wrap" style="margin-bottom: 20px;">
                                 <label class='active highlight' for="country">Country</label>
                                 <select name="country" id="country">
                                     <option value="">
@@ -192,14 +193,14 @@
         </div>
 
         <!-- hidden receipt page -->
-        <div id='container2' class="container" style="display: none; margin-top: 100px;">
+        <div id='container2' class="container invoice-box" style="display: none; margin-top: 100px;">
             <table cellpadding="0" cellspacing="0" style="margin: auto; width: 100%;">
                 <tr class="top">
                     <td colspan="2">
                         <table style="width: 100%;">
                             <tr>
                                 <td class="title">
-                                    <img src="http://nextstepwebs.com/images/logo.png" style="width:100%; max-width:300px;">
+                                    <img src="<?php echo base_url('assets/images/cyto_logo_orgdark_sharp.png'); ?>" style="width:100%; max-width:150px;">
                                 </td>
 
                                 <td>
@@ -217,9 +218,9 @@
                         <table>
                             <tr>
                                 <td>
-                                    Next Step Webs, Inc.<br>
-                                    12345 Sunny Road<br>
-                                    Sunnyville, TX 12345
+                                    CytoInformatics, LLC<br>
+                                    105 Haynes Circle<br>
+                                    Nicholasville, KY, 40356
                                 </td>
 
                                 <td>
@@ -355,19 +356,19 @@
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <h4 class="modal-title">ACCEPT.JS EXAMPLE</h4>
+                        <h4 class="modal-title">Pay with your credit card</h4>
                     </div>
 
-                    <div class="modal-body" id="acceptJSPayBody">
+                    <div class="modal-body" id="acceptJSPayBody" style="margin-top: 10px;">
                         <!--form role="form"-->
 
                         <div class="form-group col-xs-8">
-                            <label for="creditCardNumber">CREDIT CARD NUMBER</label>
-                            <input type="tel" class="form-control" id="creditCardNumber" placeholder="4111111111111111" value="4111111111111111" autocomplete="off"/>
+                            <label for="creditCardNumber">Credit card number</label>
+                            <input type="tel" class="form-control" id="creditCardNumber" placeholder="" value="" autocomplete="off"/>
                         </div>
                         <div class="form-group col-xs-4">
                             <label for="cvv">CVV</label>
-                            <input type="text" class="form-control" id="cvv" placeholder="123" autocomplete="off"/>
+                            <input type="text" class="form-control" id="cvv" placeholder="" autocomplete="off"/>
                         </div>
 
                         <!--div class="form-group col-xs-6 col-xs-offset-1" style="margin-bottom: 2px; border: 2px solid; border-color: #ccc; border-radius: 3px">
@@ -379,13 +380,13 @@
 
                         <div>
                             <div class="form-group col-xs-5">
-                                <label for="expiryDateYY">EXP. DATE</label>
-                                <input type="text" class="form-control" id="expiryDateYY" placeholder="YYYY"/>
+                                <label for="expiryDateYY">Exp. date (YYYY)</label>
+                                <input type="text" class="form-control" id="expiryDateYY" placeholder=""/>
                             </div>
 
                             <div class="form-group col-xs-3">
-                                <label for="expiryDateMM" style="opacity: 0">MONTH</label>
-                                <input type="text" class="form-control" id="expiryDateMM" placeholder="MM"/>
+                                <label for="expiryDateMM">Month (MM)</label>
+                                <input type="text" class="form-control" id="expiryDateMM" placeholder=""/>
                             </div>
 
                             <div class="form-group col-xs-4">
@@ -396,7 +397,7 @@
 
                         <!--/form-->
                         <div style="text-align: center; margin-top: 20%;">
-                            <button type="button" name="<?php echo base_url();?>" id="submitButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;">SUBMIT</button>
+                            <button type="button" name="<?php echo base_url();?>" id="submitButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -412,8 +413,8 @@
 	<script src="<?php echo base_url('assets/accept/jquery-2.1.4.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/accept/bootstrap.min.js'); ?>"></script>
 	
-	<!-- <script src="https://jstest.authorize.net/v1/Accept.js"></script> -->
-    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>
+	 <script src="https://jstest.authorize.net/v1/Accept.js"></script> 
+<!--    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js"></script>-->
 	<script src="<?php echo base_url('assets/js/acceptJSCaller.js'); ?>"></script>
 
     <script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
@@ -425,6 +426,7 @@
     <!-- FANCYBOX -->
     <script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>	
     
+    <!-- QUOTEFORM JS -->
 	<script src="<?php echo base_url('assets/js/quoteform.js'); ?>"></script>
     
     <script>

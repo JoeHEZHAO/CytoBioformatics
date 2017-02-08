@@ -9,7 +9,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	
-	<title>Intelligence for Medicine | CytoInformatics</title>
+	<title>Turning Sight Into Insight | CytoInformatics</title>
 	
 	<!-- FAVICON AND APPLE TOUCH -->    
 	<meta name="msapplication-TileImage" content="mstile.png">
