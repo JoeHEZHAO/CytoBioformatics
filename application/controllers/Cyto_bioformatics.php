@@ -158,8 +158,8 @@ class Cyto_bioformatics extends CI_Controller {
         your code here
         ---- ---- ---- ----
     */
-//        $data = msdoggdso
-	    $this->load->view('pdf_example');
+        $data['name'] = 'hezhao';
+	    $this->load->view('pdf_example', $data);
 	}
     
     function demo()
