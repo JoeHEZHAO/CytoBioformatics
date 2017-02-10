@@ -60,6 +60,7 @@
 }
 
 .intro-section-card {
+    position: absolute;
     margin-top: 300px;
     margin-left: 220px;
 }

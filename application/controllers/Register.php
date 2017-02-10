@@ -14,6 +14,8 @@ class Register extends CI_Controller
         $firstname = $this->security->xss_clean($this->input->post('FirstName'));
         $lastname = $this->security->xss_clean($this->input->post('LastName'));
         $password = $this->security->xss_clean($this->input->post('password'));
+        $organization = $this->security->xss_clean($this->input->post('organization'));
+        $phone = $this->security->xss_clean($this->input->post('phone'));
         
         // hash password before checking database
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -24,16 +26,20 @@ class Register extends CI_Controller
                                             $firstname,
                                             $lastname,
                                             $password, 
+                                            $organization,
+                                            $phone,
                                             $UniqueID);
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
             $_SESSION['email'] = $email;
+            $_SESSION['organization'] = $organization;
+            $_SESSION['ID'] = $UniqueID;
 			echo "";
 			
 		}
 		else
 		{
-			echo "email address already existed";
+			echo "Email address already exists.";
 		}
 	
 	}

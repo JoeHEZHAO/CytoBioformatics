@@ -8,13 +8,15 @@ date_default_timezone_set('America/New_York');
 			parent::__construct();
 		}
 
-		function insert($email, $firstname, $lastname, $password, $UniqueID)
+		function insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)
 		{
 			$data = array(
 				'firstname'   => $firstname,
 				'lastname' => $lastname,
 				'email'      => $email,
 				'password'   => $password,
+                'organization' => $organization,
+                'phone' => $phone,
 				'created_at' => date('Y-m-j H:i:s'),
 				'ID' => $UniqueID
 			);

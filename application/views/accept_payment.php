@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Accept Payment</title>
+	<title>Payment | CytoInformatics</title>
 
     <!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -207,8 +207,7 @@
 
                                 <td>
                                     Invoice #: 123<br>
-                                    Created: January 1, 2015<br>
-                                    Due: February 1, 2015
+                                    Date: <?php echo date('m-j-Y H:i:s'); ?>
                                 </td>
                             </tr>
                         </table>
@@ -226,9 +225,9 @@
                                 </td>
 
                                 <td>
-                                    Acme Corp.<br>
-                                    John Doe<br>
-                                    john@example.com
+                                    <?php echo $organization; ?><br>
+                                    <?php echo $firstname.' '.$lastname; ?><br>
+                                    <?php echo $email; ?>
                                 </td>
                             </tr>
                         </table>
@@ -453,7 +452,9 @@
         }
 
         function showNext(){
+            // check that terms agreement checkbox is checked
             if ($('#termsCheck').is(':checked')) {
+                // check that all fields of billing form are filled
                 if ($("input[name='email']").val() && $("input[name='address']").val() && $("input[name='zip']").val() && $("input[name='city']").val() && $("#country").val()) 
                 {
                     var email = $("input[name='email']").val();
@@ -470,12 +471,12 @@
 
                 }else
                 {
-                    alert('Bill Info is not complete, please check before Continue');
+                    alert('Billing info is not complete. Please check before proceeding.');
                     return false;
                 }
 
             }else{
-                alert('please check the term agreement button');
+                alert('please check the term agreement button.');
                 return false;
             }
             $('#container2').show();
