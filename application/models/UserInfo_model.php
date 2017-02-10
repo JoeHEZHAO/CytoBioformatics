@@ -98,9 +98,16 @@ date_default_timezone_set('America/New_York');
             $this->db->from('ResetPassword');
             $this->db->where('token', $token);
             if (!empty($data = $this->db->get()->row())) {
-                return $data->email;
+                $currentdate = new DateTime();
+                $tokendate = date_create_from_format('Y-m-j H:i:s', $data->created_at);
+                $date_diff = $currentdate->diff($tokendate);
+                if ($date_diff->d == 0) {
+                    return $data->email;
+                } else {
+                    return;
+                }
             } else {
-                return false;
+                return;
             }
         }
         

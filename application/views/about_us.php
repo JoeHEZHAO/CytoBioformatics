@@ -100,8 +100,9 @@
 						<img src="<?php echo base_url('images/logos/uk.png') ?>" alt="UK" width="500" height="500">
 						
 					</div>-->
-				</div><!-- row -->
-			</div><!-- container -->
+				</div>
+			</div>
+<!--
             <div class="container">
                 <div class="row">
                     <div class="col-lg-offset-1 col-lg-5 col-sm-6 text-block">
@@ -110,7 +111,7 @@
                 </div>
             </div>
 			
-            <br><br>
+            <br><br>-->
             
 			<div class="container">
                 <div class="row">

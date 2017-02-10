@@ -99,6 +99,10 @@ $('#reset_password').submit(function() {
                     if (response == 'success') {
                         $("#error_reset").text("Your password has been updated!");
                         $("#error_reset").css("color", "white");
+                        $(".field-wrap").css("display", "none");
+                        $(".button").css("display", "none");
+                        $("#return-button").css("display", "block");
+                        
                     } else if (response == 'failed_to_update') {
                         $("#error_reset").text("Failed to update database. Please contact us.");
                         $("#error_reset").css("color", "red");

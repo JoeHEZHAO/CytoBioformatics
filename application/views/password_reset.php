@@ -45,6 +45,8 @@
           
             <button class="button button-block">Confirm</button>
           </form>
+            
+          <a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>"><button id="return-button" class="button button-block" style="display: none;">Return</button></a>
         </div>
       </div>
   </div>

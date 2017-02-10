@@ -233,7 +233,7 @@ class Cyto_bioformatics extends CI_Controller {
             $data['email'] = $email;
             $this->load->view('password_reset', $data);
         } else {
-            echo "Invalid token.";    
+            echo "Error: invalid/expired token.";    
         }
     }
 	
