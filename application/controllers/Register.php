@@ -6,7 +6,6 @@ class Register extends CI_Controller
 	
 	public function index()
 	{
-
 		$this->load->model('Register_model');
 		$UniqueID = md5(uniqid(mt_rand(), true));
         
@@ -41,7 +40,20 @@ class Register extends CI_Controller
 		{
 			echo "Email address already exists.";
 		}
-	
 	}
+    
+    public function reset_password() {
+        $email = $this->security->xss_clean($this->input->post('email'));
+        $password = $this->security->xss_clean($this->input->post('password'));    
+        // hash password before inserting in database
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        
+        $this->load->model('UserInfo_model');
+        if ($this->UserInfo_model->reset_password($email, $password)) {
+            echo "success";   
+        } else {
+            echo "failed_to_update";
+        }
+    }
 }
 ?>

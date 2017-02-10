@@ -58,11 +58,72 @@ date_default_timezone_set('America/New_York');
 
 		function removeUser($email, $password){
 
+		}
+        
+        
+        // For RESETPASSWORD
+        function insert_resetpassword($email, $token)
+		{
+			$data = array(
+				'email'   => $email,
+				'token' => $token,
+				'created_at' => date('Y-m-j H:i:s')
+			);
 
+			if ($this->db->insert('ResetPassword', $data)) {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+        
+        function replace_resetpassword($email, $token)
+		{
+			$data = array(
+				'email'   => $email,
+				'token' => $token,
+				'created_at' => date('Y-m-j H:i:s')
+			);
 
-
+			if ($this->db->replace('ResetPassword', $data)) {
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
 
+        function check_password_token($token) {
+            $this->db->from('ResetPassword');
+            $this->db->where('token', $token);
+            if (!empty($data = $this->db->get()->row())) {
+                return $data->email;
+            } else {
+                return false;
+            }
+        }
+        
+        function check_resetpassword_exists($email) {
+            $this->db->from('ResetPassword');
+            $this->db->where('email', $email);
+            if (!empty($data = $this->db->get()->row())) {
+				return true;
+			} else {
+				return false;
+			}	
+        }
+        
+        function reset_password($email, $password) {
+			$this->db->set('password', $password);
+            $this->db->where('email', $email);
+			if ($this->db->update('UserInfo')) {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 
 	}
 

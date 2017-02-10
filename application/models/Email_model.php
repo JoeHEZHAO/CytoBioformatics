@@ -62,6 +62,20 @@ class Email_model extends CI_Model{
         if (empty($records)) {
             return "email_not_exist";
         } else {
+            // generate new pass and update ResetPassword database
+            $token = md5(uniqid(mt_rand(), true));
+            $data['token'] = $token;
+            $this->load->model('UserInfo_model');
+            // if email exists, modify row; if not, insert new row 
+            if ($this->UserInfo_model->check_resetpassword_exists($data['email'])) {
+                if (!($this->UserInfo_model->replace_resetpassword($data['email'], $token))) {
+				    return "generate_token_failed";
+			     }
+            } else if (!($this->UserInfo_model->insert_resetpassword($data['email'], $token))) {
+				return "generate_token_failed";
+			}
+            
+            // create email to send to user
             $config = Array(
                 'protocol' => 'smtp',
                 'smtp_host' => 'ssl://smtp.googlemail.com',

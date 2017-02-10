@@ -90,8 +90,7 @@
 <body>
     <div>
         <h5>Hello, <?php echo $email; ?></h5>
-        <p>Please click the following link to reset your password.</p><br>
-        <a href="localhost/Codeigniter/index.php/Cyto_bioformatics/password_reset">localhost/Codeigniter/index.php/Cyto_bioformatics/password_reset</a><br>
+        <p>Please click <a href="<?php echo base_url('index.php/cyto_bioformatics/password_reset_token').'/'.$token; ?>">this link to reset your password.</a></p><br>
         <p>Note that this link will stop working after 24 hours.</p><br>
     </div>
 </body>

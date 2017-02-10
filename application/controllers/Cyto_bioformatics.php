@@ -220,6 +220,22 @@ class Cyto_bioformatics extends CI_Controller {
     function forgot_password() {
         $this->load->view('forgot_password');
     }
+    
+    function password_reset() {
+        $data['email'] = $_SESSION['email'];
+        $this->load->view('password_reset', $data);
+    }
+    
+    function password_reset_token($token) {
+        $this->load->model('UserInfo_model');
+        $email = $this->UserInfo_model->check_password_token($token);
+        if(!empty($email)) {
+            $data['email'] = $email;
+            $this->load->view('password_reset', $data);
+        } else {
+            echo "Invalid token.";    
+        }
+    }
 	
 }
 /**
