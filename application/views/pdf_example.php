@@ -9,9 +9,8 @@ class MYPDF extends TCPDF {
     //Page header
     public function Header() {
         // Logo
-        // $image_file = "http://cytoinformatics.com/assets/images/cyto_logo.png";
-        $image_file = $_SERVER['DOCUMENT_ROOT']. 'Codeigniter/assets/images/cyto_logo.png';
-
+        // $image_file = base_url('assets/images/cyto_logo_orgdark_sharp_noalpha.png');
+        $image_file = $_SERVER['DOCUMENT_ROOT'].'/Codeigniter/assets/images/cyto_logo_orgdark_sharp_noalpha.png';
         $this->Image($image_file, 10, 10, 25, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
         // Set font
         $this->SetFont('helvetica', 'B', 20);
@@ -45,6 +44,17 @@ $obj_pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 $obj_pdf->SetFont('helvetica', '', 9);
 $obj_pdf->setFontSubsetting(false);
 $obj_pdf->AddPage();
+
+$items = '';
+foreach ($quoteIds as $key => $value) {
+    $items = $items."<tr class='item-row'>
+            <td>Item id :".$value."</td>
+            <td class='description'>Monthly web updates for http://widgetcorp.com (Nov. 1 - Nov. 30, 2009)</td>
+            <td>".$quoteCharges[$key]."</td>
+            <td>1</td>
+            <td>".$quoteCharges[$key]."</td>
+        </tr>";
+};
 
 $html = "
 <!DOCTYPE html>
@@ -100,8 +110,8 @@ $html = "
             <div style='height: 10px; background-color: #fff;'></div>
 
             <tr id='address'>
-                <td class='col-left' width='260'>Chris Coyier</td>
-                <td align='right' width='110'>Invoice #:</td>
+                <td class='col-left' width='260'>".$firstname.$lastname. "</td>
+                <td align='right' width='110'>Invoice #:".$billEmail."</td>
                 <td width='140'>000123</td>
             </tr>
             <tr>
@@ -146,20 +156,7 @@ $html = "
               <th width='90'>Quantity</th>
               <th width='80'>Price</th>
           </tr>
-          <tr class='item-row'>
-              <td>Item 1</td>
-              <td class='description'>Monthly web updates for http://widgetcorp.com (Nov. 1 - Nov. 30, 2009)</td>
-              <td>$650.00</td>
-              <td>1</td>
-              <td>$650.00</td>
-          </tr>
-          <tr class='item-row'>
-              <td>Item 2</td>
-              <td class='description'><textarea>Yearly renewals of SSL certificates on main domain and several subdomains</textarea></td>
-              <td>$75.00</td>
-              <td>3</td>
-              <td>$225.00</td>
-          </tr>
+         ".$items."
           <tr>
               <td class='border-top'></td>
               <td class='border-top'></td>
@@ -172,21 +169,21 @@ $html = "
               <td></td>
               <td></td>
               <td align='right' class='border-top border-left'>Subtotal:</td>
-              <td class='border-top border-right'>$875.00</td>
+              <td class='border-top border-right'>".$amount."</td>
           </tr>
           <tr>
               <td></td>
               <td></td>
               <td></td>
               <td align='right' class='border-left'>Total:</td>
-              <td class='border-right'>$875.00</td>
+              <td class='border-right'>".$amount."</td>
           </tr>
           <tr>
               <td></td>
               <td></td>
               <td></td>
               <td align='right' class='border-left'>Amount Paid:</td>
-              <td class='border-right'>$875.00</td>
+              <td class='border-right'>".$amount."</td>
           </tr>
           <tr>
               <td></td>
