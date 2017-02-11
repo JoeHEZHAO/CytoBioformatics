@@ -153,12 +153,41 @@ class Cyto_bioformatics extends CI_Controller {
     
     function createPdf(){
 		$this->load->helper('pdf_helper');
-    /*
-        ---- ---- ---- ----
-        your code here
-        ---- ---- ---- ----
-    */
-        $data['name'] = 'hezhao';
+
+		// $data['billEmail'] = $_SESSION['billingAddr']['billEmail'];
+		// $data['streetAddress'] = $_SESSION['billingAddr']['streetAddress'];
+		// $data['zipCode'] = $_SESSION['billingAddr']['zipCode'];
+		// $data['city'] = $_SESSION['billingAddr']['city'];
+		// $data['country'] = $_SESSION['billingAddr']['country'];
+		// $data['transId'] = $_SESSION['billingAddr']['transId'];
+
+		// $data['accountNumber'] = $_SESSION['transInfo']['accountNumber'];
+		// $data['accountType'] = $_SESSION['transInfo']['accountType'];
+		// $data['amount'] = $_SESSION['transInfo']['amount'];
+		// $data['TranDate'] = $_SESSION['transInfo']['TranDate'];
+		// $data['firstname'] = $_SESSION['transInfo']['firstname'];
+		// $data['lastname'] = $_SESSION['transInfo']['lastname'];
+		// $data['quoteIds'] = $_SESSION['quoteIds'];
+		// $data['quoteCharges'] = $_SESSION['quoteCharges'];
+
+		// dummy data
+		$data['billEmail'] = 'zhaohezzu@gmail.com';
+		$data['streetAddress'] = '366 Maguire Village APt #4';
+		$data['zipCode'] = '32608';
+		$data['city'] = 'Gainesville';
+		$data['country'] = 'USA';
+		$data['transId'] = '123456789';
+
+		$data['accountNumber'] = 'xxxx 6676';
+		$data['accountType'] = 'VISA';
+		$data['amount'] = '105';
+		$data['TranDate'] = '2017-02-11';
+		$data['firstname'] = 'He';
+		$data['lastname'] = 'Zhao';
+		$data['quoteIds'] = array('123', '456');
+		$data['quoteCharges'] = array('45', '60');
+
+		$data['name'] = 'hezhao';
 	    $this->load->view('pdf_example', $data);
 	}
     
