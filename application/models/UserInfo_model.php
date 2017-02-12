@@ -100,8 +100,8 @@ date_default_timezone_set('America/New_York');
             if (!empty($data = $this->db->get()->row())) {
                 $currentdate = new DateTime();
                 $tokendate = date_create_from_format('Y-m-j H:i:s', $data->created_at);
-                $date_diff = $currentdate->diff($tokendate);
-                if ($date_diff->d == 0) {
+                $total_diff = abs($currentdate->getTimestamp() - $tokendate->getTimestamp());
+                if ($total_diff < 86400) {
                     return $data->email;
                 } else {
                     return;

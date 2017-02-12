@@ -205,6 +205,14 @@
                 </div><!-- row -->
             </div><!-- container -->
             
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-5 col-sm-6 text-block">
+                        <p style="font-size: 11pt;">This work was supported by the National Institute of Arthritis and Musculoskeletal and Skin Diseases of the National Institutes of Health under Award Number 1R41AR064596 and by the National Institute of Aging under Award Number 9R42AG055375. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.</p>
+                    </div>
+                </div>
+            </div>
+            
             <section class="full-section dark-section">
                 <div class="full-section-container">
                     <div class="container">
