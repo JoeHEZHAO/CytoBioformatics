@@ -81,6 +81,8 @@ class Cyto_bioformatics extends CI_Controller {
 		if (isset($_SESSION['firstname']) && !empty($_SESSION['firstname'])) {
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
+            $data['email'] = $_SESSION['email'];
+            $data['organization'] = $_SESSION['organization'];
 			$this->load->view('accept_payment', $data);
 		}
 	}
@@ -144,10 +146,10 @@ class Cyto_bioformatics extends CI_Controller {
 		$this->load->model('TransactionRecord_model');
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
 			$this->createPdf();
-			$this->load->model('email_receipt_model');
-			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo'], $_SESSION['email']);
+			$this->load->model('Email_model');
+			$this->Email_model->send_mail($data, $_SESSION['transInfo'], $_SESSION['email']);
 			echo "Ok";
-		}else{
+		} else {
 			echo "failed";
 		}
 	}
@@ -211,6 +213,26 @@ class Cyto_bioformatics extends CI_Controller {
 		$this->TransactionRecord_model->rewriteQuoteDb($quoteIds);
 		echo 'Ok';
 	}
+    
+    function forgot_password() {
+        $this->load->view('forgot_password');
+    }
+    
+    function password_reset() {
+        $data['email'] = $_SESSION['email'];
+        $this->load->view('password_reset', $data);
+    }
+    
+    function password_reset_token($token) {
+        $this->load->model('UserInfo_model');
+        $email = $this->UserInfo_model->check_password_token($token);
+        if(!empty($email)) {
+            $data['email'] = $email;
+            $this->load->view('password_reset', $data);
+        } else {
+            echo "Error: invalid/expired token.";    
+        }
+    }
 	
 }
 /**

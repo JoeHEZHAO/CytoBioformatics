@@ -8,11 +8,11 @@
 			  parent::__construct();
 		 }
 
-		function register($email, $firstname, $lastname, $password, $UniqueID)
+		function register($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)
 		{
 
 			$this->load->model('UserInfo_model');
-			if ($this->UserInfo_model->insert($email, $firstname, $lastname, $password, $UniqueID)) {
+			if ($this->UserInfo_model->insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)) {
 				return true;
 			}else{
 				return false;

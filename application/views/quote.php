@@ -103,14 +103,23 @@
                             <label>
                                 First Name<span class="req">*</span>
                             </label>
-                            <input type="text" name="FirstName" required autocomplete="off" />
+                            <!-- automatically fills if available in session -->
+                            <?php if(!empty($_SESSION['firstname'])) {  ?>
+                                <input type="text" name="FirstName" value="<?php echo $_SESSION['firstname']; ?>" required autocomplete="off" />
+                            <?php }else{  ?>
+                                <input type="text" name="FirstName" value="" required autocomplete="off" />
+                            <?php } ?>
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Last Name<span class="req">*</span>
                             </label>
-                            <input type="text" name="LastName" required autocomplete="off"/>
+                            <?php if(!empty($_SESSION['lastname'])) {  ?>
+                                <input type="text" name="LastName" value="<?php echo $_SESSION['lastname']; ?>" required autocomplete="off" />
+                            <?php }else{  ?>
+                                <input type="text" name="LastName" value="" required autocomplete="off" />
+                            <?php } ?>
                         </div>
                     </div>
 
@@ -118,21 +127,33 @@
                         <label>
                             Email Address<span class="req">*</span>
                         </label>
-                        <input type="email" name="email" required autocomplete="off"/>
+                        <?php if(!empty($_SESSION['email'])) {  ?>
+                            <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" required autocomplete="off" />
+                        <?php }else{  ?>
+                             <input type="email" name="email" value="" required autocomplete="off" />
+                        <?php } ?>
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Organization<span class="req">*</span>
                         </label>
-                        <input type="organization" name="organization" required autocomplete="off"/>
+                        <?php if(!empty($_SESSION['organization'])) {  ?>
+                            <input type="organization" name="organization" value="<?php echo $_SESSION['organization']; ?>" required autocomplete="off" />
+                        <?php }else{  ?>
+                             <input type="organization" name="organization" value="" required autocomplete="off" />
+                        <?php } ?>
                     </div>
                     
                     <div class="field-wrap">
                         <label>
                             Phone Number
                         </label>
-                        <input type="phone" name="phone" required autocomplete="off"/>
+                        <?php if(!empty($_SESSION['phone'])) {  ?>
+                            <input type="phone" name="phone" value="<?php echo $_SESSION['phone']; ?>" required autocomplete="off" />
+                        <?php }else{  ?>
+                             <input type="phone" name="phone" value="" required autocomplete="off" />
+                        <?php } ?>
                     </div>
 
                     <div class="field-wrap">

@@ -12,6 +12,7 @@ class Submitquote extends CI_Controller
         // uploads files and updates database simultaneously
         /*UPLOAD FILES*/
         $UniqueID = md5(uniqid(mt_rand(), true));
+//        $rootdir = '/home/cytoinfo/public_html/uploads/'; // server
         $rootdir = './uploads/';
         $config['upload_path'] = $rootdir . $UniqueID;
         $config['allowed_types'] = 'gif|jpg|png';
@@ -21,7 +22,7 @@ class Submitquote extends CI_Controller
         // creates path if does not exist
         if (!is_dir($config['upload_path'])) {
             mkdir($config['upload_path'], 0777, true);
-            chmod($rootdir, 0777);
+//            chmod($rootdir, 0777);
             chmod($config['upload_path'], 0777);
         }
         
@@ -33,11 +34,13 @@ class Submitquote extends CI_Controller
         $file0 = $this->check_filename($inputname0);
         $file1 = $this->check_filename($inputname1);
         $file2 = $this->check_filename($inputname2);
+        
         // uploads files one-by-one to server
+//        echo "uploading files";
         $resp0 = $this->do_upload_onefile($inputname0, $file0);
         $resp1 = $this->do_upload_onefile($inputname1, $file1);
         $resp2 = $this->do_upload_onefile($inputname2, $file2);
-                
+        
         /*UPDATE DATABASE*/
 		$this->load->model('Submitquote_model');
         
@@ -94,8 +97,7 @@ class Submitquote extends CI_Controller
             if (!$this->upload->do_upload($inputname)) {
                 // if fails, returns an error
                 return array('error' => $this->upload->display_errors());
-            }
-            else {
+            } else {
                 // if succeeds, returns a data array
                 return array('upload_data' => $this->upload->data());
             }

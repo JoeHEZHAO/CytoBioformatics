@@ -1,3 +1,17 @@
+$(document).ready(function() {
+    $('.form').find('input, textarea').each(function(e) {
+        var $this = $(this),
+            label = $this.prev('label');
+        
+        if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+        console.log('123');
+    });
+});
+
 // changes activity and appearance of input and textarea fields
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   var $this = $(this),
@@ -57,16 +71,6 @@ $('#submitquote').submit(function() {
     var filename1 = _checkFile("input[name='filename1']");
     var filename2 = _checkFile("input[name='filename2']");
     
-    // console.log(firstname);
-    // console.log(lastname);
-    // console.log(email);
-    // console.log(organization);
-    // console.log(phone);
-    // console.log(message);
-    // console.log(filename0);
-    // console.log(filename1);
-    // console.log(filename2);
-    
     var myFormData = new FormData(this);
     $.ajax({
         method: "POST",
@@ -83,6 +87,9 @@ $('#submitquote').submit(function() {
             else{
                 window.location.replace($('#submitquote').attr('action') + '/Submitquote/quote_success');
 //                alert(response);
+//                console.log("response: ");
+//                console.log(response);
+//                console.log("\n");
             }
             
         },

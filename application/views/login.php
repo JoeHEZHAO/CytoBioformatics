@@ -22,7 +22,7 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
+          <h1>Create New Account</h1>
 
           <label id="error_signup" style="display: none; position: relative; color: red; font-size: 13px; left: 0; bottom: 21px;"></label>
             
@@ -51,6 +51,20 @@
 
             <div class="field-wrap">
               <label>
+                Organization
+              </label>
+              <input type="text" name="organization" autocomplete="off"/>
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Phone Number
+              </label>
+              <input type="text" name="phone" autocomplete="off"/>
+            </div>
+
+            <div class="field-wrap">
+              <label>
                 Email Address<span class="req">*</span>
               </label>
               <input type="email" name="email" required autocomplete="off"/>
@@ -58,9 +72,16 @@
           
             <div class="field-wrap">
               <label>
-                Set A Password<span class="req">*</span>
+                Set A Password (Min. 8 characters)<span class="req">*</span>
               </label>
               <input type="password" name="password" required autocomplete="off"/>
+            </div>
+          
+            <div class="field-wrap">
+              <label>
+                Confirm Password<span class="req">*</span>
+              </label>
+              <input type="password" name="password_c" required autocomplete="off"/>
             </div>
           
             <button type="submit" class="button button-block">Get Started</button>
@@ -89,7 +110,7 @@
               <input type="password" name="password_login" required autocomplete="off"/>
             </div>
           
-            <!--<p class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/forgot_password'); ?>">Forgot Password?</a></p>-->
+            <p class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/forgot_password'); ?>">Forgot Password?</a></p>
           
             <button class="button button-block">Log In</button>
           

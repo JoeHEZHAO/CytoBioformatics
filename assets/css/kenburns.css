@@ -12,8 +12,8 @@ the images will fade over one another and not move.
 */
 #kenburns-slideshow {
 	position: absolute;
-    width: 800px;
-	height: 800px;
+    width: 50%;
+	height: 100%;
     right: 0px;
 	background-color: #282a37;
 	z-index: 1;

@@ -8,13 +8,15 @@ date_default_timezone_set('America/New_York');
 			parent::__construct();
 		}
 
-		function insert($email, $firstname, $lastname, $password, $UniqueID)
+		function insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)
 		{
 			$data = array(
 				'firstname'   => $firstname,
 				'lastname' => $lastname,
 				'email'      => $email,
 				'password'   => $password,
+                'organization' => $organization,
+                'phone' => $phone,
 				'created_at' => date('Y-m-j H:i:s'),
 				'ID' => $UniqueID
 			);
@@ -56,11 +58,79 @@ date_default_timezone_set('America/New_York');
 
 		function removeUser($email, $password){
 
+		}
+        
+        
+        // For RESETPASSWORD
+        function insert_resetpassword($email, $token)
+		{
+			$data = array(
+				'email'   => $email,
+				'token' => $token,
+				'created_at' => date('Y-m-j H:i:s')
+			);
 
+			if ($this->db->insert('ResetPassword', $data)) {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+        
+        function replace_resetpassword($email, $token)
+		{
+			$data = array(
+				'email'   => $email,
+				'token' => $token,
+				'created_at' => date('Y-m-j H:i:s')
+			);
 
-
+			if ($this->db->replace('ResetPassword', $data)) {
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
 
+        function check_password_token($token) {
+            $this->db->from('ResetPassword');
+            $this->db->where('token', $token);
+            if (!empty($data = $this->db->get()->row())) {
+                $currentdate = new DateTime();
+                $tokendate = date_create_from_format('Y-m-j H:i:s', $data->created_at);
+                $total_diff = abs($currentdate->getTimestamp() - $tokendate->getTimestamp());
+                if ($total_diff < 86400) {
+                    return $data->email;
+                } else {
+                    return;
+                }
+            } else {
+                return;
+            }
+        }
+        
+        function check_resetpassword_exists($email) {
+            $this->db->from('ResetPassword');
+            $this->db->where('email', $email);
+            if (!empty($data = $this->db->get()->row())) {
+				return true;
+			} else {
+				return false;
+			}	
+        }
+        
+        function reset_password($email, $password) {
+			$this->db->set('password', $password);
+            $this->db->where('email', $email);
+			if ($this->db->update('UserInfo')) {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 
 	}
 

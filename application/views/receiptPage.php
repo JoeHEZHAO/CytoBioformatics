@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title>Your Receipt</title>
     
     <style>
     .invoice-box{
@@ -265,7 +265,7 @@
                 <td>
                    <?php echo $country; ?>
                 </td>
-            </tr
+            </tr>
 
             <tr class="item last">
                 <td>
