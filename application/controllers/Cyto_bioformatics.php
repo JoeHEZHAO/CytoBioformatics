@@ -146,8 +146,8 @@ class Cyto_bioformatics extends CI_Controller {
 		$this->load->model('TransactionRecord_model');
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
 			$this->createPdf();
-			$this->load->model('email_receipt_model');
-			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo'], $_SESSION['email']);
+			$this->load->model('Email_model');
+			$this->Email_model->send_mail($data, $_SESSION['transInfo'], $_SESSION['email']);
 			echo "Ok";
 		} else {
 			echo "failed";

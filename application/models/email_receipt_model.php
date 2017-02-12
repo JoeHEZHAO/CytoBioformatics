@@ -1,14 +1,14 @@
 <?php 
 date_default_timezone_set('America/New_York');
 
-class Email_model extends CI_Model{
+   class email_receipt_model extends CI_Model{
+ 
+      function __construct() { 
+         parent::__construct(); 
+         $this->load->helper('form'); 
+      } 
 
-    function __construct() { 
-        parent::__construct(); 
-        $this->load->helper('form'); 
-    } 
-
-    public function send_mail($billAddr,$transInfo,$email) { 
+      public function send_mail($billAddr,$transInfo,$email) { 
 
          $config = Array(
               'protocol' => 'smtp',
@@ -56,9 +56,10 @@ class Email_model extends CI_Model{
           $this->email->attach($fileLocation.'/output.pdf');
           $this->email->send();
           echo $this->email->print_debugger();
+
       }
 
-    public function send_passwordreset($data) { 
+      public function send_passwordreset($data) { 
         
         // check email is in database and update database if needed
         $this->db->from('UserInfo');
@@ -74,11 +75,11 @@ class Email_model extends CI_Model{
             // if email exists, modify row; if not, insert new row 
             if ($this->UserInfo_model->check_resetpassword_exists($data['email'])) {
                 if (!($this->UserInfo_model->replace_resetpassword($data['email'], $token))) {
-				    return "generate_token_failed";
-			     }
+            return "generate_token_failed";
+           }
             } else if (!($this->UserInfo_model->insert_resetpassword($data['email'], $token))) {
-				return "generate_token_failed";
-			}
+        return "generate_token_failed";
+      }
             
             // create email to send to user
             $config = Array(
@@ -110,5 +111,5 @@ class Email_model extends CI_Model{
 //            echo $this->email->print_debugger();
         }
     }
-} 
+   } 
 ?>

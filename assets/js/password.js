@@ -48,12 +48,13 @@ $('.tab a').on('click', function (e) {
 $('#reset_password_email').submit(function() {
     
     var email =  $("input[name='email']").val();
+    // console.log($('#reset_password_email').attr('action') + '/Email/password_reset');
     $.ajax({
         method: "POST",
         url: $('#reset_password_email').attr('action') + '/Email/password_reset',
         data: { email : email },
         success: function (response) {
-//            console.log(response);
+           // console.log(response);
             if (response == 'email_not_exist') {
                 $("#error_reset").text("Email not found. Please try another.");
                 $("#error_reset").css("color", "red");
