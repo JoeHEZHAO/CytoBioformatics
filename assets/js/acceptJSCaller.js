@@ -127,7 +127,7 @@ function storeRecord(response){
 
 function saveBillingAddress(transId){
 
-$.ajax({
+    $.ajax({
 		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/saveBillingAddress',
 		data: { 
 			billEmail: document.getElementById('email').value, 

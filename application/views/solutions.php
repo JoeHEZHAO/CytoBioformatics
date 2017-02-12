@@ -117,7 +117,7 @@
                                 <!--<i class="bronx-icon-heart"></i>-->
                                 <div class="service-box-content">
                                     <h6><a href="#">Cell Segmentation</a></h6>
-                                    <p>Find the boundary coordinates of up to thousands of cells per image, enabling robust cross-sectional area calculations, background removal, shape modeling, and more.</p>
+                                    <p>Find the boundary coordinates of thousands of cells per image, enabling robust cross-sectional area calculations, background removal, shape modeling, and more.</p>
                                 </div><!-- service-box-content -->
                             </div><!-- service-box -->
 
@@ -157,7 +157,7 @@
 
                                     <h6><a href="#">Image Cleaning</a></h6>
 
-                                    <p>Denoise, contrast-enhance, and sharpen your images so that they are as clear to the naked eye as possible.</p>
+                                    <p>Improve the clarity of your images so that they are as sharp to the naked eye as possible.</p>
 
                                 </div><!-- service-box-content -->
 
@@ -292,9 +292,9 @@
                                         <!--<i class="bronx-icon-food"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="#">Neuroendocrine Tumor</a></h6>
+                                            <h6><a href="#">Pancreas</a></h6>
 
-                                            <p>Lung cell detection, tumor segmentation, tumor grading, and more are practical solutions with our platform.</p>
+                                            <p>Use our services for detecting islets, identifying neuroendocrine tumors, and distinguishing between alpha and beta cells.</p>
 
                                         </div><!-- service-box-content -->
 
@@ -311,7 +311,7 @@
 
                                             <h6><a href="#">Breast</a></h6>
 
-                                            <p>Model muscular dystrophy and myositis easily with reliable muscle fiber segmentation and inflammatory cell detection.</p>
+                                            <p>Our platform enables lung cell detection, tumor segmentation, tumor grading, and more.</p>
 
                                         </div><!-- service-box-content -->
 
