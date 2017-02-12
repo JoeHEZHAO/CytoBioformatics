@@ -121,7 +121,7 @@
                         <div class="row">
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
-                                Quote ID
+                                Subject
                             </div><!-- col -->
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
@@ -157,7 +157,7 @@
 						 ?> 
 							<div class="row">
 								<div class="col-sm-4 payment-table-col">
-									<?php echo substr($value['quoteId'], 0, 15)?>
+									<?php echo substr($value['subject'], 0, 15)?>
 								</div><!-- col -->
 								
 								<div class="col-sm-4 payment-table-col">
@@ -183,6 +183,7 @@
                                 <div class="col-sm-4 payment-table-col-small">
 									<?php if ($value['status'] == 'approved') { ?>
 									    <input type="checkbox" name="<?php echo $value['quoteId'] ?>" value="<?php echo $value['subTotal']?>" style="float: right;">
+									    <input type="hidden" name="<?php echo $value['quoteId']?>" value="<?php echo $value['subject']?>" style="float: right;">
 									<?php }else{  } ?>
 								</div><!-- col -->
 							</div><!-- row -->

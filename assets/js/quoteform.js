@@ -51,20 +51,21 @@ $('#submitquote').submit(function() {
     var email = $("input[name='email']").val(); 
     var organization = $("input[name='organization']").val(); 
     var phone = $("input[name='phone']").val(); 
+    var subject = $("input[name='subject']").val(); 
     var message = $("textarea[name='message']").val(); 
     var filename0 = _checkFile("input[name='filename0']");
     var filename1 = _checkFile("input[name='filename1']");
     var filename2 = _checkFile("input[name='filename2']");
     
-    console.log(firstname);
-    console.log(lastname);
-    console.log(email);
-    console.log(organization);
-    console.log(phone);
-    console.log(message);
-    console.log(filename0);
-    console.log(filename1);
-    console.log(filename2);
+    // console.log(firstname);
+    // console.log(lastname);
+    // console.log(email);
+    // console.log(organization);
+    // console.log(phone);
+    // console.log(message);
+    // console.log(filename0);
+    // console.log(filename1);
+    // console.log(filename2);
     
     var myFormData = new FormData(this);
     $.ajax({

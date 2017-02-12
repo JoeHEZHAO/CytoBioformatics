@@ -8,7 +8,7 @@ date_default_timezone_set('America/New_York');
          $this->load->helper('form'); 
       } 
 
-      public function send_mail($billAddr,$transInfo) { 
+      public function send_mail($billAddr,$transInfo,$email) { 
 
          $config = Array(
               'protocol' => 'smtp',
@@ -41,13 +41,19 @@ date_default_timezone_set('America/New_York');
           $data['firstname'] = $transInfo['firstname'];
           $data['lastname'] = $transInfo['lastname'];
 
+          $data['quoteIds'] = $_SESSION['quoteIds'];
+          $data['quoteCharges'] = $_SESSION['quoteCharges'];
+          $data['name'] = 'hezhao';
+
           // $list = array('...@gmail.com');
           $this->email->to($billAddr['billEmail']);
           $this->email->subject('Auto-Receipt');
           // $this->email->message($email_body);
           $this->email->message($this->load->view('email_receipt',$data, true));
-          $fileLocation = '/Users/zhaohe/htdocs/localhost/';
-          $this->email->attach($fileLocation.'output.pdf');
+          // $this->load->view('pdf_example', $data);
+          $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
+          var_dump($fileLocation.'/output.pdf');
+          $this->email->attach($fileLocation.'/output.pdf');
           $this->email->send();
           echo $this->email->print_debugger();
 

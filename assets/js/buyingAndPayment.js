@@ -4,7 +4,10 @@ $(document).ready(function() {
 		    var quoteIds = [];
 		    var quoteCharges = [];
 		    var totalCharge = 0;
+			var subjects = [];
 			$('input:checkbox:checked').each(function () {
+				// console.log($("input[type='hidden'][name='" + $(this).attr('name') + "']").attr('value'));
+				subjects.push($("input[type='hidden'][name='" + $(this).attr('name') + "']").attr('value'));
 			    quoteIds.push($(this).attr('name'));
 			    quoteCharges.push($(this).attr('value'));
 			    totalCharge = totalCharge + parseFloat($(this).attr('value'));
@@ -14,7 +17,7 @@ $(document).ready(function() {
 				$.ajax({
 					type: "POST",
 					url: $('#checkout').attr('name') + '/Cyto_bioformatics/Checkout',
-					data: { TotelCharge : totalCharge, quoteIds: quoteIds,  quoteCharges : quoteCharges },
+					data: { TotelCharge : totalCharge, quoteIds: quoteIds,  quoteCharges : quoteCharges, subjects : subjects },
 					success: function (response) {
 						if (response == 'success!') {
 							window.location.replace($('#checkout').attr('name') + '/Cyto_bioformatics/paymentPage');

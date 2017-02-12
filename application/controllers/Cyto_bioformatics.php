@@ -65,6 +65,7 @@ class Cyto_bioformatics extends CI_Controller {
 			$_SESSION['TotelCharge'] = $_POST['TotelCharge'];
 			$_SESSION['quoteIds'] = $_POST['quoteIds'];
 			$_SESSION['quoteCharges'] = $_POST['quoteCharges'];	
+			$_SESSION['subjects'] = $_POST['subjects'];
 	        echo "success!";
 		}else{
 			echo 'failed';
@@ -129,7 +130,6 @@ class Cyto_bioformatics extends CI_Controller {
 	}
 
 	function saveBillingAddress(){
-
 		$data = array(
 				'billEmail'   => $_POST['billEmail'],
 				'streetAddress' => $_POST['streetAddress'],
@@ -143,8 +143,9 @@ class Cyto_bioformatics extends CI_Controller {
 		$_SESSION['billingAddr'] = $data; 
 		$this->load->model('TransactionRecord_model');
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
+			$this->createPdf();
 			$this->load->model('email_receipt_model');
-			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo']);
+			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo'], $_SESSION['email']);
 			echo "Ok";
 		}else{
 			echo "failed";
@@ -153,42 +154,9 @@ class Cyto_bioformatics extends CI_Controller {
     
     function createPdf(){
 		$this->load->helper('pdf_helper');
-
-		// $data['billEmail'] = $_SESSION['billingAddr']['billEmail'];
-		// $data['streetAddress'] = $_SESSION['billingAddr']['streetAddress'];
-		// $data['zipCode'] = $_SESSION['billingAddr']['zipCode'];
-		// $data['city'] = $_SESSION['billingAddr']['city'];
-		// $data['country'] = $_SESSION['billingAddr']['country'];
-		// $data['transId'] = $_SESSION['billingAddr']['transId'];
-
-		// $data['accountNumber'] = $_SESSION['transInfo']['accountNumber'];
-		// $data['accountType'] = $_SESSION['transInfo']['accountType'];
-		// $data['amount'] = $_SESSION['transInfo']['amount'];
-		// $data['TranDate'] = $_SESSION['transInfo']['TranDate'];
-		// $data['firstname'] = $_SESSION['transInfo']['firstname'];
-		// $data['lastname'] = $_SESSION['transInfo']['lastname'];
-		// $data['quoteIds'] = $_SESSION['quoteIds'];
-		// $data['quoteCharges'] = $_SESSION['quoteCharges'];
-
-		// dummy data
-		$data['billEmail'] = 'zhaohezzu@gmail.com';
-		$data['streetAddress'] = '366 Maguire Village APt #4';
-		$data['zipCode'] = '32608';
-		$data['city'] = 'Gainesville';
-		$data['country'] = 'USA';
-		$data['transId'] = '123456789';
-
-		$data['accountNumber'] = 'xxxx 6676';
-		$data['accountType'] = 'VISA';
-		$data['amount'] = '105';
-		$data['TranDate'] = '2017-02-11';
-		$data['firstname'] = 'He';
-		$data['lastname'] = 'Zhao';
-		$data['quoteIds'] = array('123', '456');
-		$data['quoteCharges'] = array('45', '60');
-
-		$data['name'] = 'hezhao';
-	    $this->load->view('pdf_example', $data);
+		$this->load->model('generate_pdf_receipt');
+		$this->generate_pdf_receipt->createPdf($_SESSION['billingAddr'], $_SESSION['transInfo'], $_SESSION['subjects'], $_SESSION['quoteCharges'], $_SESSION['email']);
+		// var_dump($_SESSION['ID']);
 	}
     
     function demo()

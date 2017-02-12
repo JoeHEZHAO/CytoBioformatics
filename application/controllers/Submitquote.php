@@ -47,6 +47,7 @@ class Submitquote extends CI_Controller
         $email = $this->security->xss_clean($this->input->post('email'));
         $organization = $this->security->xss_clean($this->input->post('organization'));
         $phone = $this->security->xss_clean($this->input->post('phone'));
+        $subject = $this->security->xss_clean($this->input->post('subject'));
         $message = $this->security->xss_clean($this->input->post('message'));
         
         // submit to database
@@ -55,6 +56,7 @@ class Submitquote extends CI_Controller
                                               $email, 
                                               $organization, 
                                               $phone,
+                                              $subject,
                                               $message,
                                               $UniqueID,
                                               $file0, 

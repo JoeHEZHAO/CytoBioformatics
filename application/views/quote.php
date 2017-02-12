@@ -134,6 +134,13 @@
                         </label>
                         <input type="phone" name="phone" required autocomplete="off"/>
                     </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Subject<span class="req">*</span>
+                        </label>
+                        <input type="subject" name="subject" required autocomplete="off"/>
+                    </div>
                     
                     <div class="field-wrap-message">
                         <label>
