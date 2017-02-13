@@ -18,6 +18,7 @@ class generate_pdf_receipt extends CI_Model {
 		$accountNumber = $transInfo['accountNumber'];
 		$accountType = $transInfo['accountType'];
 		$amount = $transInfo['amount'];
+		$amount = number_format(floatval($amount), 2);
 		$TranDate = $transInfo['TranDate'];
 		$firstname = $transInfo['firstname'];
 		$lastname = $transInfo['lastname'];
@@ -39,12 +40,13 @@ class generate_pdf_receipt extends CI_Model {
 
 		$items = '';
 		foreach ($subjects as $key => $value) {
+			$newChargeFormat = number_format(floatval($quoteCharges[$key]), 2);
 		    $items = $items."<tr class='item-row'>
 		            <td>".$value."</td>
 		            <td class='description'></td>
-		            <td>".$quoteCharges[$key]."</td>
+		            <td>$".$newChargeFormat."</td>
 		            <td>1</td>
-		            <td>".$quoteCharges[$key]."</td>
+		            <td>$".$newChargeFormat."</td>
 		        </tr>";
 		};
 
@@ -161,21 +163,21 @@ class generate_pdf_receipt extends CI_Model {
 		              <td></td>
 		              <td></td>
 		              <td align='right' class='border-top border-left'>Subtotal:</td>
-		              <td class='border-top border-right'>".$amount."</td>
+		              <td class='border-top border-right'>$".$amount."</td>
 		          </tr>
 		          <tr>
 		              <td></td>
 		              <td></td>
 		              <td></td>
 		              <td align='right' class='border-left'>Total:</td>
-		              <td class='border-right'>".$amount."</td>
+		              <td class='border-right'>$".$amount."</td>
 		          </tr>
 		          <tr>
 		              <td></td>
 		              <td></td>
 		              <td></td>
 		              <td align='right' class='border-left'>Amount Paid:</td>
-		              <td class='border-right'>".$amount."</td>
+		              <td class='border-right'>$".$amount."</td>
 		          </tr>
 		          <tr>
 		              <td></td>
@@ -185,14 +187,14 @@ class generate_pdf_receipt extends CI_Model {
 		              <td class='border-top border-right border-bottom highlight'>$0.00</td>
 		          </tr>
 
-		        </table>
+		        </table>"
 
-		        <div id='terms'>
-		          <h5>Terms</h5>
-		          <p>Services will not be completed until balance due is paid in full.</p>
-		        </div>
+		        // <div id='terms'>
+		        //   <h5>Terms</h5>
+		        //   <p>Services will not be completed until balance due is paid in full.</p>
+		        // </div>
 
-		    </div>
+		    "</div>
 		</body>
 		    
 		</html>
