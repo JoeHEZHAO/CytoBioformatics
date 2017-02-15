@@ -13,7 +13,7 @@ class Submitquote extends CI_Controller
         /*UPLOAD FILES*/
         $UniqueID = md5(uniqid(mt_rand(), true));
 //        $rootdir = '/home/cytoinfo/public_html/uploads/'; // server
-        $rootdir = './uploads/';
+        $rootdir = '/var/www/html/Codeigniter/uploads/';
         $config['upload_path'] = $rootdir . $UniqueID;
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = 10240;
@@ -36,7 +36,6 @@ class Submitquote extends CI_Controller
         $file2 = $this->check_filename($inputname2);
         
         // uploads files one-by-one to server
-//        echo "uploading files";
         $resp0 = $this->do_upload_onefile($inputname0, $file0);
         $resp1 = $this->do_upload_onefile($inputname1, $file1);
         $resp2 = $this->do_upload_onefile($inputname2, $file2);

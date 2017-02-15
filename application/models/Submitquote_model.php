@@ -29,7 +29,7 @@ class Submitquote_model extends CI_Model
             'subject' => $subject,
             'created_at' => date('Y-m-j H:i:s'),
             'message' => $message,
-            'quoteID' => $QuoteID,
+            'quoteId' => $QuoteID,
             'filename0' => $filename0,
             'filename1' => $filename1,
             'filename2' => $filename2,
@@ -38,8 +38,7 @@ class Submitquote_model extends CI_Model
 
         if ($this->db->insert('Quotes', $data)) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

@@ -49,13 +49,13 @@ class Email_model extends CI_Model{
           $this->email->to($billAddr['billEmail']);
           $this->email->subject('Auto-Receipt');
           // $this->email->message($email_body);
-          $this->email->message($this->load->view('email_receipt',$data, true));
+          $this->email->message($this->load->view('email_receipt', $data, true));
           // $this->load->view('pdf_example', $data);
           $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
-          var_dump($fileLocation.'/output.pdf');
+//          var_dump($fileLocation.'/output.pdf');
           $this->email->attach($fileLocation.'/output.pdf');
           $this->email->send();
-          echo $this->email->print_debugger();
+//          echo $this->email->print_debugger();
       }
 
     public function send_passwordreset($data) { 
