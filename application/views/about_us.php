@@ -84,7 +84,7 @@
 							
 							<h1>About us</h1>
 							
-							<p class="tp-caption text-center text">Imaging data at your fingertips</p>
+							<p class="tp-caption text">Imaging data at your fingertips</p>
 							
 							<!--<a class="go-to-section" href="#page-content"><i class="bronx-icon-mouse"></i></a>-->
 							

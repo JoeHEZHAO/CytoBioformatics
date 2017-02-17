@@ -110,7 +110,9 @@
         wrapper.html(img);
 
         //First check if the browser supports 3D transitions, initialize the CSS accordingly
-        if(this.has3d) {
+        if(this.has3d) { 
+//            img.css({'width':'1000px'}); //ADDED BY MASON
+//            img.css({'height':'1000px'}); //ADDED BY MASON
             img.css({'-webkit-transform-origin':'left top'});
             img.css({'-moz-transform-origin':'left top'});
             img.css({'-webkit-transform':'scale('+that.options.scale+') translate3d(0,0,0)'});

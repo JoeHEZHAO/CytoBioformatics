@@ -233,6 +233,11 @@ class Cyto_bioformatics extends CI_Controller {
             echo "Error: invalid/expired token.";    
         }
     }
+    
+    function test_mimetype() {
+        echo "finfo:\t";
+        var_dump(@finfo_open(FILEINFO_MIME_TYPE));
+    }
 	
 }
 /**
