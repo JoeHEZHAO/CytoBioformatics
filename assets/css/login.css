@@ -84,18 +84,33 @@ label {
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  font-size: 22px;
 }
 label .req {
   margin: 2px;
   color: #00cce0;
 }
 
+@media (min-width: 769px) {
+    label {
+        font-size: 22px;
+    }
+    label.active {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    label {
+        font-size: 14px;
+    }
+    label.active {
+        font-size: 11px;
+    }
+}
+
 label.active {
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
   left: 2px;
-  font-size: 14px;
 }
 label.active .req {
   opacity: 0;

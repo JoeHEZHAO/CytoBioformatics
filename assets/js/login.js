@@ -97,7 +97,7 @@ $('#register').submit(function() {
                 data: { email: email, password: pwd, FirstName : firstname, LastName : lastname, organization : organization, phone : phone },
                 success: function (response) {
 
-                    if (response == 'email address already existed') {
+                    if (response == 'Email address already exists.') {
 
                         $("#error_signup").text("Duplicate email address. Please try another.");
                         $("#error_signup").css("display", "block");

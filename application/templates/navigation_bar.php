@@ -62,7 +62,7 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li class="dropdown">
+                            <li>
                                     <a href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Login | Sign Up</a>
                             </li>
                         <?php endif; ?>

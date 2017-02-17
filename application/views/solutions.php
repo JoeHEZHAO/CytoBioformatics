@@ -79,10 +79,10 @@
 		
 		<!-- PAGE CONTENT -->
 		<div class="page-solutions">
-			<img class="backing-image" src="<?php echo base_url('images/index/revolution-slider/J33-QUAD-1_01_3.jpg'); ?>" alt="">
+			<img class="backing-image" src="<?php echo base_url('images/backgrounds/solutions.jpg'); ?>" alt="">
 							
             <!--<div class="tp-caption">
-                 <img src="<?php echo base_url('images/index/revolution-slider/J33-QUAD-1_01_3.jpg'); ?>" alt="" style="width: 100%;">
+                 <img src="<?php echo base_url('images/backgrounds/solutions.jpg'); ?>" alt="" style="width: 100%;">
             </div>-->
 
             <div class="page-solutions-text">
@@ -141,7 +141,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <div class="solutions-image-box">
-                                    <img class="bg-img" src="<?php echo base_url('images/services/classification_bg.png'); ?>" alt="">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/classification_bg.jpg'); ?>" alt="">
                                     <img class="hv-img" src="<?php echo base_url('images/services/classification_overlay.png'); ?>" alt="">
                                 </div>
                                 <!--<i class="bronx-icon-data"></i>-->

@@ -90,9 +90,14 @@
             <!-- KEN BURNS SLIDER -->
             <div class="intro-section">
                 <div id="kenburns-slideshow"></div>
+<!--
+                <div class="intro-section-imgdiv">
+                    <img class="intro-section-sideimg" src="<?php echo base_url('images/kenburns/kb-0.jpg'); ?>" alt=""/>
+                </div>
+-->
                 
-                <div class="intro-section rectangle" style="z-index: 1;">
-                    <img class="intro-section-image" src="<?php echo base_url('images/index/revolution-slider/cyto_dark.png'); ?>" alt="">
+                <div class="intro-section rectangle" style="z-index: 1; background-image: url(<?php echo base_url('images/backgrounds/intro_bg.png'); ?>); background-repeat: no-repeat;">
+                    <!--<img class="intro-section-image" src="<?php echo base_url('images/index/revolution-slider/cyto_dark.png'); ?>" alt="">-->
                     
                     <div class="intro-section-card">
                         <div class="intro-section-small-title">

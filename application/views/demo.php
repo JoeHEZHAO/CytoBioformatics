@@ -67,7 +67,7 @@
 			<!-- NAVIGATION BAR -->
 			<?php include "application/templates/navigation_bar.php"; ?>
 			
-			<div id="page-header" class="parallax" data-stellar-background-ratio="0.1" style="background-image:url(images/backgrounds/page-header-1.jpg); padding: 150px 0 75px; margin-bottom: 50px;">
+			<div id="page-header" class="parallax" data-stellar-background-ratio="0.1">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
@@ -82,9 +82,19 @@
 			</div><!-- page-header -->
             
             <div class="button-panel">
-                <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo1.gif'); ?>')">Segment (NET)</button>
-                <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo2.gif'); ?>')">Segment (Muscle)</button>
-                <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo3.gif'); ?>')">Detect</button>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-4">
+                            <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo1.gif'); ?>')">Segment (NET)</button>
+                        </div>
+						<div class="col-sm-4">
+                            <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo2.gif'); ?>')">Segment (Muscle)</button>
+                        </div>
+						<div class="col-sm-4">
+                            <button class="button" onclick="loadVideo('<?php echo base_url('images/videos/webdemo3.gif'); ?>')">Detect</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <img id="gif-window" class="centered" src="" alt="">
 		</header><!-- HEADER CONTAINER -->
