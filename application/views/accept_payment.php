@@ -354,7 +354,7 @@
             <p>
                 <button type="button" id="acceptJSPayButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal">Pay</button>
 
-                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal" onclick="cancelTransaction()">Cancel </button>
+                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" onclick="cancelTransaction()">Cancel </button>
             </p>
             <br>         
         </div>
