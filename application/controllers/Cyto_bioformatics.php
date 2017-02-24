@@ -234,11 +234,14 @@ class Cyto_bioformatics extends CI_Controller {
         }
     }
     
-    function test_mimetype() {
-        echo "finfo:\t";
-        var_dump(@finfo_open(FILEINFO_MIME_TYPE));
-    }
-	
+//    function test_mimetype() {
+//        echo "finfo:\t";
+//        var_dump(finfo_open(FILEINFO_MIME_TYPE));
+//    }
+//	
+//    function print_phpinfo() {
+//        phpinfo();
+//    }
 }
 /**
 * 

@@ -54,10 +54,12 @@
               <input type="email" name="email" required autocomplete="off"/>
             </div>
               
-            <p class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Return to Login</a></p>
+            <p id="return-to-login" class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Return to Login</a></p>
           
             <button class="button button-block">Send Email</button>
           </form>
+            
+          <a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>"><button id="return-button" class="button button-block" style="display: none;">Return</button></a>
         </div>
       </div>
   </div>

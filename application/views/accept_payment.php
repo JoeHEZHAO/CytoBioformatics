@@ -35,7 +35,10 @@
     
 	<!-- BOOTSTRAP CSS -->
 	<link href="<?php echo base_url('assets/accept/bootstrap.min.css'); ?>" rel="stylesheet">
-
+	
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
+    
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	

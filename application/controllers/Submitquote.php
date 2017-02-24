@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('America/New_York');
 
 class Submitquote extends CI_Controller
 {
@@ -15,7 +16,8 @@ class Submitquote extends CI_Controller
 //        $rootdir = '/home/cytoinfo/public_html/uploads/'; // server
         $rootdir = '/var/www/html/Codeigniter/uploads/';
         $config['upload_path'] = $rootdir . $UniqueID;
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = '*';
+        $config['detect_mime'] = TRUE;
         $config['max_size'] = 10240;
         $this->load->library('upload', $config);
         

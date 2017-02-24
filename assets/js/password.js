@@ -67,6 +67,11 @@ $('#reset_password_email').submit(function() {
             } else if (response == 'success') {
                 $("#error_reset").text("An email has been sent. Please check your inbox.");
                 $("#error_reset").css("color", "white");
+                $(".field-wrap").css("display", "none");
+                $(".button").css("display", "none");
+                $("#return-button").css("display", "block");
+                $("#return-to-login").css("display", "none");
+                
             } else {
                 $("#error_reset").text("An unknown error occurred.");
                 $("#error_reset").css("color", "red");
