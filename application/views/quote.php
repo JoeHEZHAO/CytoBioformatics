@@ -113,27 +113,31 @@
                 ?>-->
                     <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                     <div class="top-row">
-                        <div class="field-wrap">
-                            <label>
-                                First Name<span class="req">*</span>
-                            </label>
-                            <!-- automatically fills if available in session -->
-                            <?php if(!empty($_SESSION['firstname'])) {  ?>
-                                <input type="text" name="FirstName" value="<?php echo $_SESSION['firstname']; ?>" required autocomplete="off" />
-                            <?php }else{  ?>
-                                <input type="text" name="FirstName" value="" required autocomplete="off" />
-                            <?php } ?>
+                        <div class="col-sm-4" style="padding:0;">
+                            <div class="field-wrap">
+                                <label>
+                                    First Name<span class="req">*</span>
+                                </label>
+                                <!-- automatically fills if available in session -->
+                                <?php if(!empty($_SESSION['firstname'])) {  ?>
+                                    <input type="text" name="FirstName" value="<?php echo $_SESSION['firstname']; ?>" required autocomplete="off" />
+                                <?php }else{  ?>
+                                    <input type="text" name="FirstName" value="" required autocomplete="off" />
+                                <?php } ?>
+                            </div>
                         </div>
 
-                        <div class="field-wrap">
-                            <label>
-                                Last Name<span class="req">*</span>
-                            </label>
-                            <?php if(!empty($_SESSION['lastname'])) {  ?>
-                                <input type="text" name="LastName" value="<?php echo $_SESSION['lastname']; ?>" required autocomplete="off" />
-                            <?php }else{  ?>
-                                <input type="text" name="LastName" value="" required autocomplete="off" />
-                            <?php } ?>
+                        <div class="col-sm-4" style="padding:0;">
+                            <div class="field-wrap">
+                                <label>
+                                    Last Name<span class="req">*</span>
+                                </label>
+                                <?php if(!empty($_SESSION['lastname'])) {  ?>
+                                    <input type="text" name="LastName" value="<?php echo $_SESSION['lastname']; ?>" required autocomplete="off" />
+                                <?php }else{  ?>
+                                    <input type="text" name="LastName" value="" required autocomplete="off" />
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
 

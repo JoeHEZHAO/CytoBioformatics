@@ -46,11 +46,6 @@
 	<!-- FANCYBOX -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
 	
-	<!-- REVOLUTION SLIDER -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/settings.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/layers.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/navigation.css'); ?>">
-	
 	<!-- OWL Carousel -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
 	
@@ -270,7 +265,7 @@
 
                                             <h6><a href="#">Muscle</a></h6>
 
-                                            <p>Model muscular dystrophy and myositis easily with reliable muscle fiber segmentation and inflammatory cell detection.</p>
+                                            <p>Model muscular dystrophy and do fiber typing with reliable muscle fiber segmentation and inflammatory cell detection.</p>
 
                                         </div><!-- service-box-content -->
 
@@ -327,7 +322,7 @@
 
                                             <h6><a href="#">Breast</a></h6>
 
-                                            <p>Our platform enables lung cell detection, tumor segmentation, tumor grading, and more.</p>
+                                            <p>Our platform enables breast cell detection, tumor segmentation, tumor grading, and more.</p>
 
                                         </div><!-- service-box-content -->
 

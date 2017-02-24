@@ -90,6 +90,7 @@
 <body>
     <div>
         <h5>Hello, <?php echo $email; ?></h5>
+        <p>This is an automated message from <a href="<?php echo base_url('index.php/cyto_bioformatics/index').'/'.$token; ?>">cytoinformatics.com</a>. You have requested to reset the password for the account associated with this email address.</p>
         <p>Please click <a href="<?php echo base_url('index.php/cyto_bioformatics/password_reset_token').'/'.$token; ?>">this link to reset your password.</a></p><br>
         <p>Note that this link will stop working after 24 hours.</p><br>
     </div>

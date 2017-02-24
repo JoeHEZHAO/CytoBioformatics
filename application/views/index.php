@@ -205,7 +205,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/pricing'); ?>">Check out our pricing model <i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
+								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/solutions'); ?>">See what we can do<i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->
@@ -213,7 +213,8 @@
 				</div><!-- full-section-container -->
 			</section><!-- full-section -->
 			
-			<!-- COUNTER EFFECTS -->
+			<br /><br />
+			<!-- COUNTER EFFECTS 
 			<section class="full-section dark-section" id="section-4">
 				<div class="full-section-container">
 					<div class="container-fluid">
@@ -221,28 +222,28 @@
 						
 							<div class="col-sm-2 visible-lg-block">
 								<a class="more-facts" href="#"><img src="<?php echo base_url('assets/images/cyto_logo_white_sharp.png'); ?>" style="width: 100px; height: 100px" alt="<?php echo base_url();?>"></a>
-							</div><!-- col -->
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="10000"></div>
 									<div class="counter-details">Images Processed</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="160"></div>
 									<div class="counter-details">Projects Completed</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="53"></div>
 									<div class="counter-details">Active Users</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
@@ -253,12 +254,12 @@
 							
 							<div class="col-sm-2 visible-lg-block">
 								<a class="more-facts" href="#"></a>
-							</div><!-- col -->
+							</div>
 							
-						</div><!-- row -->
-					</div><!-- container -->
-				</div><!-- full-section-container -->
-			</section><!-- full-section -->
+						</div>
+					</div>
+				</div>
+			</section>-->
 			
 			<!-- POWERFULL -->
 			<div class="container">

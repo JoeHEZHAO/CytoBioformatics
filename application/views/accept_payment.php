@@ -35,7 +35,10 @@
     
 	<!-- BOOTSTRAP CSS -->
 	<link href="<?php echo base_url('assets/accept/bootstrap.min.css'); ?>" rel="stylesheet">
-
+	
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
+    
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
@@ -351,7 +354,7 @@
             <p>
                 <button type="button" id="acceptJSPayButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal">Pay</button>
 
-                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal" onclick="cancelTransaction()">Cancel </button>
+                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" onclick="cancelTransaction()">Cancel </button>
             </p>
             <br>         
         </div>
