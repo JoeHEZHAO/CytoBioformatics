@@ -7,67 +7,68 @@ class Email_model extends CI_Model{
         parent::__construct(); 
         $this->load->helper('form'); 
     } 
+    
+    private function email_config() {
+         //$config = Array(
+         //     'protocol' => 'smtp',
+         //     'smtp_host' => 'ssl://smtp.googlemail.com',
+         //     'smtp_port' => 465,
+         //     'smtp_user' => 'zhaohezzu@gmail.com',
+         //     'smtp_pass' => 'Zh63963252',
+         //     'mailtype'  => 'html', 
+         //     'charset' => 'utf-8',
+         //     'wordwrap' => TRUE
+         //);
+         $config = Array(
+            'protocol' => 'sendmail',
+            'mailpath' => '/usr/sbin/sendmail',
+            'smtp_port' => 465,
+            'smtp_user' => 'service@cytoinformatics.com',
+            'smtp_pass' => 'JMN73dfuXfQV',
+            'smtp_crypto' => 'ssl',
+            'mailtype'  => 'html', 
+            'charset' => 'utf-8',
+            'wordwrap' => TRUE
+         );
+        // 465 for ssl, 587 for tls
+        return $config;
+    }
 
     public function send_mail($billAddr,$transInfo,$email) { 
 
-         $config = Array(
-              'protocol' => 'smtp',
-              'smtp_host' => 'ssl://smtp.googlemail.com',
-              'smtp_port' => 465,
-              'smtp_user' => 'zhaohezzu@gmail.com',
-              'smtp_pass' => 'Zh63963252',
-              'mailtype'  => 'html', 
-              'charset' => 'utf-8',
-              'wordwrap' => TRUE
-         );
-//         $config = Array(
-//            'protocol' => 'sendmail',
-//            'mailpath' => '/usr/sbin/sendmail',
-//            'smtp_port' => 465,
-//            'smtp_user' => 'service@cytoinformatics.com',
-//            'smtp_pass' => 'JMN73dfuXfQV',
-//            'smtp_crypto' => 'ssl',
-//            'mailtype'  => 'html', 
-//            'charset' => 'utf-8',
-//            'wordwrap' => TRUE
-//         );
-        // 465 for ssl, 587 for tls
+        $config = $this->email_config();
         
-          $this->load->library('email', $config);
-          $this->email->initialize($config);
-          $this->email->set_newline("\r\n");
-          // $email_body ="<div>This is a test for sending email through Codeigniter.</div>";
-          $this->email->from('zhaohezzu@gmail.com', 'he zhao');
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+        $this->email->set_newline("\r\n");
+        $this->email->from($config['smtp_user'], 'CytoInformatics');
 
-          $data['billEmail'] = $billAddr['billEmail'];
-          $data['streetAddress'] = $billAddr['streetAddress'];
-          $data['zipCode'] = $billAddr['zipCode'];
-          $data['city'] = $billAddr['city'];
-          $data['country'] = $billAddr['country'];
-          $data['transId'] = $billAddr['transId'];
+        $data['billEmail'] = $billAddr['billEmail'];
+        $data['streetAddress'] = $billAddr['streetAddress'];
+        $data['zipCode'] = $billAddr['zipCode'];
+        $data['city'] = $billAddr['city'];
+        $data['country'] = $billAddr['country'];
+        $data['transId'] = $billAddr['transId'];
 
-          $data['accountNumber'] = $transInfo['accountNumber'];
-          $data['accountType'] = $transInfo['accountType'];
-          $data['amount'] = $transInfo['amount'];
-          $data['TranDate'] = $transInfo['TranDate'];
-          $data['firstname'] = $transInfo['firstname'];
-          $data['lastname'] = $transInfo['lastname'];
+        $data['accountNumber'] = $transInfo['accountNumber'];
+        $data['accountType'] = $transInfo['accountType'];
+        $data['amount'] = $transInfo['amount'];
+        $data['TranDate'] = $transInfo['TranDate'];
+        $data['firstname'] = $transInfo['firstname'];
+        $data['lastname'] = $transInfo['lastname'];
 
-          $data['quoteIds'] = $_SESSION['quoteIds'];
-          $data['quoteCharges'] = $_SESSION['quoteCharges'];
-          $data['name'] = 'hezhao';
+        $data['quoteIds'] = $_SESSION['quoteIds'];
+        $data['quoteCharges'] = $_SESSION['quoteCharges'];
+        $data['name'] = 'hezhao';
 
-          // $list = array('...@gmail.com');
-          $this->email->to($billAddr['billEmail']);
-          $this->email->subject('Auto-Receipt');
-          // $this->email->message($email_body);
-          $this->email->message($this->load->view('email_receipt', $data, true));
-          // $this->load->view('pdf_example', $data);
-          $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
-//          var_dump($fileLocation.'/output.pdf');
-          $this->email->attach($fileLocation.'/output.pdf');
-          $this->email->send();
-//          echo $this->email->print_debugger();
+        // $list = array('...@gmail.com');
+        $this->email->to($billAddr['billEmail']);
+        $this->email->subject('Auto-Receipt');
+        $this->email->message($this->load->view('email_receipt', $data, true));
+//        $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
+        $fileLocation = '/home/cytoinfo/public_html/receipt/'.$email;
+        $this->email->attach($fileLocation.'/'.$data['transId'].'.pdf');
+        $this->email->send();
       }
 
     public function send_passwordreset($data) { 
@@ -90,24 +91,14 @@ class Email_model extends CI_Model{
 			     }
             } else if (!($this->UserInfo_model->insert_resetpassword($data['email'], $token))) {
 				return "generate_token_failed";
-			}
+			}            
             
-            // create email to send to user
-            $config = Array(
-                'protocol' => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'zhaohezzu@gmail.com',
-                'smtp_pass' => 'Zh63963252',
-                'mailtype'  => 'html', 
-                'charset' => 'utf-8',
-                'wordwrap' => TRUE
-            );
+            $config = $this->email_config();
             
             $this->load->library('email', $config);
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
-            $this->email->from('zhaohezzu@gmail.com', 'he zhao');
+            $this->email->from($config['smtp_user'], 'CytoInformatics');
             
             $this->email->to($data['email']);
             $this->email->subject('Auto-Receipt');

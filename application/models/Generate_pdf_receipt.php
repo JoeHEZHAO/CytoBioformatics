@@ -3,7 +3,7 @@ date_default_timezone_set('America/New_York');
 tcpdf();
 ob_start();
 
-class generate_pdf_receipt extends CI_Model {
+class Generate_pdf_receipt extends CI_Model {
 
    	public function createPdf($billingInfo, $transInfo, $subjects, $quoteCharges, $email) {
 		$this->load->helper('pdf_helper');
@@ -104,7 +104,7 @@ class generate_pdf_receipt extends CI_Model {
 		            <div style='height: 10px; background-color: #fff;'></div>
 
 		            <tr id='address'>
-		                <td class='col-left' width='260'>".$firstname.$lastname. "</td>
+		                <td class='col-left' width='260'>".$firstname." ".$lastname."</td>
 		                <td align='right' width='110'>Invoice #:</td>
 		                <td width='140'>".$transId."</td>
 		            </tr>
@@ -136,7 +136,7 @@ class generate_pdf_receipt extends CI_Model {
 		        <div id='customer'>
 
 		            <div class='customer-title'><br />
-		                                     ".$firstname."  ".$lastname."
+		                                     ".$firstname." ".$lastname."
 		            </div>
 
 		        </div>
@@ -187,14 +187,8 @@ class generate_pdf_receipt extends CI_Model {
 		              <td class='border-top border-right border-bottom highlight'>$0.00</td>
 		          </tr>
 
-		        </table>"
-
-		        // <div id='terms'>
-		        //   <h5>Terms</h5>
-		        //   <p>Services will not be completed until balance due is paid in full.</p>
-		        // </div>
-
-		    "</div>
+		        </table>
+		    </div>
 		</body>
 		    
 		</html>
@@ -214,8 +208,11 @@ class generate_pdf_receipt extends CI_Model {
 		//    mkdir($dir, 0777);
 		// } 
 
-		$obj_pdf->Output('/Users/zhaohe/htdocs/localhost/Codeigniter/'.$dir.'/output.pdf', 'F');
+		//$obj_pdf->Output('/Users/zhaohe/htdocs/localhost/Codeigniter/'.$dir.'/output.pdf', 'F');
 		//$obj_pdf->Output('/var/www/html/Codeigniter/tmp/output.pdf', 'F');
+		$fileLocation = $_SERVER['DOCUMENT_ROOT'].$dir.'/'.$transId.'.pdf';
+		echo $fileLocation;
+		$obj_pdf->Output($fileLocation, 'F');
 	 }
 }
 
@@ -224,7 +221,7 @@ class generate_pdf_receipt extends CI_Model {
 	    public function Header() {
 	        // Log
 	        // $image_file = base_url('assets/images/cyto_logo_orgdark_sharp_noalpha.png');
-	        $image_file = $_SERVER['DOCUMENT_ROOT'].'/Codeigniter/assets/images/cyto_logo_orgdark_sharp_noalpha.png';
+	        $image_file = $_SERVER['DOCUMENT_ROOT'].'assets/images/cyto_logo_orgdark_sharp_noalpha.png';
 	        $this->Image($image_file, 10, 10, 25, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 	        // Set font
 	        $this->SetFont('helvetica', 'B', 20);

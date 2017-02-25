@@ -238,19 +238,6 @@
 	<!-- FANCYBOX -->
 	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
 	
-	<!-- REVOLUTION SLIDER  -->
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.actions.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.carousel.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.kenburn.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.layeranimation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.migration.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.navigation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.slideanims.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.video.min.js'); ?>"></script>
-	
 	<!-- OWL Carousel -->
 	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>
 	
@@ -268,21 +255,8 @@
 	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
 	
-	<!-- GOOGLE MAPS -->
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="<?php echo base_url('assets/plugins/googlemaps/gmap3.min.js'); ?>"></script>
-	
 	<!-- CHARTS -->
 	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
-	
-	<!-- COUNTER -->
-	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
-	
-	<!-- STATISTICS -->
-	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
-	
-	<!-- YOUTUBE PLAYER -->
-	<script src="<?php echo base_url('assets/plugins/ytplayer/jquery.mb.ytplayer.min.js'); ?>"></script>
 	
 	<!-- INSTAFEED -->
 	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>
