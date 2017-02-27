@@ -176,46 +176,43 @@
                 </td>
             </tr>
 
+            <!-- for loop items  -->
             <tr class="heading">
                 <td>
                     Item
                 </td>
                 
                 <td>
+                    Description
+                </td>
+
+                <td>
+                    Unit Cost
+                </td>
+                
+                <td>
+                    Quantity
+                </td>
+
+                <td>
                     Price
                 </td>
             </tr>
-            
-            <tr class="item">
-                <td>
-                    Website design
-                </td>
-                
-                <td>
-                    $300.00
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Hosting (3 months)
-                </td>
-                
-                <td>
-                    $75.00
-                </td>
-            </tr>
-            
-            <tr class="item last">
-                <td>
-                    Domain name (1 year)
-                </td>
-                
-                <td>
-                    $10.00
-                </td>
-            </tr>
-            
+
+             <?php 
+                $items = '';
+                foreach ($quoteIds as $key => $value) {
+                        $items = $items."<tr class='item'>
+                                <td>Item id :".$value."</td>
+                                <td class='description'>Monthly web</td>
+                                <td>".$quoteCharges[$key]."</td>
+                                <td>1</td>
+                                <td>".$quoteCharges[$key]."</td>
+                            </tr>";
+                }; 
+                echo $items;
+            ?>
+
             <!-- billing address -->
             <tr class="heading">
                 <td>
@@ -281,7 +278,7 @@
                 <td></td>
                 
                 <td>
-                   Total: $385.00
+                   Total: $<?php echo $amount ?>
                 </td>
             </tr>
         </table>
