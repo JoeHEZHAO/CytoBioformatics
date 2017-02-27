@@ -8,9 +8,9 @@ class Submitquote_model extends CI_Model
           parent::__construct();
      }
 
-    function submitquote($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review')
+    function submitquote($firstname, $lastname, $email, $organization, $phone, $subject, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review')
     {
-        if ($this->insert($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review')) {
+        if ($this->insert($firstname, $lastname, $email, $organization, $phone, $subject, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review')) {
             return true;
         }
         else {
@@ -19,16 +19,17 @@ class Submitquote_model extends CI_Model
 
     }
 
-    function insert($firstname, $lastname, $email, $organization, $phone, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review') {
+    function insert($firstname, $lastname, $email, $organization, $phone, $subject, $message, $QuoteID, $filename0, $filename1, $filename2, $status='under review') {
         $data = array(
             'firstname' => $firstname,
             'lastname' => $lastname,
             'email' => $email,
             'organization' => $organization,
             'phone' => $phone,
+            'subject' => $subject,
             'created_at' => date('Y-m-j H:i:s'),
             'message' => $message,
-            'quoteID' => $QuoteID,
+            'quoteId' => $QuoteID,
             'filename0' => $filename0,
             'filename1' => $filename1,
             'filename2' => $filename2,
@@ -37,8 +38,7 @@ class Submitquote_model extends CI_Model
 
         if ($this->db->insert('Quotes', $data)) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

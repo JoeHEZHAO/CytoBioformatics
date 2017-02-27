@@ -18,6 +18,8 @@ class Login extends CI_Controller
 			$_SESSION['firstname'] = $data['result']->firstname; // data type always a problem
 			$_SESSION['lastname'] = $data['result']->lastname;
             $_SESSION['email'] = $data['result']->email;
+            $_SESSION['organization'] = $data['result']->organization;
+            $_SESSION['phone'] = $data['result']->phone;
             $_SESSION['ID'] = $data['result']->ID;
 			echo "";
 		}

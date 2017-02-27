@@ -10,11 +10,25 @@
 	<meta name="description" content="">
 	
 	<title>About us | CytoInformatics</title>
-	
+	  
 	<!-- FAVICON AND APPLE TOUCH -->    
-	<link rel="shortcut icon" href="favicon.png">
-	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-180x180.png">
-	<meta name="msapplication-TileImage" content="mstile.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 	
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -70,7 +84,7 @@
 							
 							<h1>About us</h1>
 							
-							<p class="tp-caption text-center text">Imaging data at your fingertips</p>
+							<p class="tp-caption text">Imaging data at your fingertips</p>
 							
 							<!--<a class="go-to-section" href="#page-content"><i class="bronx-icon-mouse"></i></a>-->
 							
@@ -100,8 +114,9 @@
 						<img src="<?php echo base_url('images/logos/uk.png') ?>" alt="UK" width="500" height="500">
 						
 					</div>-->
-				</div><!-- row -->
-			</div><!-- container -->
+				</div>
+			</div>
+<!--
             <div class="container">
                 <div class="row">
                     <div class="col-lg-offset-1 col-lg-5 col-sm-6 text-block">
@@ -110,7 +125,7 @@
                 </div>
             </div>
 			
-            <br><br>
+            <br><br>-->
             
 			<div class="container">
                 <div class="row">
@@ -203,6 +218,14 @@
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-5 col-sm-6 text-block">
+                        <p style="font-size: 11pt;">This work was supported by the National Institute of Arthritis and Musculoskeletal and Skin Diseases of the National Institutes of Health under Award Number 1R41AR064596 and by the National Institute of Aging under Award Number 9R42AG055375. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.</p>
+                    </div>
+                </div>
+            </div>
             
             <section class="full-section dark-section">
                 <div class="full-section-container">

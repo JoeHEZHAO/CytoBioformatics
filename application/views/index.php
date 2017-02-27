@@ -12,7 +12,23 @@
 	<title>Turning Sight Into Insight | CytoInformatics</title>
 	
 	<!-- FAVICON AND APPLE TOUCH -->    
-	<meta name="msapplication-TileImage" content="mstile.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 	
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -74,9 +90,14 @@
             <!-- KEN BURNS SLIDER -->
             <div class="intro-section">
                 <div id="kenburns-slideshow"></div>
+<!--
+                <div class="intro-section-imgdiv">
+                    <img class="intro-section-sideimg" src="<?php echo base_url('images/kenburns/kb-0.jpg'); ?>" alt=""/>
+                </div>
+-->
                 
-                <div class="intro-section rectangle" style="z-index: 1;">
-                    <img class="intro-section-image" src="<?php echo base_url('images/index/revolution-slider/cyto_dark.png'); ?>" alt="">
+                <div class="intro-section rectangle" style="z-index: 1; background-image: url(<?php echo base_url('images/backgrounds/intro_bg.png'); ?>); background-repeat: no-repeat;">
+                    <!--<img class="intro-section-image" src="<?php echo base_url('images/index/revolution-slider/cyto_dark.png'); ?>" alt="">-->
                     
                     <div class="intro-section-card">
                         <div class="intro-section-small-title">
@@ -184,7 +205,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/pricing'); ?>">Check out our pricing model <i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
+								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/solutions'); ?>">See what we can do<i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->
@@ -192,7 +213,8 @@
 				</div><!-- full-section-container -->
 			</section><!-- full-section -->
 			
-			<!-- COUNTER EFFECTS -->
+			<br /><br />
+			<!-- COUNTER EFFECTS 
 			<section class="full-section dark-section" id="section-4">
 				<div class="full-section-container">
 					<div class="container-fluid">
@@ -200,28 +222,28 @@
 						
 							<div class="col-sm-2 visible-lg-block">
 								<a class="more-facts" href="#"><img src="<?php echo base_url('assets/images/cyto_logo_white_sharp.png'); ?>" style="width: 100px; height: 100px" alt="<?php echo base_url();?>"></a>
-							</div><!-- col -->
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="10000"></div>
 									<div class="counter-details">Images Processed</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="160"></div>
 									<div class="counter-details">Projects Completed</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
 									<div class="counter-value" data-value="53"></div>
 									<div class="counter-details">Active Users</div>
-								</div><!-- counter -->
-							</div><!-- col -->
+								</div>
+							</div>
 							
 							<div class="col-lg-2 col-sm-3">
 								<div class="counter">
@@ -232,12 +254,12 @@
 							
 							<div class="col-sm-2 visible-lg-block">
 								<a class="more-facts" href="#"></a>
-							</div><!-- col -->
+							</div>
 							
-						</div><!-- row -->
-					</div><!-- container -->
-				</div><!-- full-section-container -->
-			</section><!-- full-section -->
+						</div>
+					</div>
+				</div>
+			</section>-->
 			
 			<!-- POWERFULL -->
 			<div class="container">

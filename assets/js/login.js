@@ -81,31 +81,46 @@ $('#register').submit(function() {
 
     var email =  $("input[name='email']").val(); 
     var pwd = $("input[name='password']").val();
+    var pwd_c = $("input[name='password_c']").val();
     var firstname = $("input[name='FirstName']").val(); 
-    var lastname = $("input[name='LastName']").val(); 
+    var lastname = $("input[name='LastName']").val();
+    var organization = $("input[name='organization']").val(); 
+    var phone = $("input[name='phone']").val(); 
 
-    $.ajax({
-        method: "POST",
-        url: $('#register').attr('action') + '/Register/index',
-        data: { email: email, password: pwd, FirstName : firstname, LastName : lastname },
-        success: function (response) {
-            
-            if (response == 'email address already existed') {
+    // check that password is at least 8 characters
+    if (pwd.length >= 8) {
+        // check that passwords match
+        if (pwd===pwd_c) {
+            $.ajax({
+                method: "POST",
+                url: $('#register').attr('action') + '/Register/index',
+                data: { email: email, password: pwd, FirstName : firstname, LastName : lastname, organization : organization, phone : phone },
+                success: function (response) {
 
-                $("#error_signup").text("Duplicate email address. Please try another.");
-                $("#error_signup").css("display", "block");
+                    if (response == 'Email address already exists.') {
 
-            }
-            else{
-                window.location.replace($('#register').attr('action') + '/cyto_bioformatics/index');
-//                alert(response);
-            }
+                        $("#error_signup").text("Duplicate email address. Please try another.");
+                        $("#error_signup").css("display", "block");
 
-        },
-        error: function(xhr, textStatus, errorThrown){
-            alert('Request failed.\n\n' + errorThrown);
+                    }
+                    else{
+                        window.location.replace($('#register').attr('action') + '/cyto_bioformatics/index');
+        //                alert(response);
+                    }
+
+                },
+                error: function(xhr, textStatus, errorThrown){
+                    alert('Request failed.\n\n' + errorThrown);
+                }
+            })
+        } else {
+            $("#error_signup").text("Passwords do not match. Please try again.");
+            $("#error_signup").css("display", "block");
         }
-    })
+    } else {
+        $("#error_signup").text("Password must be at least 8 characters.");
+        $("#error_signup").css("display", "block");
+    }
 
     return false; // keep page from refreshing
 

@@ -40,6 +40,12 @@
     line-height: 28px;
 }
 
+@media (max-width: 768px) {
+    .navbar-company-name {
+        visibility: hidden;
+    }
+}
+
 .dropdown li {
     right: 100%;
 }
@@ -48,20 +54,19 @@
 .intro-section {
     position: relative;
     width: 100%;
-    height: 800px;
     margin-bottom: 100px;
 }
 
 .intro-section.rectangle {
-    position: absolute; 
-    width: 55%;
+    position: absolute;
     height: 100% !important;
     background-color: #282a37;
 }
 
 .intro-section-card {
-    margin-top: 300px;
-    margin-left: 220px;
+    position: relative;
+    margin-top: 20%;
+    margin-left: 15%;
 }
 
 .intro-section-image {
@@ -72,20 +77,31 @@
     z-image: 0;
 }
 
+.intro-section-imgdiv {
+	position: absolute;
+    width: 55%;
+	height: 100%;
+    left: 50%;
+	background-color: #282a37;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.intro-section-sideimg {
+    position: absolute;
+    max-width: none;
+}
+
 .intro-section-big-title {
     position: relative;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-size: 82px;
-    line-height: 72px;
 }
 
 .intro-section-small-title {
     position: relative;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-size: 48px;
-    line-height: 38px;
 }
 
 .intro-section-caption {
@@ -95,6 +111,52 @@
     font-size: 32px;
     line-height: 32px;
 }
+
+@media (min-width: 700px) {
+    .intro-section {
+        height: 700px;
+    }
+    .intro-section.rectangle {
+        width: 55%;
+    }
+    .intro-section-big-title {
+        font-size: 82px;
+        line-height: 72px;
+    }
+    .intro-section-small-title {
+        font-size: 48px;
+        line-height: 38px;
+    }
+    .intro-section-caption {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 699px) {
+    .intro-section {
+        height: 500px;
+    }
+    .intro-section.rectangle {
+        width: 100%;
+    }
+    .intro-section-big-title {
+        font-size: 44px;
+        line-height: 20px;
+    }
+    .intro-section-small-title {
+        font-size: 32px;
+        line-height: 20px;
+    }
+    .intro-section-caption {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    #kenburns-slideshow {
+        visibility: hidden;
+    }
+}
+
 
 /*CONTACT*/
 .about-me h4 {
@@ -140,7 +202,6 @@
 .page-solutions {
     display: block;
     position: relative;
-    height: 700px;
     width: 100%;
     background-color: #000000;
     padding-bottom: 50px;
@@ -149,27 +210,26 @@
 }
 
 .page-solutions-text h1 {
-    position: absolute;
+    position: relative;
     color: #fff;
     font-family: "Montserrat", sans-serif;
     width: 75%; 
     text-align: center;
-    font-size: 60px;
-    line-height: 60px;
     white-space: pre-wrap; 
-    padding-top: 200px;
-    padding-bottom: 50px;
+    top: 20%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 15%;
+    margin-bottom: 4%;
     left: 0;
     right: 0;
 }
 
 .page-solutions-text p {
-    position: absolute;
+    position: relative;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    width:700px; 
+    width: 50%; 
     text-align: justify;
     font-size: 24px;
     line-height: 24px;
@@ -178,12 +238,59 @@
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 450px;
+    top: 60%;
 }
 
-.backing-image {
-    position: absolute;
-    width: 100%;
+@media (min-width: 1200px) {
+    .page-solutions-text h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    
+    .page-solutions-text p {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    
+    .backing-image {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .page-solutions-text h1 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+    
+    .page-solutions-text p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    
+    .backing-image {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-solutions-text h1 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    
+    .page-solutions-text p {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    
+    .backing-image {
+        position: absolute;
+        height: 100%;
+        opacity: 0.9;
+    }
 }
 
 /*PRICING PAGE*/
@@ -250,10 +357,11 @@
 }
 
 .text-block {
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    text-align: justify;
+    color: #363636;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    /*text-align: justify;*/
+    width: 70%;
     white-space: pre-wrap;
 }
 
@@ -266,6 +374,22 @@
 }
     
 /*BUYINGANDPAYMENT*/
+/*@media (min-width: 1600px) {
+    .payment-table-col {
+        min-width: 5%;
+        max-width: 15%;
+        color: #000;
+    }
+}
+
+@media (max-width: 1199px) {
+    .payment-table-col {
+        min-width: 50%;
+        max-width: 60%;
+        color: #000;
+    }
+}*/
+
 .payment-table-col {
     min-width: 5%;
     max-width: 15%;

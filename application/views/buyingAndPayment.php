@@ -5,14 +5,30 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	
-	<title>Intelligence for Medicine | CytoInformatics</title>
-	
-	<!-- FAVICON AND APPLE TOUCH -->    
-	<meta name="msapplication-TileImage" content="mstile.png">
+	<title>Projects and Payment | CytoInformatics</title>
+    
+    <!-- FAVICON AND APPLE TOUCH -->    
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 	
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -56,7 +72,7 @@
 	<div id="main-container">
 		
 		<!-- HEADER -->
-		<header id="header-container" style="height: 90px">
+		<header id="header-container">
 			<!-- NAVIGATION BAR -->
 			<?php include "application/templates/navigation_bar.php"; ?>
 			
@@ -65,43 +81,6 @@
 		
 		<!-- PAGE CONTENT -->
 		<div id="page-content">
-		
-			<!-- WORKFLOW -->
-			<!-- <div class="workflow-animation" style="background-image: url(<?php echo base_url('images/index/revolution-slider/diamond_bladder.png'); ?>);">
-				<div class="slide tp-caption">
-					 <img src="<?php echo base_url('images/index/revolution-slider/slide-2-image-1.png'); ?>" alt="">
-				</div>
-
-				<div class="slide-excerpt tp-caption">
-					 <img src="<?php echo base_url('images/index/revolution-slider/slide-2-image-2.png'); ?>" alt="">
-				</div>
-
-				<div class="fadein-header1 tp-caption small-title">
-					 Give life to your images
-				</div> 
-				
-				<div class="fadein-text1 tp-caption text">
-					 Extract real insight from medical imaging data
-				</div> 
-				
-				<div class=tp-caption>
-					<div class="fadein-object1 tp-caption">
-						 <img class="barplot" src="<?php echo base_url('images/index/revolution-slider/slide-2-image-3.png'); ?>" alt="">
-					</div>
-
-					<div class="fadein-object1 tp-caption">
-						 <img class="barplot_bar1" src="<?php echo base_url('images/index/revolution-slider/slide-2-image-4.png'); ?>" alt="">
-					</div>
-
-					<div class="fadein-object1 tp-caption"
-						 <img class="barplot_bar2" src="<?php echo base_url('images/index/revolution-slider/slide-2-image-5.png'); ?>" alt="">
-					</div>
-
-					<div class="fadein-object1 tp-caption">
-						 <img class="barplot_bar3" src="<?php echo base_url('images/index/revolution-slider/slide-2-image-6.png'); ?>" alt="">
-					</div>
-				</div>
-			</div> -->
 			
 			<!-- SERVICES -->
 			<div class="container">
@@ -113,68 +92,105 @@
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
+            
+            <div class="container">
+                <form method="post" action="" id="ServiceQuantity">
+                    <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class=payment-table-header>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Organization</th>
+                                <th>Date Created</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Subtotal</th>
+                                <th>Select</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <?php if($rows != 'failed'){foreach ($rows as $key => $value) {?> 
+                                    <tr>
+                                        <td><?php echo substr($value['subject'], 0, 15)?></td>
+                                        <td><?php echo $value['organization']?></td>
+                                        <td><?php echo $value['created_at']?></td>
+                                        <td><?php echo $value['message']?></td>
+                                        <td><?php echo $value['status']?></td>
+                                        <td><?php echo $value['subTotal']?></td>
+                                        <td><?php if ($value['status'] == 'approved') { ?>
+                                            <input type="checkbox" name="<?php echo $value['quoteId'] ?>" value="<?php echo $value['subTotal']?>" style="float: right;">
+                                            <input type="hidden" name="<?php echo $value['quoteId']?>" value="<?php echo $value['subject']?>" style="float: right;">
+                                        <?php }else{  } ?></td>
+                                    </tr>
+                                <?php }	}else{}?>
+                        </tbody>
+                    </table>
+                    <input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
+                </form>
+            </div>
 			
-			<div class="container">
+			<!--<div class="container">
 				<div class="col-sm-12">
 					<div class="item">
 
                         <div class="row">
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
-                                Quote ID
-                            </div><!-- col -->
+                                Subject
+                            </div>
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
                                 Organization
-                            </div><!-- col -->
+                            </div>
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
                                 Date Created
-                            </div><!-- col -->
+                            </div>
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
                                 Message
-                            </div><!-- col -->
+                            </div>
 
                             <div class="col-sm-4 payment-table-col payment-table-header">
                                 Status
-                            </div><!-- col -->
+                            </div>
 
                             <div class="col-sm-4 payment-table-col-small payment-table-header">
                                 Subtotal
-                            </div><!-- col -->
+                            </div>
                             
                             <div class="col-sm-4 payment-table-col-small payment-table-header">
                                 Select
-                            </div><!-- col -->
+                            </div>
 
-                        </div><!-- row -->
+                        </div>
 
-						<form method="post" action="" id="ServiceQuantity"> <!-- form -->
+						<form method="post" action="" id="ServiceQuantity">
 				 	<?php
 				 	if($rows != 'failed'){
 						 foreach ($rows as $key => $value) {
 						 ?> 
 							<div class="row">
 								<div class="col-sm-4 payment-table-col">
-									<?php echo substr($value['quoteId'], 0, 15)?>
-								</div><!-- col -->
+									<?php echo substr($value['subject'], 0, 15)?>
+								</div>
 								
 								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['organization']?>
-								</div><!-- col -->
+								</div>
 
 								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['created_at']?>
-								</div><!-- col -->
+								</div>
 
 								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['message']?>
-								</div><!-- col -->
+								</div>
 
 								<div class="col-sm-4 payment-table-col">
 									<?php echo $value['status']?>
-								</div><!-- col -->
+								</div>
 
 								<div class="col-sm-4 payment-table-col-small">
 									<?php echo $value['subTotal']?>
@@ -183,17 +199,18 @@
                                 <div class="col-sm-4 payment-table-col-small">
 									<?php if ($value['status'] == 'approved') { ?>
 									    <input type="checkbox" name="<?php echo $value['quoteId'] ?>" value="<?php echo $value['subTotal']?>" style="float: right;">
+									    <input type="hidden" name="<?php echo $value['quoteId']?>" value="<?php echo $value['subject']?>" style="float: right;">
 									<?php }else{  } ?>
-								</div><!-- col -->
-							</div><!-- row -->
+								</div>
+							</div>
 						<?php  }
 							   	}else{}?>
 							<input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
-						</form> <!-- form -->
+						</form>
 
-					</div><!-- item -->
-				</div><!-- col -->
-            </div><!-- container -->
+					</div>
+				</div>
+            </div>-->
 
         </div><!-- PAGE-CONTENT -->
 		<!-- FOOTER -->
@@ -221,19 +238,6 @@
 	<!-- FANCYBOX -->
 	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
 	
-	<!-- REVOLUTION SLIDER  -->
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.actions.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.carousel.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.kenburn.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.layeranimation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.migration.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.navigation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.slideanims.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.video.min.js'); ?>"></script>
-	
 	<!-- OWL Carousel -->
 	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>
 	
@@ -251,21 +255,8 @@
 	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
 	
-	<!-- GOOGLE MAPS -->
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="<?php echo base_url('assets/plugins/googlemaps/gmap3.min.js'); ?>"></script>
-	
 	<!-- CHARTS -->
 	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
-	
-	<!-- COUNTER -->
-	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
-	
-	<!-- STATISTICS -->
-	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
-	
-	<!-- YOUTUBE PLAYER -->
-	<script src="<?php echo base_url('assets/plugins/ytplayer/jquery.mb.ytplayer.min.js'); ?>"></script>
 	
 	<!-- INSTAFEED -->
 	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>

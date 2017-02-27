@@ -8,7 +8,26 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Accept Payment</title>
+	<title>Payment | CytoInformatics</title>
+    
+    <!-- FAVICON AND APPLE TOUCH -->    
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -16,7 +35,10 @@
     
 	<!-- BOOTSTRAP CSS -->
 	<link href="<?php echo base_url('assets/accept/bootstrap.min.css'); ?>" rel="stylesheet">
-
+	
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
+    
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
@@ -37,8 +59,8 @@
         <?php include "application/templates/navigation_bar.php"; ?>
     </header>
 	
-	<div class="container-fluid" style="width: 60%; margin: auto; padding-top: 100px; height: 100%">
-		<div id="terms" style="text-align: center; margin-bottom: 50px; margin-top: 50px; width=60%;">
+	<div class="container-fluid" style="margin: auto; padding-top: 100px; height: 100%">
+		<div id="terms" style="text-align: center; margin: auto; margin-bottom: 50px; margin-top: 50px; width: 60%;">
             <h2>Terms and Conditions</h2><br>
             <textarea readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
             <br>
@@ -207,8 +229,7 @@
 
                                 <td>
                                     Invoice #: 123<br>
-                                    Created: January 1, 2015<br>
-                                    Due: February 1, 2015
+                                    Date: <?php echo date('m-j-Y H:i:s'); ?>
                                 </td>
                             </tr>
                         </table>
@@ -226,9 +247,9 @@
                                 </td>
 
                                 <td>
-                                    Acme Corp.<br>
-                                    John Doe<br>
-                                    john@example.com
+                                    <?php echo $organization; ?><br>
+                                    <?php echo $firstname.' '.$lastname; ?><br>
+                                    <?php echo $email; ?>
                                 </td>
                             </tr>
                         </table>
@@ -333,7 +354,7 @@
             <p>
                 <button type="button" id="acceptJSPayButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal">Pay</button>
 
-                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" data-toggle="modal" data-target="#acceptJSPayModal" onclick="cancelTransaction()">Cancel </button>
+                <button type="button" id="acceptJSCancelButton" class="btn-lg button" style="width: 200px; padding-left: 15px; padding-right: 15px; margin: 15px 0 15px 0;" onclick="cancelTransaction()">Cancel </button>
             </p>
             <br>         
         </div>
@@ -453,7 +474,9 @@
         }
 
         function showNext(){
+            // check that terms agreement checkbox is checked
             if ($('#termsCheck').is(':checked')) {
+                // check that all fields of billing form are filled
                 if ($("input[name='email']").val() && $("input[name='address']").val() && $("input[name='zip']").val() && $("input[name='city']").val() && $("#country").val()) 
                 {
                     var email = $("input[name='email']").val();
@@ -470,12 +493,12 @@
 
                 }else
                 {
-                    alert('Bill Info is not complete, please check before Continue');
+                    alert('Billing info is not complete. Please check before proceeding.');
                     return false;
                 }
 
             }else{
-                alert('please check the term agreement button');
+                alert('please check the term agreement button.');
                 return false;
             }
             $('#container2').show();

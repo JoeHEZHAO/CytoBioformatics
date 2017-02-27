@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('America/New_York');
 
 class Cyto_bioformatics extends CI_Controller {
 
@@ -65,6 +65,7 @@ class Cyto_bioformatics extends CI_Controller {
 			$_SESSION['TotelCharge'] = $_POST['TotelCharge'];
 			$_SESSION['quoteIds'] = $_POST['quoteIds'];
 			$_SESSION['quoteCharges'] = $_POST['quoteCharges'];	
+			$_SESSION['subjects'] = $_POST['subjects'];
 	        echo "success!";
 		}else{
 			echo 'failed';
@@ -80,6 +81,8 @@ class Cyto_bioformatics extends CI_Controller {
 		if (isset($_SESSION['firstname']) && !empty($_SESSION['firstname'])) {
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
+            $data['email'] = $_SESSION['email'];
+            $data['organization'] = $_SESSION['organization'];
 			$this->load->view('accept_payment', $data);
 		}
 	}
@@ -133,7 +136,6 @@ class Cyto_bioformatics extends CI_Controller {
 	}
 
 	function saveBillingAddress(){
-
 		$data = array(
 				'billEmail'   => $_POST['billEmail'],
 				'streetAddress' => $_POST['streetAddress'],
@@ -153,10 +155,11 @@ class Cyto_bioformatics extends CI_Controller {
 		$_SESSION['billingAddr'] = $data; 
 		$this->load->model('TransactionRecord_model');
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
-			$this->load->model('email_receipt_model');
-			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo'],$items);
+			$this->createPdf();
+			$this->load->model('Email_model');
+			$this->Email_model->send_mail($data, $_SESSION['transInfo'], $_SESSION['email'], $items);
 			echo "Ok";
-		}else{
+		} else {
 			echo "failed";
 		}
 	}
@@ -179,26 +182,12 @@ class Cyto_bioformatics extends CI_Controller {
 		$data['lastname'] = $_SESSION['transInfo']['lastname'];
 		$data['quoteIds'] = $_SESSION['quoteIds'];
 		$data['quoteCharges'] = $_SESSION['quoteCharges'];
-
-		// dummy data
-		// $data['billEmail'] = 'zhaohezzu@gmail.com';
-		// $data['streetAddress'] = '366 Maguire Village APt #4';
-		// $data['zipCode'] = '32608';
-		// $data['city'] = 'Gainesville';
-		// $data['country'] = 'USA';
-		// $data['transId'] = '123456789';
-
-		// $data['accountNumber'] = 'xxxx 6676';
-		// $data['accountType'] = 'VISA';
-		// $data['amount'] = '105';
-		// $data['TranDate'] = '2017-02-11';
-		// $data['firstname'] = 'He';
-		// $data['lastname'] = 'Zhao';
-		// $data['quoteIds'] = array('123', '456');
-		// $data['quoteCharges'] = array('45', '60');
-
 		$data['name'] = 'hezhao';
+
 	    $this->load->view('pdf_example', $data);
+		$this->load->model('generate_pdf_receipt');
+		$this->generate_pdf_receipt->createPdf($_SESSION['billingAddr'], $_SESSION['transInfo'], $_SESSION['subjects'], $_SESSION['quoteCharges'], $_SESSION['email']);
+		// var_dump($_SESSION['ID']);
 	}
     
     function demo()
@@ -318,6 +307,35 @@ XML;
 		    	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
 			}
 	}
+    
+    function forgot_password() {
+        $this->load->view('forgot_password');
+    }
+    
+    function password_reset() {
+        $data['email'] = $_SESSION['email'];
+        $this->load->view('password_reset', $data);
+    }
+    
+    function password_reset_token($token) {
+        $this->load->model('UserInfo_model');
+        $email = $this->UserInfo_model->check_password_token($token);
+        if(!empty($email)) {
+            $data['email'] = $email;
+            $this->load->view('password_reset', $data);
+        } else {
+            echo "Error: invalid/expired token.";    
+        }
+    }
+    
+//    function test_mimetype() {
+//        echo "finfo:\t";
+//        var_dump(finfo_open(FILEINFO_MIME_TYPE));
+//    }
+//	
+//    function print_phpinfo() {
+//        phpinfo();
+//    }
 }
 /**
 * 

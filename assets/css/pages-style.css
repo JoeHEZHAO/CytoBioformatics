@@ -48,7 +48,7 @@
 	}
 	
 	#header {
-		position: absolute;
+		position: relative;
 		z-index: 8010;
 		top: 0;
 		left: 0px;
@@ -68,7 +68,7 @@
 	@media (min-width: 768px) and (max-width: 1199px) {
 		
 		.header-boxed #header-container {
-			margin: 20px 20px 0;
+			margin: 0px 0px 0;
 		}
 		
 		#header {
@@ -78,7 +78,7 @@
 		}
 		
 		.header-boxed #header {
-			margin-bottom: 15px;
+			margin-bottom: 0px;
 		}
 		
 	}
@@ -86,7 +86,7 @@
 	@media (max-width: 767px) {
 		
 		.header-boxed #header-container {
-			margin: 15px 15px 0;
+			margin: 0px 0px 0;
 		}
 		
 		#header {
@@ -96,7 +96,7 @@
 		}
 		
 		.header-boxed #header {
-			margin-bottom: 15px;
+			margin-bottom: 0px;
 		}
 		
 	}
@@ -769,7 +769,7 @@
  	
 	#page-header {
 		position: relative;
-		padding: 255px 0 185px;
+		padding: 125px 0 185px;
 		margin-bottom: 100px;
 		background: #282a37 no-repeat center center;
 		color: #fff;
@@ -844,7 +844,7 @@
  
  	#footer {
 		padding: 110px 0;
-		background-image: url(../../images/backgrounds/bg-5.png);
+		/*background-image: url(../../images/backgrounds/bg-5.png);*/
 		/*background-color: #1a1c24;*/
 		color: #848484;
 	}

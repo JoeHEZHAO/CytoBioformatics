@@ -3,7 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Login / Sign Up | CytoInformatics</title>
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    
+    <!-- FAVICON AND APPLE TOUCH -->    
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
+    
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/login.css'); ?>">
 </head>
@@ -22,7 +42,7 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
+          <h1>Create New Account</h1>
 
           <label id="error_signup" style="display: none; position: relative; color: red; font-size: 13px; left: 0; bottom: 21px;"></label>
             
@@ -51,6 +71,20 @@
 
             <div class="field-wrap">
               <label>
+                Organization
+              </label>
+              <input type="text" name="organization" autocomplete="off"/>
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Phone Number
+              </label>
+              <input type="text" name="phone" autocomplete="off"/>
+            </div>
+
+            <div class="field-wrap">
+              <label>
                 Email Address<span class="req">*</span>
               </label>
               <input type="email" name="email" required autocomplete="off"/>
@@ -58,9 +92,16 @@
           
             <div class="field-wrap">
               <label>
-                Set A Password<span class="req">*</span>
+                Set A Password (Min. 8 characters)<span class="req">*</span>
               </label>
               <input type="password" name="password" required autocomplete="off"/>
+            </div>
+          
+            <div class="field-wrap">
+              <label>
+                Confirm Password<span class="req">*</span>
+              </label>
+              <input type="password" name="password_c" required autocomplete="off"/>
             </div>
           
             <button type="submit" class="button button-block">Get Started</button>
@@ -89,7 +130,7 @@
               <input type="password" name="password_login" required autocomplete="off"/>
             </div>
           
-            <!--<p class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/forgot_password'); ?>">Forgot Password?</a></p>-->
+            <p class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/forgot_password'); ?>">Forgot Password?</a></p>
           
             <button class="button button-block">Log In</button>
           
@@ -100,7 +141,7 @@
       </div><!-- tab-content -->
       
     </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
   <script src="<?php echo base_url('assets/js/login.js'); ?>"></script>
 

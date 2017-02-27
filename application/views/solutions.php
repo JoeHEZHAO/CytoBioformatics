@@ -11,8 +11,24 @@
 	
 	<title>Solutions | CytoInformatics</title>
 	
-	<!-- FAVICON AND APPLE TOUCH -->
-	<meta name="msapplication-TileImage" content="mstile.png">
+	<!-- FAVICON AND APPLE TOUCH -->    
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 	
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -29,11 +45,6 @@
 	
 	<!-- FANCYBOX -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
-	
-	<!-- REVOLUTION SLIDER -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/settings.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/layers.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/navigation.css'); ?>">
 	
 	<!-- OWL Carousel -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
@@ -63,10 +74,10 @@
 		
 		<!-- PAGE CONTENT -->
 		<div class="page-solutions">
-			<img class="backing-image" src="<?php echo base_url('images/index/revolution-slider/J33-QUAD-1_01_3.jpg'); ?>" alt="">
+			<img class="backing-image" src="<?php echo base_url('images/backgrounds/solutions.jpg'); ?>" alt="">
 							
             <!--<div class="tp-caption">
-                 <img src="<?php echo base_url('images/index/revolution-slider/J33-QUAD-1_01_3.jpg'); ?>" alt="" style="width: 100%;">
+                 <img src="<?php echo base_url('images/backgrounds/solutions.jpg'); ?>" alt="" style="width: 100%;">
             </div>-->
 
             <div class="page-solutions-text">
@@ -117,7 +128,7 @@
                                 <!--<i class="bronx-icon-heart"></i>-->
                                 <div class="service-box-content">
                                     <h6><a href="#">Cell Segmentation</a></h6>
-                                    <p>Find the boundary coordinates of up to thousands of cells per image, enabling robust cross-sectional area calculations, background removal, shape modeling, and more.</p>
+                                    <p>Find the boundary coordinates of thousands of cells per image, enabling robust cross-sectional area calculations, background removal, shape modeling, and more.</p>
                                 </div><!-- service-box-content -->
                             </div><!-- service-box -->
 
@@ -125,7 +136,7 @@
                         <div class="col-sm-4">
                             <div class="service-box style-1">
                                 <div class="solutions-image-box">
-                                    <img class="bg-img" src="<?php echo base_url('images/services/classification_bg.png'); ?>" alt="">
+                                    <img class="bg-img" src="<?php echo base_url('images/services/classification_bg.jpg'); ?>" alt="">
                                     <img class="hv-img" src="<?php echo base_url('images/services/classification_overlay.png'); ?>" alt="">
                                 </div>
                                 <!--<i class="bronx-icon-data"></i>-->
@@ -157,7 +168,7 @@
 
                                     <h6><a href="#">Image Cleaning</a></h6>
 
-                                    <p>Denoise, contrast-enhance, and sharpen your images so that they are as clear to the naked eye as possible.</p>
+                                    <p>Improve the clarity of your images so that they are as sharp to the naked eye as possible.</p>
 
                                 </div><!-- service-box-content -->
 
@@ -254,7 +265,7 @@
 
                                             <h6><a href="#">Muscle</a></h6>
 
-                                            <p>Model muscular dystrophy and myositis easily with reliable muscle fiber segmentation and inflammatory cell detection.</p>
+                                            <p>Model muscular dystrophy and do fiber typing with reliable muscle fiber segmentation and inflammatory cell detection.</p>
 
                                         </div><!-- service-box-content -->
 
@@ -292,9 +303,9 @@
                                         <!--<i class="bronx-icon-food"></i>-->
                                         <div class="service-box-content">
 
-                                            <h6><a href="#">Neuroendocrine Tumor</a></h6>
+                                            <h6><a href="#">Pancreas</a></h6>
 
-                                            <p>Lung cell detection, tumor segmentation, tumor grading, and more are practical solutions with our platform.</p>
+                                            <p>Use our services for detecting islets, identifying neuroendocrine tumors, and distinguishing between alpha and beta cells.</p>
 
                                         </div><!-- service-box-content -->
 
@@ -311,7 +322,7 @@
 
                                             <h6><a href="#">Breast</a></h6>
 
-                                            <p>Model muscular dystrophy and myositis easily with reliable muscle fiber segmentation and inflammatory cell detection.</p>
+                                            <p>Our platform enables breast cell detection, tumor segmentation, tumor grading, and more.</p>
 
                                         </div><!-- service-box-content -->
 

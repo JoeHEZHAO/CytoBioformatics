@@ -12,9 +12,23 @@
 	<title>Quote | CytoInformatics</title>
 	
 	<!-- FAVICON AND APPLE TOUCH -->    
-	<link rel="shortcut icon" href="favicon.png">
-	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-180x180.png">
-	<meta name="msapplication-TileImage" content="mstile.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 	
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -99,18 +113,31 @@
                 ?>-->
                     <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                     <div class="top-row">
-                        <div class="field-wrap">
-                            <label>
-                                First Name<span class="req">*</span>
-                            </label>
-                            <input type="text" name="FirstName" required autocomplete="off" />
+                        <div class="col-sm-4" style="padding:0;">
+                            <div class="field-wrap">
+                                <label>
+                                    First Name<span class="req">*</span>
+                                </label>
+                                <!-- automatically fills if available in session -->
+                                <?php if(!empty($_SESSION['firstname'])) {  ?>
+                                    <input type="text" name="FirstName" value="<?php echo $_SESSION['firstname']; ?>" required autocomplete="off" />
+                                <?php }else{  ?>
+                                    <input type="text" name="FirstName" value="" required autocomplete="off" />
+                                <?php } ?>
+                            </div>
                         </div>
 
-                        <div class="field-wrap">
-                            <label>
-                                Last Name<span class="req">*</span>
-                            </label>
-                            <input type="text" name="LastName" required autocomplete="off"/>
+                        <div class="col-sm-4" style="padding:0;">
+                            <div class="field-wrap">
+                                <label>
+                                    Last Name<span class="req">*</span>
+                                </label>
+                                <?php if(!empty($_SESSION['lastname'])) {  ?>
+                                    <input type="text" name="LastName" value="<?php echo $_SESSION['lastname']; ?>" required autocomplete="off" />
+                                <?php }else{  ?>
+                                    <input type="text" name="LastName" value="" required autocomplete="off" />
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
 
@@ -118,21 +145,40 @@
                         <label>
                             Email Address<span class="req">*</span>
                         </label>
-                        <input type="email" name="email" required autocomplete="off"/>
+                        <?php if(!empty($_SESSION['email'])) {  ?>
+                            <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" required autocomplete="off" />
+                        <?php }else{  ?>
+                             <input type="email" name="email" value="" required autocomplete="off" />
+                        <?php } ?>
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Organization<span class="req">*</span>
                         </label>
-                        <input type="organization" name="organization" required autocomplete="off"/>
+                        <?php if(!empty($_SESSION['organization'])) {  ?>
+                            <input type="organization" name="organization" value="<?php echo $_SESSION['organization']; ?>" required autocomplete="off" />
+                        <?php }else{  ?>
+                             <input type="organization" name="organization" value="" required autocomplete="off" />
+                        <?php } ?>
                     </div>
                     
                     <div class="field-wrap">
                         <label>
                             Phone Number
                         </label>
-                        <input type="phone" name="phone" required autocomplete="off"/>
+                        <?php if(!empty($_SESSION['phone'])) {  ?>
+                            <input type="phone" name="phone" value="<?php echo $_SESSION['phone']; ?>" required autocomplete="off" />
+                        <?php }else{  ?>
+                             <input type="phone" name="phone" value="" required autocomplete="off" />
+                        <?php } ?>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Subject<span class="req">*</span>
+                        </label>
+                        <input type="subject" name="subject" required autocomplete="off"/>
                     </div>
                     
                     <div class="field-wrap-message">

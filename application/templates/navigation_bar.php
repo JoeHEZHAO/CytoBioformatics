@@ -36,6 +36,7 @@
                                 <a href="#">Hi, <?php echo $firstname; ?></a>
                                 <ul style="left: auto; right: 0;">
                                     <li><a href="<?php echo base_url('index.php/cyto_bioformatics/buyingAndPayment'); ?>">Projects and Payment</a></li>
+                                    <li><a href="<?php echo base_url('index.php/cyto_bioformatics/password_reset'); ?>">Change Password</a></li>
                                     <!--<li><a href="services.html">Services</a></li>
                                     <li><a href="single-service.html">Single service</a></li>
                                     <li class="dropdown">
@@ -61,7 +62,7 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li class="dropdown">
+                            <li>
                                     <a href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Login | Sign Up</a>
                             </li>
                         <?php endif; ?>

@@ -99,11 +99,10 @@ function acceptJSCaller()
 }
 
 function storeRecord(response){
-
+	console.log(response);
 	$.ajax({
 		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/StoreTransactionRecord',
 		data: { 
-
 			amount: document.getElementById('amount').value, 
 			accountNumber: response.transactionResponse.accountNumber, 
 			accountType: response.transactionResponse.accountType,
@@ -129,7 +128,7 @@ function storeRecord(response){
 
 function saveBillingAddress(transId){
 
-$.ajax({
+    $.ajax({
 		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/saveBillingAddress',
 		data: { 
 			billEmail: document.getElementById('email').value, 

@@ -12,9 +12,23 @@
 	<title>Workflow | CytoInformatics</title>
 	
 	<!-- FAVICON AND APPLE TOUCH -->    
-	<link rel="shortcut icon" href="favicon.png">
-	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-180x180.png">
-	<meta name="msapplication-TileImage" content="mstile.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('images/favicon/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('images/favicon/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url('images/favicon/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('images/favicon/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('images/favicon/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('images/favicon/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('images/favicon/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('images/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('images/favicon/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('images/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo base_url('images/favicon/ms-icon-144x144.png') ?>">
+    <meta name="theme-color" content="#ffffff">
 	
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
@@ -74,19 +88,25 @@
                     <img src="<?php echo base_url('images/backgrounds/bg-slider.jpg'); ?>" style="width:102%; height: 100%;">
                     <ul>
 						<li data-transition="fade">
-                            <div class="tp-caption text-center"
+                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
-                                 data-voffset="300"
+                                 data-voffset="200"
                                  data-speed="700"
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <h2>Say you are a pathologist...</h2>
+                                Say you are a pathologist...
                             </div>
 
-                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
@@ -95,24 +115,30 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <p>You have several hundred images of lung biopsies. You know that some of your images depict tissue with signs of small cell carcinoma, some show large cell carcinoma, and some show no signs of carcinoma.</p>
+                                You have several hundred images of lung biopsies. You know that some of your images depict tissue with signs of small cell carcinoma, some show large cell carcinoma, and some show no signs of carcinoma.
                             </div>
 						</li>
                         
 						<li data-transition="fade">
-                            <div class="tp-caption text-center"
+                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
-                                 data-voffset="300"
+                                 data-voffset="200"
                                  data-speed="700"
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <h2>But you are also a researcher.</h2>
+                                But you are also a researcher.
                             </div>
 
-                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
@@ -121,24 +147,30 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <p>You want to publish high-quality studies with impact. You know that there are significant morphological differences between the tissue samples you have. However, you don't have the time or resources to pay an assistant to manually annotate each image by hand, much less do it yourself. If only you could find a way to easily quantify these differences!</p>
+                                You want to publish high-quality studies with impact. You know that there are significant morphological differences between the tissue samples you have. However, you don't have the time or resources to pay an assistant to manually annotate each image by hand, much less do it yourself. If only you could find a way to easily quantify these differences!
                             </div>
 						</li>
                         
 						<li data-transition="fade">
-                            <div class="tp-caption text-center"
+                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
-                                 data-voffset="230"
+                                 data-voffset="200"
                                  data-speed="700"
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <h2>That's where <br><span class="text-alt-color">CytoInformatics</span> comes in.</h2>
+                                Introducing <span class="text-alt-color">CytoInformatics</span>
                             </div>
 
-                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
@@ -147,24 +179,30 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <p>Here at CytoInformatics, we aim to simplify the analysis of microscopy images for you while delivering pinpoint-accurate results. All you need to do is upload your images and we will handle the rest.<br><br>To get started, follow these simple instructions.</p>
+                                At CytoInformatics, we aim to simplify the analysis of microscopy images for you while delivering pinpoint-accurate results. All you need to do is upload your images and we will handle the rest.<br><br>To get started, follow these simple instructions.
                             </div>
 						</li>
                         
                         <li data-transition="fade">
-                            <div class="tp-caption text-center"
+                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
-                                 data-voffset="300"
+                                 data-voffset="200"
                                  data-speed="700"
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <h2>Step 1: Submit a Quote</h2>
+                                Step 1: Submit a Quote
                             </div>
 
-                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
@@ -173,24 +211,30 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <p>Click the <a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to discuss the possible solutions we can pursue to help you get the findings you need.<br><br>You are also encouraged to submit up to three sample images so that we may better prepare to discuss your data with you.</p>
+                                Click the <a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to discuss the possible solutions we can pursue to help you get the findings you need.<br><br>You are also encouraged to submit up to three sample images so that we may better prepare to discuss your data with you.
                             </div>
 						</li>
                         
                         <li data-transition="fade">
-                            <div class="tp-caption text-center"
+                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
-                                 data-voffset="300"
+                                 data-voffset="200"
                                  data-speed="700"
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <h2>Step 2: Purchase Our Services</h2>
+                                Step 2: Purchase Our Services
                             </div>
 
-                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
@@ -199,24 +243,30 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <p>Once you have agreed to a solution and have logged in with your account, you should see a <span class="text-alt-color">Projects and Payment</span> tab in the dropdown menu under your name. This link will bring you to a table with your unpaid charges. Select this charge and continue through our online payment portal powered by <a href="https://www.authorize.net/">Authorize.Net</a> to complete your payment.
+                                Once you have agreed to a solution and have logged in with your account, you should see a <span class="text-alt-color">Projects and Payment</span> tab in the dropdown menu under your name. This link will bring you to a table with your unpaid charges. Select this charge and continue through our online payment portal powered by <a href="https://www.authorize.net/">Authorize.Net</a> to complete your payment.
                             </div>
 						</li>
                         
                         <li data-transition="fade">
-                            <div class="tp-caption text-center"
+                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
-                                 data-voffset="300"
+                                 data-voffset="200"
                                  data-speed="700"
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <h2>Step 3: Submit Your Images</h2>
+                                Step 3: Submit Your Images
                             </div>
 
-                            <div class="tp-caption text-block" style="width:800px; white-space: pre-wrap;"
+                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                                 data-whitespace=”normal”
+                                 data-width="['800']"
+                                 data-height="['auto']"
                                  data-x="center"
                                  data-y="top"
                                  data-hoffset="0"
@@ -225,19 +275,7 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                <p>After you have paid for your images, we will provide you with a link to securely upload your images to our platform. From here we can begin to work on your data. From there on we will provide you with regular updates until the project is complete. It's that simple.</p>
-                            </div>
-                            
-                            <div class="tp-caption text-center"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="650"
-                                 data-speed="700"
-                                 data-start="700"
-                                 data-transform_in="o:0;s:700;"
-                                 data-transform_out="o:0;s:700;">
-                                <h4><a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>" class="text-alt-color">Ready to get started?</a></h4>
+                                After you have paid for your images, we will provide you with a link to securely upload your images to our platform. From here we can begin to work on your data. From there on we will provide you with regular updates until the project is complete. It's that simple.<br /><br /><a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>" class="text-alt-color">Ready to get started?</a>
                             </div>
 						</li>
 					</ul>
