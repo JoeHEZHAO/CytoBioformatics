@@ -125,6 +125,10 @@ class Cyto_bioformatics extends CI_Controller {
           $data['firstname'] = $_SESSION['transInfo']['firstname'];
           $data['lastname'] = $_SESSION['transInfo']['lastname'];
 
+          $data['TotelCharge'] = $_SESSION['TotelCharge'];
+		  $data['quoteIds'] = $_SESSION['quoteIds'];
+		  $data['quoteCharges'] = $_SESSION['quoteCharges'];
+
           $this->load->view('receiptPage', $data);
 	}
 
@@ -140,11 +144,17 @@ class Cyto_bioformatics extends CI_Controller {
 				'ID' => $_SESSION['ID']
 		);
 
+		$items = array(
+			'TotelCharge' => $_SESSION['TotelCharge'],
+	  		'quoteIds' => $_SESSION['quoteIds'],
+	  		'quoteCharges' => $_SESSION['quoteCharges']
+		);
+
 		$_SESSION['billingAddr'] = $data; 
 		$this->load->model('TransactionRecord_model');
 		if ($response = $this->TransactionRecord_model->saveBillingAddress($data)) {
 			$this->load->model('email_receipt_model');
-			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo']);
+			$this->email_receipt_model->send_mail($data, $_SESSION['transInfo'],$items);
 			echo "Ok";
 		}else{
 			echo "failed";
@@ -154,38 +164,38 @@ class Cyto_bioformatics extends CI_Controller {
     function createPdf(){
 		$this->load->helper('pdf_helper');
 
-		// $data['billEmail'] = $_SESSION['billingAddr']['billEmail'];
-		// $data['streetAddress'] = $_SESSION['billingAddr']['streetAddress'];
-		// $data['zipCode'] = $_SESSION['billingAddr']['zipCode'];
-		// $data['city'] = $_SESSION['billingAddr']['city'];
-		// $data['country'] = $_SESSION['billingAddr']['country'];
-		// $data['transId'] = $_SESSION['billingAddr']['transId'];
+		$data['billEmail'] = $_SESSION['billingAddr']['billEmail'];
+		$data['streetAddress'] = $_SESSION['billingAddr']['streetAddress'];
+		$data['zipCode'] = $_SESSION['billingAddr']['zipCode'];
+		$data['city'] = $_SESSION['billingAddr']['city'];
+		$data['country'] = $_SESSION['billingAddr']['country'];
+		$data['transId'] = $_SESSION['billingAddr']['transId'];
 
-		// $data['accountNumber'] = $_SESSION['transInfo']['accountNumber'];
-		// $data['accountType'] = $_SESSION['transInfo']['accountType'];
-		// $data['amount'] = $_SESSION['transInfo']['amount'];
-		// $data['TranDate'] = $_SESSION['transInfo']['TranDate'];
-		// $data['firstname'] = $_SESSION['transInfo']['firstname'];
-		// $data['lastname'] = $_SESSION['transInfo']['lastname'];
-		// $data['quoteIds'] = $_SESSION['quoteIds'];
-		// $data['quoteCharges'] = $_SESSION['quoteCharges'];
+		$data['accountNumber'] = $_SESSION['transInfo']['accountNumber'];
+		$data['accountType'] = $_SESSION['transInfo']['accountType'];
+		$data['amount'] = $_SESSION['transInfo']['amount'];
+		$data['TranDate'] = $_SESSION['transInfo']['TranDate'];
+		$data['firstname'] = $_SESSION['transInfo']['firstname'];
+		$data['lastname'] = $_SESSION['transInfo']['lastname'];
+		$data['quoteIds'] = $_SESSION['quoteIds'];
+		$data['quoteCharges'] = $_SESSION['quoteCharges'];
 
 		// dummy data
-		$data['billEmail'] = 'zhaohezzu@gmail.com';
-		$data['streetAddress'] = '366 Maguire Village APt #4';
-		$data['zipCode'] = '32608';
-		$data['city'] = 'Gainesville';
-		$data['country'] = 'USA';
-		$data['transId'] = '123456789';
+		// $data['billEmail'] = 'zhaohezzu@gmail.com';
+		// $data['streetAddress'] = '366 Maguire Village APt #4';
+		// $data['zipCode'] = '32608';
+		// $data['city'] = 'Gainesville';
+		// $data['country'] = 'USA';
+		// $data['transId'] = '123456789';
 
-		$data['accountNumber'] = 'xxxx 6676';
-		$data['accountType'] = 'VISA';
-		$data['amount'] = '105';
-		$data['TranDate'] = '2017-02-11';
-		$data['firstname'] = 'He';
-		$data['lastname'] = 'Zhao';
-		$data['quoteIds'] = array('123', '456');
-		$data['quoteCharges'] = array('45', '60');
+		// $data['accountNumber'] = 'xxxx 6676';
+		// $data['accountType'] = 'VISA';
+		// $data['amount'] = '105';
+		// $data['TranDate'] = '2017-02-11';
+		// $data['firstname'] = 'He';
+		// $data['lastname'] = 'Zhao';
+		// $data['quoteIds'] = array('123', '456');
+		// $data['quoteCharges'] = array('45', '60');
 
 		$data['name'] = 'hezhao';
 	    $this->load->view('pdf_example', $data);
@@ -243,7 +253,71 @@ class Cyto_bioformatics extends CI_Controller {
 		$this->TransactionRecord_model->rewriteQuoteDb($quoteIds);
 		echo 'Ok';
 	}
-	
+
+	function transactionCaller(){
+libxml_use_internal_errors(true); 
+// below line has to be unendented		
+$transRequestXmlStr=<<<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+	<merchantAuthentication></merchantAuthentication>
+	<transactionRequest>
+	<transactionType>authCaptureTransaction</transactionType>
+	<amount>assignAMOUNT</amount>
+	<currencyCode>USD</currencyCode>
+	<payment>
+	<opaqueData>
+   		<dataDescriptor>assignDD</dataDescriptor>
+   		<dataValue>assignDV</dataValue>
+	</opaqueData>
+	</payment>
+	</transactionRequest>
+</createTransactionRequest>
+XML;
+		$transRequestXml=new SimpleXMLElement($transRequestXmlStr, LIBXML_NOWARNING);
+
+		$loginId = "3Dh3gd4ZwG";
+		$transactionKey = "82xL6Wk6A46r88t6";
+
+		// $loginId = "2m7ULx4Bva";
+		// $transactionKey = "224DSD4ns9bUk4K4";
+
+		$transRequestXml->merchantAuthentication->addChild('name',$loginId);
+		$transRequestXml->merchantAuthentication->addChild('transactionKey',$transactionKey);
+
+		$transRequestXml->transactionRequest->amount=$_POST['amount'];
+		$transRequestXml->transactionRequest->payment->opaqueData->dataDescriptor=$_POST['dataDesc'];
+		$transRequestXml->transactionRequest->payment->opaqueData->dataValue=$_POST['dataValue'];
+
+		$url="https://apitest.authorize.net/xml/v1/request.api";
+		// $url="https://api.authorize.net/xml/v1/request.api";
+
+		try{	//setting the curl parameters.
+		        $ch = curl_init();
+		        if (FALSE === $ch)
+		        	throw new Exception('failed to initialize');
+		        curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+		        curl_setopt($ch, CURLOPT_POSTFIELDS, $transRequestXml->asXML());
+		        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
+		        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		        curl_setopt($ch, CURLOPT_DNS_USE_GLOBAL_CACHE, false );
+		        $content = curl_exec($ch);
+		        if (FALSE === $content)
+		        	throw new Exception(curl_error($ch), curl_errno($ch));
+		        curl_close($ch);
+				
+				$xmlResult=simplexml_load_string($content);
+				$jsonResult=json_encode($xmlResult);
+				echo $jsonResult;
+				// echo $content;
+				
+		    }catch(Exception $e) {
+		    	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
+			}
+	}
 }
 /**
 * 

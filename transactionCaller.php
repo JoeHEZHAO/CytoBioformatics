@@ -36,9 +36,6 @@ $transRequestXml->transactionRequest->payment->opaqueData->dataValue=$_POST['dat
 $url="https://apitest.authorize.net/xml/v1/request.api";
 // $url="https://api.authorize.net/xml/v1/request.api";
 
-
-//print_r($transRequestXml->asXML());
-
 try{	//setting the curl parameters.
         $ch = curl_init();
         if (FALSE === $ch)
@@ -56,11 +53,13 @@ try{	//setting the curl parameters.
         	throw new Exception(curl_error($ch), curl_errno($ch));
         curl_close($ch);
 		
-		$xmlResult=simplexml_load_string($content);
+		// $xmlResult=simplexml_load_string($content);
 
-		$jsonResult=json_encode($xmlResult);
+		// $jsonResult=json_encode($xmlResult);
 		
-		echo $jsonResult;
+		// echo $jsonResult;
+
+        echo $content;
 		
     }catch(Exception $e) {
     	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);

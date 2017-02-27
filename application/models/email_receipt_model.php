@@ -8,7 +8,7 @@ date_default_timezone_set('America/New_York');
          $this->load->helper('form'); 
       } 
 
-      public function send_mail($billAddr,$transInfo) { 
+      public function send_mail($billAddr,$transInfo, $items) { 
 
          $config = Array(
               'protocol' => 'smtp',
@@ -40,6 +40,10 @@ date_default_timezone_set('America/New_York');
           $data['TranDate'] = $transInfo['TranDate'];
           $data['firstname'] = $transInfo['firstname'];
           $data['lastname'] = $transInfo['lastname'];
+
+          $data['TotelCharge'] = $items['TotelCharge'];
+          $data['quoteIds'] = $items['quoteIds'];
+          $data['quoteCharges'] = $items['quoteCharges'];
 
           // $list = array('...@gmail.com');
           $this->email->to($billAddr['billEmail']);

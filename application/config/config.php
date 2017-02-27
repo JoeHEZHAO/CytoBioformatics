@@ -36,7 +36,7 @@ $config['base_url'] = 'https://localhost/Codeigniter';
 |
 */
 //$config['index_page'] = '';
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 
 /*
