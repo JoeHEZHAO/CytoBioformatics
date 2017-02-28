@@ -184,7 +184,6 @@ class Cyto_bioformatics extends CI_Controller {
 		$data['quoteCharges'] = $_SESSION['quoteCharges'];
 		$data['name'] = 'hezhao';
 
-	    $this->load->view('pdf_example', $data);
 		$this->load->model('generate_pdf_receipt');
 		$this->generate_pdf_receipt->createPdf($_SESSION['billingAddr'], $_SESSION['transInfo'], $_SESSION['subjects'], $_SESSION['quoteCharges'], $_SESSION['email']);
 		// var_dump($_SESSION['ID']);
