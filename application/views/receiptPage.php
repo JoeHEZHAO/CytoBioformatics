@@ -93,42 +93,52 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="http://nextstepwebs.com/images/logo.png" style="width:100%; max-width:300px;">
-                            </td>
-                            
-                            <td>
-                                Invoice #: 123<br>
-                                Created: January 1, 2015<br>
-                                Due: February 1, 2015
+                                <img src="<?php echo base_url('assets/images/cyto_logo_orgdark_sharp_noalpha.png'); ?>" style="width:100%; max-width:90px;">
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                Next Step Webs, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, TX 12345
-                            </td>
-                            
-                            <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
-                            </td>
-                        </tr>
-                    </table>
-                </td>
+            <tr id='address'>
+                <td class='col-left' width='260'>CytoInformatics</td>
+                <td align='right' width='110'>Receipt #:</td>
+                <td width='140'> <?php echo $transId ?></td>
             </tr>
+            <tr>
+                <td class='col-left'>105 Haynes Circle</td>
+                <td align='right'>Date:</td>
+                <td><div id='date'><?php echo $TranDate ?></div></td>
+            </tr>
+            <tr>
+                <td class='col-left'>Nicholasville, KY, 40356</td>
+                <td align='right' class='border-bottom'></td>
+                <td class='border-bottom'></td>
+            </tr>
+            <tr>
+                <td class='col-left'></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class='col-left'>Phone: (904)521-2357</td>
+                <td></td>
+                <td></td>
+            </tr>
+
             
             <tr class="heading">
                 <td>
                     Payment Method
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
                 </td>
                 
                 <td>
@@ -140,6 +150,15 @@
                 <td>
                     Account Number : 
                 </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
                 
                 <td>
                     <?php echo $accountNumber; ?>
@@ -149,6 +168,15 @@
             <tr class="details">
                 <td>
                     Account Type : 
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
                 </td>
                 
                 <td>
@@ -160,6 +188,15 @@
                 <td>
                     Transaction ID : 
                 </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
                 
                 <td>
                     <?php echo $transId; ?>
@@ -169,6 +206,15 @@
             <tr class="details">
                 <td>
                     Transaction Date : 
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
                 </td>
                 
                 <td>
@@ -203,7 +249,7 @@
                 $items = '';
                 foreach ($quoteIds as $key => $value) {
                         $items = $items."<tr class='item'>
-                                <td>Item id :".$value."</td>
+                                <td>".$value."</td>
                                 <td class='description'>Monthly web</td>
                                 <td>".$quoteCharges[$key]."</td>
                                 <td>1</td>
@@ -222,11 +268,35 @@
                 <td>
                     
                 </td>
+
+                <td>
+                    
+                </td>
+                
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
             </tr>
             
             <tr class="item">
                 <td>
                     Billing Email : 
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
                 </td>
                 
                 <td>
@@ -238,6 +308,18 @@
                 <td>
                     Street Address :
                 </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
                 
                 <td>
                    <?php echo $streetAddress; ?>
@@ -247,6 +329,18 @@
             <tr class="item">
                 <td>
                     City :
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
                 </td>
                 
                 <td>
@@ -258,6 +352,18 @@
                 <td>
                     Country :
                 </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
                 
                 <td>
                    <?php echo $country; ?>
@@ -268,16 +374,38 @@
                 <td>
                     Zipcode :
                 </td>
-                
+                <td>
+                    
+                </td >
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
                 <td>
                    <?php echo $zipCode;?>
                 </td>
             </tr>            
 
-            <tr class="total">
-                <td></td>
-                
+            <tr >
                 <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+                
+                <td style="border-top: 2px solid #eee;">
                    Total: $<?php echo $amount ?>
                 </td>
             </tr>

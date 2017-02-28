@@ -104,7 +104,7 @@ class Generate_pdf_receipt extends CI_Model {
 		            <div style='height: 10px; background-color: #fff;'></div>
 
 		            <tr id='address'>
-		                <td class='col-left' width='260'>".$firstname." ".$lastname."</td>
+		                <td class='col-left' width='260'>CytoInformatics</td>
 		                <td align='right' width='110'>Invoice #:</td>
 		                <td width='140'>".$transId."</td>
 		            </tr>
