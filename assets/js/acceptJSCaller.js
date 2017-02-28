@@ -100,7 +100,7 @@ function acceptJSCaller()
 function storeRecord(response){
 	console.log(response);
 	$.ajax({
-		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/StoreTransactionRecord',
+		url: $('#submitButton').attr('name') + 'index.php/Cyto/StoreTransactionRecord',
 		data: { 
 			amount: document.getElementById('amount').value, 
 			accountNumber: response.transactionResponse.accountNumber, 
@@ -128,7 +128,7 @@ function storeRecord(response){
 function saveBillingAddress(transId){
 
     $.ajax({
-		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/saveBillingAddress',
+		url: $('#submitButton').attr('name') + 'index.php/Cyto/saveBillingAddress',
 		data: { 
 			billEmail: document.getElementById('email').value, 
 			streetAddress: document.getElementById('address').value, 
@@ -154,7 +154,7 @@ function saveBillingAddress(transId){
 function rewriteQuotesDb(){
 
 	$.ajax({
-		url: $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/rewriteQuotesDb',
+		url: $('#submitButton').attr('name') + 'index.php/Cyto/rewriteQuotesDb',
 		data: {},
 		method: 'POST',
 		timeout: 5000

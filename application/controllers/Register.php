@@ -35,17 +35,16 @@ class Register extends CI_Controller
             $_SESSION['phone'] = $phone;
             $_SESSION['ID'] = $UniqueID;
 			echo "";
-			
-		}
-		else
-		{
+		} 
+        else {
 			echo "Email address already exists.";
 		}
 	}
     
     public function reset_password() {
         $email = $this->security->xss_clean($this->input->post('email'));
-        $password = $this->security->xss_clean($this->input->post('password'));    
+        $password = $this->security->xss_clean($this->input->post('password'));
+        
         // hash password before inserting in database
         $password = password_hash($password, PASSWORD_DEFAULT);
         

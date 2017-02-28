@@ -31,7 +31,7 @@
 <body>
   <div class="form">
       
-      <a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>">
+      <a href="<?php echo base_url('index.php/Cyto/index'); ?>">
           <img src="<?php echo base_url('assets/images/cyto_logo.png'); ?>" style="width: 150px; display: block; margin: auto; margin-bottom: 50px;">
       </a>
           
@@ -130,7 +130,7 @@
               <input type="password" name="password_login" required autocomplete="off"/>
             </div>
           
-            <p class="forgot"><a href="<?php echo base_url('index.php/cyto_bioformatics/forgot_password'); ?>">Forgot Password?</a></p>
+            <p class="forgot"><a href="<?php echo base_url('index.php/Cyto/forgot_password'); ?>">Forgot Password?</a></p>
           
             <button class="button button-block">Log In</button>
           

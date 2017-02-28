@@ -292,7 +292,7 @@
 
     <script type="text/javascript">     
     function returnback(){
-        window.location.href = 'https://localhost/Codeigniter/index.php/cyto_bioformatics/index';
+        window.location.href = 'https://localhost/Codeigniter/index.php/Cyto/index';
     }
     </script>
 </body>
