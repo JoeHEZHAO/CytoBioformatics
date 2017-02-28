@@ -9,27 +9,27 @@ class Email_model extends CI_Model{
     } 
     
     private function email_config() {
-         //$config = Array(
-         //     'protocol' => 'smtp',
-         //     'smtp_host' => 'ssl://smtp.googlemail.com',
-         //     'smtp_port' => 465,
-         //     'smtp_user' => 'zhaohezzu@gmail.com',
-         //     'smtp_pass' => 'Zh63963252',
-         //     'mailtype'  => 'html', 
-         //     'charset' => 'utf-8',
-         //     'wordwrap' => TRUE
-         //);
          $config = Array(
-            'protocol' => 'sendmail',
-            'mailpath' => '/usr/sbin/sendmail',
-            'smtp_port' => 465,
-            'smtp_user' => 'service@cytoinformatics.com',
-            'smtp_pass' => 'JMN73dfuXfQV',
-            'smtp_crypto' => 'ssl',
-            'mailtype'  => 'html', 
-            'charset' => 'utf-8',
-            'wordwrap' => TRUE
+             'protocol' => 'smtp',
+             'smtp_host' => 'ssl://smtp.googlemail.com',
+             'smtp_port' => 465,
+             'smtp_user' => 'zhaohezzu@gmail.com',
+             'smtp_pass' => 'Zh63963252',
+             'mailtype'  => 'html', 
+             'charset' => 'utf-8',
+             'wordwrap' => TRUE
          );
+         // $config = Array(
+         //    'protocol' => 'sendmail',
+         //    'mailpath' => '/usr/sbin/sendmail',
+         //    'smtp_port' => 465,
+         //    'smtp_user' => 'service@cytoinformatics.com',
+         //    'smtp_pass' => 'JMN73dfuXfQV',
+         //    'smtp_crypto' => 'ssl',
+         //    'mailtype'  => 'html', 
+         //    'charset' => 'utf-8',
+         //    'wordwrap' => TRUE
+         // );
         // 465 for ssl, 587 for tls
         return $config;
     }
@@ -65,8 +65,8 @@ class Email_model extends CI_Model{
         $this->email->to($billAddr['billEmail']);
         $this->email->subject('Auto-Receipt');
         $this->email->message($this->load->view('email_receipt', $data, true));
-//        $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
-        $fileLocation = '/home/cytoinfo/public_html/receipt/'.$email;
+        $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
+        // $fileLocation = '/home/cytoinfo/public_html/receipt/'.$email;
         $this->email->attach($fileLocation.'/'.$data['transId'].'.pdf');
         $this->email->send();
       }

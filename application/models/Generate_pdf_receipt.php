@@ -199,7 +199,7 @@ class Generate_pdf_receipt extends CI_Model {
 		ob_end_clean();
 		$obj_pdf->writeHTML($html, true, false, true, false, '');
     	$dir = 'receipt/'.$email;
-    	echo $dir;
+    	// echo $dir;
 		if (!is_dir($dir)) {
 		   mkdir($dir, 0777);
 		} 
@@ -210,10 +210,10 @@ class Generate_pdf_receipt extends CI_Model {
 
 		//$obj_pdf->Output('/Users/zhaohe/htdocs/localhost/Codeigniter/'.$dir.'/output.pdf', 'F');
 		//$obj_pdf->Output('/var/www/html/Codeigniter/tmp/output.pdf', 'F');
-		$fileLocation = $_SERVER['DOCUMENT_ROOT'].$dir.'/'.$transId.'.pdf';
-		echo $fileLocation;
+		$fileLocation = $_SERVER['DOCUMENT_ROOT'].'Codeigniter/'.$dir.'/'.$transId.'.pdf';
 		$obj_pdf->Output($fileLocation, 'F');
-	 }
+		return $fileLocation; 
+	}
 }
 
 	class MYPDF extends TCPDF {
@@ -221,7 +221,7 @@ class Generate_pdf_receipt extends CI_Model {
 	    public function Header() {
 	        // Log
 	        // $image_file = base_url('assets/images/cyto_logo_orgdark_sharp_noalpha.png');
-	        $image_file = $_SERVER['DOCUMENT_ROOT'].'assets/images/cyto_logo_orgdark_sharp_noalpha.png';
+	        $image_file = $_SERVER['DOCUMENT_ROOT'].'Codeigniter/assets/images/cyto_logo_orgdark_sharp_noalpha.png';
 	        $this->Image($image_file, 10, 10, 25, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 	        // Set font
 	        $this->SetFont('helvetica', 'B', 20);

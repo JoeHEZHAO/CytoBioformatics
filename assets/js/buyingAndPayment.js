@@ -12,7 +12,7 @@ $(document).ready(function() {
 			    quoteCharges.push($(this).attr('value'));
 			    totalCharge = totalCharge + parseFloat($(this).attr('value'));
 			});
-
+			console.log(subjects);
 			if(totalCharge != 0){	
 				$.ajax({
 					type: "POST",
