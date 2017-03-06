@@ -14,7 +14,7 @@
 			$this->load->model('UserInfo_model');
 			if ($this->UserInfo_model->insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)) {
 				return true;
-			}else{
+			} else {
 				return false;
 			}
 
@@ -24,14 +24,9 @@
 
 			$this->load->model('UserInfo_model');
 			if (!empty($data = $this->UserInfo_model->selectForSignUp($email))) {
-
 				return $data;
-
-			}
-			else{
-
+			} else {
 				return;
-
 			}
 
 		}

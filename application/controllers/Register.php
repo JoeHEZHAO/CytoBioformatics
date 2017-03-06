@@ -45,14 +45,17 @@ class Register extends CI_Controller
         $email = $this->security->xss_clean($this->input->post('email'));
         $password = $this->security->xss_clean($this->input->post('password'));
         
-        // hash password before inserting in database
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        
         $this->load->model('UserInfo_model');
-        if ($this->UserInfo_model->reset_password($email, $password)) {
-            echo "success";   
+        if ($this->UserInfo_model->check_resetpassword_isnew($email, $password)) {
+            // hash password before inserting in database
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            if ($this->UserInfo_model->reset_password($email, $password)) {
+                echo "success";   
+            } else {
+                echo "failed_to_update";
+            }
         } else {
-            echo "failed_to_update";
+            echo "used_password";
         }
     }
 }
