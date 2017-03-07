@@ -18,8 +18,7 @@ date_default_timezone_set('America/New_York');
       public function password_reset() {
           $data['email'] = $this->security->xss_clean($this->input->post('email'));
           $this->load->model('Email_model');
-		      $resp = $this->Email_model->send_passwordreset($data);
-          echo $resp;
+		  echo $this->Email_model->send_passwordreset($data);
       }
    } 
 ?>

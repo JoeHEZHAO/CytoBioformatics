@@ -88,11 +88,12 @@
 </head>
 
 <body>
+    <?php $link = base_url('index.php/Login/activate_account').'/'.$encoded_email.'/'.$activate_token; ?>
     <div>
-        <h5>Hello, <?php echo $email; ?></h5>
-        <p>This is an automated message from <a href="<?php echo base_url('index.php/Cyto/index').'/'.$token; ?>">cytoinformatics.com</a>. You have requested to reset the password for the account associated with this email address.</p>
-        <p>Please click <a href="<?php echo base_url('index.php/Cyto/password_reset_token').'/'.$token; ?>">this link to reset your password.</a></p><br>
-        <p>Note that this link will stop working after 24 hours.</p><br>
+        <h5>Hello, <?php echo rawurldecode($encoded_email); ?></h5>
+        <p>This is an automated message from <a href="<?php echo base_url('index.php/Cyto/index'); ?>">cytoinformatics.com</a>. Please click the following link to activate your account.</p>
+        <p><a href="<?php echo $link; ?>"><?php echo $link; ?></a></p><br>
+        <p>If you did not request to create a CytoInformatics account, then please disregard this email.</p><br>
     </div>
 </body>
 </html>

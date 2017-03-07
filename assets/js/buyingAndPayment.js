@@ -16,11 +16,11 @@ $(document).ready(function() {
 			if(totalCharge != 0){	
 				$.ajax({
 					type: "POST",
-					url: $('#checkout').attr('name') + '/Cyto_bioformatics/Checkout',
+					url: $('#checkout').attr('name') + '/Cyto/Checkout',
 					data: { TotelCharge : totalCharge, quoteIds: quoteIds,  quoteCharges : quoteCharges, subjects : subjects },
 					success: function (response) {
 						if (response == 'success!') {
-							window.location.replace($('#checkout').attr('name') + '/Cyto_bioformatics/paymentPage');
+							window.location.replace($('#checkout').attr('name') + '/Cyto/paymentPage');
 						}else{
 							alert(response);
 						}				

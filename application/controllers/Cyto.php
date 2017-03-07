@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('America/New_York');
 
-class Cyto_bioformatics extends CI_Controller {
+class Cyto extends CI_Controller {
 
 	public function index()
 	{
@@ -50,10 +50,12 @@ class Cyto_bioformatics extends CI_Controller {
 			$data['lastname'] = $_SESSION['lastname'];
 			$this->load->model('Submitquote_model');
 
-			if ($this->Submitquote_model->loadQuotes()) {
-				$data['rows'] = $this->Submitquote_model->loadQuotes();
-			}else{
+			if (!empty($response = $this->Submitquote_model->loadQuotes())) {
+                $data['rows'] = $response->result_array();
+                $data['num_rows'] = $response->num_rows();
+			} else {
 				$data['rows'] = 'failed';
+                $data['num_rows'] = 0;
 			}
 			$this->load->view('buyingAndPayment', $data);
 		}
@@ -90,17 +92,17 @@ class Cyto_bioformatics extends CI_Controller {
     function StoreTransactionRecord(){
 
 		$data = array(
-				'firstname'   => $_SESSION['firstname'],
-				'lastname' => $_SESSION['lastname'],
-				'email'      => $_SESSION['email'],
-				'TranDate' => date('Y-m-j H:i:s'),
-				'ID' => $_SESSION['ID'],
-				'amount' => $_POST['amount'],
-				'accountNumber' => $_POST['accountNumber'],
-				'accountType' => $_POST['accountType'],
-				'authCode' => $_POST['authCode'],
-				'transId' => $_POST['transId'],
-				'messages' => $_POST['messages']
+            'firstname'   => $_SESSION['firstname'],
+            'lastname' => $_SESSION['lastname'],
+            'email'      => $_SESSION['email'],
+            'TranDate' => date('Y-m-j H:i:s'),
+            'ID' => $_SESSION['ID'],
+            'amount' => $_POST['amount'],
+            'accountNumber' => $_POST['accountNumber'],
+            'accountType' => $_POST['accountType'],
+            'authCode' => $_POST['authCode'],
+            'transId' => $_POST['transId'],
+            'messages' => $_POST['messages']
 		);
 
 		$_SESSION['transInfo'] = $data;
@@ -113,37 +115,36 @@ class Cyto_bioformatics extends CI_Controller {
 	}
 
 	function receiptPage(){
+      	$data['TotelCharge'] = $_SESSION['TotelCharge'];{
+	  	$data['quoteIds'] = $_SESSION['quoteIds'];
+	  	$data['quoteCharges'] = $_SESSION['quoteCharges'];}
+        // billing info
+        $data['billEmail'] = $_SESSION['billingAddr']['billEmail'];
+        $data['streetAddress'] = $_SESSION['billingAddr']['streetAddress'];
+        $data['zipCode'] = $_SESSION['billingAddr']['zipCode'];
+        $data['city'] = $_SESSION['billingAddr']['city'];
+        $data['country'] = $_SESSION['billingAddr']['country'];
+        $data['transId'] = $_SESSION['billingAddr']['transId'];
+        // transaction info
+        $data['accountNumber'] = $_SESSION['transInfo']['accountNumber'];
+        $data['accountType'] = $_SESSION['transInfo']['accountType'];
+        $data['amount'] = $_SESSION['transInfo']['amount'];
+        $data['TranDate'] = $_SESSION['transInfo']['TranDate'];
+        $data['firstname'] = $_SESSION['transInfo']['firstname'];
+        $data['lastname'] = $_SESSION['transInfo']['lastname'];
 
-		  $data['billEmail'] = $_SESSION['billingAddr']['billEmail'];
-          $data['streetAddress'] = $_SESSION['billingAddr']['streetAddress'];
-          $data['zipCode'] = $_SESSION['billingAddr']['zipCode'];
-          $data['city'] = $_SESSION['billingAddr']['city'];
-          $data['country'] = $_SESSION['billingAddr']['country'];
-          $data['transId'] = $_SESSION['billingAddr']['transId'];
-
-          $data['accountNumber'] = $_SESSION['transInfo']['accountNumber'];
-          $data['accountType'] = $_SESSION['transInfo']['accountType'];
-          $data['amount'] = $_SESSION['transInfo']['amount'];
-          $data['TranDate'] = $_SESSION['transInfo']['TranDate'];
-          $data['firstname'] = $_SESSION['transInfo']['firstname'];
-          $data['lastname'] = $_SESSION['transInfo']['lastname'];
-
-          $data['TotelCharge'] = $_SESSION['TotelCharge'];
-		  $data['quoteIds'] = $_SESSION['quoteIds'];
-		  $data['quoteCharges'] = $_SESSION['quoteCharges'];
-
-          $this->load->view('receiptPage', $data);
+        $this->load->view('receiptPage', $data);
 	}
 
 	function saveBillingAddress(){
 		$data = array(
-				'billEmail'   => $_POST['billEmail'],
-				'streetAddress' => $_POST['streetAddress'],
-				'zipCode' => $_POST['zipCode'],
-				'city' => $_POST['city'],
-				'country' => $_POST['country'],
-				'transId' => $_POST['transId'],
-				'ID' => $_SESSION['ID']
+            'billEmail'   => $_POST['billEmail'],
+            'streetAddress' => $_POST['streetAddress'],
+            'zipCode' => $_POST['zipCode'],
+            'city' => $_POST['city'],
+            'country' => $_POST['country'],
+            'transId' => $_POST['transId'],
+            'ID' => $_SESSION['ID']
 		);
 
 		$items = array(
@@ -326,6 +327,16 @@ XML;
             echo "Error: invalid/expired token.";    
         }
     }
+    
+//    function activate_account($encoded_email, $token) {
+//        $this->load->model('UserInfo_model');
+//        $data = $this->UserInfo_model->activate_account(rawurldecode($encoded_email), $token);
+//        if (!empty($data)) {
+//            $this->load->view('account_activated');
+//        } else {
+//            echo "An error occurred.";
+//        }
+//    }
     
 //    function test_mimetype() {
 //        echo "finfo:\t";

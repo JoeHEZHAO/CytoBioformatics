@@ -46,17 +46,6 @@
 	<!-- FANCYBOX -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
 	
-	<!-- REVOLUTION SLIDER 
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/settings.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/layers.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/navigation.css'); ?>">-->
-	
-	<!-- OWL Carousel 
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">-->
-	
-	<!-- YOUTUBE PLAYER 
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/ytplayer/css/jquery.mb.ytplayer.min.css'); ?>">-->
-	
 	<!-- ANIMATIONS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
 	
@@ -113,7 +102,7 @@
                         </div>
 
                         <div class="tp-caption" style="position: relative; top: 60px;">
-                             <a class="btn btn-default" href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Get Started <i class="bronx-icon-arrow-right"></i></a>
+                             <a class="btn btn-default" href="<?php echo base_url('index.php/Cyto/login'); ?>">Get Started <i class="bronx-icon-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -128,12 +117,12 @@
 						<div class="row">
 							<div class="col-sm-9">
 								
-								<h3 class="last">Curious? <a href="<?php echo base_url('index.php/cyto_bioformatics/demo'); ?>">Click here to see a live demo.</a></h3>
+								<h3 class="last">Curious? <a href="<?php echo base_url('index.php/Cyto/demo'); ?>">Click here to see a live demo.</a></h3>
 								
 							</div><!-- col -->
 							<div class="col-sm-3 text-right">
 								
-								<a class="btn btn-default" href="<?php echo base_url('index.php/cyto_bioformatics/demo'); ?>">Learn More <i class="bronx-icon-arrow-right"></i></a>
+								<a class="btn btn-default" href="<?php echo base_url('index.php/Cyto/demo'); ?>">Learn More <i class="bronx-icon-arrow-right"></i></a>
 								
 							</div><!-- col -->
 						</div><!-- row -->
@@ -205,7 +194,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/solutions'); ?>">See what we can do<i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
+								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/Cyto/solutions'); ?>">See what we can do<i class="bronx-icon-arrow-right btn-default-alt-hover"></i></a>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->
@@ -354,9 +343,9 @@
 							<div class="col-lg-8 col-md-9 col-sm-12">
 								<h1 class="text-white-color">Put us to work on <span class="text-default-color">your problem</span></h1>
 								<br>
-								<p class="text-white-color">If you are curious about how our services can help you answer questions about your imaging data, <a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">submit a free quote</a>. We will quickly get back to you to discuss further.</p>
+								<p class="text-white-color">If you are curious about how our services can help you answer questions about your imaging data, <a href="<?php echo base_url('index.php/Cyto/quote'); ?>">submit a free quote</a>. We will quickly get back to you to discuss further.</p>
 								<br>
-								<a class="btn btn-default btn-white-hover" href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Submit Quote<i class="bronx-icon-arrow-right btn-white-hover"></i></a>
+								<a class="btn btn-default btn-white-hover" href="<?php echo base_url('index.php/Cyto/quote'); ?>">Submit Quote<i class="bronx-icon-arrow-right btn-white-hover"></i></a>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->
@@ -370,7 +359,7 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<h2 class="text-center text-dark">Ready to start?</h2>
-								<h6 class="text-center"><a class="text-alt-color" href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Sign up now.</a></h6>
+								<h6 class="text-center"><a class="text-alt-color" href="<?php echo base_url('index.php/Cyto/login'); ?>">Sign up now.</a></h6>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->
@@ -386,71 +375,44 @@
 	<!-- SCROLL UP -->
 	<a id="scroll-up"><i class="fa fa-angle-up"></i></a>
 	
-	
 	<!-- jQUERY -->
 	<script src="<?php echo base_url('assets/plugins/jquery/jquery-2.2.2.min.js'); ?>"></script>
 	
 	<!-- BOOTSTRAP JS -->
 	<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 	
-	<!-- VIEWPORT -->
+	<!-- VIEWPORT: place images and other content in container -->
 	<script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
 	
 	<!-- MENU -->
 	<script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
 	
-	<!-- FANCYBOX -->
+	<!-- FANCYBOX: make images, iframes, etc pop out of page -->
 	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
 	
-	<!-- REVOLUTION SLIDER  
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.actions.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.carousel.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.kenburn.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.layeranimation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.migration.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.navigation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.slideanims.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.video.min.js'); ?>"></script>-->
-	
-	<!-- OWL Carousel 
+	<!-- OWL Carousel: fast slider for scrolling through content
 	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>-->
 	
-	<!-- PARALLAX -->
+	<!-- PARALLAX: visual depth effect for background images -->
 	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
 	
-	<!-- ISOTOPE -->
+	<!-- ISOTOPE: filter & sort items in a layout -->
 	<script src="<?php echo base_url('assets/plugins/isotope/imagesloaded.pkgd.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/isotope/isotope.pkgd.min.js'); ?>"></script>
 	
-	<!-- PLACEHOLDER -->
+	<!-- PLACEHOLDER: enables html5 placeholder feature for old browsers -->
 	<script src="<?php echo base_url('assets/plugins/placeholders/jquery.placeholder.min.js'); ?>"></script>
 	
 	<!-- CONTACT FORM VALIDATE & SUBMIT -->
 	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
 	
-	<!-- GOOGLE MAPS 
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="<?php echo base_url('assets/plugins/googlemaps/gmap3.min.js'); ?>"></script>-->
-	
-	<!-- CHARTS -->
-	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
-	
 	<!-- COUNTER -->
 	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
 	
 	<!-- STATISTICS -->
 	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
-	
-	<!-- YOUTUBE PLAYER 
-	<script src="<?php echo base_url('assets/plugins/ytplayer/jquery.mb.ytplayer.min.js'); ?>"></script>-->
-	
-	<!-- INSTAFEED -->
-	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>
 	
 	<!-- COUNTDOWN -->
 	<script src="<?php echo base_url('assets/plugins/countdown/jquery.countdown.min.js'); ?>"></script>

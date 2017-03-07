@@ -211,7 +211,7 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                Click the <a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to discuss the possible solutions we can pursue to help you get the findings you need.<br><br>You are also encouraged to submit up to three sample images so that we may better prepare to discuss your data with you.
+                                Click the <a href="<?php echo base_url('index.php/Cyto/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to discuss the possible solutions we can pursue to help you get the findings you need.<br><br>You are also encouraged to submit up to three sample images so that we may better prepare to discuss your data with you.
                             </div>
 						</li>
                         
@@ -275,7 +275,7 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                After you have paid for your images, we will provide you with a link to securely upload your images to our platform. From here we can begin to work on your data. From there on we will provide you with regular updates until the project is complete. It's that simple.<br /><br /><a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>" class="text-alt-color">Ready to get started?</a>
+                                After you have paid for your images, we will provide you with a link to securely upload your images to our platform. From here we can begin to work on your data. From there on we will provide you with regular updates until the project is complete. It's that simple.<br /><br /><a href="<?php echo base_url('index.php/Cyto/quote'); ?>" class="text-alt-color">Ready to get started?</a>
                             </div>
 						</li>
 					</ul>

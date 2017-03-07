@@ -9,27 +9,16 @@ class Email_model extends CI_Model{
     } 
     
     private function email_config() {
-         $config = Array(
-             'protocol' => 'smtp',
-             'smtp_host' => 'ssl://smtp.googlemail.com',
-             'smtp_port' => 465,
-             'smtp_user' => 'zhaohezzu@gmail.com',
-             'smtp_pass' => 'Zh63963252',
-             'mailtype'  => 'html', 
-             'charset' => 'utf-8',
-             'wordwrap' => TRUE
+        $config = Array(
+              'protocol' => 'smtp',
+              'smtp_host' => 'ssl://smtp.googlemail.com',
+              'smtp_port' => 465,
+              'smtp_user' => 'zhaohezzu@gmail.com',
+              'smtp_pass' => 'Zh63963252',
+              'mailtype'  => 'html', 
+              'charset' => 'utf-8',
+              'wordwrap' => TRUE
          );
-         // $config = Array(
-         //    'protocol' => 'sendmail',
-         //    'mailpath' => '/usr/sbin/sendmail',
-         //    'smtp_port' => 465,
-         //    'smtp_user' => 'service@cytoinformatics.com',
-         //    'smtp_pass' => 'JMN73dfuXfQV',
-         //    'smtp_crypto' => 'ssl',
-         //    'mailtype'  => 'html', 
-         //    'charset' => 'utf-8',
-         //    'wordwrap' => TRUE
-         // );
         // 465 for ssl, 587 for tls
         return $config;
     }
@@ -103,6 +92,40 @@ class Email_model extends CI_Model{
             $this->email->to($data['email']);
             $this->email->subject('Auto-Receipt');
             $this->email->message($this->load->view('email_passwordreset', $data, true));
+            if($this->email->send()) {
+                return "success";
+            } else {
+                return "failed_to_send";
+            }
+            
+//            $this->email->send();
+//            echo $this->email->print_debugger();
+        }
+    }
+    
+    public function send_activateaccount($email, $activate_token) {
+        // check email is in database and update database if needed
+        $this->db->from('UserInfo');
+        $this->db->where('email', $email);
+        $records = $this->db->get()->row();
+        if (empty($records)) {
+            return "email_not_exist";
+        } else {
+            $data = array(
+                'encoded_email' => rawurlencode($email),
+                'activate_token' => $activate_token
+            );
+            
+            $config = $this->email_config();
+            
+            $this->load->library('email', $config);
+            $this->email->initialize($config);
+            $this->email->set_newline("\r\n");
+            $this->email->from($config['smtp_user'], 'CytoInformatics');
+            
+            $this->email->to($email);
+            $this->email->subject('Activate Your Account - CytoInformatics');
+            $this->email->message($this->load->view('email_activateaccount', $data, true));
             if($this->email->send()) {
                 return "success";
             } else {

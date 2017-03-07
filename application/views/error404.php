@@ -92,9 +92,9 @@
 						<h3>Page Not Found</h3>
 						<h4 style="color:#6e6e6e">The page you are looking for does not exist</h4>
 						<br>
-						<p>We were unable to find the page that you requested on this server. If you believe this is the result of an error, please <a href="<?php echo base_url('index.php/cyto_bioformatics/contact'); ?>">contact us</a>.</p>
+						<p>We were unable to find the page that you requested on this server. If you believe this is the result of an error, please <a href="<?php echo base_url('index.php/Cyto/contact'); ?>">contact us</a>.</p>
 						<br>
-						<a class="btn btn-default" href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>">Home<i class="bronx-icon-arrow-right"></i></a>
+						<a class="btn btn-default" href="<?php echo base_url('index.php/Cyto/index'); ?>">Home<i class="bronx-icon-arrow-right"></i></a>
 					</div><!-- col -->
 				</div><!-- row -->
 			</div><!-- container -->    

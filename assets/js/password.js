@@ -112,6 +112,9 @@ $('#reset_password').submit(function() {
                     } else if (response == 'failed_to_update') {
                         $("#error_reset").text("Failed to update database. Please contact us.");
                         $("#error_reset").css("color", "red");
+                    } else if (response == 'used_password') {
+                        $("#error_reset").text("This password has been used before. Please try a new one.");
+                        $("#error_reset").css("color", "red");                        
                     } else {
                         $("#error_reset").text("An unknown error occurred.");
                         $("#error_reset").css("color", "red");

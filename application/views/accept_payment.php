@@ -466,11 +466,11 @@
         });
 
         function returnback(){
-            window.location.href = $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/receiptPage';
+            window.location.href = $('#submitButton').attr('name') + 'index.php/Cyto/receiptPage';
         }
 
         function cancelTransaction(){
-            window.location.href = $('#submitButton').attr('name') + 'index.php/Cyto_bioformatics/buyingAndPayment';
+            window.location.href = $('#submitButton').attr('name') + 'index.php/Cyto/buyingAndPayment';
         }
 
         function showNext(){
