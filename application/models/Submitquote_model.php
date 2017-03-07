@@ -51,13 +51,15 @@ class Submitquote_model extends CI_Model
         // $this->db->where('status','approved');
 
         if (!empty($response = $this->db->get())) {
-            if ($response->num_rows() > 0) {
-                $row = $response->result_array();
-                return $row;
-            }
-        }else{
-            return false;
-        }
+//            if ($response->num_rows() > 0) {
+//                $row = $response->result_array();
+//                return $row;
+//            }
+            return $response;
+        } 
+//        else {
+//            return false;
+//        }
     }
 }
 

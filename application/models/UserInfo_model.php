@@ -171,9 +171,7 @@ date_default_timezone_set('America/New_York');
                 $this->db->set('activate_token', '');
                 $this->db->where('email', $email);
                 $this->db->update('UserInfo');
-                return true;
-            } else {
-                return false;
+                return $query;
             }
             
         }

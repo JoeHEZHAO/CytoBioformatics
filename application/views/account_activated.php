@@ -39,7 +39,7 @@
           <h1>Thank you! </h1>
           <label id="error_reset" style="display: block; text-align: center; position: relative; color: white; font-size: 13px; left: 0; bottom: 21px;">Your account has now been activated.</label>
             
-          <a href="<?php echo base_url('index.php/Cyto/index'); ?>"><button id="return-button" class="button button-block" style="display: none;">Return</button></a>
+          <a href="<?php echo base_url('index.php/Cyto/index'); ?>"><button id="return-button" class="button button-block">Return</button></a>
         </div>
       </div>
   </div>

@@ -88,9 +88,9 @@
 </head>
 
 <body>
-    <?php $link = base_url('index.php/Cyto/activate_account').'/'.$email.'/'.$activate_token; ?>
+    <?php $link = base_url('index.php/Login/activate_account').'/'.$encoded_email.'/'.$activate_token; ?>
     <div>
-        <h5>Hello, <?php echo $email; ?></h5>
+        <h5>Hello, <?php echo rawurldecode($encoded_email); ?></h5>
         <p>This is an automated message from <a href="<?php echo base_url('index.php/Cyto/index'); ?>">cytoinformatics.com</a>. Please click the following link to activate your account.</p>
         <p><a href="<?php echo $link; ?>"><?php echo $link; ?></a></p><br>
         <p>If you did not request to create a CytoInformatics account, then please disregard this email.</p><br>

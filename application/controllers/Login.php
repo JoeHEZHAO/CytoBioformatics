@@ -44,6 +44,22 @@ class Login extends CI_Controller
         $_SESSION['ID'] = $id;
         return true;
     }
+    
+    public function activate_account($encoded_email, $token) {
+        $this->load->model('UserInfo_model');
+        $data = $this->UserInfo_model->activate_account(rawurldecode($encoded_email), $token);
+        if (!empty($data)) {
+            $this->create_session($data->firstname, 
+                                  $data->lastname,
+                                  $data->email,
+                                  $data->organization,
+                                  $data->phone,
+                                  $data->ID);
+            $this->load->view('account_activated');
+        } else {
+            echo "An error occurred.";
+        }
+    }
 
 }
 ?>

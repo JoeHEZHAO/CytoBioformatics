@@ -123,7 +123,7 @@ class Email_model extends CI_Model{
             return "email_not_exist";
         } else {
             $data = array(
-                'email' => $email,
+                'encoded_email' => rawurlencode($email),
                 'activate_token' => $activate_token
             );
             
