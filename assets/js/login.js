@@ -55,12 +55,16 @@ $('#userlogin').submit(function() {
         url: $('#userlogin').attr('action') + '/Login/index',
         data: { email: email, password: pwd },
         success: function (response) {
-            
+//            console.log(response);
             if (response == 'failed') {
-
                 $("#error_login").text("Wrong email or password. Please try again.");
                 $("#error_login").css("display", "block");
-
+            } else if (response == 'exceeded_attempts') {
+                $("#error_login").text("Too many failed login attempts have been made. Please try again in five minutes.");
+                $("#error_login").css("display", "block");
+            } else if (response == 'error') {
+                $("#error_login").text("An error occurred. Please try again.");
+                $("#error_login").css("display", "block");
             } else {
                 window.location.replace($('#userlogin').attr('action') + '/Cyto/index');
 //                alert(response);

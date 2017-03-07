@@ -36,14 +36,17 @@ date_default_timezone_set('America/New_York');
 			$this->db->from('UserInfo');
 			$this->db->where('email', $email);
 
-            $data = $this->db->get()->row();
-            // if row was found and submitted password matches stored hash 
-			if ((!empty($data)) && (password_verify($password, $data->password))) {
-				return $data;
-			}
-			else{
-				return;
-			}
+            $data = array('result' => $this->db->get()->row());
+			if (!empty($data['result'])) {
+                if (password_verify($password, $data['result']->password)) {
+                    $data['login_status'] = 'correct';
+                } else {
+                    $data['login_status'] = 'incorrect';
+                }
+			} else {
+                $data['login_status'] = 'not_found';
+            }
+            return $data;
 		}
 
 		function selectForSignUp($email){

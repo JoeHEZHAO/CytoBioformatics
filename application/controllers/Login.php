@@ -12,25 +12,25 @@ class Login extends CI_Controller
         $password = $this->security->xss_clean($this->input->post('password'));
         
         // if user data exists in database, login user
-		if (!empty($data['result'] = $this->Login_model->checkUser($email, $password)))
-		{
-//			$_SESSION['firstname'] = $data['result']->firstname;
-//			$_SESSION['lastname'] = $data['result']->lastname;
-//            $_SESSION['email'] = $data['result']->email;
-//            $_SESSION['organization'] = $data['result']->organization;
-//            $_SESSION['phone'] = $data['result']->phone;
-//            $_SESSION['ID'] = $data['result']->ID;
-            $this->create_session($data['result']->firstname,
-                                  $data['result']->lastname,
-                                  $data['result']->email,
-                                  $data['result']->organization,
-                                  $data['result']->phone,
-                                  $data['result']->ID);
-			echo "";
-		}
-		else
-		{
-			echo "failed"; 
+        $data = $this->Login_model->checkUser($email, $password);
+//        var_dump($data);
+		if ($data['login_status'] === 'not_found') {
+            echo "failed";
+        } else if ($data['login_status'] === 'incorrect') {
+            echo $this->Login_model->loginAttempt(false, $data['result']);
+        } else if ($data['login_status'] === 'correct') {
+            $resp = $this->Login_model->loginAttempt(true, $data['result']);
+            if ($resp == '') {
+                $this->create_session($data['result']->firstname,
+                                      $data['result']->lastname,
+                                      $data['result']->email,
+                                      $data['result']->organization,
+                                      $data['result']->phone,
+                                      $data['result']->ID);
+            }
+            echo $resp;
+		} else {
+			echo "error"; 
 		}	
 	
 	}
