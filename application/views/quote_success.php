@@ -86,7 +86,7 @@
 						<h4>Thank you!</h4>
                         <p>We will contact you soon at the email address you provided.</p>
                         
-                        <p><a href="<?php echo base_url('index.php/cyto_bioformatics/index'); ?>">Click here</a> to return to the home page.</p>
+                        <p><a href="<?php echo base_url('index.php/Cyto/index'); ?>">Click here</a> to return to the home page.</p>
                         <br>
 						
 					</div><!-- col -->

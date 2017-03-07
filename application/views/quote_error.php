@@ -86,7 +86,7 @@
 						<h4>We are sorry!</h4>
                         <p>There was an error processing your quote.</p>
                         
-                        <p><a href="<?php echo base_url('index.php/cyto_bioformatics/quote'); ?>">Click here</a> to try again.</p>
+                        <p><a href="<?php echo base_url('index.php/Cyto/quote'); ?>">Click here</a> to try again.</p>
                         <br>
 						
 					</div><!-- col -->

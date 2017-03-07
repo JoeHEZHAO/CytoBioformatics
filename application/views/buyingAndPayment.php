@@ -126,6 +126,7 @@
                                 <?php }	}else{}?>
                         </tbody>
                     </table>
+                    </div>
                     <input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
                 </form>
             </div>

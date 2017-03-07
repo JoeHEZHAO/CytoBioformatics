@@ -63,7 +63,7 @@ $('#userlogin').submit(function() {
 
             }
             else{
-                window.location.replace($('#userlogin').attr('action') + '/cyto_bioformatics/index');
+                window.location.replace($('#userlogin').attr('action') + '/Cyto/index');
 //                alert(response);
             }
 
@@ -104,7 +104,7 @@ $('#register').submit(function() {
 
                     }
                     else{
-                        window.location.replace($('#register').attr('action') + '/cyto_bioformatics/index');
+                        window.location.replace($('#register').attr('action') + '/Cyto/index');
         //                alert(response);
                     }
 

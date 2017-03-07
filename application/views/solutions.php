@@ -75,10 +75,6 @@
 		<!-- PAGE CONTENT -->
 		<div class="page-solutions">
 			<img class="backing-image" src="<?php echo base_url('images/backgrounds/solutions.jpg'); ?>" alt="">
-							
-            <!--<div class="tp-caption">
-                 <img src="<?php echo base_url('images/backgrounds/solutions.jpg'); ?>" alt="" style="width: 100%;">
-            </div>-->
 
             <div class="page-solutions-text">
                  <h1>Cutting-Edge <span class="text-default-color">Machine Intelligence</span> <br> Optimized For Understanding <span class="text-default-color">Biomedical Images</span></h1>
@@ -348,60 +344,11 @@
                                 </div><!-- col -->
                             </div><!-- row -->
 
-                        </div><!-- item -->
-                        <!-- add more <div class="item"> elements here to add more pages to the services-slider. -->
-
+                        </div>
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
         </div><!-- solutions -->
-
-        <!-- COUNTER EFFECTS 
-        <section class="full-section dark-section" style="margin-bottom: 0px;" id="section-4">
-            <div class="full-section-container">
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-sm-2 visible-lg-block">
-								<a class="more-facts" href="#"><img src="<?php echo base_url('assets/images/cyto_logo_white_sharp.png'); ?>" style="width: 100px; height: 100px" alt="<?php echo base_url();?>"></a>
-							</div>
-							
-							<div class="col-lg-2 col-sm-3">
-								<div class="counter">
-									<div class="counter-value" data-value="10000"></div>
-									<div class="counter-details">Images Processed</div>
-								</div>
-							</div>
-							
-							<div class="col-lg-2 col-sm-3">
-								<div class="counter">
-									<div class="counter-value" data-value="160"></div>
-									<div class="counter-details">Projects Completed</div>
-								</div>
-							</div>
-							
-							<div class="col-lg-2 col-sm-3">
-								<div class="counter">
-									<div class="counter-value" data-value="53"></div>
-									<div class="counter-details">Active Users</div>
-								</div>
-							</div>
-							
-							<div class="col-lg-2 col-sm-3">
-								<div class="counter">
-									<div class="counter-value" data-value="40"></div>
-									<div class="counter-details">Active Sites</div>
-								</div>
-							</div>
-							
-							<div class="col-sm-2 visible-lg-block">
-								<a class="more-facts" href="#"></a>
-							</div>
-
-                    </div>
-                </div>
-            </div>
-        </section>-->
 
         <!-- SPAN -->
         <section class="full-section parallax" id="section-6" data-stellar-background-ratio="0.1">
@@ -410,7 +357,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h2 class="text-center text-dark">Ready to start?</h2>
-                            <h6 class="text-center"><a class="text-alt-color" href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>">Sign up now.</a></h6>
+                            <h6 class="text-center"><a class="text-alt-color" href="<?php echo base_url('index.php/Cyto/login'); ?>">Sign up now.</a></h6>
                         </div><!-- col -->
                     </div><!-- row -->
                 </div><!-- container -->

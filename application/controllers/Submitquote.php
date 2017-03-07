@@ -113,23 +113,19 @@ class Submitquote extends CI_Controller
 		$this->load->model('Submitquote_model');
         $UniqueID = md5(uniqid(mt_rand(), true));
         if ($this->Submitquote_model->submitquote($this->input->post('FirstName'), 
-                                              $this->input->post('LastName'), 
-                                              $this->input->post('email'), 
-                                              $this->input->post('organization'), 
-                                              $this->input->post('phone'),
-                                              $this->input->post('message'),
-                                              $UniqueID,
-                                              $this->input->post('filename0'),
-                                              $this->input->post('filename1'),
-                                              $this->input->post('filename2')
-                                             ))
-        {    
+                                                  $this->input->post('LastName'), 
+                                                  $this->input->post('email'), 
+                                                  $this->input->post('organization'), 
+                                                  $this->input->post('phone'),
+                                                  $this->input->post('message'),
+                                                  $UniqueID,
+                                                  $this->input->post('filename0'),
+                                                  $this->input->post('filename1'),
+                                                  $this->input->post('filename2'))) {    
             echo "";
-            /*$this->quote_success();*/
         }
         else {
             echo "failed";
-            /*$this->quote_error();*/
         }
 	}
     
@@ -154,32 +150,29 @@ class Submitquote extends CI_Controller
     
     function viewInSession($dest) {
         // checks if user has session and passes it to next view
-        if(isset($_SESSION['firstname']) && !empty($_SESSION['firstname']))
-		{
+        if(isset($_SESSION['firstname']) && !empty($_SESSION['firstname'])) {
 			$data['firstname'] = $_SESSION['firstname'];
 			$data['lastname'] = $_SESSION['lastname'];
 			$this->load->view($dest, $data);
 		}
-		else {$this->load->view($dest);}
+		else {
+            $this->load->view($dest);
+        }
     }
     
-    function quote()
-    {
+    function quote() {
         $this->viewInSession('quote'); 
     }
     
-    function quote_success()
-    {
+    function quote_success() {
 		$this->viewInSession('quote_success');        
     }
     
-    function quote_error()
-    {
+    function quote_error() {
 		$this->viewInSession('quote_error');        
     }
     
-    function _debug($error)
-    {
+    function _debug($error) {
         $this->load->view('debug', $error);
     }
 }
