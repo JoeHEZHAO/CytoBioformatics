@@ -106,6 +106,8 @@
           
             <button type="submit" class="button button-block">Get Started</button>
           </form>
+            
+          <p class="resend_activate" style="display: none;">Resend email</p>
 
         </div>
         

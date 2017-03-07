@@ -234,6 +234,15 @@ class Cyto extends CI_Controller {
         }
     }
     
+    function activate_account($email, $token) {
+        $this->load->model('UserInfo_model');
+        if ($this->UserInfo_model->activate_account($email, $token)) {
+            $this->load->view('account_activated');
+        } else {
+            echo "An error occurred.";
+        }
+    }
+    
 //    function test_mimetype() {
 //        echo "finfo:\t";
 //        var_dump(finfo_open(FILEINFO_MIME_TYPE));

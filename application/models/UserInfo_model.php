@@ -8,7 +8,7 @@ date_default_timezone_set('America/New_York');
 			parent::__construct();
 		}
 
-		function insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)
+		function insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID, $activate_token)
 		{
 			$data = array(
 				'firstname'   => $firstname,
@@ -18,14 +18,15 @@ date_default_timezone_set('America/New_York');
                 'organization' => $organization,
                 'phone' => $phone,
 				'created_at' => date('Y-m-j H:i:s'),
-				'ID' => $UniqueID
+				'ID' => $UniqueID,
+                'status' => 'pending',
+                'activate_token' => $activate_token
 			);
 
 			if ($this->db->insert('UserInfo', $data)) {
                 $this->update_password_history($email, $password);
 				return true;
-			}
-			else{
+			} else {
 				return false;
 			}
 		}
@@ -160,6 +161,22 @@ date_default_timezone_set('America/New_York');
 				return false;
 			}
 		}
+        
+        function activate_account($email, $token) {
+            $this->db->from('UserInfo');
+            $this->db->where('email', $email);
+            $query = $this->db->get()->row();
+            if (!empty($query) && ($query->activate_token == $token)) {
+                $this->db->set('status', 'active');
+                $this->db->set('activate_token', '');
+                $this->db->where('email', $email);
+                $this->db->update('UserInfo');
+                return true;
+            } else {
+                return false;
+            }
+            
+        }
 
 	}
 

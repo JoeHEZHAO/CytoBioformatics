@@ -8,6 +8,7 @@ class Register extends CI_Controller
 	{
 		$this->load->model('Register_model');
 		$UniqueID = md5(uniqid(mt_rand(), true));
+        $activate_token = md5(uniqid(mt_rand(), true));
         
         $email = $this->security->xss_clean($this->input->post('email'));
         $firstname = $this->security->xss_clean($this->input->post('FirstName'));
@@ -19,26 +20,33 @@ class Register extends CI_Controller
         // hash password before checking database
         $password = password_hash($password, PASSWORD_DEFAULT);
 
-		if (empty($data = $this->Register_model->checkerExisted($email))) {
-
-			$this->Register_model->register($email, 
+        $data = $this->Register_model->checkerExisted($email);
+		if (empty($data)) {
+            $this->Register_model->register($email, 
                                             $firstname,
                                             $lastname,
                                             $password, 
                                             $organization,
                                             $phone,
-                                            $UniqueID);
-			$_SESSION['firstname'] = $firstname;
-			$_SESSION['lastname'] = $lastname;
-            $_SESSION['email'] = $email;
-            $_SESSION['organization'] = $organization;
-            $_SESSION['phone'] = $phone;
-            $_SESSION['ID'] = $UniqueID;
-			echo "";
-		} 
-        else {
+                                            $UniqueID,
+                                            $activate_token);
+//            $_SESSION['firstname'] = $firstname;
+//            $_SESSION['lastname'] = $lastname;
+//            $_SESSION['email'] = $email;
+//            $_SESSION['organization'] = $organization;
+//            $_SESSION['phone'] = $phone;
+//            $_SESSION['ID'] = $UniqueID;
+            $this->load->model('Email_model');
+            if ($this->Email_model->send_activateaccount($email, $activate_token) == 'success') {
+                echo "";
+            } else {
+                echo 'activate_email_failed';
+            }
+        } else if ($data->status !== 'pending') {
 			echo "Email address already exists.";
-		}
+		} else {
+            echo 'account_pending';
+        }
 	}
     
     public function reset_password() {
