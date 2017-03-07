@@ -8,7 +8,7 @@ date_default_timezone_set('America/New_York');
 			parent::__construct();
 		}
 
-		function insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID)
+		function insert($email, $firstname, $lastname, $password, $organization, $phone, $UniqueID, $activate_token)
 		{
 			$data = array(
 				'firstname'   => $firstname,
@@ -18,13 +18,15 @@ date_default_timezone_set('America/New_York');
                 'organization' => $organization,
                 'phone' => $phone,
 				'created_at' => date('Y-m-j H:i:s'),
-				'ID' => $UniqueID
+				'ID' => $UniqueID,
+                'status' => 'pending',
+                'activate_token' => $activate_token
 			);
 
 			if ($this->db->insert('UserInfo', $data)) {
+                $this->update_password_history($email, $password);
 				return true;
-			}
-			else{
+			} else {
 				return false;
 			}
 		}
@@ -34,14 +36,17 @@ date_default_timezone_set('America/New_York');
 			$this->db->from('UserInfo');
 			$this->db->where('email', $email);
 
-            $data = $this->db->get()->row();
-            // if row was found and submitted password matches stored hash 
-			if ((!empty($data)) && (password_verify($password, $data->password))) {
-				return $data;
-			}
-			else{
-				return;
-			}
+            $data = array('result' => $this->db->get()->row());
+			if (!empty($data['result'])) {
+                if (password_verify($password, $data['result']->password)) {
+                    $data['login_status'] = 'correct';
+                } else {
+                    $data['login_status'] = 'incorrect';
+                }
+			} else {
+                $data['login_status'] = 'not_found';
+            }
+            return $data;
 		}
 
 		function selectForSignUp($email){
@@ -121,16 +126,58 @@ date_default_timezone_set('America/New_York');
 			}	
         }
         
+        function update_password_history($email, $password) {
+			$data = array(
+				'email'      => $email,
+				'password'   => $password,
+				'date_added' => date('Y-m-j H:i:s')
+			);
+
+			if ($this->db->insert('PasswordHistory', $data)) {
+				return true;
+			} else {
+				return false;
+			}
+            
+        }
+        
+        function check_resetpassword_isnew($email, $password) {
+            $this->db->from('PasswordHistory');
+            $this->db->where('email', $email);
+            $query = $this->db->get();
+            foreach ($query->result() as $row) {
+                if (password_verify($password, $row->password)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
         function reset_password($email, $password) {
 			$this->db->set('password', $password);
             $this->db->where('email', $email);
 			if ($this->db->update('UserInfo')) {
+                $this->update_password_history($email, $password);
 				return true;
 			}
 			else{
 				return false;
 			}
 		}
+        
+        function activate_account($email, $token) {
+            $this->db->from('UserInfo');
+            $this->db->where('email', $email);
+            $query = $this->db->get()->row();
+            if (!empty($query) && ($query->activate_token == $token)) {
+                $this->db->set('status', 'active');
+                $this->db->set('activate_token', '');
+                $this->db->where('email', $email);
+                $this->db->update('UserInfo');
+                return $query;
+            }
+            
+        }
 
 	}
 

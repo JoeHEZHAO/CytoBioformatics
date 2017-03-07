@@ -50,10 +50,12 @@ class Cyto extends CI_Controller {
 			$data['lastname'] = $_SESSION['lastname'];
 			$this->load->model('Submitquote_model');
 
-			if ($this->Submitquote_model->loadQuotes()) {
-				$data['rows'] = $this->Submitquote_model->loadQuotes();
-			}else{
+			if (!empty($response = $this->Submitquote_model->loadQuotes())) {
+                $data['rows'] = $response->result_array();
+                $data['num_rows'] = $response->num_rows();
+			} else {
 				$data['rows'] = 'failed';
+                $data['num_rows'] = 0;
 			}
 			$this->load->view('buyingAndPayment', $data);
 		}
@@ -325,6 +327,16 @@ XML;
             echo "Error: invalid/expired token.";    
         }
     }
+    
+//    function activate_account($encoded_email, $token) {
+//        $this->load->model('UserInfo_model');
+//        $data = $this->UserInfo_model->activate_account(rawurldecode($encoded_email), $token);
+//        if (!empty($data)) {
+//            $this->load->view('account_activated');
+//        } else {
+//            echo "An error occurred.";
+//        }
+//    }
     
 //    function test_mimetype() {
 //        echo "finfo:\t";

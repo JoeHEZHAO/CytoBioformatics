@@ -94,41 +94,48 @@
             </div><!-- container -->
             
             <div class="container">
-                <form method="post" action="" id="ServiceQuantity">
-                    <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class=payment-table-header>
-                            <tr>
-                                <th>Subject</th>
-                                <th>Organization</th>
-                                <th>Date Created</th>
-                                <th>Message</th>
-                                <th>Status</th>
-                                <th>Subtotal</th>
-                                <th>Select</th>
-                            </tr>
-                        </thead>
+                <?php if ($num_rows > 0) { ?>
+                    <form method="post" action="" id="ServiceQuantity">
+                        <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class=payment-table-header>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Organization</th>
+                                    <th>Date Created</th>
+                                    <th>Message</th>
+                                    <th>Status</th>
+                                    <th>Subtotal</th>
+                                    <th>Select</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                                <?php if($rows != 'failed'){foreach ($rows as $key => $value) {?> 
-                                    <tr>
-                                        <td><?php echo substr($value['subject'], 0, 15)?></td>
-                                        <td><?php echo $value['organization']?></td>
-                                        <td><?php echo $value['created_at']?></td>
-                                        <td><?php echo $value['message']?></td>
-                                        <td><?php echo $value['status']?></td>
-                                        <td><?php echo $value['subTotal']?></td>
-                                        <td><?php if ($value['status'] == 'approved') { ?>
-                                            <input type="checkbox" name="<?php echo $value['quoteId'] ?>" value="<?php echo $value['subTotal']?>" style="float: right;">
-                                            <input type="hidden" name="<?php echo $value['quoteId']?>" value="<?php echo $value['subject']?>" style="float: right;">
-                                        <?php }else{  } ?></td>
-                                    </tr>
-                                <?php }	}else{}?>
-                        </tbody>
-                    </table>
-                    </div>
-                    <input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
-                </form>
+                            <tbody>
+                                <?php if($rows != 'failed') {
+                                    foreach ($rows as $key => $value) { ?> 
+                                        <tr>
+                                            <td><?php echo substr($value['subject'], 0, 15)?></td>
+                                            <td><?php echo $value['organization']?></td>
+                                            <td><?php echo $value['created_at']?></td>
+                                            <td><?php echo $value['message']?></td>
+                                            <td><?php echo $value['status']?></td>
+                                            <td><?php echo $value['subTotal']?></td>
+                                            <td><?php if ($value['status'] == 'approved') { ?>
+                                                <input type="checkbox" name="<?php echo $value['quoteId']?>" value="<?php echo $value['subTotal']?>" style="float: right;">
+                                                <input type="hidden" name="<?php echo $value['quoteId']?>" value="<?php echo $value['subject']?>" style="float: right;">
+                                            <?php } else {} ?></td>
+                                        </tr>
+                                    <?php }
+                                } else {} ?>
+                            </tbody>
+                        </table>
+                        </div>
+                        <input type="submit" class="payment-button" name="<?php echo base_url('index.php'); ?>" id="checkout" value="Continue" style="float:right">
+                    </form>
+                <?php } else { ?>
+                    <h4>You have no active projects yet.</h4> 
+                    <p><a href="<?php echo base_url('index.php/Cyto/quote'); ?>">Submit a quote</a> to get started.</p>
+                <?php } ?>
             </div>
 			
 			<!--<div class="container">
