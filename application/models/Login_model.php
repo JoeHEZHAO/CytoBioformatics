@@ -1,5 +1,5 @@
 <?php 
-
+date_default_timezone_set('America/New_York');
 	class Login_model extends CI_Model
 	{
         public function max_num_logins() {

@@ -169,6 +169,7 @@ date_default_timezone_set('America/New_York');
             if (!empty($query) && ($query->activate_token == $token)) {
                 $this->db->set('status', 'active');
                 $this->db->set('activate_token', '');
+                $this->db->set('date_last_attempted_login',  date('Y-m-j H:i:s'));
                 $this->db->where('email', $email);
                 $this->db->update('UserInfo');
                 return $query;
