@@ -52,10 +52,32 @@ class Register extends CI_Controller
     public function reset_password() {
         $email = $this->security->xss_clean($this->input->post('email'));
         $password = $this->security->xss_clean($this->input->post('password'));
+        $password_old = $this->security->xss_clean($this->input->post('password_old'));
+        
+        $this->load->model('UserInfo_model');
+        $data = $this->UserInfo_model->selectForLogin($email, $password_old);
+        if ($data['login_status'] === 'correct') {
+            if ($this->UserInfo_model->check_resetpassword_isnew($email, $password)) {
+                $password = password_hash($password, PASSWORD_DEFAULT);
+                if ($this->UserInfo_model->reset_password($email, $password)) {
+                    echo "success";   
+                } else {
+                    echo "failed_to_update";
+                }
+            } else {
+                echo "used_password";
+            }
+        } else {
+            echo "incorrect_password";
+        }
+    }
+    
+    public function reset_password_token() {
+        $email = $this->security->xss_clean($this->input->post('email'));
+        $password = $this->security->xss_clean($this->input->post('password'));
         
         $this->load->model('UserInfo_model');
         if ($this->UserInfo_model->check_resetpassword_isnew($email, $password)) {
-            // hash password before inserting in database
             $password = password_hash($password, PASSWORD_DEFAULT);
             if ($this->UserInfo_model->reset_password($email, $password)) {
                 echo "success";   

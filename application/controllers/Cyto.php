@@ -235,6 +235,26 @@ class Cyto extends CI_Controller {
     {
         
     }
+    
+    function forgot_password() {
+        $this->load->view('forgot_password');
+    }
+    
+    function password_reset() {
+        $data['email'] = $_SESSION['email'];
+        $this->load->view('password_reset', $data);
+    }
+    
+    function password_reset_token($token) {
+        $this->load->model('UserInfo_model');
+        $email = $this->UserInfo_model->check_password_token($token);
+        if(!empty($email)) {
+            $data['email'] = $email;
+            $this->load->view('password_reset_token', $data);
+        } else {
+            echo "Error: invalid/expired token.";    
+        }
+    }
 
 	function rewriteQuotesDb(){
 		$quoteIds = $_SESSION['quoteIds'];
@@ -303,30 +323,10 @@ XML;
 				echo $jsonResult;
 				// echo $content;
 				
-		    }catch(Exception $e) {
+		    } catch(Exception $e) {
 		    	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
 			}
 	}
-    
-    function forgot_password() {
-        $this->load->view('forgot_password');
-    }
-    
-    function password_reset() {
-        $data['email'] = $_SESSION['email'];
-        $this->load->view('password_reset', $data);
-    }
-    
-    function password_reset_token($token) {
-        $this->load->model('UserInfo_model');
-        $email = $this->UserInfo_model->check_password_token($token);
-        if(!empty($email)) {
-            $data['email'] = $email;
-            $this->load->view('password_reset', $data);
-        } else {
-            echo "Error: invalid/expired token.";    
-        }
-    }
     
 //    function activate_account($encoded_email, $token) {
 //        $this->load->model('UserInfo_model');

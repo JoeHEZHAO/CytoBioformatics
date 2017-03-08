@@ -120,6 +120,8 @@ $('#register').submit(function() {
                         $("#error_signup").css("color", "white");
                         $("#register").css("display", "none");
                         $(".button").css("display", "none");
+                        $("#return-button").css("display", "block");
+                        $(".tab-group").css("display", "none");
                         
 //                        $(".resend_activate").css("display", "block");
                         
