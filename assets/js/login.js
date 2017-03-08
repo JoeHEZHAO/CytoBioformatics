@@ -59,6 +59,9 @@ $('#userlogin').submit(function() {
             if (response == 'failed') {
                 $("#error_login").text("Wrong email or password. Please try again.");
                 $("#error_login").css("display", "block");
+            } else if (response == 'account_pending') {
+                $("#error_login").text("Account has not yet been activated. Please check your inbox.");
+                $("#error_login").css("display", "block");
             } else if (response == 'exceeded_attempts') {
                 $("#error_login").text("Too many failed login attempts have been made. Please try again in five minutes.");
                 $("#error_login").css("display", "block");

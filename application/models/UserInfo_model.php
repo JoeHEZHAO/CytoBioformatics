@@ -60,10 +60,6 @@ date_default_timezone_set('America/New_York');
 				return;
 			}	
 		}
-
-		function removeUser($email, $password){
-
-		}
         
         
         // For RESETPASSWORD
@@ -166,6 +162,7 @@ date_default_timezone_set('America/New_York');
 		}
         
         function activate_account($email, $token) {
+            // invoked through confirmation email
             $this->db->from('UserInfo');
             $this->db->where('email', $email);
             $query = $this->db->get()->row();
@@ -176,9 +173,30 @@ date_default_timezone_set('America/New_York');
                 $this->db->update('UserInfo');
                 return $query;
             }
-            
+        }
+        
+        public function delete_user($email)
+        {
+            $this->db->from('UserInfo');
+            $this->db->where('email', $email);
+            $this->db->delete();
         }
 
+        public function stale_pending_users($cutoff_date)
+        {
+            $this->db->from('UserInfo');
+            $this->db->where('status', 'pending');
+            $this->db->where('created_at <', $cutoff_date);
+            return $this->db->get()->result(); 
+        }
+        
+        public function nonactive_users()
+        {
+            $active_statuses = array('active', 'pending');
+            $this->db->from('UserInfo');
+            $this->db->where_not_in('status', $active_statuses);
+            return $this->db->get()->result(); 
+        }
 	}
 
 ?>
