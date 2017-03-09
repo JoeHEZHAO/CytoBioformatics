@@ -14,25 +14,28 @@ class Login extends CI_Controller
         // if user data exists in database, login user
         $data = $this->Login_model->checkUser($email, $password);
 //        var_dump($data);
-		if ($data['login_status'] === 'not_found') {
-            echo "failed";
-        } else if ($data['login_status'] === 'incorrect') {
-            echo $this->Login_model->loginAttempt(false, $data['result']);
-        } else if ($data['login_status'] === 'correct') {
-            $resp = $this->Login_model->loginAttempt(true, $data['result']);
-            if ($resp == '') {
-                $this->create_session($data['result']->firstname,
-                                      $data['result']->lastname,
-                                      $data['result']->email,
-                                      $data['result']->organization,
-                                      $data['result']->phone,
-                                      $data['result']->ID);
-            }
-            echo $resp;
-		} else {
-			echo "error"; 
-		}	
-	
+        if (!($data['result']->status === 'pending')) {
+            if ($data['login_status'] === 'not_found') {
+                echo "failed";
+            } else if ($data['login_status'] === 'incorrect') {
+                echo $this->Login_model->loginAttempt(false, $data['result']);
+            } else if ($data['login_status'] === 'correct') {
+                $resp = $this->Login_model->loginAttempt(true, $data['result']);
+                if ($resp == '') {
+                    $this->create_session($data['result']->firstname,
+                                          $data['result']->lastname,
+                                          $data['result']->email,
+                                          $data['result']->organization,
+                                          $data['result']->phone,
+                                          $data['result']->ID);
+                }
+                echo $resp;
+            } else {
+                echo 'error'; 
+            }	
+        } else {
+            echo 'account_pending';
+        }
 	}
     
     public function create_session($first, $last, $email, $org, $phone, $id) {

@@ -64,12 +64,12 @@ class Cyto extends CI_Controller {
 	function Checkout()
 	{
 		if ($_POST['TotelCharge'] != 0) {
-			$_SESSION['TotelCharge'] = $_POST['TotelCharge'];
-			$_SESSION['quoteIds'] = $_POST['quoteIds'];
-			$_SESSION['quoteCharges'] = $_POST['quoteCharges'];	
-			$_SESSION['subjects'] = $_POST['subjects'];
+			$_SESSION['TotelCharge'] = $this->security->xss_clean($this->input->post('TotelCharge'));
+			$_SESSION['quoteIds'] = $this->security->xss_clean($this->input->post('quoteIds'));
+			$_SESSION['quoteCharges'] = $this->security->xss_clean($this->input->post('quoteCharges'));	
+			$_SESSION['subjects'] = $this->security->xss_clean($this->input->post('subjects'));
 	        echo "success!";
-		}else{
+		} else {
 			echo 'failed';
 		}	
 	}
@@ -97,12 +97,12 @@ class Cyto extends CI_Controller {
             'email'      => $_SESSION['email'],
             'TranDate' => date('Y-m-j H:i:s'),
             'ID' => $_SESSION['ID'],
-            'amount' => $_POST['amount'],
-            'accountNumber' => $_POST['accountNumber'],
-            'accountType' => $_POST['accountType'],
-            'authCode' => $_POST['authCode'],
-            'transId' => $_POST['transId'],
-            'messages' => $_POST['messages']
+            'amount' => $this->security->xss_clean($this->input->post('amount')),
+            'accountNumber' => $this->security->xss_clean($this->input->post('accountNumber')),
+            'accountType' => $this->security->xss_clean($this->input->post('accountType')),
+            'authCode' => $this->security->xss_clean($this->input->post('authCode')),
+            'transId' => $this->security->xss_clean($this->input->post('transId')),
+            'messages' => $this->security->xss_clean($this->input->post('messages'))
 		);
 
 		$_SESSION['transInfo'] = $data;
@@ -138,12 +138,12 @@ class Cyto extends CI_Controller {
 
 	function saveBillingAddress(){
 		$data = array(
-            'billEmail'   => $_POST['billEmail'],
-            'streetAddress' => $_POST['streetAddress'],
-            'zipCode' => $_POST['zipCode'],
-            'city' => $_POST['city'],
-            'country' => $_POST['country'],
-            'transId' => $_POST['transId'],
+            'billEmail'   => $this->security->xss_clean($this->input->post('billEmail')),
+            'streetAddress' => $this->security->xss_clean($this->input->post('streetAddress')),
+            'zipCode' => $this->security->xss_clean($this->input->post('zipCode')),
+            'city' => $this->security->xss_clean($this->input->post('city')),
+            'country' => $this->security->xss_clean($this->input->post('country')),
+            'transId' => $this->security->xss_clean($this->input->post('transId')),
             'ID' => $_SESSION['ID']
 		);
 
@@ -235,6 +235,26 @@ class Cyto extends CI_Controller {
     {
         
     }
+    
+    function forgot_password() {
+        $this->load->view('forgot_password');
+    }
+    
+    function password_reset() {
+        $data['email'] = $_SESSION['email'];
+        $this->load->view('password_reset', $data);
+    }
+    
+    function password_reset_token($token) {
+        $this->load->model('UserInfo_model');
+        $email = $this->UserInfo_model->check_password_token($token);
+        if(!empty($email)) {
+            $data['email'] = $email;
+            $this->load->view('password_reset_token', $data);
+        } else {
+            echo "Error: invalid/expired token.";    
+        }
+    }
 
 	function rewriteQuotesDb(){
 		$quoteIds = $_SESSION['quoteIds'];
@@ -303,30 +323,10 @@ XML;
 				echo $jsonResult;
 				// echo $content;
 				
-		    }catch(Exception $e) {
+		    } catch(Exception $e) {
 		    	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
 			}
 	}
-    
-    function forgot_password() {
-        $this->load->view('forgot_password');
-    }
-    
-    function password_reset() {
-        $data['email'] = $_SESSION['email'];
-        $this->load->view('password_reset', $data);
-    }
-    
-    function password_reset_token($token) {
-        $this->load->model('UserInfo_model');
-        $email = $this->UserInfo_model->check_password_token($token);
-        if(!empty($email)) {
-            $data['email'] = $email;
-            $this->load->view('password_reset', $data);
-        } else {
-            echo "Error: invalid/expired token.";    
-        }
-    }
     
 //    function activate_account($encoded_email, $token) {
 //        $this->load->model('UserInfo_model');
