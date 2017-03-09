@@ -2,14 +2,28 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register extends CI_Controller
-{
-	
+{	
 	public function index()
 	{
 		$this->load->model('Register_model');
+        
+        // form validation
+        $this->load->library('form_validation');
+        $config = array(
+            'email' => array(
+                array('field' => 'email',
+                      'label' => 'Email',
+                      'rules' => 'callback_formval_email'
+                )
+            )
+        );
+        $this->form_validation->set_rules('email', 'Email', 'callback_formval_email');
+        if ($this->form_validation->run() == FALSE) {
+            return;
+        }
+        
 		$UniqueID = md5(uniqid(mt_rand(), true));
         $activate_token = md5(uniqid(mt_rand(), true));
-        
         $email = $this->security->xss_clean($this->input->post('email'));
         $firstname = $this->security->xss_clean($this->input->post('FirstName'));
         $lastname = $this->security->xss_clean($this->input->post('LastName'));
@@ -30,12 +44,6 @@ class Register extends CI_Controller
                                             $phone,
                                             $UniqueID,
                                             $activate_token);
-//            $_SESSION['firstname'] = $firstname;
-//            $_SESSION['lastname'] = $lastname;
-//            $_SESSION['email'] = $email;
-//            $_SESSION['organization'] = $organization;
-//            $_SESSION['phone'] = $phone;
-//            $_SESSION['ID'] = $UniqueID;
             $this->load->model('Email_model');
             if ($this->Email_model->send_activateaccount($email, $activate_token) == 'success') {
                 echo "";
@@ -48,6 +56,14 @@ class Register extends CI_Controller
             echo 'account_pending';
         }
 	}
+    
+    public function formval_email($email) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+            echo "formval_email";
+            return false;
+        }
+        return true;
+    }
     
     public function reset_password() {
         $email = $this->security->xss_clean($this->input->post('email'));
