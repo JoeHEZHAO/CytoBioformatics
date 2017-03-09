@@ -101,7 +101,7 @@ class Email_model extends CI_Model{
             $this->email->from($config['smtp_user'], 'CytoInformatics');
             
             $this->email->to($data['email']);
-            $this->email->subject('Auto-Receipt');
+            $this->email->subject('Reset Password - CytoInformatics');
             $this->email->message($this->load->view('email_passwordreset', $data, true));
             if($this->email->send()) {
                 return "success";

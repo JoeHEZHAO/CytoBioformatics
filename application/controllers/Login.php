@@ -2,26 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller
-{
-//	public function formval_email($email) {
-//        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-//            echo "formval_email";
-//            return false;
-//        }
-//        return true;
-//    }
-    
+{    
 	public function index()
 	{
 		$this->load->model('Login_model');
         $this->load->model('UserInfo_model');
-        
-        // form validation
-//        $this->load->library('form_validation');
-//        $this->form_validation->set_rules('email', 'Email', 'callback_formval_email');
-//        if ($this->form_validation->run() == FALSE) {
-//            return;
-//        }
 
         $email = $this->security->xss_clean($this->input->post('email'));
         $password = $this->security->xss_clean($this->input->post('password'));
@@ -43,7 +28,7 @@ class Login extends CI_Controller
             echo $this->Login_model->loginAttempt(false, $data['result']);
         } else if ($data['login_status'] === 'correct') {
             $resp = $this->Login_model->loginAttempt(true, $data['result']);
-            if ($resp == '') {
+            if ($resp == 'success') {
                 $this->create_session($data['result']->firstname,
                                       $data['result']->lastname,
                                       $data['result']->email,

@@ -71,9 +71,12 @@ $('#userlogin').submit(function() {
             } else if (response == 'error') {
                 $("#error_login").text("An error occurred. Please try again.");
                 $("#error_login").css("display", "block");
-            } else {
+            } else if (response == 'success') {
                 window.location.replace($('#userlogin').attr('action') + '/Cyto/index');
 //                alert(response);
+            } else {
+                $("#error_login").text("An unknown error occurred. Please contact us.");
+                $("#error_login").css("display", "block");
             }
 
         },
@@ -103,7 +106,7 @@ $('#register').submit(function() {
         return false;
     }
     // check that passwords match
-    if (pwd===pwd_c) {
+    if (!(pwd === pwd_c)) {
         $("#error_signup").text("Passwords do not match. Please try again.");
         $("#error_signup").css("display", "block");
         return false;
@@ -114,7 +117,7 @@ $('#register').submit(function() {
         url: $('#register').attr('action') + '/Register/index',
         data: { email: email, password: pwd, FirstName : firstname, LastName : lastname, organization : organization, phone : phone },
         success: function (response) {
-//                    console.log(response);
+//            console.log(response);
             if (response == 'Email address already exists.') {
                 $("#error_signup").text("Duplicate email address. Please try another.");
                 $("#error_signup").css("display", "block");
@@ -129,7 +132,7 @@ $('#register').submit(function() {
                 $("#error_signup").css("display", "block");
                 $("#register").css("display", "none");
                 $(".button").css("display", "none");
-            } else {
+            } else if (response == 'success') {
                 $("#error_signup").text("A confirmation email has been sent. Please check your inbox.");
                 $("#error_signup").css("display", "block");
                 $("#error_signup").css("color", "white");
@@ -137,7 +140,10 @@ $('#register').submit(function() {
                 $(".button").css("display", "none");
                 $("#return-button").css("display", "block");
                 $(".tab-group").css("display", "none");
-//                        alert(response);
+//                alert(response);
+            } else {
+                $("#error_signup").text("An unknown error occurred. Please contact us.");
+                $("#error_signup").css("display", "block");
             }
         },
         error: function(xhr, textStatus, errorThrown){

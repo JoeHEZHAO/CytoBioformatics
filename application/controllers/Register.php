@@ -9,16 +9,23 @@ class Register extends CI_Controller
         
         // form validation
         $this->load->library('form_validation');
-        $config = array(
-            'email' => array(
-                array('field' => 'email',
-                      'label' => 'Email',
-                      'rules' => 'callback_formval_email'
-                )
-            )
+        $this->load->library('custom_formval');
+//        $config = array(
+//            'email' => array(
+//                array('field' => 'email',
+//                      'label' => 'Email',
+//                      'rules' => 'callback_formval_email'
+//                )
+//            )
+//        );
+        $this->form_validation->set_rules('email', 'Email', 
+                                        array(
+                                            array($this->custom_formval, 
+                                                    'formval_email'
+                                            )
+                                        )
         );
-        $this->form_validation->set_rules('email', 'Email', 'callback_formval_email');
-        if ($this->form_validation->run() == FALSE) {
+        if ($this->form_validation->run() == false) {
             return;
         }
         
@@ -46,24 +53,24 @@ class Register extends CI_Controller
                                             $activate_token);
             $this->load->model('Email_model');
             if ($this->Email_model->send_activateaccount($email, $activate_token) == 'success') {
-                echo "";
+                echo 'success';
             } else {
                 echo 'activate_email_failed';
             }
         } else if ($data->status !== 'pending') {
-			echo "Email address already exists.";
+			echo 'Email address already exists.';
 		} else {
             echo 'account_pending';
         }
 	}
     
-    public function formval_email($email) {
-        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            echo "formval_email";
-            return false;
-        }
-        return true;
-    }
+//    public function formval_email($email) {
+//        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+//            echo "formval_email";
+//            return false;
+//        }
+//        return true;
+//    }
     
     public function reset_password() {
         $email = $this->security->xss_clean($this->input->post('email'));
