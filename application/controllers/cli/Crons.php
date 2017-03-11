@@ -1,5 +1,9 @@
 <?php 
 class Crons extends CI_Controller {
+    
+    private $max_age = 60; // 60*60*24*30
+    private $uploads_dir = '/var/www/html/Codeigniter/uploads/';
+    
     public function __construct()
     { 	
         parent::__construct(); 
@@ -43,6 +47,37 @@ class Crons extends CI_Controller {
                 $this->UserInfo_model->delete_user($account->email);
             }
         }
+    }
+    
+    public function delete_old_uploads() 
+    {
+        $files = scandir($this->uploads_dir);
+        foreach($files as $file) {
+            if ($file != "." && $file != "..") {
+                $filepath = $this->uploads_dir.$file;
+                if (time() - filemtime($filepath) > $this->max_age) {
+                    $this->rrmdir($filepath);
+//                    echo $filepath.PHP_EOL;
+//                    echo (time() - filemtime($filepath)).PHP_EOL;
+                }
+            }
+        }
+    }
+    
+    private function rrmdir($dir) 
+    { 
+        if (is_dir($dir)) { 
+            $objects = scandir($dir); 
+            foreach ($objects as $object) { 
+                if ($object != "." && $object != "..") { 
+                    if (is_dir($dir."/".$object))
+                        $this->rrmdir($dir."/".$object);
+                    else
+                        unlink($dir."/".$object); 
+                } 
+            }
+            rmdir($dir); 
+        } 
     }
     
 //    public function test($input) 
