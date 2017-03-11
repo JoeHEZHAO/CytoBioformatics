@@ -42,7 +42,7 @@ date_default_timezone_set('America/New_York');
             if ($this->timeSinceLastLogin($data->date_last_attempted_login) > $this->min_timeout()) {
                 if ($is_success) {
                     $this->updateLoginAttempts($data->email, 0);
-                    return "";
+                    return "success";
                 } else {
                     $this->updateLoginAttempts($data->email, 1);
                     return "failed";
@@ -50,7 +50,7 @@ date_default_timezone_set('America/New_York');
             } else if ($data->num_login_attempts < $this->max_num_logins()) {
                 if ($is_success) {
                     $this->updateLoginAttempts($data->email, 0);
-                    return "";
+                    return "success";
                 } else {
                     $this->updateLoginAttempts($data->email, $data->num_login_attempts + 1);
                     return "failed";
