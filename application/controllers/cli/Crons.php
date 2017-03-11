@@ -55,10 +55,10 @@ class Crons extends CI_Controller {
         foreach($files as $file) {
             if ($file != "." && $file != "..") {
                 $filepath = $this->uploads_dir.$file;
+//                echo $filepath.PHP_EOL;
+//                echo (time() - filemtime($filepath)).PHP_EOL;
                 if (time() - filemtime($filepath) > $this->max_age) {
                     $this->rrmdir($filepath);
-//                    echo $filepath.PHP_EOL;
-//                    echo (time() - filemtime($filepath)).PHP_EOL;
                 }
             }
         }
@@ -66,17 +66,16 @@ class Crons extends CI_Controller {
     
     private function rrmdir($dir) 
     { 
-        if (is_dir($dir)) { 
-            $objects = scandir($dir); 
-            foreach ($objects as $object) { 
-                if ($object != "." && $object != "..") { 
-                    if (is_dir($dir."/".$object))
-                        $this->rrmdir($dir."/".$object);
-                    else
-                        unlink($dir."/".$object); 
-                } 
+        if (is_dir($dir)) {            
+            foreach(glob("{$dir}/*") as $file) {
+                if(is_dir($file)) { 
+                    $this->rrmdir($file);
+                } else {
+                    unlink($file);
+                }
+//                echo $file . PHP_EOL;
             }
-            rmdir($dir); 
+            rmdir($dir);
         } 
     }
     
