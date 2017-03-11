@@ -1,7 +1,7 @@
 <?php 
 class Crons extends CI_Controller {
     
-    private $max_age = 60; // 60*60*24*30
+    private $max_age = 2592000; // 60*60*24*30
     private $uploads_dir = '/var/www/html/Codeigniter/uploads/';
     
     public function __construct()
