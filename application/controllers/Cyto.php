@@ -40,6 +40,18 @@ class Cyto extends CI_Controller {
 		$this->viewInSession('workflow');
 	}
     
+    function user_profile()
+    {
+        $this->load->helper('form');
+        $this->load->model('UserInfo_model');
+        $data = $this->UserInfo_model->retrieveUserInfo($_SESSION['email']);
+        if (!empty($data)) {
+            $this->load->view('user_profile', $data);
+        } else {
+            $this->load->view('login');
+        }
+    }
+    
     function buyingAndPayment()
 	{
 		if (!isset($_SESSION['firstname']) && !empty($_SESSION['firstname'])) {

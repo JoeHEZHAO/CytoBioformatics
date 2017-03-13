@@ -3324,6 +3324,70 @@
 		}
 		
 	}
+
+/***********************************************************************************
+ *	- PAGE HEADER
+ ***********************************************************************************/
+ 	
+	#page-header {
+		position: relative;
+		padding: 125px 0 125px;
+		margin-bottom: 100px;
+		background: #282a37 no-repeat center center;
+		color: #fff;
+	}	
+
+    #page-header-aboutus {
+        background-image: url(../../images/backgrounds/page-header-1.jpg);
+    }
+	
+	#page-header [class^="col-"] {
+		position: static;
+	}
+	
+	#page-header h1 {
+		margin-bottom: 10px;
+		color: inherit;
+	}
+	
+	a.go-to-section {
+		position: absolute;
+		bottom: 50px;
+		left: 50%;
+		color: #fff;
+		font-size: 32px;
+		line-height: 32px;
+		text-decoration: none;
+		-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+		-webkit-transition: all 0.3s;
+				transition: all 0.3s;
+	}
+	
+	a.go-to-section:hover {
+		color: #00ddf7;
+	}
+	
+	@media (max-width: 767px) {
+		
+		#page-header {
+			padding: 100px 0;
+		}
+		
+		#page-header h1 {
+			font-size: 32px;
+		}
+		
+		a.go-to-section {
+			bottom: 20px;
+		}
+		
+		#page-header .breadcrumb {
+			display: none;
+		}
+		
+	}
 	
 /***********************************************************************************
  *	+ PAGE CONTENT
@@ -4254,4 +4318,123 @@
 /*REVSLIDER*/
 .workflow-slider {
     background-image: "images/backgrounds/bg-slider.jpg";
+}
+
+
+
+
+
+/*********************
+    MY_ANIMATIONS
+ *********************/
+
+/*
+ * MY-ANIMATIONS
+ * Added by Mason McGough to include custom CSS animations to elements.
+ * December 31st, 2016
+ *
+ *
+ */
+ 
+	@keyframes fadein {
+		from {left: -50px; opacity: 0.0;}
+		to {left: 0px; opacity: 1.0;}
+	}
+	.workflow-animation {
+		height: 1000px;
+		overflow: hidden;
+		margin-bottom: 100px;
+	}
+	.fadein-header1 {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.fadein-text1 {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.whole-slide {
+		position: relative;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.slide-excerpt {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+	.fadein-object1 {
+		position: absolute;
+		animation-name: fadein;
+		animation-duration: 1.0s;
+		animation-delay: 1.0s;
+	}
+
+    .solutions-image-box {
+        position: relative;
+        width: 100%;
+        height: 270px;
+        margin: 0;
+        padding: 0;
+        border-radius: 15px;
+        text-align: left;
+        overflow: hidden;
+    }
+    .bg-img {
+        position: absolute;
+        width: 100%;
+    }
+    .hv-img {
+        position: absolute;
+        width: 100%;
+        opacity: 0.0;
+    }
+/*
+    .hover-img, .hover-img-lite {
+        position: absolute;
+        width: 100%;
+        opacity: 0.0;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+        z-index: 2;
+    }
+    .hover-img:hover {
+        opacity: 1.0;
+    }
+    .hover-img-lite:hover {
+        opacity: 0.8;
+    }*/
+
+
+
+
+
+
+/*********************
+    USER_PROFILE
+ *********************/
+
+.userdata {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    background-color: #f0f0f0;
+}
+
+.userdata > p.userdata_content {
+    font-size: 28pt;
+    color: #000;
+    margin-bottom: 32px;
+}
+.userdata > p.userdata_label {
+    font-size: 18pt;
+    margin-bottom: 4px;
 }

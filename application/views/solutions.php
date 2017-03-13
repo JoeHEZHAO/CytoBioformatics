@@ -43,23 +43,13 @@
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
-	<!-- FANCYBOX -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
-	
-	<!-- OWL Carousel -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
-	
-	<!-- ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
-	
 	<!-- CUSTOM & PAGES STYLE -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
-	
-	<!-- MY ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-animations.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
 
+<!--	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">-->
+<!--	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">-->
+<!--	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">-->
+	
 </head>
 
 <body class="header-boxed">

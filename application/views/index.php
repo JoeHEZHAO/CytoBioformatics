@@ -39,11 +39,11 @@
 	
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
+    
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
 	
 	<!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
-<!--	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">-->
-<!--	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">-->
 	
 	<!-- MY ANIMATIONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/kenburns.css'); ?>">
@@ -363,9 +363,9 @@
 	
 	
 	<!-- SCROLL UP -->
-<!--	<a id="scroll-up"><i class="fa fa-angle-up"></i></a>-->
+	<a id="scroll-up"><i class="fa fa-angle-up"></i></a>
 <!--	<a id="scroll-up"><img src="<?php echo base_url('assets/images/cyto_logo_white_sharp.png'); ?>"></a>-->
-    <a id="scroll-up"><h1>^</h1></a>
+<!--    <a id="scroll-up"><h1>^</h1></a>-->
 	
 	<!-- jQUERY -->
 	<script src="<?php echo base_url('assets/plugins/jquery/jquery-2.2.2.min.js'); ?>"></script>

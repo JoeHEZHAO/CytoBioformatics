@@ -48,6 +48,31 @@ date_default_timezone_set('America/New_York');
             }
             return $data;
 		}
+        
+        function retrieveUserInfo($email) 
+        {
+			$this->db->from('UserInfo');
+			$this->db->where('email', $email);
+
+            $query = $this->db->get()->row();
+			if (!empty($query)) {
+                $data = array(
+                    'firstname' => $query->firstname,
+                    'lastname' => $query->lastname,
+                    'miname' => $query->miname,
+                    'gender' => $query->gender,
+                    'email' => $query->email,
+                    'organization' => $query->organization,
+                    'phone' => $query->phone,
+                    'address1' => $query->address1,
+                    'address2' => $query->address2,
+                    'city' => $query->city,
+                    'region' => $query->region,
+                    'country' => $query->country,
+                    'postalCode' => $query->postalCode);
+                return $data;
+			}
+        }
 
 		function selectForSignUp($email){
 			$this->db->from('UserInfo');
