@@ -78,7 +78,7 @@ $('#submitquote').submit(function() {
         processData: false,
         contentType: false,
         success: function (response) {
-                    
+//            console.log(response);
             if (response == 'failed_database') {
                 $("#error_quote").text("There was a database error submitting your quote. Please try again.");
                 $("#error_quote").css("display", "block");

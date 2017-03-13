@@ -24,9 +24,9 @@ class Submitquote extends CI_Controller
         
         // creates path if does not exist
         if (!is_dir($config['upload_path'])) {
-            mkdir($config['upload_path'], 0777, true);
-//            chmod($rootdir, 0777);
-            chmod($config['upload_path'], 0777);
+            mkdir($config['upload_path'], 0777, true); // change to 750 on server
+//            chmod($rootdir, 0775);
+            chmod($config['upload_path'], 0777); // change to 750 on server
         }
         
         $inputname0 = 'filename0';
