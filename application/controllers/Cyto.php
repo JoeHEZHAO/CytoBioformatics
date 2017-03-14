@@ -44,12 +44,14 @@ class Cyto extends CI_Controller {
     {
         $this->load->helper('form');
         $this->load->model('UserInfo_model');
-        $data = $this->UserInfo_model->retrieveUserInfo($_SESSION['email']);
-        if (!empty($data)) {
-            $this->load->view('user_profile', $data);
-        } else {
-            $this->load->view('login');
+        if (!empty($_SESSION['email'])) {
+            $data = $this->UserInfo_model->retrieveUserInfo($_SESSION['email']);
+            if (!empty($data)) {
+                $this->load->view('user_profile', $data);
+                return;
+            } 
         }
+        $this->load->view('login');
     }
     
     function buyingAndPayment()

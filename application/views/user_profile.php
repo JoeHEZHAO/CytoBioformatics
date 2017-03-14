@@ -9,7 +9,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	
-	<title>Quote | CytoInformatics</title>
+	<title>My Profile | CytoInformatics</title>
 	
 	<!-- FAVICON AND APPLE TOUCH -->    
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
@@ -78,141 +78,88 @@
 		<!-- PAGE CONTENT -->
 		<div id="page-content">
             <div class="userdata">
-                <p class="userdata_label">full name</p>
-                <p class="userdata_content"><?php echo $firstname . ' ' . $lastname; ?></p>
+                <?php
+                    $fullname = (empty($miname) ? $firstname.' '.$lastname : $firstname.' '.$miname.' '.$lastname);
                 
-                <p class="userdata_label">email</p>
-                <p class="userdata_content"><?php echo $email; ?></p>
+                    $csrf = array('name' => $this->security->get_csrf_token_name(),
+                                  'hash' => $this->security->get_csrf_hash());
                 
-                <p class="userdata_label">gender</p>
-                <p class="userdata_content"><?php echo $gender; ?></p>
+                    function fieldEmpty($field) {
+                        echo (empty($field) ? 'empty' : $field);
+                    }
+                    function fieldEmptyClass($field) {
+                        echo (empty($field) ? 'userdata_empty' : 'userdata_content');
+                    }
+                ?>
+
+                <form action="<?php echo base_url('index.php'); ?>" method="post" id="edit_profile" enctype="multipart/form-data">
+                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">full name</p>
+                        <p id="ud_fullname" class="userdata_input <?php fieldEmptyClass($fullname); ?>"><?php echo fieldEmpty($fullname); ?></p>
+                    </div>
+                    
+                    <div class="userdata_box">
+                        <p class="userdata_label">email</p>
+                        <p class="userdata_input <?php fieldEmptyClass($email); ?>"><?php echo fieldEmpty($email); ?></p>
+                        <input id="ud_email" class="userdata_input <?php fieldEmptyClass($email); ?>" disabled style="display: none" value="<?php fieldEmpty($email); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">gender</p>
+                        <input id="ud_gender" class="userdata_input <?php fieldEmptyClass($gender); ?>" disabled value="<?php fieldEmpty($gender); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">organization</p>
+                        <input id="ud_organization" class="userdata_input <?php fieldEmptyClass($organization); ?>" disabled value="<?php fieldEmpty($organization); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">phone</p>
+                        <input id="ud_phone" class="userdata_input <?php fieldEmptyClass($phone); ?>" disabled value="<?php fieldEmpty($phone); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">address 1</p>
+                        <input id="ud_address1" class="userdata_input <?php fieldEmptyClass($address1); ?>" disabled value="<?php fieldEmpty($address1); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">address 2</p>
+                        <input id="ud_address2" class="userdata_input <?php fieldEmptyClass($address2); ?>" disabled value="<?php fieldEmpty($address2); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">city</p>
+                        <input id="ud_city" class="userdata_input <?php fieldEmptyClass($city); ?>" disabled value="<?php fieldEmpty($city); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">region</p>
+                        <input id="ud_region" class="userdata_input <?php fieldEmptyClass($region); ?>" disabled value="<?php fieldEmpty($region); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">country</p>
+                        <input id="ud_country" class="userdata_input <?php fieldEmptyClass($country); ?>" disabled value="<?php fieldEmpty($country); ?>">
+                    </div>
+
+                    <div class="userdata_box">
+                        <p class="userdata_label">postal code</p>
+                        <input id="ud_postalCode" class="userdata_input <?php fieldEmptyClass($postalCode); ?>" disabled value="<?php fieldEmpty($postalCode); ?>">
+                    </div>
+                    
+                    <div class="userdata_box">
+                        <a href="#"><i class="fa fa-pencil user_profile_edit"></i></a>
+
+                        <button class="button edit_cancel deactivated">Cancel</button>
+                        <button class="button edit_submit deactivated" type="submit">Submit</button>
+                    </div>
                 
-                <p class="userdata_label">organization</p>
-                <p class="userdata_content"><?php echo $organization; ?></p>
-                
-                <p class="userdata_label">phone</p>
-                <p class="userdata_content"><?php echo $phone; ?></p>
-                
-                <p class="userdata_label">address 1</p>
-                <p class="userdata_content"><?php echo $address1; ?></p>
-                
-                <p class="userdata_label">address 2</p>
-                <p class="userdata_content"><?php echo $address2; ?></p>
-                
-                <p class="userdata_label">city</p>
-                <p class="userdata_content"><?php echo $city; ?></p>
-                
-                <p class="userdata_label">region</p>
-                <p class="userdata_content"><?php echo $region; ?></p>
-                
-                <p class="userdata_label">country</p>
-                <p class="userdata_content"><?php echo $country; ?></p>
-                
-                <p class="userdata_label">postal code</p>
-                <p class="userdata_content"><?php echo $postalCode; ?></p>
-            </div>
-            
-            <div class="edit_userdata">
-                <div class="form">
-                    <h2>Quote Form</h2>
-                    <br>
-
-                    <label id="error_quote" style="display: none; position: relative; color: red; font-size: 13px; left: 0; bottom: 21px;"></label>
-
-                    <!-- CSRF FORM TOKEN -->
-                    <?php $csrf = array('name' => $this->security->get_csrf_token_name(),
-                                        'hash' => $this->security->get_csrf_hash()); ?>
-
-                    <form action="<?php echo base_url('index.php'); ?>" method="post" id="submitquote" enctype="multipart/form-data">
-                    <!--<?php 
-                        $attributes = array('method' => 'post', 'id' => 'submitquote', 'enctype' => 'multipart/form-data');
-                        echo form_open_multipart('', $attributes);
-                    ?>-->
-                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                        <div class="top-row">
-                            <div class="col-sm-4" style="padding:0;">
-                                <div class="field-wrap">
-                                    <label>
-                                        First Name<span class="req">*</span>
-                                    </label>
-                                    <!-- automatically fills if available in session -->
-                                    <?php if(!empty($_SESSION['firstname'])) {  ?>
-                                        <input type="text" name="FirstName" value="<?php echo $_SESSION['firstname']; ?>" required autocomplete="off" />
-                                    <?php }else{  ?>
-                                        <input type="text" name="FirstName" value="" required autocomplete="off" />
-                                    <?php } ?>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4" style="padding:0;">
-                                <div class="field-wrap">
-                                    <label>
-                                        Last Name<span class="req">*</span>
-                                    </label>
-                                    <?php if(!empty($_SESSION['lastname'])) {  ?>
-                                        <input type="text" name="LastName" value="<?php echo $_SESSION['lastname']; ?>" required autocomplete="off" />
-                                    <?php }else{  ?>
-                                        <input type="text" name="LastName" value="" required autocomplete="off" />
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Email Address<span class="req">*</span>
-                            </label>
-                            <?php if(!empty($_SESSION['email'])) {  ?>
-                                <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" required autocomplete="off" />
-                            <?php }else{  ?>
-                                 <input type="email" name="email" value="" required autocomplete="off" />
-                            <?php } ?>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Organization<span class="req">*</span>
-                            </label>
-                            <?php if(!empty($_SESSION['organization'])) {  ?>
-                                <input type="organization" name="organization" value="<?php echo $_SESSION['organization']; ?>" required autocomplete="off" />
-                            <?php }else{  ?>
-                                 <input type="organization" name="organization" value="" required autocomplete="off" />
-                            <?php } ?>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Phone Number
-                            </label>
-                            <?php if(!empty($_SESSION['phone'])) {  ?>
-                                <input type="phone" name="phone" value="<?php echo $_SESSION['phone']; ?>" required autocomplete="off" />
-                            <?php }else{  ?>
-                                 <input type="phone" name="phone" value="" required autocomplete="off" />
-                            <?php } ?>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Subject<span class="req">*</span>
-                            </label>
-                            <input type="subject" name="subject" required autocomplete="off"/>
-                        </div>
-
-                        <div class="field-wrap-message">
-                            <label>
-                                Message<span class="req">*</span> (max: 500 characters)
-                            </label>
-                            <textarea type="message" name="message" required maxlength="500" autocomplete="off"></textarea>
-                        </div>
-
-                        <div id="file-upload-quote" class="file-upload">
-                            Upload up to 3 images (up to 10MB each. Extensions .jpg, .png, and .gif accepted)
-                            <button type="button" class="button button-block" onclick="addFileUpload()" style="width: 200px;">Add File</button>
-                        </div>
-
-                        <button type="submit" class="button button-block" style="width: 200px; margin-top: 50px;">Submit</button>
-                    </form>
-                </div>
+                    <label id="error_label" style="display: none; position: relative; color: red; font-size: 13px; left: 0; bottom: 21px;"></label>
+                </form>
             </div>
         </div><!-- PAGE CONTENT -->
 		
@@ -257,24 +204,7 @@
 	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/js/quoteform.js'); ?>"></script>
-    
-    <script text="type/javascript">
-        $(document).ready(function() {
-            document.getElementById("quote-button").setAttribute("class", "active");
-        });
-        
-        function addFileUpload() {
-            var num_fileinputs = document.querySelectorAll('#file-upload-quote input').length;
-            if (num_fileinputs<3) {
-                var x = document.createElement("INPUT");
-                x.setAttribute("type", "file");
-                x.setAttribute("name", "filename" + num_fileinputs.toString());
-                x.setAttribute("multiple", "false");
-                document.getElementById("file-upload-quote").appendChild(x);
-            }
-        }
-    </script>
+    <script src="<?php echo base_url('assets/js/userProfile.js'); ?>"></script>
 	
 </body>
 
