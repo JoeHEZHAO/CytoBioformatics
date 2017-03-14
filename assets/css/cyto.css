@@ -4425,16 +4425,59 @@
 .userdata {
     position: relative;
     width: 60%;
-    margin: auto;
+    padding: 50px 100px 50px 100px;
+    margin: 50px auto 100px auto;
+    border-radius: 15px;
     background-color: #f0f0f0;
 }
 
-.userdata > p.userdata_content {
-    font-size: 28pt;
-    color: #000;
+.userdata_box {
     margin-bottom: 32px;
 }
-.userdata > p.userdata_label {
-    font-size: 18pt;
+.userdata_box > input {
+    width: 60%;
+    background-color: #fafafa;
+}
+
+.userdata_input {
     margin-bottom: 4px;
+}
+.userdata_box > input.userdata_content {
+    font-size: 20pt;
+    color: #000;
+}
+.userdata_box > p.userdata_content {
+    font-size: 20pt;
+    color: #000;
+}
+.userdata_box > input.userdata_empty {
+    font-size: 16pt;
+    font-style: italic;
+    color: #363636;
+}
+.userdata_box > p.userdata_label {
+    font-size: 14pt;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.userdata_box > button {
+    width: 100px;
+}
+
+.user_profile_edit {
+    height: 65px;
+    width: 65px;
+    font-size: 65px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #36394a;
+}
+.user_profile_edit:hover {
+    color: #fff;
+    background-color: #00ddf7;
+}
+
+.deactivated {
+    display: none;
 }

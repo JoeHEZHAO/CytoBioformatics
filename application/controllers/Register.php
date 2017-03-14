@@ -111,5 +111,27 @@ class Register extends CI_Controller
             echo "used_password";
         }
     }
+    
+    public function modify_userdata() {        
+        $data = array(
+            'email' => $this->security->xss_clean($this->input->post('email')),
+            'gender' => $this->security->xss_clean($this->input->post('gender')),
+            'organization' => $this->security->xss_clean($this->input->post('organization')),
+            'phone' => $this->security->xss_clean($this->input->post('phone')),
+            'address1' => $this->security->xss_clean($this->input->post('address1')),
+            'address2' => $this->security->xss_clean($this->input->post('address2')),
+            'city' => $this->security->xss_clean($this->input->post('city')),
+            'region' => $this->security->xss_clean($this->input->post('region')),
+            'country' => $this->security->xss_clean($this->input->post('country')),
+            'postalCode' => $this->security->xss_clean($this->input->post('postalCode'))
+        );
+        
+        $this->load->model('UserInfo_model');
+        if ($this->UserInfo_model->updateUserInfo($data)) {
+            echo "success";
+        } else {
+            echo "failed_to_update";
+        }
+    }
 }
 ?>

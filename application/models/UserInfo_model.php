@@ -73,6 +73,21 @@ date_default_timezone_set('America/New_York');
                 return $data;
 			}
         }
+        
+        function updateUserInfo($data) 
+        {
+			$this->db->set('gender', $data['gender']);
+			$this->db->set('organization', $data['organization']);
+			$this->db->set('phone', $data['phone']);
+			$this->db->set('address1', $data['address1']);
+			$this->db->set('address2', $data['address2']);
+			$this->db->set('city', $data['city']);
+			$this->db->set('region', $data['region']);
+			$this->db->set('country', $data['country']);
+			$this->db->set('postalCode', $data['postalCode']);
+			$this->db->where('email', $data['email']);
+            return $this->db->update('UserInfo');
+        }
 
 		function selectForSignUp($email){
 			$this->db->from('UserInfo');
