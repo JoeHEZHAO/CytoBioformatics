@@ -37,18 +37,8 @@
 	<!-- BOOTSTRAP CSS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"> 
 	
-	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
-	
-	<!-- BRONX ICONS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
-	
 	<!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
-
-<!--	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">-->
-<!--	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">-->
-<!--	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">-->
 	
 </head>
 
@@ -366,21 +356,6 @@
 	
 	<!-- BOOTSTRAP JS -->
 	<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-	
-	<!-- VIEWPORT -->
-	<script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
-	
-	<!-- FANCYBOX -->
-	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
-	
-	<!-- PARALLAX -->
-	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
-    
-	<!-- COUNTER -->
-	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
-	
-	<!-- COUNTDOWN -->
-	<script src="<?php echo base_url('assets/plugins/countdown/jquery.countdown.min.js'); ?>"></script>
 	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
