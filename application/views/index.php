@@ -39,8 +39,6 @@
 	
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
-    
-    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
 	
 	<!-- CUSTOM & PAGES STYLE -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">

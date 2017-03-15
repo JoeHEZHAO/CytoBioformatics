@@ -35,35 +35,13 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 	
 	<!-- BOOTSTRAP CSS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"> 
-	
-	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 	
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
-	<!-- FANCYBOX -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
-	
-	<!-- REVOLUTION SLIDER -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/settings.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/layers.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/navigation.css'); ?>">
-	
-	<!-- OWL Carousel -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
-	
-	<!-- YOUTUBE PLAYER -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/ytplayer/css/jquery.mb.ytplayer.min.css'); ?>">
-	
-	<!-- ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
-	
 	<!-- CUSTOM & PAGES STYLE -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
 	
 
 </head>
@@ -99,30 +77,25 @@
             <div class="container price-table">
 				<div class="row">
 					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Segmentation</h1>
-                        <p>This is a test paragraph. Lorem ipsum yada yada yada.</p>
+                        <h1>Basic</h1>
+                        <div class="price-label">As low as</div>
+                        <div class="price-number">$1.99</div>
+                        <div class="price-foot">per image</div>
+                        <p>Segmentation, detection, classification, and other basic services as needed. We retain a copy of your data to improve our services.</p>
                     </div>
 					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Detection</h1>                        
-                        <p>This is a test paragraph. Lorem ipsum yada yada yada.</p>
+                        <h1>Professional</h1>
+                        <div class="price-label">As low as</div>
+                        <div class="price-number">$2.99</div>
+                        <div class="price-foot">per image</div>                        
+                        <p>Any basic services and we do not retain a copy of your data. An excellent choice for users demanding extra privacy.</p>
                     </div>
 					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Classification</h1>
-                        <p>This is a test paragraph. Lorem ipsum yada yada yada.</p>
-                    </div>
-                </div>
-				<div class="row">
-					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Image Cleaning</h1>
-                        <p>This is a test paragraph. Lorem ipsum yada yada yada.</p>
-                    </div>
-					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Feature Extraction</h1>
-                        <p>This is a test paragraph. Lorem ipsum yada yada yada.</p>
-                    </div>
-					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Special Cases</h1>
-                        <p>This is a test paragraph. Lorem ipsum yada yada yada.</p>
+                        <h1>Expert</h1>
+                        <div class="price-label">As low as</div>
+                        <div class="price-number">$3.99</div>
+                        <div class="price-foot">per image</div>
+                        <p>A fully customized solution for very specific problems. We also provide support for your scientific writing as needed.</p>
                     </div>
                 </div>
             </div>
@@ -169,25 +142,6 @@
 	<script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
 	
-	<!-- FANCYBOX -->
-	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
-	
-	<!-- REVOLUTION SLIDER  -->
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.actions.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.carousel.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.kenburn.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.layeranimation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.migration.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.navigation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.slideanims.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.video.min.js'); ?>"></script>
-	
-	<!-- OWL Carousel -->
-	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>
-	
 	<!-- PARALLAX -->
 	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
 	
@@ -197,35 +151,6 @@
 	
 	<!-- PLACEHOLDER -->
 	<script src="<?php echo base_url('assets/plugins/placeholders/jquery.placeholder.min.js'); ?>"></script>
-	
-	<!-- CONTACT FORM VALIDATE & SUBMIT -->
-	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
-	
-	<!-- GOOGLE MAPS -->
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="<?php echo base_url('assets/plugins/googlemaps/gmap3.min.js'); ?>"></script>
-	
-	<!-- CHARTS -->
-	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
-	
-	<!-- COUNTER -->
-	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
-	
-	<!-- STATISTICS -->
-	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
-	
-	<!-- YOUTUBE PLAYER -->
-	<script src="<?php echo base_url('assets/plugins/ytplayer/jquery.mb.ytplayer.min.js'); ?>"></script>
-	
-	<!-- INSTAFEED -->
-	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>
-	
-	<!-- COUNTDOWN -->
-	<script src="<?php echo base_url('assets/plugins/countdown/jquery.countdown.min.js'); ?>"></script>
-	
-	<!-- ANIMATIONS -->
-	<script src="<?php echo base_url('assets/plugins/animations/wow.min.js'); ?>"></script>
 	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>

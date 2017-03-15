@@ -185,22 +185,8 @@
 	<script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
 	
-	<!-- FANCYBOX -->
-	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
-	
-	<!-- ISOTOPE -->
-	<script src="<?php echo base_url('assets/plugins/isotope/imagesloaded.pkgd.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/isotope/isotope.pkgd.min.js'); ?>"></script>
-	
 	<!-- PLACEHOLDER -->
 	<script src="<?php echo base_url('assets/plugins/placeholders/jquery.placeholder.min.js'); ?>"></script>
-	
-	<!-- CONTACT FORM VALIDATE & SUBMIT -->
-	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
-
-	<!-- ANIMATIONS -->
-	<script src="<?php echo base_url('assets/plugins/animations/wow.min.js'); ?>"></script>
 	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
