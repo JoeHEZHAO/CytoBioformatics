@@ -80,25 +80,27 @@
                         <h1>Basic</h1>
                         <div class="price-label">As low as</div>
                         <div class="price-number">$1.99</div>
-                        <div class="price-foot">per image</div>
+                        <div class="price-foot">per image*</div>
                         <p>Segmentation, detection, classification, and other basic services as needed. We retain a copy of your data to improve our services.</p>
                     </div>
 					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
                         <h1>Professional</h1>
                         <div class="price-label">As low as</div>
                         <div class="price-number">$2.99</div>
-                        <div class="price-foot">per image</div>                        
+                        <div class="price-foot">per image*</div>                        
                         <p>Any basic services and we do not retain a copy of your data. An excellent choice for users demanding extra privacy.</p>
                     </div>
 					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
                         <h1>Expert</h1>
                         <div class="price-label">As low as</div>
                         <div class="price-number">$3.99</div>
-                        <div class="price-foot">per image</div>
+                        <div class="price-foot">per image*</div>
                         <p>A fully customized solution for very specific problems. We also provide support for your scientific writing as needed.</p>
                     </div>
                 </div>
             </div>
+            
+            <p style="font-size: 9pt; margin-left: 20%; width: 30%; line-height: 16px;"><b>*</b>Price estimate is for images under 2048 x 2048 pixels. Prices may vary for larger images and based on the complexity of requested task(s).</p>
             
             <!-- SPAN -->
 			<section class="full-section" id="section-9">

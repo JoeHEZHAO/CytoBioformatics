@@ -37,35 +37,15 @@
 	<!-- BOOTSTRAP CSS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"> 
 	
-	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
-	
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
-	<!-- FANCYBOX -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
-	
 	<!-- REVOLUTION SLIDER -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/settings.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/layers.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/navigation.css'); ?>">
 	
-	<!-- OWL Carousel -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
-	
-	<!-- YOUTUBE PLAYER -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/ytplayer/css/jquery.mb.ytplayer.min.css'); ?>">
-	
-	<!-- ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
-	
 	<!-- CUSTOM & PAGES STYLE -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
-	
-
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
 </head>
 
 <body class="header-boxed">
@@ -88,7 +68,7 @@
                     <img src="<?php echo base_url('images/backgrounds/bg-slider.jpg'); ?>" style="width:102%; height: 100%;">
                     <ul>
 						<li data-transition="fade">
-                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption big-title workflow-title"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -100,10 +80,10 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                Say you are a pathologist...
+                                Say you are studying tissue...
                             </div>
 
-                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption tp-resizeme"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -115,12 +95,12 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                You have several hundred images of lung biopsies. You know that some of your images depict tissue with signs of small cell carcinoma, some show large cell carcinoma, and some show no signs of carcinoma.
+                                You have obtained several hundred images of tissue for research, drug analysis, or clinical usage. Now you need to extract quantitative measurements, such as cross-sectional area, cell size, shape, staining intensity, mytosis counting, fibrosis area, etc.
                             </div>
 						</li>
                         
 						<li data-transition="fade">
-                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption big-title workflow-title"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -132,10 +112,10 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                But you are also a researcher.
+                                But speed is everything.
                             </div>
 
-                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption tp-resizeme"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -147,12 +127,12 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                You want to publish high-quality studies with impact. You know that there are significant morphological differences between the tissue samples you have. However, you don't have the time or resources to pay an assistant to manually annotate each image by hand, much less do it yourself. If only you could find a way to easily quantify these differences!
+                                You may want to publish high-quality studies in Nature and Science. You may want to know immediately about the effects of certain drugs. You may want to study why certain groups of patients respond effectively to one kind of treatment, while others do not. At the same time, you need to spend time to conduct painful manual analysis of each image by hand. Even if you have hundreds of thousands of dollars to spare for expensive proprietary software, chances are you still spend a lot of time and manpower using this software for post-processing just to get decent results. 
                             </div>
 						</li>
                         
 						<li data-transition="fade">
-                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption big-title workflow-title"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -167,7 +147,7 @@
                                 Introducing <span class="text-alt-color">CytoInformatics</span>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption tp-resizeme"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -179,12 +159,12 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                At CytoInformatics, we aim to simplify the analysis of microscopy images for you while delivering pinpoint-accurate results. All you need to do is upload your images and we will handle the rest.<br><br>To get started, follow these simple instructions.
+                                At CytoInformatics, we aim to simplify the entire pipeline of biomedical image analysis by relieving researchers and clinicians from time-consuming data processing tasks. Our team is composed of professonals who have worked in this field for more than 15 years. Wielding cutting-edge deep learning technology, we can process thousands of images in seconds. All you need to do is upload your images and we will handle all the rest. <br><br><b>To get started, please follow these simple instructions.</b>
                             </div>
 						</li>
                         
                         <li data-transition="fade">
-                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption big-title workflow-title"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -199,7 +179,7 @@
                                 Step 1: Submit a Quote
                             </div>
 
-                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption tp-resizeme"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -211,12 +191,12 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                Click the <a href="<?php echo base_url('index.php/Cyto/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to discuss the possible solutions we can pursue to help you get the findings you need.<br><br>You are also encouraged to submit up to three sample images so that we may better prepare to discuss your data with you.
+                                Click the <a href="<?php echo base_url('index.php/Cyto/quote'); ?>">Quote</a> link at the top of this page to access our quote submission form. You do not even need to register for an account to submit a quote. Just provide us with a brief description of the task you are looking to solve. We will contact you to better understand your needs.<br><br>Please also submit up to three sample images so that we may better prepare our discussion with you about your image analyis tasks.
                             </div>
 						</li>
                         
                         <li data-transition="fade">
-                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption big-title workflow-title" 
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -231,7 +211,7 @@
                                 Step 2: Purchase Our Services
                             </div>
 
-                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption tp-resizeme"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -243,12 +223,12 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                Once you have agreed to a solution and have logged in with your account, you should see a <span class="text-alt-color">Projects and Payment</span> tab in the dropdown menu under your name. This link will bring you to a table with your unpaid charges. Select this charge and continue through our online payment portal powered by <a href="https://www.authorize.net/">Authorize.Net</a> to complete your payment.
+                                Log in to your account and you should see a <span class="text-alt-color">Projects and Payment</span> tab in the dropdown menu under your name. This link will bring you to a table with your unpaid charges. Select this charge and continue through our secure online payment portal to complete your payment. The payment process is powered by <a href="https://www.authorize.net/">Authorize.Net</a>, so you can rest assured that it is completely safe and secured.
                             </div>
 						</li>
                         
                         <li data-transition="fade">
-                            <div class="tp-caption big-title" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption big-title workflow-title"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -263,7 +243,7 @@
                                 Step 3: Submit Your Images
                             </div>
 
-                            <div class="tp-caption tp-resizeme" style="color: #363636; white-space: normal !important;"
+                            <div class="tp-caption tp-resizeme"
                                  data-whitespace=”normal”
                                  data-width="['800']"
                                  data-height="['auto']"
@@ -275,7 +255,7 @@
                                  data-start="700"
                                  data-transform_in="o:0;s:700;"
                                  data-transform_out="o:0;s:700;">
-                                After you have paid for your images, we will provide you with a link to securely upload your images to our platform. From here we can begin to work on your data. From there on we will provide you with regular updates until the project is complete. It's that simple.<br /><br /><a href="<?php echo base_url('index.php/Cyto/quote'); ?>" class="text-alt-color">Ready to get started?</a>
+                                After you have paid for your images, we will provide you with a link to securely upload all your images to our platform in a fast and efficient way. From there we will begin to work on your image data. Your customized report will be returned to you in the way that you prefer. Thanks to our cutting-edge artificial intelligence solutions using deep learning, we can return the results as fast as overnight if needed and as cheap as $1.99 per case. If you do not want us to keep the data, then for a small fee we will not store it any longer than it takes us to finish. <i>It's that simple.</i><br /><br /><a href="<?php echo base_url('index.php/Cyto/quote'); ?>" class="text-alt-color">Ready to get started?</a>
                             </div>
 						</li>
 					</ul>
@@ -299,64 +279,10 @@
 	<!-- BOOTSTRAP JS -->
 	<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 	
-	<!-- VIEWPORT -->
-	<script src="<?php echo base_url('assets/plugins/viewport/jquery.viewport.js'); ?>"></script>
-	
-	<!-- MENU -->
-	<script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
-	
-	<!-- FANCYBOX -->
-	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
-
     <!-- REVOLUTION SLIDER -->  
 	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.actions.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.carousel.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.kenburn.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.layeranimation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.migration.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.navigation.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.slideanims.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/revolutionslider/js/extensions/revolution.extension.video.min.js'); ?>"></script>
-	
-	<!-- OWL Carousel 
-	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>-->
     
-	<!-- PARALLAX -->
-	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
-	
-	<!-- ISOTOPE -->
-	<script src="<?php echo base_url('assets/plugins/isotope/imagesloaded.pkgd.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/isotope/isotope.pkgd.min.js'); ?>"></script>
-	
-	<!-- PLACEHOLDER -->
-	<script src="<?php echo base_url('assets/plugins/placeholders/jquery.placeholder.min.js'); ?>"></script>
-	
-	<!-- CONTACT FORM VALIDATE & SUBMIT -->
-	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
-
-	<!-- CHARTS -->
-	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
-	
-	<!-- COUNTER -->
-	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
-	
-	<!-- STATISTICS -->
-	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
-	
-	<!-- INSTAFEED -->
-	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>
-	
-	<!-- COUNTDOWN -->
-	<script src="<?php echo base_url('assets/plugins/countdown/jquery.countdown.min.js'); ?>"></script>
-	
-	<!-- ANIMATIONS -->
-	<script src="<?php echo base_url('assets/plugins/animations/wow.min.js'); ?>"></script>
-	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
     

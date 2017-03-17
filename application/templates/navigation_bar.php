@@ -25,7 +25,7 @@
                             <li id="solutions-button"><a href="<?php echo base_url('index.php/Cyto/solutions'); ?>">Solutions</a></li>
                             <li id="demo-button"><a href="<?php echo base_url('index.php/Cyto/demo'); ?>">Demo</a></li>
                             <li id="workflow-button"><a href="<?php echo base_url('index.php/Cyto/workflow'); ?>">WorkFlow</a></li>
-                            <!--<li id="pricing-button"><a href="<?php echo base_url('index.php/Cyto/pricing'); ?>">Pricing</a></li>-->
+                            <li id="pricing-button"><a href="<?php echo base_url('index.php/Cyto/pricing'); ?>">Pricing</a></li>
                             <li id="quote-button"><a href="<?php echo base_url('index.php/Cyto/quote'); ?>">Quote</a></li>
                             <li id="about_us-button"><a href="<?php echo base_url('index.php/Cyto/about_us'); ?>">About Us</a></li>
 

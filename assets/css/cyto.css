@@ -3405,7 +3405,7 @@
  ***********************************************************************************/
  
  	#footer {
-		padding: 110px 0;
+		padding: 110px 0 50px 0;
 		/*background-image: url(../../images/backgrounds/bg-5.png);*/
 		/*background-color: #1a1c24;*/
 		color: #848484;
@@ -3534,11 +3534,18 @@
 	
 	.about-me-thumbnail {
 		position: relative;
+        width: 340px;
+        height: 440px;
 		overflow: hidden;
 		border-bottom: 2px solid transparent;
 		margin-bottom: 35px;
 		-webkit-transition: all 0.3s;
 				transition: all 0.3s;
+	}
+
+	.about-me-thumbnail img {
+		position: relative;
+        height: 100%;
 	}
 	
 	.about-me-thumbnail .social-media {
@@ -4237,6 +4244,19 @@
 
 .short-margin {
     margin-bottom: 30px;
+}
+
+.tp-caption {
+    color: #363636; 
+    white-space: normal !important;
+}
+
+.workflow-title {
+    color: #363636 !important;
+}
+
+.tp-resizeme {
+    font-size: 16px;
 }
     
 /*BUYINGANDPAYMENT*/

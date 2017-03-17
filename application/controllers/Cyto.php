@@ -239,6 +239,11 @@ class Cyto extends CI_Controller {
     {
 		$this->viewInSession('refund_policy');
     }
+    
+    function disclaimer()
+    {
+        $this->viewInSession('disclaimer');
+    }
 	
 	function error404()
 	{
@@ -297,49 +302,49 @@ $transRequestXmlStr=<<<XML
 	</transactionRequest>
 </createTransactionRequest>
 XML;
-		$transRequestXml=new SimpleXMLElement($transRequestXmlStr, LIBXML_NOWARNING);
+        $transRequestXml=new SimpleXMLElement($transRequestXmlStr, LIBXML_NOWARNING);
 
-		$loginId = "3Dh3gd4ZwG";
-		$transactionKey = "82xL6Wk6A46r88t6";
+        $loginId = "3Dh3gd4ZwG";
+        $transactionKey = "82xL6Wk6A46r88t6";
 
-		// $loginId = "2m7ULx4Bva";
-		// $transactionKey = "224DSD4ns9bUk4K4";
+        // $loginId = "2m7ULx4Bva";
+        // $transactionKey = "224DSD4ns9bUk4K4";
 
-		$transRequestXml->merchantAuthentication->addChild('name',$loginId);
-		$transRequestXml->merchantAuthentication->addChild('transactionKey',$transactionKey);
+        $transRequestXml->merchantAuthentication->addChild('name',$loginId);
+        $transRequestXml->merchantAuthentication->addChild('transactionKey',$transactionKey);
 
-		$transRequestXml->transactionRequest->amount=$_POST['amount'];
-		$transRequestXml->transactionRequest->payment->opaqueData->dataDescriptor=$_POST['dataDesc'];
-		$transRequestXml->transactionRequest->payment->opaqueData->dataValue=$_POST['dataValue'];
+        $transRequestXml->transactionRequest->amount=$_POST['amount'];
+        $transRequestXml->transactionRequest->payment->opaqueData->dataDescriptor=$_POST['dataDesc'];
+        $transRequestXml->transactionRequest->payment->opaqueData->dataValue=$_POST['dataValue'];
 
-		$url="https://apitest.authorize.net/xml/v1/request.api";
-		// $url="https://api.authorize.net/xml/v1/request.api";
+        $url="https://apitest.authorize.net/xml/v1/request.api";
+        // $url="https://api.authorize.net/xml/v1/request.api";
 
-		try{	//setting the curl parameters.
-		        $ch = curl_init();
-		        if (FALSE === $ch)
-		        	throw new Exception('failed to initialize');
-		        curl_setopt($ch, CURLOPT_URL, $url);
-				curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
-		        curl_setopt($ch, CURLOPT_POSTFIELDS, $transRequestXml->asXML());
-		        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
-		        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-		        curl_setopt($ch, CURLOPT_DNS_USE_GLOBAL_CACHE, false );
-		        $content = curl_exec($ch);
-		        if (FALSE === $content)
-		        	throw new Exception(curl_error($ch), curl_errno($ch));
-		        curl_close($ch);
-				
-				$xmlResult=simplexml_load_string($content);
-				$jsonResult=json_encode($xmlResult);
-				echo $jsonResult;
-				// echo $content;
-				
-		    } catch(Exception $e) {
-		    	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
-			}
+        try{	//setting the curl parameters.
+            $ch = curl_init();
+            if (FALSE === $ch)
+                throw new Exception('failed to initialize');
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $transRequestXml->asXML());
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($ch, CURLOPT_DNS_USE_GLOBAL_CACHE, false );
+            $content = curl_exec($ch);
+            if (FALSE === $content)
+                throw new Exception(curl_error($ch), curl_errno($ch));
+            curl_close($ch);
+
+            $xmlResult=simplexml_load_string($content);
+            $jsonResult=json_encode($xmlResult);
+            echo $jsonResult;
+            // echo $content;
+
+        } catch(Exception $e) {
+            trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
+        }
 	}
     
 //    function activate_account($encoded_email, $token) {

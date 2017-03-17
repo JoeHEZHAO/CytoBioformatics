@@ -125,87 +125,59 @@
 			<div class="container">
                 <div class="row">
                     <div class="col-sm-4">
-
                         <div class="about-me">
-						
 							<div class="about-me-thumbnail">
-							
 								<img src="<?php echo base_url('images/about/team/image-1.jpg'); ?>" alt="">
-								
-								<!--<div class="social-media">
-									
-									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-									<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-									
-								</div>-->
-							
-							</div><!-- about-me-thumbnail -->
+							</div>
 							
 							<h4>Dr. Karyn Esser</h4>
                             <p><a href="mailto:karyn.esser@cytoinformatics.com">karyn.esser@cytoinformatics.com</a></p>
+                            <p style="text-align: justify;">Dr. Karyn Esser is the Associate Program Director at the Institute of Myology at the University of Florida. She is a biologist who conducts pioneered research on the circadian rhythms of skeletal muscle with the goal of defining the transcriptional networks that govern the molecular clock of skeletal muscle function. Dr. Karyn Esser has more than 30 years of experience in muscle biology. She is also the first beneficiary of the power of the high throughput image analysis provided by CytoInformatics, LLC.  
+                            </p>
 							
-						</div><!-- about-me -->
+						</div>
 
-                    </div><!-- col -->
+                    </div>
 					<div class="col-sm-4">
-
                         <div class="about-me">
-						
 							<div class="about-me-thumbnail">
-							
 								<img src="<?php echo base_url('images/about/team/image-2.jpg'); ?>" alt="">
-								
-								<!--<div class="social-media">
-									
-									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-									<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-									
-								</div>-->
-							
-							</div><!-- about-me-thumbnail -->
+							</div>
 							
                             <h4>Dr. Lin Yang</h4>
                             <p><a href="mailto:lin.yang@cytoinformatics.com">lin.yang@cytoinformatics.com</a></p>
+                            <p style="text-align: justify; font-size: 11px;">Dr. Lin Yang is an Associate Professor with the J. Crayton Pruitt Family Department of Biomedical Engineering (BME) at University of Florida. He also holds a joint appointment in the Department of Electrical and Computer Engineering (ECE) and the Department of Computer and Information Science and Engineering (CISE). He leads the <a href="https://www.bme.ufl.edu/labs/yang/"><i>Biomedical Image Computing and Imaging Informatics (BICI2) Lab</i></a>. He was recruited to University of Florida through UF Preeminence Hiring Plan. Dr. Yang has over 15 years of R&amp;D experience in microscopic image analysis and digital pathology. <a href="https://www.bme.ufl.edu/node/1905"><i>Recently he has published and/or co-authored two books</i></a> discussing the most recent deep learning technologies and their application in microscopic image analysis (<a href="http://www.springer.com/us/book/9783319429984"><i>Deep Learning and Convolutional Neural Network for Biomedical Image Computing</i></a> and <a href="https://www.elsevier.com/books/deep-learning-for-medical-image-analysis/zhou/978-0-12-810408-8"><i>Deep Learning for Medical Image Analysis</i></a>). 
+                            <br />
+                            He has published papers in over 100 peer-reviewed journals and attended premium conferences including PAMI, TMI, TBME, CVPR, ECCV, MICCAI, and IPMI. In 2015, he was the winner of the Young Scientist Best Paper Award at MICCAI, a premium conference in medical image computing. He also received the Young Investigator Paper and Travel Award at the Sixth North American Neuroendocrine Tumor Society (NANETS) Conference in 2014, was selected as the representative for NANETS at the 2014 European Neuroendocrine Tumor Society (ENETS) Conference  (one of only three representatives for North America), and also received the NIH Young Investigator Paper and Travel Award at the International Symposium on Biomedical Imaging (ISBI) in 2008. His lab's research received multiple federal funding awards, including NIH R01 and STTR Phase I and Phase II. He also serves in multiple NIH study sections and NSF review panels. He is the main founder of CytoInformatics, LLC. 
+                            </p>
 							
-						</div><!-- about-me -->
+						</div>
 
                     </div><!-- col -->
 					<div class="col-sm-4">
-
                         <div class="about-me">
-						
 							<div class="about-me-thumbnail">
-							
 								<img src="<?php echo base_url('images/about/team/image-3.jpg'); ?>" alt="">
-								
-								<!--<div class="social-media">
-									
-									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-									<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-									
-								</div>-->
-							
-							</div><!-- about-me-thumbnail -->
+							</div>
 							
 							<h4>Mason McGough</h4>
                             <p><a href="mailto:mason.mcgough@cytoinformatics.com">mason.mcgough@cytoinformatics.com</a></p>
+                            <p style="text-align: justify;">Mason McGough is an expert in computer vision and biomedical image analysis. He got his master degree in the Biomedical Image Computing and Imaging Informatics (BICI2) lab at the University of Florida. While working in BICI2 lab, he has developed strong interests in biomedical image analysis and computer aided diagnosis. In the past years, he has made significant achievements in applying deep learning to process biomedical images. Mason is served as CTO of CytoInformatics, LLC.
+                            </p>
 							
-						</div><!-- about-me -->
+						</div>
 
-                    </div><!-- col -->
-                </div><!-- row -->
-            </div><!-- container -->
+                    </div>
+                </div>
+            </div>
             
-            <div class="container">
+            <!--<div class="container">
                 <div class="row">
                     <div class="col-lg-offset-1 col-lg-5 col-sm-6 text-block">
                         <p style="font-size: 11pt;">This work was supported by the National Institute of Arthritis and Musculoskeletal and Skin Diseases of the National Institutes of Health under Award Number 1R41AR064596 and by the National Institute of Aging under Award Number 9R42AG055375. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.</p>
                     </div>
                 </div>
-            </div>
+            </div>-->
             
             <section class="full-section dark-section">
                 <div class="full-section-container">

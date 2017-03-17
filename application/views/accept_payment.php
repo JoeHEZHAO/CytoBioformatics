@@ -363,7 +363,7 @@
             <div class="modal-dialog" style="display: block; vertical-align: middle; bottom: 0px;">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Accept.js Example</h4>
+                        <h4 class="modal-title">Payment Confirmed</h4>
                     </div>
                     <div class="modal-body" id="acceptJSReceiptBody">
 

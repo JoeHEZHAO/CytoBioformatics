@@ -38,12 +38,14 @@ function messageFunc(msg)
 	//jQuery.noConflict();
 	$('#acceptJSPayModal').modal('hide');
 	$('#acceptJSReceiptModal').modal('show');
+//    window.location.href = $('#submitButton').attr('name') + 'index.php/Cyto/newMethod/'+transId;
 }
 
 function createTransact(dataObj) {
 	$.ajax({
 
-		url: "https://localhost/Codeigniter/index.php/Cyto_bioformatics/transactionCaller",
+//		url: "https://localhost/Codeigniter/index.php/Cyto_bioformatics/transactionCaller",
+		url: "https://cytoinformatics.com/index.php/Cyto/transactionCaller",
 		data: {amount: document.getElementById('amount').value, dataDesc: dataObj.dataDescriptor, dataValue: dataObj.dataValue},
 		method: 'POST',
 		timeout: 5000
