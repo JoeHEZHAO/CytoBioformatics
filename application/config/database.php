@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'localhost:3306',
 	'username' => 'root',
-	'password' => '1tAs$erv3R!p',
+	'password' => 'root',
 	'database' => 'CytoBioformatics',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

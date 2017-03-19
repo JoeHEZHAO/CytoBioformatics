@@ -43,7 +43,7 @@ function messageFunc(msg)
 function createTransact(dataObj) {
 	$.ajax({
 
-		url: "https://localhost/Codeigniter/index.php/Cyto_bioformatics/transactionCaller",
+		url: "https://localhost/Codeigniter/index.php/Cyto/transactionCaller",
 		data: {amount: document.getElementById('amount').value, dataDesc: dataObj.dataDescriptor, dataValue: dataObj.dataValue},
 		method: 'POST',
 		timeout: 5000
