@@ -14,7 +14,8 @@ class Submitquote extends CI_Controller
         /*UPLOAD FILES*/
         $UniqueID = md5(uniqid(mt_rand(), true));
 //        $rootdir = '/home/cytoinfo/public_html/uploads/'; // server
-        $rootdir = '/var/www/html/Codeigniter/uploads/';
+        // $rootdir = '/var/www/html/Codeigniter/uploads/';
+        $rootdir = '/Users/zhaohe/MAMP/Codeigniter/uploads/';
         $config['upload_path'] = $rootdir . $UniqueID;
 //        $config['allowed_types'] = '*';
         $config['allowed_types'] = 'gif|jpg|png';

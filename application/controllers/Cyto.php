@@ -341,6 +341,11 @@ XML;
 		    	trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
 			}
 	}
+
+	function transaction_success($transId){
+		$data['transId'] = $transId;
+		$this->load->view('transaction_success.php', $data);
+	}
     
 //    function activate_account($encoded_email, $token) {
 //        $this->load->model('UserInfo_model');
