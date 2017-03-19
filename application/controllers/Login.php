@@ -2,25 +2,33 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller
-{
-	
+{    
 	public function index()
 	{
 		$this->load->model('Login_model');
+        $this->load->model('UserInfo_model');
 
         $email = $this->security->xss_clean($this->input->post('email'));
         $password = $this->security->xss_clean($this->input->post('password'));
         
         // if user data exists in database, login user
-        $data = $this->Login_model->checkUser($email, $password);
-//        var_dump($data);
-		if ($data['login_status'] === 'not_found') {
+        $data = $this->UserInfo_model->selectForLogin($email, $password);
+
+        if (empty($data['result'])) {
+            echo 'failed';
+            return;
+        }
+        if (($data['result']->status === 'pending')) {
+            echo 'account_pending';
+            return;
+        }
+        if ($data['login_status'] === 'not_found') {
             echo "failed";
         } else if ($data['login_status'] === 'incorrect') {
             echo $this->Login_model->loginAttempt(false, $data['result']);
         } else if ($data['login_status'] === 'correct') {
             $resp = $this->Login_model->loginAttempt(true, $data['result']);
-            if ($resp == '') {
+            if ($resp == 'success') {
                 $this->create_session($data['result']->firstname,
                                       $data['result']->lastname,
                                       $data['result']->email,
@@ -29,10 +37,9 @@ class Login extends CI_Controller
                                       $data['result']->ID);
             }
             echo $resp;
-		} else {
-			echo "error"; 
-		}	
-	
+        } else {
+            echo 'error'; 
+        }	
 	}
     
     public function create_session($first, $last, $email, $org, $phone, $id) {

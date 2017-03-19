@@ -5,6 +5,9 @@ function messageFunc(msg)
 		if(responseObj.transactionResponse.responseCode=='1'){
 			message="Transaction Successful!<br>Transaction ID: "+responseObj.transactionResponse.transId;
 			message = message + "<br><button id='return' onclick='returnback()'>Go to Receipt Page</button>"
+			// TODO: After success, open new page saying it is done;
+			window.open($('#submitButton').attr('name') + 'index.php/Cyto/transaction_success/' + responseObj.transactionResponse.transId);
+			window.location.href = $('#submitButton').attr('name') + 'index.php/Cyto/';
 		}
 		else{
 			message="Transaction Unsuccessful.";//+responseObj.messages.message[0].text;
@@ -43,7 +46,7 @@ function messageFunc(msg)
 function createTransact(dataObj) {
 	$.ajax({
 
-		url: "https://localhost/Codeigniter/index.php/Cyto_bioformatics/transactionCaller",
+		url: "https://localhost/Codeigniter/index.php/Cyto/transactionCaller",
 		data: {amount: document.getElementById('amount').value, dataDesc: dataObj.dataDescriptor, dataValue: dataObj.dataValue},
 		method: 'POST',
 		timeout: 5000

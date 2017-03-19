@@ -35,6 +35,7 @@
                                 <!--<a href="#"><?php echo $firstname," ", $lastname; ?></a>-->
                                 <a href="#">Hi, <?php echo $firstname; ?></a>
                                 <ul style="left: auto; right: 0;">
+                                    <li><a href="<?php echo base_url('index.php/Cyto/user_profile'); ?>">My Profile</a></li>
                                     <li><a href="<?php echo base_url('index.php/Cyto/buyingAndPayment'); ?>">Projects and Payment</a></li>
                                     <li><a href="<?php echo base_url('index.php/Cyto/password_reset'); ?>">Change Password</a></li>
                                     <!--<li><a href="services.html">Services</a></li>

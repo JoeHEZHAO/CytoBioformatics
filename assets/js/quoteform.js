@@ -78,17 +78,19 @@ $('#submitquote').submit(function() {
         processData: false,
         contentType: false,
         success: function (response) {
-                    
+//            console.log(response);
             if (response == 'failed_database') {
                 $("#error_quote").text("There was a database error submitting your quote. Please try again.");
                 $("#error_quote").css("display", "block");
-            }
-            else{
+            } else if (response == 'formval_email') {
+                $("#error_quote").text("Invalid email address.");
+                $("#error_quote").css("display", "block");
+            } else if (response == 'success') {
                 window.location.replace($('#submitquote').attr('action') + '/Submitquote/quote_success');
 //                alert(response);
-//                console.log("response: ");
-//                console.log(response);
-//                console.log("\n");
+            } else {
+                $("#error_quote").text("An unknown error occurred. Please contact us.");
+                $("#error_quote").css("display", "block");
             }
             
         },

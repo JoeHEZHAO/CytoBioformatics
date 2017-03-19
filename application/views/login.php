@@ -106,6 +106,8 @@
           
             <button type="submit" class="button button-block">Get Started</button>
           </form>
+          
+          <a href="<?php echo base_url('index.php/Cyto/index'); ?>"><button id="return-button" class="button button-block" style="display: none;">Return</button></a>
             
           <p class="resend_activate" style="display: none;">Resend email</p>
 

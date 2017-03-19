@@ -37,25 +37,13 @@
 	<!-- BOOTSTRAP CSS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"> 
 	
-	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
-	
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
-	<!-- FANCYBOX -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
-	
-	<!-- ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
-	
 	<!-- CUSTOM & PAGES STYLE -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
 	
 	<!-- MY ANIMATIONS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-animations.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/kenburns.css'); ?>">
 	
 
@@ -374,6 +362,8 @@
 	
 	<!-- SCROLL UP -->
 	<a id="scroll-up"><i class="fa fa-angle-up"></i></a>
+<!--	<a id="scroll-up"><img src="<?php echo base_url('assets/images/cyto_logo_white_sharp.png'); ?>"></a>-->
+<!--    <a id="scroll-up"><h1>^</h1></a>-->
 	
 	<!-- jQUERY -->
 	<script src="<?php echo base_url('assets/plugins/jquery/jquery-2.2.2.min.js'); ?>"></script>

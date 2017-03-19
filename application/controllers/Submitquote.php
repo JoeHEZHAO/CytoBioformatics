@@ -14,18 +14,20 @@ class Submitquote extends CI_Controller
         /*UPLOAD FILES*/
         $UniqueID = md5(uniqid(mt_rand(), true));
 //        $rootdir = '/home/cytoinfo/public_html/uploads/'; // server
-        $rootdir = '/var/www/html/Codeigniter/uploads/';
+        // $rootdir = '/var/www/html/Codeigniter/uploads/';
+        $rootdir = '/Users/zhaohe/MAMP/Codeigniter/uploads/';
         $config['upload_path'] = $rootdir . $UniqueID;
-        $config['allowed_types'] = '*';
+//        $config['allowed_types'] = '*';
+        $config['allowed_types'] = 'gif|jpg|png';
         $config['detect_mime'] = TRUE;
         $config['max_size'] = 10240;
         $this->load->library('upload', $config);
         
         // creates path if does not exist
         if (!is_dir($config['upload_path'])) {
-            mkdir($config['upload_path'], 0777, true);
-//            chmod($rootdir, 0777);
-            chmod($config['upload_path'], 0777);
+            mkdir($config['upload_path'], 0777, true); // change to 750 on server
+//            chmod($rootdir, 0775);
+            chmod($config['upload_path'], 0777); // change to 750 on server
         }
         
         $inputname0 = 'filename0';
@@ -44,6 +46,20 @@ class Submitquote extends CI_Controller
         
         /*UPDATE DATABASE*/
 		$this->load->model('Submitquote_model');
+        
+        // form validation
+        $this->load->library('form_validation');
+        $this->load->library('custom_formval');
+        $this->form_validation->set_rules('email', 'Email', 
+                                        array(
+                                            array($this->custom_formval, 
+                                                  'formval_email'
+                                            )
+                                        )
+        );
+        if ($this->form_validation->run() == FALSE) {
+            return;
+        }
         
         // retrieve fields from post and clean of disallowed characters
         $firstname = $this->security->xss_clean($this->input->post('FirstName'));
@@ -68,7 +84,7 @@ class Submitquote extends CI_Controller
                                               $file2
                                              )) {
             
-            echo "";
+            echo "success";
         }
         else {
             echo "failed_database";
@@ -105,46 +121,6 @@ class Submitquote extends CI_Controller
         }
         else {
             return array('error' => 'no_file');
-        }
-    }
-    
-    function upload_form() {
-        // update database only (no file upload)
-		$this->load->model('Submitquote_model');
-        $UniqueID = md5(uniqid(mt_rand(), true));
-        if ($this->Submitquote_model->submitquote($this->input->post('FirstName'), 
-                                                  $this->input->post('LastName'), 
-                                                  $this->input->post('email'), 
-                                                  $this->input->post('organization'), 
-                                                  $this->input->post('phone'),
-                                                  $this->input->post('message'),
-                                                  $UniqueID,
-                                                  $this->input->post('filename0'),
-                                                  $this->input->post('filename1'),
-                                                  $this->input->post('filename2'))) {    
-            echo "";
-        }
-        else {
-            echo "failed";
-        }
-	}
-    
-    function upload_files() {
-        // upload files only (no database update)
-        /*UPLOAD FILES*/
-        $config['upload_path'] = './uploads/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 10240;
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('filename0')) {
-            /*$error = array('error' => $this->upload->display_errors());
-            $this->load->view('upload_form', $error);*/
-            $this->quote_error();
-        }
-        else {
-            /*$data = array('upload_data' => $this->upload->data());
-            $this->load->view('upload_success', $data);*/
-            $this->quote_success();
         }
     }
     

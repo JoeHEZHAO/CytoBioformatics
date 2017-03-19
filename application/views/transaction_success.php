@@ -9,9 +9,9 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	
-	<title>Pricing | CytoInformatics</title>
-    
-    <!-- FAVICON AND APPLE TOUCH -->    
+	<title>Quote Submitted | CytoInformatics</title>
+	
+	<!-- FAVICON AND APPLE TOUCH -->    
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('images/favicon/apple-icon-60x60.png') ?>">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('images/favicon/apple-icon-72x72.png') ?>">
@@ -35,13 +35,32 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 	
 	<!-- BOOTSTRAP CSS -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>"> 
+	
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/fonts/fontawesome/css/font-awesome.min.css'); ?>">
 	
 	<!-- BRONX ICONS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/bronx-icons/css/bronx-icons.min.css'); ?>">
 	
+	<!-- FANCYBOX -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.css'); ?>">
+	
+	<!-- REVOLUTION SLIDER -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/settings.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/layers.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolutionslider/css/navigation.css'); ?>">
+	
+	<!-- OWL Carousel -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.css'); ?>">
+	
+	<!-- ANIMATIONS -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/animations/animate.min.css'); ?>">
+	
 	<!-- CUSTOM & PAGES STYLE -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/cyto.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/pages-style.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/my-styles.css'); ?>">
 	
 
 </head>
@@ -54,70 +73,28 @@
 		<header id="header-container">
 			<!-- NAVIGATION BAR -->
 			<?php include "application/templates/navigation_bar.php"; ?>
-			
-			<div id="page-header" class="parallax" data-stellar-background-ratio="0.1" style="background-image:url(images/backgrounds/page-header-1.jpg);">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							
-							<h1>Pricing Models</h1>
-							
-							<p class="tp-caption text">Learn how affordable our solutions can be</p>
-							
-						</div><!-- col -->
-					</div><!-- row -->
-				</div><!-- container -->    
-			</div><!-- page-header -->
 		</header><!-- HEADER CONTAINER -->
 		
 		
 		<!-- PAGE CONTENT -->
 		<div id="page-content">
-			<!-- PRICING TABLE -->
-            <div class="container price-table">
-				<div class="row">
-					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Basic</h1>
-                        <div class="price-label">As low as</div>
-                        <div class="price-number">$1.99</div>
-                        <div class="price-foot">per image</div>
-                        <p>Segmentation, detection, classification, and other basic services as needed. We retain a copy of your data to improve our services.</p>
-                    </div>
-					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Professional</h1>
-                        <div class="price-label">As low as</div>
-                        <div class="price-number">$2.99</div>
-                        <div class="price-foot">per image</div>                        
-                        <p>Any basic services and we do not retain a copy of your data. An excellent choice for users demanding extra privacy.</p>
-                    </div>
-					<div class="col-lg-offset-1 col-md-1 col-sm-2 price-box">
-                        <h1>Expert</h1>
-                        <div class="price-label">As low as</div>
-                        <div class="price-number">$3.99</div>
-                        <div class="price-foot">per image</div>
-                        <p>A fully customized solution for very specific problems. We also provide support for your scientific writing as needed.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SPAN -->
-			<section class="full-section" id="section-9">
-				<div class="full-section-container">
-					
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<h2 class="text-center">Look no further</h2>
-                                <h5 class="text-center">for the image analysis you need</h5>
-                                <br>
-								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/Cyto/login'); ?>" style="display: block; margin-left: auto; margin-right: auto; width: 122px;">Get Started<i class="bronx-icon-arrow-right text-alt-color"></i></a>
-							</div><!-- col -->
-						</div><!-- row -->
-					</div><!-- container -->
-					
-				</div><!-- full-section-container -->
-			</section><!-- full-section -->
 			
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-offset-1 col-lg-5 col-sm-6" style="margin-top: 150px; margin-left: 8.333%; width: 81.333%;">
+
+						<h4>Thank you!</h4>
+                        <p>Transcation has been dealt with successfully.</p>
+                        <p>Transaction ID: <?php echo $transId; ?></p>
+                        <p>We shall contact you in no time !</p>
+                        <h>Click on button to see detail payment report <button class="" onclick='goToReceipt()'>Go to Receipt Page</button></h>
+                        
+                        <p><a href="<?php echo base_url('index.php/Cyto/index'); ?>">Click here</a> to return to the home page.</p>
+                        <br>
+						
+					</div><!-- col -->
+				</div><!-- row -->
+			</div><!-- container -->
 		</div><!-- PAGE CONTENT -->
 		
 		<!-- FOOTER -->
@@ -142,6 +119,12 @@
 	<script src="<?php echo base_url('assets/plugins/menu/hoverIntent.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/menu/superfish.js'); ?>"></script>
 	
+	<!-- FANCYBOX -->
+	<script src="<?php echo base_url('assets/plugins/fancybox/jquery.fancybox.pack.js'); ?>"></script>
+	
+	<!-- OWL Carousel -->
+	<script src="<?php echo base_url('assets/plugins/owl-carousel/owl.carousel.min.js'); ?>"></script>
+	
 	<!-- PARALLAX -->
 	<script src="<?php echo base_url('assets/plugins/parallax/jquery.stellar.min.js'); ?>"></script>
 	
@@ -152,15 +135,36 @@
 	<!-- PLACEHOLDER -->
 	<script src="<?php echo base_url('assets/plugins/placeholders/jquery.placeholder.min.js'); ?>"></script>
 	
+	<!-- CONTACT FORM VALIDATE & SUBMIT -->
+	<script src="<?php echo base_url('assets/plugins/validate/jquery.validate.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/submit/jquery.form.min.js'); ?>"></script>
+	
+	<!-- CHARTS -->
+	<script src="<?php echo base_url('assets/plugins/charts/jquery.easypiechart.min.js'); ?>"></script>
+	
+	<!-- COUNTER -->
+	<script src="<?php echo base_url('assets/plugins/counter/jquerysimplecounter.js'); ?>"></script>
+	
+	<!-- STATISTICS -->
+	<script src="<?php echo base_url('assets/plugins/statistics/chart.min.js'); ?>"></script>
+	
+	<!-- INSTAFEED -->
+	<script src="<?php echo base_url('assets/plugins/instafeed/instafeed.min.js'); ?>"></script>
+	
+	<!-- COUNTDOWN -->
+	<script src="<?php echo base_url('assets/plugins/countdown/jquery.countdown.min.js'); ?>"></script>
+	
+	<!-- ANIMATIONS -->
+	<script src="<?php echo base_url('assets/plugins/animations/wow.min.js'); ?>"></script>
+	
 	<!-- CUSTOM JS -->
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-    
-    <script text="type/javascript">
-        $(document).ready(function() {
-            document.getElementById("pricing-button").setAttribute("class", "active");
-        });
-    </script>
 	
+	<script type="text/javascript">
+        function goToReceipt(){
+            window.location.href = 'https://localhost/Codeigniter/index.php/Cyto/receiptPage';
+        }
+	</script>
 </body>
 
 </html>

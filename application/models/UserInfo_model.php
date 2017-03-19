@@ -48,6 +48,46 @@ date_default_timezone_set('America/New_York');
             }
             return $data;
 		}
+        
+        function retrieveUserInfo($email) 
+        {
+			$this->db->from('UserInfo');
+			$this->db->where('email', $email);
+
+            $query = $this->db->get()->row();
+			if (!empty($query)) {
+                $data = array(
+                    'firstname' => $query->firstname,
+                    'lastname' => $query->lastname,
+                    'miname' => $query->miname,
+                    'gender' => $query->gender,
+                    'email' => $query->email,
+                    'organization' => $query->organization,
+                    'phone' => $query->phone,
+                    'address1' => $query->address1,
+                    'address2' => $query->address2,
+                    'city' => $query->city,
+                    'region' => $query->region,
+                    'country' => $query->country,
+                    'postalCode' => $query->postalCode);
+                return $data;
+			}
+        }
+        
+        function updateUserInfo($data) 
+        {
+			$this->db->set('gender', $data['gender']);
+			$this->db->set('organization', $data['organization']);
+			$this->db->set('phone', $data['phone']);
+			$this->db->set('address1', $data['address1']);
+			$this->db->set('address2', $data['address2']);
+			$this->db->set('city', $data['city']);
+			$this->db->set('region', $data['region']);
+			$this->db->set('country', $data['country']);
+			$this->db->set('postalCode', $data['postalCode']);
+			$this->db->where('email', $data['email']);
+            return $this->db->update('UserInfo');
+        }
 
 		function selectForSignUp($email){
 			$this->db->from('UserInfo');
@@ -59,10 +99,6 @@ date_default_timezone_set('America/New_York');
 			else{
 				return;
 			}	
-		}
-
-		function removeUser($email, $password){
-
 		}
         
         
@@ -166,19 +202,42 @@ date_default_timezone_set('America/New_York');
 		}
         
         function activate_account($email, $token) {
+            // invoked through confirmation email
             $this->db->from('UserInfo');
             $this->db->where('email', $email);
             $query = $this->db->get()->row();
             if (!empty($query) && ($query->activate_token == $token)) {
                 $this->db->set('status', 'active');
                 $this->db->set('activate_token', '');
+                $this->db->set('date_last_attempted_login',  date('Y-m-j H:i:s'));
                 $this->db->where('email', $email);
                 $this->db->update('UserInfo');
                 return $query;
             }
-            
+        }
+        
+        public function delete_user($email)
+        {
+            $this->db->from('UserInfo');
+            $this->db->where('email', $email);
+            $this->db->delete();
         }
 
+        public function stale_pending_users($cutoff_date)
+        {
+            $this->db->from('UserInfo');
+            $this->db->where('status', 'pending');
+            $this->db->where('created_at <', $cutoff_date);
+            return $this->db->get()->result(); 
+        }
+        
+        public function nonactive_users()
+        {
+            $active_statuses = array('active', 'pending');
+            $this->db->from('UserInfo');
+            $this->db->where_not_in('status', $active_statuses);
+            return $this->db->get()->result(); 
+        }
 	}
 
 ?>

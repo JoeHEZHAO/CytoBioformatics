@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Account Activated | CytoInformatics</title>
+  <title>Reset Password | CytoInformatics</title>
     
     <!-- FAVICON AND APPLE TOUCH -->    
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('images/favicon/apple-icon-57x57.png') ?>">
@@ -33,13 +33,40 @@
       <a href="<?php echo base_url('index.php/Cyto/index'); ?>">
           <img src="<?php echo base_url('assets/images/cyto_logo.png'); ?>" style="width: 150px; display: block; margin: auto; margin-bottom: 50px;">
       </a>
+            
+      <!-- CSRF FORM TOKEN -->
+      <?php $csrf = array('name' => $this->security->get_csrf_token_name(),
+                          'hash' => $this->security->get_csrf_hash()); ?>
       
       <div>        
         <div id="password_reset_window" >   
-          <h1>Thank you! </h1>
-          <label id="error_reset" style="display: block; text-align: center; position: relative; color: white; font-size: 13px; left: 0; bottom: 21px;">Your account has now been activated.</label>
+          <h1>Create a new password</h1>
+          <label id="error_reset" style="display: block; text-align: center; position: relative; color: white; font-size: 13px; left: 0; bottom: 21px;">Please enter a new password (Min. 8 characters).</label>
+
+          <form action="<?php echo base_url('index.php'); ?>" method="post" id="reset_password_token">
+          
+            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+          
+            <input type="hidden" name="email" value="<?php echo $email; ?>" />
+              
+            <div class="field-wrap">
+              <label>
+                Set a password<span class="req">*</span>
+              </label>
+              <input type="password" name="password" required autocomplete="off"/>
+            </div>
+          
+            <div class="field-wrap">
+              <label>
+                Confirm password<span class="req">*</span>
+              </label>
+              <input type="password" name="password_c" required autocomplete="off"/>
+            </div>
+          
+            <button class="button button-block">Confirm</button>
+          </form>
             
-          <a href="<?php echo base_url('index.php/Cyto/index'); ?>"><button id="return-button" class="button button-block">Return</button></a>
+          <a href="<?php echo base_url('index.php/Cyto/index'); ?>"><button id="return-button" class="button button-block" style="display: none;">Return</button></a>
         </div>
       </div>
   </div>

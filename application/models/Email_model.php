@@ -9,7 +9,7 @@ class Email_model extends CI_Model{
     } 
     
     private function email_config() {
-        $config = Array(
+         $config = Array(
               'protocol' => 'smtp',
               'smtp_host' => 'ssl://smtp.googlemail.com',
               'smtp_port' => 465,
@@ -90,7 +90,7 @@ class Email_model extends CI_Model{
             $this->email->from($config['smtp_user'], 'CytoInformatics');
             
             $this->email->to($data['email']);
-            $this->email->subject('Auto-Receipt');
+            $this->email->subject('Reset Password - CytoInformatics');
             $this->email->message($this->load->view('email_passwordreset', $data, true));
             if($this->email->send()) {
                 return "success";

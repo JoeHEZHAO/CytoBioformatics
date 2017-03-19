@@ -51,14 +51,21 @@
               
             <div class="field-wrap">
               <label>
-                Set A Password<span class="req">*</span>
+                Verify current password<span class="req">*</span>
+              </label>
+              <input type="password" name="password_old" required autocomplete="off"/>
+            </div>
+              
+            <div class="field-wrap">
+              <label>
+                Set a password<span class="req">*</span>
               </label>
               <input type="password" name="password" required autocomplete="off"/>
             </div>
           
             <div class="field-wrap">
               <label>
-                Confirm Password<span class="req">*</span>
+                Confirm password<span class="req">*</span>
               </label>
               <input type="password" name="password_c" required autocomplete="off"/>
             </div>
