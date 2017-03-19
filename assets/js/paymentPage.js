@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 		var paymentProfileID = $('input[type="checkbox"]:checked'). attr("name");
 		var totalCharge = $('#TotalCharge'). attr("name");
-		var pathUrl = $(this).attr('name') + '/Cyto_bioformatics/';
+		var pathUrl = $(this).attr('name') + '/Cyto/';
 
 		$.ajax({
 	        type: "POST",

@@ -11,8 +11,8 @@
                         <br>
                         <div>
                             <ul style="list-style-type: none;">
-                                <li>Read our <a href="<?php echo base_url('index.php/Cyto_bioformatics/privacy_policy'); ?>">Privacy Policy</a></li>
-                                <li>Read our <a href="<?php echo base_url('index.php/Cyto_bioformatics/refund_policy'); ?>">Refund Policy</a></li>
+                                <li>Read our <a href="<?php echo base_url('index.php/Cyto/privacy_policy'); ?>">Privacy Policy</a></li>
+                                <li>Read our <a href="<?php echo base_url('index.php/Cyto/refund_policy'); ?>">Refund Policy</a></li>
                             </ul>
                         </div>
 					</div><!-- widget-text -->

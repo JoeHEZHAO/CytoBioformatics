@@ -137,7 +137,7 @@
 								<h2 class="text-center">Look no further</h2>
                                 <h5 class="text-center">for the image analysis you need</h5>
                                 <br>
-								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/cyto_bioformatics/login'); ?>" style="display: block; margin-left: auto; margin-right: auto; width: 122px;">Get Started<i class="bronx-icon-arrow-right text-alt-color"></i></a>
+								<a class="btn btn-default btn-default-alt" href="<?php echo base_url('index.php/Cyto/login'); ?>" style="display: block; margin-left: auto; margin-right: auto; width: 122px;">Get Started<i class="bronx-icon-arrow-right text-alt-color"></i></a>
 							</div><!-- col -->
 						</div><!-- row -->
 					</div><!-- container -->

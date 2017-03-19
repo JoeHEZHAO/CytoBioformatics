@@ -55,15 +55,18 @@ $('#userlogin').submit(function() {
         url: $('#userlogin').attr('action') + '/Login/index',
         data: { email: email, password: pwd },
         success: function (response) {
-            
+//            console.log(response);
             if (response == 'failed') {
-
                 $("#error_login").text("Wrong email or password. Please try again.");
                 $("#error_login").css("display", "block");
-
-            }
-            else{
-                window.location.replace($('#userlogin').attr('action') + '/cyto_bioformatics/index');
+            } else if (response == 'exceeded_attempts') {
+                $("#error_login").text("Too many failed login attempts have been made. Please try again in five minutes.");
+                $("#error_login").css("display", "block");
+            } else if (response == 'error') {
+                $("#error_login").text("An error occurred. Please try again.");
+                $("#error_login").css("display", "block");
+            } else {
+                window.location.replace($('#userlogin').attr('action') + '/Cyto/index');
 //                alert(response);
             }
 
@@ -96,15 +99,28 @@ $('#register').submit(function() {
                 url: $('#register').attr('action') + '/Register/index',
                 data: { email: email, password: pwd, FirstName : firstname, LastName : lastname, organization : organization, phone : phone },
                 success: function (response) {
-
+//                    alert(response);
                     if (response == 'Email address already exists.') {
-
                         $("#error_signup").text("Duplicate email address. Please try another.");
                         $("#error_signup").css("display", "block");
-
-                    }
-                    else{
-                        window.location.replace($('#register').attr('action') + '/cyto_bioformatics/index');
+                    } else if (response == 'activate_email_failed') {
+                        $("#error_signup").text("Error sending confirmation email. Please try again or contact us.");
+                        $("#error_signup").css("display", "block");
+                    } else if (response == 'account_pending') {
+                        $("#error_signup").text("A confirmation email has already been sent. Please check your inbox.");
+                        $("#error_signup").css("display", "block");
+                        $("#register").css("display", "none");
+                        $(".button").css("display", "none");
+                    } else {
+                        $("#error_signup").text("A confirmation email has been sent. Please check your inbox.");
+                        $("#error_signup").css("display", "block");
+                        $("#error_signup").css("color", "white");
+                        $("#register").css("display", "none");
+                        $(".button").css("display", "none");
+                        
+//                        $(".resend_activate").css("display", "block");
+                        
+//                        window.location.replace($('#register').attr('action') + '/Cyto/index');
         //                alert(response);
                     }
 
