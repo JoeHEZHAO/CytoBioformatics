@@ -10,7 +10,6 @@ class Email_model extends CI_Model{
     
     private function email_config() {
          $config = Array(
-<<<<<<< HEAD
               'protocol' => 'smtp',
               'smtp_host' => 'ssl://smtp.googlemail.com',
               'smtp_port' => 465,
@@ -20,39 +19,6 @@ class Email_model extends CI_Model{
               'charset' => 'utf-8',
               'wordwrap' => TRUE
          );
-//         $config = Array(
-//            'protocol' => 'sendmail',
-//            'mailpath' => '/usr/sbin/sendmail',
-//            'smtp_port' => 465,
-//            'smtp_user' => 'service@cytoinformatics.com',
-//            'smtp_pass' => 'JMN73dfuXfQV',
-//            'smtp_crypto' => 'ssl',
-//            'mailtype'  => 'html', 
-//            'charset' => 'utf-8',
-//            'wordwrap' => TRUE
-//         );
-=======
-             'protocol' => 'smtp',
-             'smtp_host' => 'ssl://smtp.googlemail.com',
-             'smtp_port' => 465,
-             'smtp_user' => 'zhaohezzu@gmail.com',
-             'smtp_pass' => 'Zh63963252',
-             'mailtype'  => 'html', 
-             'charset' => 'utf-8',
-             'wordwrap' => TRUE
-         );
-         // $config = Array(
-         //    'protocol' => 'sendmail',
-         //    'mailpath' => '/usr/sbin/sendmail',
-         //    'smtp_port' => 465,
-         //    'smtp_user' => 'service@cytoinformatics.com',
-         //    'smtp_pass' => 'JMN73dfuXfQV',
-         //    'smtp_crypto' => 'ssl',
-         //    'mailtype'  => 'html', 
-         //    'charset' => 'utf-8',
-         //    'wordwrap' => TRUE
-         // );
->>>>>>> zh
         // 465 for ssl, 587 for tls
         return $config;
     }
