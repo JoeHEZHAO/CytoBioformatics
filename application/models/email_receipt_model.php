@@ -25,7 +25,6 @@ date_default_timezone_set('America/New_York');
           $this->load->library('email', $config);
           $this->email->initialize($config);
           $this->email->set_newline("\r\n");
-          // $email_body ="<div>This is a test for sending email through Codeigniter.</div>";
           $this->email->from('zhaohezzu@gmail.com', 'he zhao');
 
           $data['billEmail'] = $billAddr['billEmail'];
@@ -49,12 +48,10 @@ date_default_timezone_set('America/New_York');
           // $list = array('...@gmail.com');
           $this->email->to($billAddr['billEmail']);
           $this->email->subject('Auto-Receipt');
-          // $this->email->message($email_body);
           $this->email->message($this->load->view('email_receipt',$data, true));
           // $this->load->view('pdf_example', $data);
-          $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
-          var_dump($fileLocation.'/output.pdf');
-          $this->email->attach($fileLocation.'/output.pdf');
+          // $fileLocation = '/Users/zhaohe/htdocs/localhost/Codeigniter/receipt/'.$email;
+          $this->email->attach('/Users/zhaohe/htdocs/localhost'.'/output.pdf');
           $this->email->send();
           echo $this->email->print_debugger();
 

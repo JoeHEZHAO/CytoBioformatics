@@ -78,7 +78,11 @@ $db['default'] = array(
 	'hostname' => 'localhost:3306',
 	'username' => 'root',
 	'password' => 'root',
+<<<<<<< HEAD
 	'database' => 'CytoBioformatics',
+=======
+	'database' => 'mysql',
+>>>>>>> zh
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
